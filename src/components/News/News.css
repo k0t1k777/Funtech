@@ -6,12 +6,26 @@
   padding: 20px 40px;
   background-image: url('./../../assets/NewsBackground.png');
   box-sizing: border-box;
+  border-radius: 12px;
 }
 
 .news__registration-container {
   display: flex;
   align-items: center;
   height: 35px;
+}
+
+.news__registration-wrapper {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  margin-top: 21px;
+  gap: 12px;
+}
+
+.news__registration-container-item {
+  display: flex;
+  gap: 4px;
 }
 
 .news__registration-img {
@@ -56,6 +70,3 @@
   line-height: 22px;
 }
 
-.news__date-container-items {
-  
-}

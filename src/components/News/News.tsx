@@ -11,25 +11,20 @@ export default function News() {
       </div>
       <h2 className='news__title'>{NEWS_TEXT_DATA.title}</h2>
       <p className='news__name'>{NEWS_TEXT_DATA.name}</p>
-      <div className='news__date-container'>
-      <div className='news__registration-container'>
-
-      {/* {NEWS_DATA.map(index, item) => {
-        <Calendar className='news__container-img' />
-         <p className='news__date'>12 апреля в 19:00</p>
-  }} */}
-
-
-
-
-          <Calendar className='news__container-img' />
-          <p className='news__date'>12 апреля в 19:00</p>
-        </div>
-        <div  className='news__registration-container'>
-          <Online className='news__container-img' />
-          <p className='news__date'>Онлайн</p>
+        <div className='news__registration-wrapper'>
+          {NEWS_DATA.map((item, index) => {
+            return (
+              <div key={index} className='news__registration-container-item'>
+                <img
+                  src={item.img}
+                  className='news__container-img'
+                  alt='иконка действия'
+                />
+                <p className='news__date'>{item.text}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
-    </div>
   );
 }

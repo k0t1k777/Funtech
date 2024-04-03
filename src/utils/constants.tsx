@@ -1,5 +1,5 @@
-import Calendar from './../../assets/calendar.svg?react';
-import Online from './../../assets/Online.svg?react';
+import Calendar from './../../src/assets/calendar.svg';
+import Online from './../assets/Online.svg';
 
 export const NEWS_DATA = [
   {
