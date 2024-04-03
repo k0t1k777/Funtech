@@ -7,6 +7,7 @@
   background-image: url('./../../assets/NewsBackground.png');
   box-sizing: border-box;
   border-radius: 12px;
+  position: relative;
 }
 
 .news__registration-container {
@@ -70,3 +71,16 @@
   line-height: 22px;
 }
 
+.news__photo {
+  position: absolute;
+  top: 0;
+  right: 56px;
+  z-index: 5;
+}
+
+.news__waves {
+  position: absolute;
+  top: 0;
+  right: 0;
+  rotate: 31.78;
+}
