@@ -29,6 +29,7 @@ export default function News() {
             );
           })}
         </div>
+        
       <img src={PhotoNews} className='news__photo' alt='фото ивента' />
       <img src={PhotoWaves} className='news__waves' alt='волны бэкграунда' />
     </div>
