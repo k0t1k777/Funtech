@@ -4,7 +4,8 @@
   height: 269px;
   padding: 0;
   padding: 20px 40px;
-  background-image: url('./../../assets/NewsBackground.png');
+  background-image: url('./../../../assets/NewsBackground.png');
+  background-size: cover;
   box-sizing: border-box;
   border-radius: 12px;
   position: relative;
