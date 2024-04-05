@@ -1,0 +1,11 @@
+.events-poster {
+  margin-top: 40px;
+}
+
+.events-poster__title {
+  color: #2B2D33;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36.4px;
+  margin: 0 0 20px 0;
+}
