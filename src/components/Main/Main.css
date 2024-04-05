@@ -1,7 +1,5 @@
 .main {
   margin: 0;
   padding: 40px 60px 0;
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: 269px min-content;
+  display: flex;
 }

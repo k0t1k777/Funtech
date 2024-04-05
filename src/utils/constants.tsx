@@ -18,7 +18,6 @@ export const NEWS_TEXT_DATA = {
   name: 'София Новикова',
 };
 
-
 export const POSTER_DATA = {
   date: '3 апреля',
   title: '2+2=22. JavaScript',
@@ -35,8 +34,8 @@ export const POSTER_DATA = {
 export const CheckboxData = {
   line: 'Направление',
   type: 'Тип',
-}
+};
 
-// export default CanselButtonData {
-//   name
-// 
+export const POPUP_DATA = {
+  agry: 'Заполняя форму, я даю согласие на обработку данных',
+};

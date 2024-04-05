@@ -15,6 +15,7 @@
   display: flex;
   align-items: center;
   height: 35px;
+  width: 100%;
 }
 
 .news__registration-wrapper {
@@ -76,7 +77,7 @@
   position: absolute;
   top: 0;
   right: 56px;
-  z-index: 5;
+  z-index: 3;
 }
 
 .news__waves {
