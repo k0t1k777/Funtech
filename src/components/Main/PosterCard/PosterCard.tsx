@@ -6,14 +6,15 @@ export default function PosterCard() {
   return (
     <div className='poster-card'>
       <div className='poster-card__img'>
-        <div className='poster-card__date-container'>
-          <CalendarVector />
-          <p className='poster-card__date'>{POSTER_DATA.date}</p>
-        </div>
-        <div className='poster-card__buttons'>
-          <button className='poster-card__button-edit' type='button' />
-
-          <button className='poster-card__button-on' type='button' />
+        <div className='poster-card__container'>
+          <div className='poster-card__date-container'>
+            <CalendarVector />
+            <p className='poster-card__date'>{POSTER_DATA.date}</p>
+          </div>
+          <div className='poster-card__buttons'>
+            <button className='poster-card__button-edit' type='button' />
+            <button className='poster-card__button-on' type='button' />
+          </div>
         </div>
       </div>
       <div className='poster-card__info'>
@@ -21,8 +22,12 @@ export default function PosterCard() {
         <p className='poster-card__name'>{POSTER_DATA.name}</p>
         <p className='poster-card__profession'>{POSTER_DATA.profession}</p>
         <div className='poster-card__tags'>
-          {POSTER_DATA.tags.map((tag) => {
-            return <p className='poster-card__tag'>{tag}</p>;
+          {POSTER_DATA.tags.map((tag, index) => {
+            return (
+              <p key={index} className='poster-card__tag'>
+                {tag}
+              </p>
+            );
           })}
         </div>
         <div

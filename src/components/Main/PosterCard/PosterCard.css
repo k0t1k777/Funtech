@@ -6,20 +6,24 @@
 }
 
 .poster-card__img {
-  background-image: url('../../../assets/posterImg.png');
-  background-position: center;
+  background-image: url('../../../assets/posterImg.jpeg');
   min-height: 151px;
-  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
 
+.poster-card__container {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 8px 0 8px;
+}
+
 .poster-card__date-container {
   display: flex;
-  position: absolute;
   align-items: center;
-  top: 20px;
-  left: 23px;
 }
 
 .poster-card__date {
@@ -32,9 +36,7 @@
 
 .poster-card__buttons {
   display: flex;
-  position: absolute;
-  top: 20px;
-  right: 23px;
+  align-items: center;
 }
 
 .poster-card__button-edit {
