@@ -22,3 +22,7 @@ export const CheckboxData = {
   line: 'Направление',
   type: 'Тип',
 }
+
+// export default CanselButtonData {
+//   name
+// }
