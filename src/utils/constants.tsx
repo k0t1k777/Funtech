@@ -17,3 +17,12 @@ export const NEWS_TEXT_DATA = {
   title: 'Инновационные тренды в UX/UI дизайне',
   name: 'София Новикова',
 };
+
+export const CheckboxData = {
+  line: 'Направление',
+  type: 'Тип',
+}
+
+// export default CanselButtonData {
+//   name
+// }

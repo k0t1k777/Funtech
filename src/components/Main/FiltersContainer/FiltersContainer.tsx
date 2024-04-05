@@ -1,6 +1,9 @@
 import Calendar from '../../Calendar/Calendar';
 import BasicSelect from '../../Select/Select';
-import Checkboxes from '../../Checkboxes/Checkboxes';
+import CheckboxesTime from '../../Filters/CheckboxesTime/CheckboxesTime';
+import CheckboxesScills from '../../Filters/CheckboxesScills/CheckboxesScills';
+import CheckboxesTypes from '../../Filters/CheckboxesTypes/CheckboxesTypes';
+
 import './FiltersContainer.css';
 
 export default function FiltersContainer() {
@@ -8,7 +11,9 @@ export default function FiltersContainer() {
     <div className='filters-container'>
       <Calendar />
       <BasicSelect />
-      <Checkboxes />
+      <CheckboxesTime />
+      <CheckboxesScills />
+      <CheckboxesTypes />
     </div>
   );
 }

@@ -15,13 +15,16 @@ export default function BasicSelect() {
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Город</InputLabel>
+        <InputLabel id='demo-simple-select-label'>Город</InputLabel>
         <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
+          labelId='demo-simple-select-label'
+          id='demo-simple-select'
           value={city}
-          label="Город"
+          label='Город'
           onChange={handleChange}
+          sx={{
+            borderRadius: '12px',
+          }}
         >
           <MenuItem value={10}>Москва</MenuItem>
           <MenuItem value={20}>Питер</MenuItem>
