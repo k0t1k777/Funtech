@@ -1,7 +1,6 @@
 import './ReturnBtn.css';
 import { Button } from '@mui/material';
 import LeftArrow from '../../../assets/LeftArrow.svg?react';
-// import { CanselButtonData } from '../../../utils/constants';
 
 interface CanselButtonProps {
   onClick: () => void;
@@ -37,7 +36,6 @@ export const CanselButton = ({ onClick }: CanselButtonProps) => {
       onClick={() => onClick()}
     >
       <LeftArrow className="returnBtn" />
-      {/* {CanselButtonData.return} */}
       Отменить
     </Button>
   );

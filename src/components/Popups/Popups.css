@@ -5,7 +5,6 @@
   flex-direction: column;
   border-radius: 24px;
   padding: 40px;
-  gap: 28px;
   border: none;
   position: absolute;
   top: 80px;
@@ -48,9 +47,18 @@
   display: flex;
   align-items: start;
   gap: 10px;
+  margin: 20px 0 0 0;
 }
 
-.popup-registration__checkbox {
+.popup-registration__container-button {
+  margin: 28px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.popup-registration__checkbox:checked {
+  background-color: red;
   color: #CAC4D0;
   margin: 2.5px 0 0 0;
 }

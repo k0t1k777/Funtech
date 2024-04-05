@@ -14,8 +14,37 @@ export default function BasicSelect() {
 
   return (
     <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel id='demo-simple-select-label'>Город</InputLabel>
+      <FormControl fullWidth           sx={{
+            borderRadius: '12px',
+            '& .css-bpeome-MuiSvgIcon-root-MuiSelect-icon': {
+              color: '#6750A4', },
+              '& .MuiOutlinedInput-notchedOutline': {
+                color: 'red',
+
+              },
+   
+              '& label.Mui-focused': {
+                color: '#6750A4',
+              },
+   
+    
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: '#CAC4D0',
+                },
+                '&:hover fieldset': {
+                  borderColor: '#E8DEF8',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#6750A4',
+                },
+              },
+          }}>
+        <InputLabel
+          id='demo-simple-select-label'
+        >
+          Город
+        </InputLabel>
         <Select
           labelId='demo-simple-select-label'
           id='demo-simple-select'

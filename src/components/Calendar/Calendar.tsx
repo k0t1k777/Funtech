@@ -24,21 +24,13 @@ export default function Calendar() {
           '& .css-zlm3dp-MuiPickersLayout-root': {
             height: '100%',
           },
-          '& .css-1juxbee-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected:hover':
-            {
-              backgroundColor: '#6750A4',
-            },
-          '& .MuiDateRangeCalendar-root': {
+            '& .MuiDateRangeCalendar-root': {
             borderRadius: '12px',
             border: '1px solid #CAC4D0',
             height: '312px',
             width: '300px',
           },
-          '& .css-grqin-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected:hover ':
-            {
-              backgroundColor: '#6750A4',
-            },
-          '& .css-1juxbee-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected':
+            '& .css-1juxbee-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected':
             {
               backgroundColor: '#6750A4',
             },
@@ -48,6 +40,21 @@ export default function Calendar() {
           '& .css-1h9r93t-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day:not(.Mui-selected)':
             {
               border: '1px solid #6750A4',
+            },
+            '& .css-grqin-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected': {
+              backgroundColor: '#6750A4',
+            },
+            '& .css-tbuks1-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected:hover': {
+              backgroundColor: '#6750A4',
+            },
+            '& .css-1juxbee-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day:focus.Mui-selected': {
+              backgroundColor: '#6750A4',
+            },
+            '& .css-tbuks1-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected': {
+              backgroundColor: '#6750A4',
+            },
+            '& .css-grqin-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected:focus': {
+              backgroundColor: '#6750A4',
             },
         }}
       />

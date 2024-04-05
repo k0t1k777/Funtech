@@ -41,9 +41,12 @@ export default function PopupRegistration({
           />
         </div>
         <div className='popup-registration__container'>
+          <label>
           <input className='popup-registration__checkbox' type='checkbox' />
+          </label>
           <p className='popup-registration__text'>{POPUP_DATA.agry}</p>
         </div>
+        <div className='popup-registration__container-button'>
         <SubmitButton title='Регистрация' onClick={handeleRegistrationOpen} />
         <SubmitButton
           title='Войти с Яндекс ID'
@@ -51,6 +54,7 @@ export default function PopupRegistration({
           color='#000000'
           borderColor='#2B2D33'
         />
+        </div>
       </div>
     </div>
   );

@@ -27,21 +27,23 @@ export default function PopupEnter({
             className='popup-registration__input'
             type='password'
             placeholder='Пароль'
-          />       
+          />
         </div>
-        <SubmitButton title='Войти' onClick={handeleEnterOpen} />
-        <SubmitButton
-          title='Войти с Яндекс ID'
-          backgroundColor='#FFF'
-          color='#000000'
-          borderColor='#2B2D33'
-        />
-         <SubmitButton
-          title='Зарегистрироваться'
-          backgroundColor='#FFF'
-          color='#C29AF5'
-          borderColor='#C29AF5'
-        />
+        <div className='popup-registration__container-button'>
+          <SubmitButton title='Войти' onClick={handeleEnterOpen} />
+          <SubmitButton
+            title='Войти с Яндекс ID'
+            backgroundColor='#FFF'
+            color='#000000'
+            borderColor='#2B2D33'
+          />
+          <SubmitButton
+            title='Зарегистрироваться'
+            backgroundColor='#FFF'
+            color='#C29AF5'
+            borderColor='#C29AF5'
+          />
+        </div>
       </div>
     </div>
   );
