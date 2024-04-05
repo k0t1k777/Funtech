@@ -18,6 +18,20 @@ export const NEWS_TEXT_DATA = {
   name: 'София Новикова',
 };
 
+
+export const POSTER_DATA = {
+  date: '3 апреля',
+  title: '2+2=22. JavaScript',
+  name: 'Роман Пушкин',
+  profession: 'Senior Developer ECAM',
+  tags: ['Frontend', 'Ts', 'React'],
+  registration: {
+    open: 'Регистрация открыта',
+    close: 'Регистрация закрыта',
+  },
+  buttonText: 'Я иду!',
+};
+
 export const CheckboxData = {
   line: 'Направление',
   type: 'Тип',
@@ -25,4 +39,4 @@ export const CheckboxData = {
 
 // export default CanselButtonData {
 //   name
-// }
+// 
