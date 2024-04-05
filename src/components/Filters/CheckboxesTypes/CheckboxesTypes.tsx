@@ -5,7 +5,7 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { Typography } from '@mui/material';
-import { CheckboxData } from './../../../utils/constants'
+import { CHECKBOX_DATA } from './../../../utils/constants'
 
 const checkboxData = [
   {
@@ -55,7 +55,7 @@ export default function CheckboxesGroup() {
           }}
           gutterBottom
         >
-          {CheckboxData.type}
+          {CHECKBOX_DATA.type}
         </Typography>
         <FormGroup sx={{ display: 'flex', flexDirection: 'row' }}>
           {checkboxData.map((checkbox) => (

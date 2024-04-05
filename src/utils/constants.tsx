@@ -31,11 +31,14 @@ export const POSTER_DATA = {
   buttonText: 'Я иду!',
 };
 
-export const CheckboxData = {
+export const CHECKBOX_DATA = {
   line: 'Направление',
   type: 'Тип',
 };
 
 export const POPUP_DATA = {
   agry: 'Заполняя форму, я даю согласие на обработку данных',
+  data: 'Личные данные',
+  notifications: 'Уведомления',
+  event: 'Добавить мероприятие',
 };

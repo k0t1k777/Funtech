@@ -1,6 +1,7 @@
 import './Popups.css';
 import SubmitButton from '../../components/SubmitButton/SubmitButton';
 import Avatar from './../../assets/PhotoWoman.png';
+import { POPUP_DATA } from './../../utils/constants'
 
 interface PopupEnterProps {
   handeleProfileOpen: () => void;
@@ -25,9 +26,9 @@ export default function PopupProfile({
           </div>
         </div>
         <ul className='popup__lists'>
-          <li className='popup__item'>Личные данные</li>
-          <li className='popup__item'>Уведомления</li>
-          <li className='popup__item'>Добавить&nbsp;мероприятие</li>
+          <li className='popup__item'>{POPUP_DATA.data}</li>
+          <li className='popup__item'>{POPUP_DATA.notifications}</li>
+          <li className='popup__item'>{POPUP_DATA.event}</li>
         </ul>
         <div className='popup__container-button'>
           <SubmitButton
