@@ -15,21 +15,21 @@ export default function PopupEnter({
   };
 
   return (
-    <div className='popup-registration__overlay' onClick={handleOverlayClose}>
-      <div className='popup-registration' onClick={handlePopupClick}>
-        <div className='popup-registration__input-container'>
+    <div className='popup__overlay' onClick={handleOverlayClose}>
+      <div className='popup' onClick={handlePopupClick}>
+        <div className='popup__input-container'>
           <input
-            className='popup-registration__input'
+            className='popup__input'
             type='text'
             placeholder='Логин'
           />
           <input
-            className='popup-registration__input'
+            className='popup__input'
             type='password'
             placeholder='Пароль'
           />
         </div>
-        <div className='popup-registration__container-button'>
+        <div className='popup__container-button'>
           <SubmitButton title='Войти' onClick={handeleEnterOpen} />
           <SubmitButton
             title='Войти с Яндекс ID'

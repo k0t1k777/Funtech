@@ -34,7 +34,7 @@ export default function SubmitButton({
       sx={{
         backgroundColor: backgroundColor ? backgroundColor : '#6750A4',
         color: color ? color : '#fff',
-        border: border ? border : 'none',
+        border: border ? border : '1px solid red',
         borderColor: borderColor ? borderColor : '#6750A4',
         borderRadius: '16px',
         '&:hover': {
