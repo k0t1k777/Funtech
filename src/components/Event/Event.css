@@ -1,4 +1,12 @@
 .event {
+  display: grid;
+  grid-template-columns: 736px min-content;
+  grid-template-rows: repeat(2, min-content);
+  column-gap: 55px;
+  padding: 60px 60px;
+}
+
+.event__container {
   display: flex;
-  padding: 60px 60px 0;
+  flex-direction: column;
 }

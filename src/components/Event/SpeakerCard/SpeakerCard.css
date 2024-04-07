@@ -1,0 +1,71 @@
+.speaker-card {
+  padding: 0 11.5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.speaker-card_plan {
+  padding: 0;
+  justify-self: end;
+  max-width: 214px;
+  width: 100%;
+}
+
+.speaker-card__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.speaker-card__img_plan {
+  width: 50px;
+  height: 50px;
+}
+
+.speaker-card__info {
+  margin-left: 20px;
+}
+
+.speaker-card__info_plan {
+  margin-left: 16px;
+}
+
+.speaker-card__title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36.4px;
+  color: #2b2d33;
+}
+
+.speaker-card__title_plan {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20.8px;
+}
+
+.speaker-card__professions {
+  display: grid;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.speaker-card__professions_plan {
+  margin-top: 4px;
+  gap: 2px;
+}
+
+.speaker-card__profession {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20.8px;
+  color: #2c2a2acc;
+}
+
+.speaker-card__profession_plan {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+}
