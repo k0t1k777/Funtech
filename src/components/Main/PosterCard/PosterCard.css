@@ -159,6 +159,11 @@
   margin-left: 4px;
 }
 
+.poster-card__link {
+  max-width: 118px;
+  width: 100%;
+}
+
 .poster-card__button-submit {
   border: 0;
   padding: 0;
@@ -168,7 +173,6 @@
   color: white;
   background-color: #6750a4;
   border-radius: 16px;
-  max-width: 118px;
   width: 100%;
   padding: 8.5px 0 8.5px 0;
   cursor: pointer;

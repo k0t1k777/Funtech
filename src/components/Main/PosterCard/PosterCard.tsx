@@ -1,8 +1,9 @@
 import './PosterCard.css';
 import CalendarVector from '../../../assets/calendar.svg?react';
 import { POSTER_DATA } from '../../../utils/constants';
+import { NavLink } from 'react-router-dom';
 
-export default function PosterCard() {
+export default function PosterCard({ eventId }) {
   return (
     <div className='poster-card'>
       <div className='poster-card__img'>
@@ -41,7 +42,7 @@ export default function PosterCard() {
                 ? 'poster-card__registration-status_close'
                 : 'poster-card__registration-status_open'
             }`}
-          />
+          ></div>
           <p
             className={`poster-card__registration-text ${
               false ? 'poster-card__registration-text_reg_closed' : ''
@@ -54,9 +55,11 @@ export default function PosterCard() {
           {false ? (
             ''
           ) : (
-            <button className='poster-card__button-submit' type='submit'>
-              {POSTER_DATA.buttonText}
-            </button>
+            <NavLink className='poster-card__link' to={`/event/${eventId}`}>
+              <button className='poster-card__button-submit' type='submit'>
+                {POSTER_DATA.buttonText}
+              </button>
+            </NavLink>
           )}
         </div>
       </div>
