@@ -1,7 +1,11 @@
 import './SpeakerCard.css';
 import speakerImg from '../../../assets/speakerImg.png';
 
-export default function SpeakerCard({ isPlanBlock }) {
+interface SpeakerCardProps {
+  isPlanBlock: any;
+}
+
+export default function SpeakerCard({ isPlanBlock }: SpeakerCardProps) {
   return (
     <div className={`speaker-card ${isPlanBlock ? 'speaker-card_plan' : ''}`}>
       <img
