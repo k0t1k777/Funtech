@@ -41,4 +41,6 @@ export const POPUP_DATA = {
   data: 'Личные данные',
   notifications: 'Уведомления',
   event: 'Добавить мероприятие',
+  aboutMe: 'Личные данные',
+  aboutName: 'Имя',
 };

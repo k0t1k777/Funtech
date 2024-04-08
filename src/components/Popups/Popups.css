@@ -14,8 +14,12 @@
   z-index: 6;
 }
 
-.popup__type_width {
+.popup__width_s {
   width: 292px;
+}
+
+.popup__width_l {
+  width: 428px;
 }
 
 .popup__overlay {
@@ -114,4 +118,29 @@
   font-weight: 400;
   line-height: 23.4px;
   list-style: none;
+}
+
+.popup__container-back {
+  display: flex;
+ align-items: center;
+  gap: 32px;
+}
+
+.popup__back-text {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36.4px;
+}
+
+.popup__container-about-me {
+
+}
+
+.popup__container-input {
+  display: flex;
+}
+
+.popup__imput-text {
+
 }

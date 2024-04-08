@@ -2,12 +2,10 @@ import './Popups.css';
 import SubmitButton from '../SubmitButton/SubmitButton';
 
 interface PopupEnterProps {
-  handeleEnterOpen: () => void;
   handleOverlayClose: () => void;
 }
 
 export default function PopupEnter({
-  handeleEnterOpen,
   handleOverlayClose,
 }: PopupEnterProps) {
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -30,7 +28,7 @@ export default function PopupEnter({
           />
         </div>
         <div className='popup__container-button'>
-          <SubmitButton title='Войти' onClick={handeleEnterOpen} />
+          <SubmitButton title='Войти' />
           <SubmitButton
             title='Войти с Яндекс ID'
             backgroundColor='#FFF'
