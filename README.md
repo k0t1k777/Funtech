@@ -18,7 +18,7 @@
 
 ## Инструкции по установке и запуску
 
-1. Клонируйте репозиторий: `git clone git@github.com:hackathon-Vink-Team-3/Funtech.git`
+1. Клонируйте репозиторий: `git clone git@github.com:Funtech.git`
 2. Перейдите в директорию проекта: `cd Funtech`
 3. Установите зависимости: `npm install`
 4. Запустите проект: `npm run dev`
@@ -26,7 +26,7 @@
 
 Или
 
-1. Переходим по этой ссылке: `https://github.com/hackathon-Vink-Team-3/Funtech/tree/dev`
+1. Переходим по этой ссылке: `https://github.com/Funtech/tree/dev`
 2. Нажимаем `Code`
 3. Нажимаем `Download ZIP`
 4. Распаковываем скачанный архив в любое удобное место
