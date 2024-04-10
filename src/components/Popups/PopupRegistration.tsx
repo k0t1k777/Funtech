@@ -3,12 +3,10 @@ import SubmitButton from '../SubmitButton/SubmitButton';
 import { POPUP_DATA } from '../../utils/constants';
 
 interface PopupRegistrationProps {
-  handeleRegistrationOpen: () => void;
   handleOverlayClose: () => void;
 }
 
 export default function PopupRegistration({
-  handeleRegistrationOpen,
   handleOverlayClose,
 }: PopupRegistrationProps) {
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -47,7 +45,7 @@ export default function PopupRegistration({
           <p className='popup__text'>{POPUP_DATA.agry}</p>
         </div>
         <div className='popup__container-button'>
-        <SubmitButton title='Регистрация' onClick={handeleRegistrationOpen} />
+        <SubmitButton title='Регистрация' />
         <SubmitButton
           title='Войти с Яндекс ID'
           backgroundColor='#FFF'

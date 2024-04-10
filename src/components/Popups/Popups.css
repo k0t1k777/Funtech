@@ -14,7 +14,7 @@
   z-index: 6;
 }
 
-.popup__type_width {
+.popup__width_s {
   width: 292px;
 }
 
@@ -36,6 +36,9 @@
   width: 500px;
   max-height: 417px;
   justify-content: center;
+  
+.popup__width_l {
+  width: 428px;
 }
 
 .popup__overlay {
@@ -158,6 +161,14 @@
 
 .popup__date {
   margin: 20px 0 0 0;
+.popup__container-back {
+  display: flex;
+ align-items: center;
+  gap: 32px;
+}
+
+.popup__back-text {
+  margin: 0;
   font-size: 28px;
   font-weight: 700;
   line-height: 36.4px;
@@ -181,4 +192,16 @@
 .popup__header {
   display: flex;
   align-items: center;
+}
+
+.popup__container-about-me {
+
+}
+
+.popup__container-input {
+  display: flex;
+}
+
+.popup__imput-text {
+
 }

@@ -6,6 +6,7 @@ import PopupProfile from '../Popups/PopupProfile';
 import PopupCreateEvent from '../Popups/PopupCreateEvent';
 import PopupEntry from '../Popups/PopupEntry';
 import PopupNotification from '../Popups/PopupNotification';
+import PopupAboutMe from '../Popups/PopupAboutMe';
 
 export const Header = () => {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
@@ -14,6 +15,7 @@ export const Header = () => {
   const [isCreateEventOpen, setIsCreateEventOpen] = useState(false);
   const [isEntryOpen, setIsEntryOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+  const [isEnterAboutMe, setIsEnterAboutMe] = useState(false);
 
   const handeleEnterOpen = () => {
     setIsEnterOpen(true);
@@ -25,6 +27,10 @@ export const Header = () => {
 
   const handeleProfileOpen = () => {
     setIsEnterProfile(true);
+  };
+
+  const handeleAboutMeOpen = () => {
+    setIsEnterAboutMe(true);
   };
 
   const handleOverlayClose = () => {
@@ -46,6 +52,8 @@ export const Header = () => {
 
   const handleNotificationOpen = () => {
     setIsNotificationOpen(true);
+
+    setIsEnterAboutMe(false);
   };
 
   return (
@@ -57,24 +65,17 @@ export const Header = () => {
         <button onClick={handleCreateEventOpen}>Создать событие</button>
         <button onClick={handleEntryOpen}>Запись</button>
         <button onClick={handleNotificationOpen}>Уведомления</button>
+        <button onClick={handeleAboutMeOpen}>О мне</button>
       </div>
       {isRegistrationOpen && (
-        <PopupRegistration
-          handeleRegistrationOpen={handeleRegistrationOpen}
-          handleOverlayClose={handleOverlayClose}
-        />
+        <PopupRegistration handleOverlayClose={handleOverlayClose} />
       )}
-      {isEnterOpen && (
-        <PopupEnter
-          handeleEnterOpen={handeleEnterOpen}
-          handleOverlayClose={handleOverlayClose}
-        />
-      )}
+      {isEnterOpen && <PopupEnter handleOverlayClose={handleOverlayClose} />}
       {isEnterProfile && (
-        <PopupProfile
-          handeleProfileOpen={handeleProfileOpen}
-          handleOverlayClose={handleOverlayClose}
-        />
+        <PopupProfile handleOverlayClose={handleOverlayClose} />
+      )}
+      {isEnterAboutMe && (
+        <PopupAboutMe handleOverlayClose={handleOverlayClose} />
       )}
       {isCreateEventOpen && (
         <PopupCreateEvent handleOverlayClose={handleOverlayClose} />
