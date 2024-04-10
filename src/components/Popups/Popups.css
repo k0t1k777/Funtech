@@ -36,6 +36,7 @@
   width: 500px;
   max-height: 417px;
   justify-content: center;
+} 
   
 .popup__width_l {
   width: 428px;
@@ -161,6 +162,8 @@
 
 .popup__date {
   margin: 20px 0 0 0;
+}
+
 .popup__container-back {
   display: flex;
  align-items: center;
@@ -194,7 +197,7 @@
   align-items: center;
 }
 
-.popup__container-about-me {
+/* .popup__container-about-me {
 
 }
 
@@ -204,4 +207,4 @@
 
 .popup__imput-text {
 
-}
+} */

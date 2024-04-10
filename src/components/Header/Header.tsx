@@ -40,6 +40,7 @@ export const Header = () => {
     setIsCreateEventOpen(false);
     setIsEntryOpen(false);
     setIsNotificationOpen(false);
+    setIsEnterAboutMe(false);
   };
 
   const handleCreateEventOpen = () => {
@@ -52,8 +53,6 @@ export const Header = () => {
 
   const handleNotificationOpen = () => {
     setIsNotificationOpen(true);
-
-    setIsEnterAboutMe(false);
   };
 
   return (
