@@ -4,17 +4,16 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Event from '../Event/Event';
 import { useEffect, useState } from 'react';
-import * as Api from './../../utils/utils'
+import * as Api from './../../utils/utils';
+import { Events } from './../Main/Main';
 
 export default function App() {
-  const [events, getEvents] = useState('');
-  console.log('events: ', events);
+  const [events, getEvents] = useState<Events[]>([]);
 
   useEffect(() => {
     Api.getEvents()
       .then((data) => {
         getEvents(data.results);
-        console.log('data: ', data.results);
       })
       .catch((error) => {
         console.error(error);
@@ -25,7 +24,7 @@ export default function App() {
     <>
       <Header />
       <Routes>
-        <Route path='/' element={<Main events={events}/>} />
+        <Route path='/' element={<Main events={events} />} />
         <Route path='/event' element={<Event />} />
       </Routes>
       {/* <Footer /> */}

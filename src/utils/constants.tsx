@@ -19,10 +19,6 @@ export const NEWS_TEXT_DATA = {
 };
 
 export const POSTER_DATA = {
-  date: '3 апреля',
-  title: '2+2=22. JavaScript',
-  name: 'Роман Пушкин',
-  profession: 'Senior Developer ECAM',
   tags: ['Frontend', 'Ts', 'React'],
   registration: {
     open: 'Регистрация открыта',
@@ -73,3 +69,12 @@ export const NOTIFICATION_FORM_DATA = {
     perMinutes: 'За 15 минут',
   },
 };
+
+export const EVENTS_POSTER_DATA = {
+  title: 'Афиша событий',
+};
+
+export const MONTH_NAMES_DATA = [
+  'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
+  'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
+];

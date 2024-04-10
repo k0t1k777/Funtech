@@ -1,11 +1,17 @@
 import './EventsPoster.css';
 import PosterCardList from '../PosterCardList/PosterCardList';
+import { Events } from './../../Main/Main'
+import { EVENTS_POSTER_DATA } from './../../../utils/constants'
 
-export default function EventsPoster() {
+export interface EventsPosterProps {
+  events: Events[];
+}
+
+export default function EventsPoster({ events }: EventsPosterProps) {
   return (
     <div className='events-poster'>
-      <h2 className='events-poster__title'>Афиша событий</h2>
-      <PosterCardList />
+      <h2 className='events-poster__title'>{EVENTS_POSTER_DATA.title}</h2>
+      <PosterCardList events={events}/>
     </div>
   );
 }
