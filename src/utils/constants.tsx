@@ -42,3 +42,32 @@ export const POPUP_DATA = {
   notifications: 'Уведомления',
   event: 'Добавить мероприятие',
 };
+
+export const ENTRY_DATA = {
+  title: 'Запись подтверждена!',
+  addReminderText: 'Добавить напоминание в календарь',
+};
+
+export const NOTIFICATION_DATA = {
+  title: 'Уведомления',
+};
+
+export const NOTIFICATION_FORM_DATA = {
+  title: 'Уведомления',
+  submitButton: {
+    notification: 'Сохранить',
+    entry: 'Ок',
+  },
+  cancelButton: 'Отменить',
+  notificationText: {
+    email: 'На почту',
+    sms: 'СМС',
+    telegram: 'Телеграм',
+    call: 'Позвонить',
+  },
+  timeText: {
+    perDay: 'За день',
+    perHour: 'За час',
+    perMinutes: 'За 15 минут',
+  },
+};
