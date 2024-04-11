@@ -71,3 +71,39 @@ export const NOTIFICATION_FORM_DATA = {
     perMinutes: 'За 15 минут',
   },
 };
+
+export const PERSONAL_DATA = {
+  title: 'Личные данные',
+  inputLabels: [
+    'Имя',
+    'Фамилия',
+    'Дата рождения',
+    'Город',
+    'Email',
+    'Телефон',
+    'Телеграм',
+  ],
+  inputJobLabels: ['Компания', 'Должность', 'Опыт'],
+  checkboxLabels: [
+    'Frontend',
+    'Backend',
+    'UX/UI',
+    'AI',
+    'ML',
+    'QA',
+    'DevOps',
+    'Аналитика',
+    'HR',
+    'Менеджмент',
+  ],
+  checkboxJobLabels: {
+    working: 'Работаю',
+    studying: 'Учусь',
+    jobHunting: 'В поиске работы',
+  },
+  occupation: 'Род  деятельности*',
+  direction: 'Направление',
+  showAll: 'Показать все',
+  submitButton: 'Сохранить',
+  cancelButton: 'Отменить',
+};

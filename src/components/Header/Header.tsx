@@ -6,6 +6,7 @@ import PopupProfile from '../Popups/PopupProfile';
 import PopupCreateEvent from '../Popups/PopupCreateEvent';
 import PopupEntry from '../Popups/PopupEntry';
 import PopupNotification from '../Popups/PopupNotification';
+import PopupPersonal from '../Popups/PopupPersonal/PopupPersonal';
 
 export const Header = () => {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
@@ -14,6 +15,7 @@ export const Header = () => {
   const [isCreateEventOpen, setIsCreateEventOpen] = useState(false);
   const [isEntryOpen, setIsEntryOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+  const [isPersonalOpen, setIsPersonalOpen] = useState(false);
 
   const handeleEnterOpen = () => {
     setIsEnterOpen(true);
@@ -34,6 +36,7 @@ export const Header = () => {
     setIsCreateEventOpen(false);
     setIsEntryOpen(false);
     setIsNotificationOpen(false);
+    setIsPersonalOpen(false);
   };
 
   const handleCreateEventOpen = () => {
@@ -48,6 +51,10 @@ export const Header = () => {
     setIsNotificationOpen(true);
   };
 
+  const handlePersonalOpen = () => {
+    setIsPersonalOpen(true);
+  };
+
   return (
     <>
       <div>
@@ -57,6 +64,7 @@ export const Header = () => {
         <button onClick={handleCreateEventOpen}>Создать событие</button>
         <button onClick={handleEntryOpen}>Запись</button>
         <button onClick={handleNotificationOpen}>Уведомления</button>
+        <button onClick={handlePersonalOpen}>Личные данные</button>
       </div>
       {isRegistrationOpen && (
         <PopupRegistration
@@ -82,6 +90,9 @@ export const Header = () => {
       {isEntryOpen && <PopupEntry handleOverlayClose={handleOverlayClose} />}
       {isNotificationOpen && (
         <PopupNotification handleOverlayClose={handleOverlayClose} />
+      )}
+      {isPersonalOpen && (
+        <PopupPersonal handleOverlayClose={handleOverlayClose} />
       )}
     </>
   );
