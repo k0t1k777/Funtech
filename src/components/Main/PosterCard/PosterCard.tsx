@@ -4,11 +4,17 @@ import { POSTER_DATA } from '../../../utils/constants';
 import { NavLink } from 'react-router-dom';
 
 export interface PosterCardProps {
-  name?: string;
-  id?: string;
-  organization?: string;
-  description?: string;
+  name: string;
+  id: string;
+  organization?: string | undefined;
+  description?: string | undefined;
   date: string;
+  company: string;
+  skill: string;
+  event: string;
+  status: string;
+  format: string;
+  // format: string;
 }
 
 export default function PosterCard({
@@ -17,6 +23,11 @@ export default function PosterCard({
   organization,
   description,
   date,
+  company,
+  skill,
+  event,
+  format,
+  status,
 }: PosterCardProps) {
   return (
     <div className='poster-card'>
@@ -33,17 +44,15 @@ export default function PosterCard({
         </div>
       </div>
       <div className='poster-card__info'>
-        <h3 className='poster-card__title'>{description}</h3>
-        <p className='poster-card__name'>{name}</p>
-        <p className='poster-card__profession'>{organization}</p>
+        <h3 className='poster-card__title'>{name}</h3>
+        <p className='poster-card__name'>{organization}</p>
+        <p className='poster-card__profession'>
+          {description} в {company}
+        </p>
         <div className='poster-card__tags'>
-          {POSTER_DATA.tags.map((tag, index) => {
-            return (
-              <p key={index} className='poster-card__tag'>
-                {tag}
-              </p>
-            );
-          })}
+          <p className='poster-card__tag'>{skill}</p>
+          <p className='poster-card__tag'>{event}</p>
+          <p className='poster-card__tag'>{format}</p>
         </div>
         <div
           className={`poster-card__registration-container ${
@@ -56,7 +65,7 @@ export default function PosterCard({
                 ? 'poster-card__registration-status_close'
                 : 'poster-card__registration-status_open'
             }`}
-          ></div>
+          />
           <p
             className={`poster-card__registration-text ${
               false ? 'poster-card__registration-text_reg_closed' : ''

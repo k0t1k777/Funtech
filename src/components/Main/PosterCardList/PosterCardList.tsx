@@ -5,14 +5,24 @@ import { MONTH_NAMES_DATA } from './../../../utils/constants';
 
 export interface Events {
   id: string;
+  name: string;
+  skill: string;
+  start_time: string;
+  format: string;
+  status: string;
   first_speaker: [
     {
-      speaker_name?: string;
-      company?: string;
-      speaker_description?: string;
+      position?: string | undefined;
+      speaker_name: string | undefined;
+      company: string;
+      speaker_description: string;
     }
   ];
-  start_time?: string;
+  event_type: [
+    {
+      specialization_name: string;
+    }
+  ]
 }
 
 export interface PosterCardListProps {
@@ -41,9 +51,16 @@ export default function PosterCardList({ events }: PosterCardListProps) {
             <PosterCard
               key={card.id}
               id={card.id}
-              name={card.first_speaker.speaker_name}
-              organization={card.first_speaker.company}
-              description={card.first_speaker.speaker_description}
+              name={card.name}
+              description={card.first_speaker.position}
+              organization={card.first_speaker.speaker_name}
+              company={card.first_speaker.company}
+              skill={card.specializations.specialization_name}
+              event={card.event_type.event_type_name}
+              format={card.format}
+              status={card.status}
+
+
               date={date}
             />
           )
@@ -51,3 +68,4 @@ export default function PosterCardList({ events }: PosterCardListProps) {
     </div>
   );
 }
+
