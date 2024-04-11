@@ -4,7 +4,6 @@ import Avatar from './../../assets/PhotoWoman.png';
 import { POPUP_DATA } from './../../utils/constants'
 
 interface PopupEnterProps {
-  handeleProfileOpen: () => void;
   handleOverlayClose: () => void;
 }
 
@@ -17,7 +16,7 @@ export default function PopupProfile({
 
   return (
     <div className='popup__overlay' onClick={handleOverlayClose}>
-      <div className='popup popup__type_width' onClick={handlePopupClick}>
+      <div className='popup popup__width_s' onClick={handlePopupClick}>
         <div className='popup__container-profile'>
           <img className='popup__img' src={Avatar} alt='Фото пользователя' />
           <div className='popup__container-items'>
