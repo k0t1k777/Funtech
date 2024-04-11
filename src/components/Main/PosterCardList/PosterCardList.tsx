@@ -33,7 +33,7 @@ export interface Events {
 
 export interface PosterCardListProps {
   events: Events[];
-  getEventId: (event: Event) => void;
+  getEventId: (eventId: []) => void;
 }
 
 export default function PosterCardList({

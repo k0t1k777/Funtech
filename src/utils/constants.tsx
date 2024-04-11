@@ -107,7 +107,8 @@ export const PERSONAL_DATA = {
   cancelButton: 'Отменить',
 };
 
-export const EVENTS_POSTER_DATA = {
+export const MAIN_DATA = {
+  personalTitle: 'Персональная подборка',
   title: 'Афиша событий',
 };
 

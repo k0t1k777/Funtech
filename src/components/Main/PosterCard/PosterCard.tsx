@@ -16,7 +16,7 @@ export interface PosterCardProps {
   status: string;
   format: string;
   buton: boolean;
-  getEventId: (event: Event) => void;}
+  getEventId: (eventId: []) => void;}
 
 export default function PosterCard({
   name,

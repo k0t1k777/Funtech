@@ -11,6 +11,8 @@ import { EventCard } from './../Event/Event';
 export default function App() {
   const [events, getEvents] = useState<Events[]>([]);
   const [eventId, getEventId] = useState<EventCard[]>([]);
+  // const [personalEvents, getPersonalEvents] = useState<EventCard[]>([]);
+  // console.log('personalEvents: ', personalEvents);
 
   useEffect(() => {
     Api.getEvents()
@@ -23,9 +25,9 @@ export default function App() {
   }, []);
 
   // useEffect(() => {
-  //   Api.getEvents()
+  //   Api.getPersonalEvents()
   //     .then((data) => {
-  //       getEvents(data.results);
+  //       getPersonalEvents(data);
   //     })
   //     .catch((error) => {
   //       console.error(error);

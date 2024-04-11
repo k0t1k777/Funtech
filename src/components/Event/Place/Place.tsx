@@ -6,12 +6,11 @@ import {
 
 export interface PlaceProps {
   eventId: EventCard[];
-
 }
 
 export interface EventCard {
   place?: string;
-  city: [
+  city?: [
     {
       city_name?: string;
     }

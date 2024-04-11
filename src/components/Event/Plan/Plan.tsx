@@ -1,18 +1,17 @@
 import SpeakerCard from '../SpeakerCard/SpeakerCard';
 import './Plan.css';
-import { EventCard } from './../../Event/Event'
 
+// export interface PlanProps {
+//   eventId: EventCard[];
+// }
 
-export interface PlanProps {
-  eventId: EventCard[];
-}
-
-export interface EventCardProps {
-  // name: string;
-  // description: string;
-}
-export default function Plan({ eventId }: PlanProps) {
-  console.log('eventId: ', eventId);
+// export interface EventCardProps {
+//   // name: string;
+//   // description: string;
+// }
+export default function Plan(
+  // { eventId }: PlanProps
+) {
   return (
     <div className='plan'>
       <h2 className='plan__title'>Программа</h2>

@@ -11,34 +11,36 @@ export interface EventProps {
 }
 
 export interface EventCard {
-    eventId: EventCard[];
-    format?: string;
-    place?: string;
-    start_time?: string;
-    status?: string;
-    city: [
-      {
-        city_name?: string;
-      }
-    ];
-    event_type: [
-      {
-        event_type_name: string;
-      }
-    ];
-  }
+  name?: string;
+  description?: string;
+  eventId: EventCard[];
+  format?: string;
+  place?: string;
+  start_time?: string;
+  status?: string;
+  city: [
+    {
+      city_name?: string;
+    }
+  ];
+  event_type: [
+    {
+      event_type_name: string;
+    }
+  ];
+}
 
 export default function Event({ eventId }: EventProps) {
   return (
     <div className='event'>
       <div className='event__container'>
         <About eventId={eventId} />
-        <Speakers eventId={eventId}/>
-        <Plan eventId={eventId}/>
+        <Speakers />
+        <Plan />
       </div>
       <div className='event__container'>
-        <Registration eventId={eventId}/>
-        <Place eventId={eventId}/>
+        <Registration eventId={eventId} />
+        <Place eventId={eventId} />
       </div>
       <Courses />
     </div>

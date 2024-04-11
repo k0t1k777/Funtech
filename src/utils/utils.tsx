@@ -13,11 +13,11 @@ export const getEvents = () => {
   }).then(getResponseData);
 };
 
-// export const getEvents = () => {
-//   return fetch(`${BASE_URL}/events/`, {
-//     method: 'GET',
-//   }).then(getResponseData);
-// };
+export const getPersonalEvents = () => {
+  return fetch(`${BASE_URL}/events/three-recommended-events/`, {
+    method: 'GET',
+  }).then(getResponseData);
+};
 
 export const getEvent = (id: string) => {
   return fetch(`${BASE_URL}/events/${id}/`, {
