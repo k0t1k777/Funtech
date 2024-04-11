@@ -54,8 +54,6 @@ export const Header = () => {
 
   const handleNotificationOpen = () => {
     setIsNotificationOpen(true);
-
-    setIsEnterAboutMe(false);
   };
 
   const handlePersonalOpen = () => {
