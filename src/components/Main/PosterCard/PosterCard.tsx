@@ -1,25 +1,25 @@
 import './PosterCard.css';
 import CalendarVector from '../../../assets/calendar.svg?react';
 import { POSTER_DATA } from '../../../utils/constants';
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import * as Api from './../../../utils/utils';
 
 export interface PosterCardProps {
   name: string;
   id: string;
-  organization?: string | undefined;
+  organization?: string;
   description?: string | undefined;
-  date: string;
+  date?: string;
   company: string;
   skill: string;
-  event: string;
+  event?: string;
   status: string;
   format: string;
   buton: boolean;
-}
+  getEventId: (event: Event) => void;}
 
 export default function PosterCard({
   name,
-  id,
   organization,
   description,
   date,
@@ -29,7 +29,21 @@ export default function PosterCard({
   format,
   status,
   buton,
+  id,
+  getEventId,
 }: PosterCardProps) {
+  const navigate = useNavigate();
+
+  const handleButtonClick = (id: string) => {
+    Api.getEvent(id)
+      .then((data) => {
+        getEventId(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    navigate(`/event/${id}`);
+  };
   return (
     <div className='poster-card'>
       <div className='poster-card__img'>
@@ -79,11 +93,18 @@ export default function PosterCard({
           {buton ? (
             ''
           ) : (
-            <NavLink className='poster-card__link' to={`/event/${id}`}>
-              <button className='poster-card__button-submit' type='submit'>
-                {POSTER_DATA.buttonText}
-              </button>
-            </NavLink>
+            <button
+              className='poster-card__button-submit'
+              type='submit'
+              onClick={() => handleButtonClick(id)}
+            >
+              {POSTER_DATA.buttonText}
+            </button>
+            // <NavLink className='poster-card__link' to={`/event/${id}`}>
+            //   <button className='poster-card__button-submit' type='submit'>
+            //     {POSTER_DATA.buttonText}
+            //   </button>
+            // </NavLink>
           )}
         </div>
       </div>

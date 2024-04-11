@@ -116,3 +116,16 @@ export const MONTH_NAMES_DATA = [
   'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
 ];
 
+export const REGISTRATION_DATA = {
+  link: 'Ссылка на трансляцию',
+  registration: 'Ссылка на трансляцию',
+  download: 'Скачать дополнительные материалы',
+};
+
+export const PLACE_DATA = {
+  mesto: 'Место',
+};
+
+export const COURSES_DATA = {
+  text: 'Похожие',
+};

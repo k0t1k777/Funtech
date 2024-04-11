@@ -13,6 +13,19 @@ export const getEvents = () => {
   }).then(getResponseData);
 };
 
+// export const getEvents = () => {
+//   return fetch(`${BASE_URL}/events/`, {
+//     method: 'GET',
+//   }).then(getResponseData);
+// };
+
+export const getEvent = (id: string) => {
+  return fetch(`${BASE_URL}/events/${id}/`, {
+    method: 'GET',
+  }).then(getResponseData);
+};
+
+
 // export const postChat = () => {
 //   return fetch(`${BASE_URL}/api/v1/chat/`, {
 //     method: 'POST',

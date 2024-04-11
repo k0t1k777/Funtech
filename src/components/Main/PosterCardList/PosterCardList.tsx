@@ -14,24 +14,32 @@ export interface Events {
   first_speaker: [
     {
       position?: string | undefined;
-      speaker_name: string | undefined;
+      speaker_name?: string | undefined;
       company: string;
       speaker_description: string;
     }
   ];
-  event_type: [
+  specializations: [
     {
       specialization_name: string;
     }
-  ]
+  ];
+  event_type: [
+    {
+      event_type_name: string;
+    }
+  ];
 }
 
 export interface PosterCardListProps {
   events: Events[];
+  getEventId: (event: Event) => void;
 }
 
-export default function PosterCardList({ events }: PosterCardListProps) {
-  console.log('events: ', events);
+export default function PosterCardList({
+  events,
+  getEventId,
+}: PosterCardListProps) {
   const [date, setdate] = useState<string>('');
 
   function getCurrentDateTime() {
@@ -47,27 +55,28 @@ export default function PosterCardList({ events }: PosterCardListProps) {
   return (
     <div className='poster-cards'>
       {events.map(
-        (card) =>
-          card.first_speaker && (
-            <PosterCard
-              key={card.id}
-              id={card.id}
-              name={card.name}
-              description={card.first_speaker.position}
-              organization={card.first_speaker.speaker_name}
-              company={card.first_speaker.company}
-              skill={card.specializations.specialization_name}
-              event={card.event_type.event_type_name}
-              format={card.format}
-              // статус Я иду на событие
-              status={card.status}
-              // - is_registrated (показывает авторизованному пользователю, идет ли он на это мероприятие, для кнопки "Я иду")
-              buton={card.is_registrated}
-              date={date}
-            />
-          )
+        (card) => (
+          // card.first_speaker && (
+          <PosterCard
+            key={card.id}
+            id={card.id}
+            name={card.name}
+            description={card.first_speaker?.position}
+            organization={card.first_speaker?.speaker_name}
+            company={card.first_speaker?.company}
+            skill={card.specializations?.specialization_name}
+            event={card.event_type?.event_type_name}
+            format={card.format}
+            // статус Я иду на событие
+            status={card.status}
+            // - is_registrated (показывает авторизованному пользователю, идет ли он на это мероприятие, для кнопки "Я иду")
+            buton={card.is_registrated}
+            date={date}
+            getEventId={getEventId}
+          />
+        )
+        // )
       )}
     </div>
   );
 }
-

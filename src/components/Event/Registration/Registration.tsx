@@ -5,21 +5,53 @@ import DownloadIcon from '../../../assets/download.svg?react';
 import PlayIcon from '../../../assets/play.svg?react';
 import TelegrammIcon from '../../../assets/telegramm.svg?react';
 import VkIcon from '../../../assets/vk.svg?react';
+import { useState } from 'react';
+import {
+  MONTH_NAMES_DATA,
+  REGISTRATION_DATA,
+} from './../../../utils/constants';
 
-export default function Registration() {
+export interface RegistrationProps {
+  eventId: EventCard[];
+}
+
+export interface EventCard {
+  format?: string;
+  place?: string;
+  start_time?: string;
+  status?: string;
+  event_type: [
+    {
+      event_type_name: string;
+    }
+  ];
+}
+
+export default function Registration({ eventId }: RegistrationProps) {
+  const [date, setdate] = useState<string>('');
+  const eventIdArray = [eventId];
+  function getCurrentDateTime() {
+    const now = new Date();
+    const month = MONTH_NAMES_DATA[now.getMonth()];
+    const day = now.getDate().toString().padStart(2, '0');
+    return `${day} ${month}`;
+  }
+  if (date === '' && eventId?.start_time) {
+    const firstDateTime = getCurrentDateTime();
+    setdate(firstDateTime);
+  }
   return (
     <div className='registration'>
       <div className='registration__container'>
         <div className='registration__container'>
           <div className='registration__date'>
             <CalendarIcon />
-            <p className='registration__date-text'>13 апреля 2024 в 15:00</p>
+            <p className='registration__date-text'>{date}</p>
           </div>
           <div className='registration__adress'>
             <LocationIcon />
-            <p className='registration__adress-text'>
-              Офлайн БЦ СуперСкайПлаза
-            </p>
+            <p className='registration__adress-text'>{eventId.format}</p>
+            <p className='registration__adress-text'>{eventId.place}</p>
           </div>
         </div>
         <div className='registration__buttons'>
@@ -36,26 +68,24 @@ export default function Registration() {
                 : 'registration__status-icon_open'
             }`}
           />
-          <p className='registration__status-text'>Регистрация открыта</p>
+          <p className='registration__status-text'>{eventId.status}</p>
         </div>
       </div>
-      <div className='registration__tags'>
-        <p className='registration__tag'>AI</p>
-        <p className='registration__tag'>ML</p>
-        <p className='registration__tag'>Data Science</p>
-        <p className='registration__tag'>Data Analitics</p>
-        <p className='registration__tag'>Party</p>
-      </div>
+      {eventIdArray.map((event, index) => (
+        <p key={index} className='registration__tag'>
+          {event.event_type?.event_type_name}
+        </p>
+      ))}
       <div className='registration__container'>
         <button className='registration__download' type='button'>
           <DownloadIcon />
           <p className='registration__download-text'>
-            Скачать дополнительные материалы
+            {REGISTRATION_DATA.download}
           </p>
         </button>
         <a className='registration__play' href='#'>
           <PlayIcon />
-          <p className='registration__play-text'>Ссылка на трансляцию</p>
+          <p className='registration__play-text'>{REGISTRATION_DATA.link}</p>
         </a>
       </div>
       <div className='registration__share'>
@@ -67,7 +97,9 @@ export default function Registration() {
         </a>
         <button className='registration__button-other' />
       </div>
-      <button className='registration__button-reg'>Зарегистрироваться</button>
+      <button className='registration__button-reg'>
+        {REGISTRATION_DATA.registration}
+      </button>
     </div>
   );
 }
