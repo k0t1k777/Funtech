@@ -42,6 +42,11 @@
   width: 428px;
 }
 
+.popup_personal {
+  width: 428px;
+  max-height: 90%;
+}
+
 .popup__overlay {
   width: 100%;
   height: 100%;
