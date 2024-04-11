@@ -14,7 +14,7 @@ export interface PosterCardProps {
   event: string;
   status: string;
   format: string;
-  // format: string;
+  buton: boolean;
 }
 
 export default function PosterCard({
@@ -28,6 +28,7 @@ export default function PosterCard({
   event,
   format,
   status,
+  buton,
 }: PosterCardProps) {
   return (
     <div className='poster-card'>
@@ -75,7 +76,7 @@ export default function PosterCard({
               ? POSTER_DATA.registration.close
               : POSTER_DATA.registration.open}
           </p>
-          {false ? (
+          {buton ? (
             ''
           ) : (
             <NavLink className='poster-card__link' to={`/event/${id}`}>

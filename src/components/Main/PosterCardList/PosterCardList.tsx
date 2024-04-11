@@ -10,6 +10,7 @@ export interface Events {
   start_time: string;
   format: string;
   status: string;
+  is_registrated: boolean;
   first_speaker: [
     {
       position?: string | undefined;
@@ -58,9 +59,10 @@ export default function PosterCardList({ events }: PosterCardListProps) {
               skill={card.specializations.specialization_name}
               event={card.event_type.event_type_name}
               format={card.format}
+              // статус Я иду на событие
               status={card.status}
-
-
+              // - is_registrated (показывает авторизованному пользователю, идет ли он на это мероприятие, для кнопки "Я иду")
+              buton={card.is_registrated}
               date={date}
             />
           )
