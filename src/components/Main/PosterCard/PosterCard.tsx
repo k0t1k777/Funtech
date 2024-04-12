@@ -1,26 +1,27 @@
 import './PosterCard.css';
 import CalendarVector from '../../../assets/calendar.svg?react';
 import { POSTER_DATA } from '../../../utils/constants';
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import * as Api from './../../../utils/utils';
 
 export interface PosterCardProps {
   name: string;
   id: string;
-  organization?: string | undefined;
+  organization?: string;
   description?: string | undefined;
-  date: string;
+  date?: string;
   company: string;
   skill: string;
-  event: string;
+  event?: string;
   status: string;
   format: string;
+  getEventId: (eventId: []) => void;}
   isRegistrated: boolean;
   isDeleted: boolean;
 }
 
 export default function PosterCard({
   name,
-  id,
   organization,
   description,
   date,
@@ -29,9 +30,23 @@ export default function PosterCard({
   event,
   format,
   status,
+  id,
+  getEventId,
   isRegistrated,
   isDeleted,
 }: PosterCardProps) {
+  const navigate = useNavigate();
+
+  const handleButtonClick = (id: string) => {
+    Api.getEvent(id)
+      .then((data) => {
+        getEventId(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    navigate(`/event/${id}`);
+  };
   return (
     <div className='poster-card'>
       <div className='poster-card__img'>
@@ -67,6 +82,46 @@ export default function PosterCard({
           <p className='poster-card__tag'>{event}</p>
           <p className='poster-card__tag'>{format}</p>
         </div>
+        
+<!--         <div
+          className={`poster-card__registration-container ${
+            false ? 'poster-card__registration-container_reg_closed' : ''
+          }`}
+        >
+          <div
+            className={`poster-card__registration-status ${
+              false
+                ? 'poster-card__registration-status_close'
+                : 'poster-card__registration-status_open'
+            }`}
+          />
+          <p
+            className={`poster-card__registration-text ${
+              false ? 'poster-card__registration-text_reg_closed' : ''
+            }`}
+          >
+            {false
+              ? POSTER_DATA.registration.close
+              : POSTER_DATA.registration.open}
+          </p>
+          {buton ? (
+            ''
+          ) : (
+            <button
+              className='poster-card__button-submit'
+              type='submit'
+              onClick={() => handleButtonClick(id)}
+            >
+              {POSTER_DATA.buttonText.registered}
+            </button>
+            // <NavLink className='poster-card__link' to={`/event/${id}`}>
+            //   <button className='poster-card__button-submit' type='submit'>
+            //     {POSTER_DATA.buttonText}
+            //   </button>
+            // </NavLink>
+          )}
+        </div> -->
+        
         {isRegistrated ? (
           <div className='poster-card__registration-container'>
             <div className='poster-card__registration-status poster-card__registration-status_registered' />
@@ -74,12 +129,13 @@ export default function PosterCard({
               {POSTER_DATA.registration.registered}
             </p>
             <NavLink className='poster-card__link' to={`/event/${id}`}>
-              <button
-                className='poster-card__button-submit poster-card__button-submit_registered'
-                type='submit'
-              >
-                {POSTER_DATA.buttonText.registered}
-              </button>
+                         <button
+              className='poster-card__button-submit'
+              type='submit'
+              onClick={() => handleButtonClick(id)}
+            >
+              {POSTER_DATA.buttonText.registered}
+            </button>
             </NavLink>
           </div>
         ) : status === 'registration is open' ? (
@@ -88,11 +144,13 @@ export default function PosterCard({
             <p className='poster-card__registration-text'>
               {POSTER_DATA.registration.open}
             </p>
-            <NavLink className='poster-card__link' to={`/event/${id}`}>
-              <button className='poster-card__button-submit' type='submit'>
-                {POSTER_DATA.buttonText.notRegistered}
-              </button>
-            </NavLink>
+            <button
+              className='poster-card__button-submit'
+              type='submit'
+              onClick={() => handleButtonClick(id)}
+            >
+              {POSTER_DATA.buttonText.notRegistered}
+            </button>
           </div>
         ) : (
           <div className='poster-card__registration-container poster-card__registration-container_reg_closed'>
@@ -102,7 +160,8 @@ export default function PosterCard({
             </p>
           </div>
         )}
-      </div>
+
+        </div>
     </div>
   );
 }

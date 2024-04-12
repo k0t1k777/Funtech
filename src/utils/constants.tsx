@@ -110,7 +110,8 @@ export const PERSONAL_DATA = {
   cancelButton: 'Отменить',
 };
 
-export const EVENTS_POSTER_DATA = {
+export const MAIN_DATA = {
+  personalTitle: 'Персональная подборка',
   title: 'Афиша событий',
 };
 
@@ -128,3 +129,17 @@ export const MONTH_NAMES_DATA = [
   'ноября',
   'декабря',
 ];
+
+export const REGISTRATION_DATA = {
+  link: 'Ссылка на трансляцию',
+  registration: 'Ссылка на трансляцию',
+  download: 'Скачать дополнительные материалы',
+};
+
+export const PLACE_DATA = {
+  mesto: 'Место',
+};
+
+export const COURSES_DATA = {
+  text: 'Похожие',
+};

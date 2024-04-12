@@ -1,17 +1,33 @@
 import './EventsPoster.css';
 import PosterCardList from '../PosterCardList/PosterCardList';
-import { Events } from './../../Main/Main'
-import { EVENTS_POSTER_DATA } from './../../../utils/constants'
+import { Events } from './../PosterCardList/PosterCardList';
 
 export interface EventsPosterProps {
   events: Events[];
+  getEventId: (eventId: []) => void;
+  text: string;
 }
-
-export default function EventsPoster({ events }: EventsPosterProps) {
+export default function EventsPoster({
+  text,
+  events,
+  getEventId,
+}: EventsPosterProps) {
   return (
     <div className='events-poster'>
-      <h2 className='events-poster__title'>{EVENTS_POSTER_DATA.title}</h2>
-      <PosterCardList events={events}/>
+      <h2 className='events-poster__title'>{text}</h2>
+      <PosterCardList events={events} getEventId={getEventId} />
     </div>
   );
 }
+
+// export default function EventsPoster({
+//   events,
+//   getEventId,
+// }: EventsPosterProps) {
+//   return (
+//     <div className='events-poster'>
+//       <h2 className='events-poster__title'>{EVENTS_POSTER_DATA.title}</h2>
+//       <PosterCardList events={events} getEventId={getEventId} />
+//     </div>
+//   );
+// }

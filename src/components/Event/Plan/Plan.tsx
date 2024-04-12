@@ -1,7 +1,17 @@
 import SpeakerCard from '../SpeakerCard/SpeakerCard';
 import './Plan.css';
 
-export default function Plan() {
+// export interface PlanProps {
+//   eventId: EventCard[];
+// }
+
+// export interface EventCardProps {
+//   // name: string;
+//   // description: string;
+// }
+export default function Plan(
+  // { eventId }: PlanProps
+) {
   return (
     <div className='plan'>
       <h2 className='plan__title'>Программа</h2>

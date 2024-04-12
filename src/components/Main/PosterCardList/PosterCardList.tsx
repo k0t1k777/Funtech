@@ -28,10 +28,13 @@ export interface Events {
 
 export interface PosterCardListProps {
   events: Events[];
+  getEventId: (eventId: []) => void;
 }
 
-export default function PosterCardList({ events }: PosterCardListProps) {
-  console.log('events: ', events);
+export default function PosterCardList({
+  events,
+  getEventId,
+}: PosterCardListProps) {
 
   function getDate(startTime: string, endTime: string | null) {
     const startDate = new Date(startTime);
@@ -68,6 +71,7 @@ export default function PosterCardList({ events }: PosterCardListProps) {
               date={getDate(card.start_time, card.end_time)}
               isRegistrated={card.is_registrated}
               isDeleted={card.is_deleted}
+              getEventId={getEventId}
             />
           )
       )}

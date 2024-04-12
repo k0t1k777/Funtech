@@ -1,18 +1,19 @@
-import './About.css'
+import './About.css';
 
-export default function About() {
+export interface AboutProps {
+  eventId: EventCard[];
+}
+
+export interface EventCard {
+  name?: string;
+  description?: string;
+}
+
+export default function About({ eventId }: AboutProps) {
   return (
     <div className='about'>
-      <h2 className='about__title'>Data Party</h2>
-      <p className='about__subtitle'>
-        Добро пожаловать на самую грандиозную вечеринку среди цифровых магов и
-        алгоритмических гуру — Data Party! Это не просто сборище программистов и
-        инженеров это праздник для тех, кто заставляет машины мыслить и учиться
-        — специалистов в области машинного обучения и искусственного интеллекта.
-        Приготовьтесь окунуться в мир бесконечных потоков данных и
-        алгоритмических гениев, ведьнаша вечеринка будет полна увлекательных
-        моментов и неожиданных открытий!
-      </p>
+      <h2 className='about__title'>{eventId?.name}</h2>
+      <p className='about__subtitle'>{eventId?.description}</p>
     </div>
   );
 }

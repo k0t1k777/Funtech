@@ -1,7 +1,22 @@
 import './Speakers.css';
 import SpeakerCard from '../SpeakerCard/SpeakerCard';
+// import { EventCard } from './../../Event/Event'
 
-export default function Speakers() {
+
+// export interface SpeakersProps {
+//   eventId: EventCard[];
+// }
+
+// export interface EventCardProps {
+//   // eventId: EventCard[];
+
+//   // name: string;
+//   // description: string;
+// }
+
+export default function Speakers(
+  // { eventId }: SpeakersProps
+) {
   return (
     <div className='speakers'>
       <h2 className='speakers__title'>Спикер</h2>
