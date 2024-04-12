@@ -10,21 +10,10 @@ import {
   MONTH_NAMES_DATA,
   REGISTRATION_DATA,
 } from './../../../utils/constants';
+import { EventCard } from '../Event';
 
 export interface RegistrationProps {
   eventId: EventCard[];
-}
-
-export interface EventCard {
-  format?: string;
-  place?: string;
-  start_time?: string;
-  status?: string;
-  event_type: [
-    {
-      event_type_name: string;
-    }
-  ];
 }
 
 export default function Registration({ eventId }: RegistrationProps) {

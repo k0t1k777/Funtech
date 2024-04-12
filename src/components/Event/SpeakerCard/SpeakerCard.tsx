@@ -1,8 +1,10 @@
 import './SpeakerCard.css';
 import speakerImg from '../../../assets/speakerImg.png';
+// import { EventCard } from '../Plan/Plan';
 
 interface SpeakerCardProps {
   isPlanBlock: boolean;
+  // eventId: EventCard[];
 }
 
 export default function SpeakerCard({ isPlanBlock }: SpeakerCardProps) {
@@ -24,8 +26,9 @@ export default function SpeakerCard({ isPlanBlock }: SpeakerCardProps) {
           className={`speaker-card__title ${
             isPlanBlock ? 'speaker-card__title_plan' : ''
           }`}
-        >
-          DJ Pandas as PD
+        >fgfg
+          {/* {eventId[0]?.name} */}
+          {/* {eventId?.event_parts[0]?.event_part_name} */}
         </h3>
         <div
           className={`speaker-card__professions ${
@@ -37,14 +40,14 @@ export default function SpeakerCard({ isPlanBlock }: SpeakerCardProps) {
               isPlanBlock ? 'speaker-card__profession_plan' : ''
             }`}
           >
-            AI/ML инженер
+            {/* {eventId?.event_parts[0]?.position} */}
           </p>
           <p
             className={`speaker-card__profession ${
               isPlanBlock ? 'speaker-card__profession_plan' : ''
             }`}
           >
-            ClosedAI
+            {/* {eventId?.event_parts[0]?.company} */}
           </p>
         </div>
       </div>

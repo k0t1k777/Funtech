@@ -36,7 +36,6 @@ export default function PosterCard({
   isDeleted,
 }: PosterCardProps) {
   const navigate = useNavigate();
-
   const handleButtonClick = (id: string) => {
     Api.getEvent(id)
       .then((data) => {
