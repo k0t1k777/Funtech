@@ -75,6 +75,10 @@
   padding: 12px 16px 33px;
 }
 
+.poster-card__info_reg_closed {
+  padding-bottom: 43px;
+}
+
 .poster-card__title {
   margin: 0;
   font-size: 16px;
@@ -103,7 +107,7 @@
   display: grid;
   grid-template-columns: 94px 101px 65px;
   gap: 4px;
-  margin: 12px 0 16px 0;
+  margin: 12px 0 0 0;
   text-align: center;
 }
 
@@ -127,10 +131,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 16px;
 }
 
 .poster-card__registration-container_reg_closed {
   justify-content: center;
+  margin-top: 26.5px;
 }
 
 .poster-card__registration-status {
@@ -145,6 +151,10 @@
 
 .poster-card__registration-status_close {
   background-color: #ff666f;
+}
+
+.poster-card__registration-status_registered {
+  background-color: #d4c4f7;
 }
 
 .poster-card__registration-text {
@@ -176,4 +186,10 @@
   width: 100%;
   padding: 8.5px 0 8.5px 0;
   cursor: pointer;
+}
+
+.poster-card__button-submit_registered {
+  border: 1px solid #7e7e7eb2;
+  background-color: white;
+  color: #7e7e7eb2;
 }
