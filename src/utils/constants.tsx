@@ -143,3 +143,11 @@ export const PLACE_DATA = {
 export const COURSES_DATA = {
   text: 'Похожие',
 };
+
+export const SPEAKERS_DATA = {
+  text: 'Спикер',
+};
+
+export const PLAN_DATA = {
+  text: 'Программа',
+};

@@ -2,7 +2,7 @@ import './SpeakerCard.css';
 import speakerImg from '../../../assets/speakerImg.png';
 
 interface SpeakerCardProps {
-  isPlanBlock: any;
+  isPlanBlock: boolean;
 }
 
 export default function SpeakerCard({ isPlanBlock }: SpeakerCardProps) {

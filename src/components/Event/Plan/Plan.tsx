@@ -1,30 +1,38 @@
 import SpeakerCard from '../SpeakerCard/SpeakerCard';
+import { PLAN_DATA } from './../../../utils/constants';
 import './Plan.css';
 
-// export interface PlanProps {
-//   eventId: EventCard[];
-// }
+export interface PlanProps {
+  eventId: EventCard[];
+}
 
-// export interface EventCardProps {
-//   // name: string;
-//   // description: string;
-// }
-export default function Plan(
-  // { eventId }: PlanProps
-) {
+export interface EventCard {
+  event_parts: {
+    event_part_name?: string;
+    event_part_description?: string;
+  }[];
+  // name: string;
+  // description: string;
+}
+export default function Plan({ eventId }: PlanProps) {
+  const eventIdArray = [eventId];
+  console.log('eventIdArray: ', eventIdArray);
   return (
     <div className='plan'>
-      <h2 className='plan__title'>Программа</h2>
+      <h2 className='plan__title'>{PLAN_DATA.text}</h2>
       <div className='plan__containers'>
-        <div className='plan__container'>
-          <p className='plan__time'>18:00</p>
-          <p className='plan__description'>
-            <b className='plan__bold-text'>Подведение итогов:</b> Разберём самые
-            яркие достижения в мире ML и AI за прошедший год! Кто выиграет титул
-            «Чемпиона алгоритмов»?
-          </p>
-          <SpeakerCard isPlanBlock={true} />
-        </div>
+        {eventIdArray.map((item, index) => (
+          <div key={index} className='plan__container'>
+            <p className='plan__time'>18:00</p>
+            <p className='plan__description'>
+              <b className='plan__bold-text'>
+                {item.event_parts.event_part_name}
+              </b>
+              {/* {item.event_parts.event_part_description} */}
+            </p>
+            <SpeakerCard isPlanBlock={true} />
+          </div>
+        ))}
         <div className='plan__container'>
           <p className='plan__time'>19:00</p>
           <p className='plan__description'>

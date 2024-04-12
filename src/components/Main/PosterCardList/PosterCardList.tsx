@@ -40,7 +40,6 @@ export default function PosterCardList({
     const startDate = new Date(startTime);
     if (endTime) {
       const endDate = new Date(endTime);
-
       if (startDate.getMonth() === endDate.getMonth()) {
         return `${startDate.getDate()} - ${endDate.getDate()} ${
           MONTH_NAMES_DATA[startDate.getMonth()]
