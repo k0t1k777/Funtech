@@ -19,15 +19,3 @@ export default function EventsPoster({
     </div>
   );
 }
-
-// export default function EventsPoster({
-//   events,
-//   getEventId,
-// }: EventsPosterProps) {
-//   return (
-//     <div className='events-poster'>
-//       <h2 className='events-poster__title'>{EVENTS_POSTER_DATA.title}</h2>
-//       <PosterCardList events={events} getEventId={getEventId} />
-//     </div>
-//   );
-// }
