@@ -14,7 +14,8 @@ export interface PosterCardProps {
   event: string;
   status: string;
   format: string;
-  buton: boolean;
+  isRegistrated: boolean;
+  isDeleted: boolean;
 }
 
 export default function PosterCard({
@@ -28,7 +29,8 @@ export default function PosterCard({
   event,
   format,
   status,
-  buton,
+  isRegistrated,
+  isDeleted,
 }: PosterCardProps) {
   return (
     <div className='poster-card'>
@@ -40,52 +42,66 @@ export default function PosterCard({
           </div>
           <div className='poster-card__buttons'>
             <button className='poster-card__button-edit' type='button' />
-            <button className='poster-card__button-on' type='button' />
+            {isDeleted ? (
+              <button className='poster-card__button-off' type='button' />
+            ) : (
+              <button className='poster-card__button-on' type='button' />
+            )}
           </div>
         </div>
       </div>
-      <div className='poster-card__info'>
+      <div
+        className={`poster-card__info ${
+          status === 'registration is open'
+            ? ''
+            : 'poster-card__info_reg_closed'
+        }`}
+      >
         <h3 className='poster-card__title'>{name}</h3>
         <p className='poster-card__name'>{organization}</p>
         <p className='poster-card__profession'>
-          {description} в {company}
+          {description}, {company}
         </p>
         <div className='poster-card__tags'>
           <p className='poster-card__tag'>{skill}</p>
           <p className='poster-card__tag'>{event}</p>
           <p className='poster-card__tag'>{format}</p>
         </div>
-        <div
-          className={`poster-card__registration-container ${
-            false ? 'poster-card__registration-container_reg_closed' : ''
-          }`}
-        >
-          <div
-            className={`poster-card__registration-status ${
-              false
-                ? 'poster-card__registration-status_close'
-                : 'poster-card__registration-status_open'
-            }`}
-          />
-          <p
-            className={`poster-card__registration-text ${
-              false ? 'poster-card__registration-text_reg_closed' : ''
-            }`}
-          >
-            {false
-              ? POSTER_DATA.registration.close
-              : POSTER_DATA.registration.open}
-          </p>
-          {buton ? (
-            ''
-          ) : (
+        {isRegistrated ? (
+          <div className='poster-card__registration-container'>
+            <div className='poster-card__registration-status poster-card__registration-status_registered' />
+            <p className='poster-card__registration-text'>
+              {POSTER_DATA.registration.registered}
+            </p>
             <NavLink className='poster-card__link' to={`/event/${id}`}>
-              <button className='poster-card__button-submit' type='submit'>
-                {POSTER_DATA.buttonText}
+              <button
+                className='poster-card__button-submit poster-card__button-submit_registered'
+                type='submit'
+              >
+                {POSTER_DATA.buttonText.registered}
               </button>
             </NavLink>
-          )}
-        </div>
+          </div>
+        ) : status === 'registration is open' ? (
+          <div className='poster-card__registration-container'>
+            <div className='poster-card__registration-status poster-card__registration-status_open' />
+            <p className='poster-card__registration-text'>
+              {POSTER_DATA.registration.open}
+            </p>
+            <NavLink className='poster-card__link' to={`/event/${id}`}>
+              <button className='poster-card__button-submit' type='submit'>
+                {POSTER_DATA.buttonText.notRegistered}
+              </button>
+            </NavLink>
+          </div>
+        ) : (
+          <div className='poster-card__registration-container poster-card__registration-container_reg_closed'>
+            <div className='poster-card__registration-status poster-card__registration-status_close' />
+            <p className='poster-card__registration-text'>
+              {POSTER_DATA.registration.close}
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
