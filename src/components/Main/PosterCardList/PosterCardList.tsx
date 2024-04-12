@@ -1,6 +1,5 @@
 import './PosterCardList.css';
 import PosterCard from '../PosterCard/PosterCard';
-import { useState } from 'react';
 import { MONTH_NAMES_DATA } from './../../../utils/constants';
 
 export interface Events {
@@ -8,22 +7,23 @@ export interface Events {
   name: string;
   skill: string;
   start_time: string;
+  end_time: string | null;
   format: string;
   status: string;
   is_registrated: boolean;
-  first_speaker: [
-    {
-      position?: string | undefined;
-      speaker_name: string | undefined;
-      company: string;
-      speaker_description: string;
-    }
-  ];
-  event_type: [
-    {
-      specialization_name: string;
-    }
-  ]
+  is_deleted: boolean;
+  first_speaker: {
+    position?: string | undefined;
+    speaker_name: string | undefined;
+    company: string;
+    speaker_description: string;
+  };
+  event_type: {
+    event_type_name: string;
+  };
+  specializations: {
+    specialization_name: string;
+  };
 }
 
 export interface PosterCardListProps {
@@ -32,17 +32,22 @@ export interface PosterCardListProps {
 
 export default function PosterCardList({ events }: PosterCardListProps) {
   console.log('events: ', events);
-  const [date, setdate] = useState<string>('');
 
-  function getCurrentDateTime() {
-    const now = new Date();
-    const month = MONTH_NAMES_DATA[now.getMonth()];
-    const day = now.getDate().toString().padStart(2, '0');
-    return `${day} ${month}`;
-  }
-  if (date === '' && events[0]?.start_time) {
-    const firstDateTime = getCurrentDateTime();
-    setdate(firstDateTime);
+  function getDate(startTime: string, endTime: string | null) {
+    const startDate = new Date(startTime);
+    if (endTime) {
+      const endDate = new Date(endTime);
+
+      if (startDate.getMonth() === endDate.getMonth()) {
+        return `${startDate.getDate()} - ${endDate.getDate()} ${
+          MONTH_NAMES_DATA[startDate.getMonth()]
+        }`;
+      }
+      return `${startDate.getDate()} ${
+        MONTH_NAMES_DATA[startDate.getMonth()]
+      } - ${endDate.getDate()} ${MONTH_NAMES_DATA[endDate.getMonth()]}`;
+    }
+    return `${startDate.getDate()} ${MONTH_NAMES_DATA[startDate.getMonth()]}`;
   }
   return (
     <div className='poster-cards'>
@@ -59,15 +64,13 @@ export default function PosterCardList({ events }: PosterCardListProps) {
               skill={card.specializations.specialization_name}
               event={card.event_type.event_type_name}
               format={card.format}
-              // статус Я иду на событие
               status={card.status}
-              // - is_registrated (показывает авторизованному пользователю, идет ли он на это мероприятие, для кнопки "Я иду")
-              buton={card.is_registrated}
-              date={date}
+              date={getDate(card.start_time, card.end_time)}
+              isRegistrated={card.is_registrated}
+              isDeleted={card.is_deleted}
             />
           )
       )}
     </div>
   );
 }
-

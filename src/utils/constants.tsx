@@ -23,8 +23,12 @@ export const POSTER_DATA = {
   registration: {
     open: 'Регистрация открыта',
     close: 'Регистрация закрыта',
+    registered: 'Зарегистрирован',
   },
-  buttonText: 'Я иду!',
+  buttonText: {
+    notRegistered: 'Я иду!',
+    registered: 'Отменить',
+  },
 };
 
 export const CHECKBOX_DATA = {
@@ -70,7 +74,6 @@ export const NOTIFICATION_FORM_DATA = {
   },
 };
 
-
 export const PERSONAL_DATA = {
   title: 'Личные данные',
   inputLabels: [
@@ -112,7 +115,16 @@ export const EVENTS_POSTER_DATA = {
 };
 
 export const MONTH_NAMES_DATA = [
-  'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
-  'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
+  'января',
+  'февраля',
+  'марта',
+  'апреля',
+  'мая',
+  'июня',
+  'июля',
+  'августа',
+  'сентября',
+  'октября',
+  'ноября',
+  'декабря',
 ];
-
