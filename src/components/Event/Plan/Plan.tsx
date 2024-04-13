@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import SpeakerCard from '../SpeakerCard/SpeakerCard';
 import { PLAN_DATA } from './../../../utils/constants';
 import './Plan.css';
-// import { EventCard } from '../Event';
 
 export interface PlanProps {
   eventId: EventCard;
