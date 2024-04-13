@@ -15,9 +15,7 @@ export interface EventCard {
   place: string;
   start_time?: string;
   status?: string;
-  city: {
-    city_name?: string | undefined;
-  }[];
+  city: string;
   event_parts: {
     event_part_name?: string;
     event_part_description?: string;

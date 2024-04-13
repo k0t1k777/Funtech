@@ -4,7 +4,7 @@ import { PLACE_DATA } from './../../../utils/constants';
 import { EventCard } from './../Plan/Plan';
 
 export interface PlaceProps {
-  eventId: EventCard[];
+  eventId: EventCard;
 }
 
 export default function Place({ eventId }: PlaceProps) {
@@ -16,7 +16,7 @@ export default function Place({ eventId }: PlaceProps) {
       <div>
         {eventIdArray.map((event, index) => (
           <p key={index} className='placeadress'>
-            {event.city?.city_name}, {event.place}
+            {event.city}, {event.place}
           </p>
         ))}
         <img className='place__img' src={adressImg} alt='address' />

@@ -10,10 +10,10 @@ import {
   MONTH_NAMES_DATA,
   REGISTRATION_DATA,
 } from './../../../utils/constants';
-import { EventCard } from '../Event';
+import { EventCard } from '../Plan/Plan';
 
 export interface RegistrationProps {
-  eventId: EventCard[];
+  eventId: EventCard;
 }
 
 export default function Registration({ eventId }: RegistrationProps) {

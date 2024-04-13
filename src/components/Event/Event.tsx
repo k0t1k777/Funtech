@@ -8,7 +8,7 @@ import Courses from './Courses/Courses';
 import { useEffect, useState } from 'react';
 
 export interface EventProps {
-  eventId: EventCard[];
+  eventId: EventCard;
 }
 
 export default function Event({ eventId }: EventProps) {

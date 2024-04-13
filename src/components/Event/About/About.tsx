@@ -2,7 +2,7 @@ import './About.css';
 import { EventCard } from './../Plan/Plan';
 
 export interface AboutProps {
-  eventId: EventCard[];
+  eventId: EventCard;
 }
 
 export default function About({ eventId }: AboutProps) {
