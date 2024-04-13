@@ -1,20 +1,27 @@
 import './SpeakerCard.css';
-import speakerImg from '../../../assets/speakerImg.png';
-// import { EventCard } from '../Plan/Plan';
 
 interface SpeakerCardProps {
   isPlanBlock: boolean;
-  // eventId: EventCard[];
+  speakerName: string;
+  speakerCompany: string;
+  speakerPosition: string;
+  speakerPhoto: string;
 }
 
-export default function SpeakerCard({ isPlanBlock }: SpeakerCardProps) {
+export default function SpeakerCard({
+  isPlanBlock,
+  speakerName,
+  speakerCompany,
+  speakerPosition,
+  speakerPhoto,
+}: SpeakerCardProps) {
   return (
     <div className={`speaker-card ${isPlanBlock ? 'speaker-card_plan' : ''}`}>
       <img
         className={`speaker-card__img ${
           isPlanBlock ? 'speaker-card__img_plan' : ''
         }`}
-        src={speakerImg}
+        src={speakerPhoto}
         alt='speaker'
       />
       <div
@@ -26,9 +33,8 @@ export default function SpeakerCard({ isPlanBlock }: SpeakerCardProps) {
           className={`speaker-card__title ${
             isPlanBlock ? 'speaker-card__title_plan' : ''
           }`}
-        >fgfg
-          {/* {eventId[0]?.name} */}
-          {/* {eventId?.event_parts[0]?.event_part_name} */}
+        >
+          {speakerName}
         </h3>
         <div
           className={`speaker-card__professions ${
@@ -40,14 +46,14 @@ export default function SpeakerCard({ isPlanBlock }: SpeakerCardProps) {
               isPlanBlock ? 'speaker-card__profession_plan' : ''
             }`}
           >
-            {/* {eventId?.event_parts[0]?.position} */}
+            {speakerPosition}
           </p>
           <p
             className={`speaker-card__profession ${
               isPlanBlock ? 'speaker-card__profession_plan' : ''
             }`}
           >
-            {/* {eventId?.event_parts[0]?.company} */}
+            {speakerCompany}
           </p>
         </div>
       </div>

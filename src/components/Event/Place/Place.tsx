@@ -1,7 +1,7 @@
 import './Place.css';
 import adressImg from '../../../assets/adressImg.png';
 import { PLACE_DATA } from './../../../utils/constants';
-import { EventCard } from '../Event';
+import { EventCard } from './../Plan/Plan';
 
 export interface PlaceProps {
   eventId: EventCard[];

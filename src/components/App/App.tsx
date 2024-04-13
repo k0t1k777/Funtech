@@ -6,7 +6,7 @@ import Event from '../Event/Event';
 import { useEffect, useState } from 'react';
 import * as Api from './../../utils/utils';
 import { Events } from './../Main/PosterCardList/PosterCardList';
-import { EventCard } from './../Event/Event';
+import { EventCard } from './../Event/Plan/Plan';
 
 export default function App() {
   const [events, getEvents] = useState<Events[]>([]);

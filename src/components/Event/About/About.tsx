@@ -1,13 +1,8 @@
 import './About.css';
-// import { EventCard } from './../Event'
+import { EventCard } from './../Plan/Plan';
 
 export interface AboutProps {
   eventId: EventCard[];
-}
-
-export interface EventCard {
-  name: string[];
-  description: string;
 }
 
 export default function About({ eventId }: AboutProps) {

@@ -40,7 +40,6 @@ export default function PosterCard({
     Api.getEvent(id)
       .then((data) => {
         getEventId(data);
-        console.log('id: ', data);
       })
       .catch((error) => {
         console.error(error);
