@@ -31,6 +31,7 @@ export default function Main({
         <EventsPoster
           eventsBlock={personalEvents}
           text={MAIN_DATA.personalTitle}
+          setEventId={setEventId}
         />
         <EventsPoster
           eventsBlock={events}
