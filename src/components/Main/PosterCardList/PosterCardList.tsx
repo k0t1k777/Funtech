@@ -28,19 +28,18 @@ export interface Events {
 
 export interface PosterCardListProps {
   events: Events[];
-  getEventId: (eventId: []) => void;
+  setEventId: (eventId: []) => void;
 }
 
 export default function PosterCardList({
   events,
-  getEventId,
+  setEventId,
 }: PosterCardListProps) {
 
   function getDate(startTime: string, endTime: string | null) {
     const startDate = new Date(startTime);
     if (endTime) {
       const endDate = new Date(endTime);
-
       if (startDate.getMonth() === endDate.getMonth()) {
         return `${startDate.getDate()} - ${endDate.getDate()} ${
           MONTH_NAMES_DATA[startDate.getMonth()]
@@ -71,7 +70,7 @@ export default function PosterCardList({
               date={getDate(card.start_time, card.end_time)}
               isRegistrated={card.is_registrated}
               isDeleted={card.is_deleted}
-              getEventId={getEventId}
+              setEventId={setEventId}
             />
           )
       )}

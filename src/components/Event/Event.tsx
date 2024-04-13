@@ -1,46 +1,34 @@
 import './Event.css';
 import About from './About/About';
 import Speakers from './Speakers/Speakers';
-import Plan from './Plan/Plan';
+import Plan, { EventCard } from './Plan/Plan';
 import Registration from './Registration/Registration';
 import Place from './Place/Place';
 import Courses from './Courses/Courses';
+import { useEffect, useState } from 'react';
 
 export interface EventProps {
-  eventId: EventCard[];
-}
-
-export interface EventCard {
-  name?: string;
-  description?: string;
-  eventId: EventCard[];
-  format?: string;
-  place?: string;
-  start_time?: string;
-  status?: string;
-  city: [
-    {
-      city_name?: string;
-    }
-  ];
-  event_type: [
-    {
-      event_type_name: string;
-    }
-  ];
+  eventId: EventCard;
 }
 
 export default function Event({ eventId }: EventProps) {
+  const [showEventId, setShowEventId] = useState(eventId);
+  console.log('showEventId: ', showEventId);
+
+  useEffect(() => {
+    setShowEventId(eventId);
+  }, [eventId]);
+
   return (
     <div className='event'>
       <div className='event__container'>
-        <About eventId={eventId} />
-        <Speakers />
-        <Plan />
+        <About eventId={showEventId} />
+        <Speakers eventId={showEventId}/>
+        <Plan eventId={showEventId}  />
       </div>
       <div className='event__container'>
-        <Registration eventId={eventId} />
-        <Place eventId={eventId} />
+        <Registration eventId={showEventId} />
+        <Place eventId={showEventId} />
       </div>
       <Courses />
     </div>

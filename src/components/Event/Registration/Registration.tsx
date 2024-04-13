@@ -10,21 +10,10 @@ import {
   MONTH_NAMES_DATA,
   REGISTRATION_DATA,
 } from './../../../utils/constants';
+import { EventCard } from '../Plan/Plan';
 
 export interface RegistrationProps {
-  eventId: EventCard[];
-}
-
-export interface EventCard {
-  format?: string;
-  place?: string;
-  start_time?: string;
-  status?: string;
-  event_type: [
-    {
-      event_type_name: string;
-    }
-  ];
+  eventId: EventCard;
 }
 
 export default function Registration({ eventId }: RegistrationProps) {
@@ -59,7 +48,8 @@ export default function Registration({ eventId }: RegistrationProps) {
           <button className='registration__button-on' />
         </div>
       </div>
-      <div className='registration__img'>
+      <div className='registration__container-img'>
+        <img className='registration__img' src={eventId.image} alt="Фон события" />
         <div className='registration__status'>
           <div
             className={`registration__status-icon ${

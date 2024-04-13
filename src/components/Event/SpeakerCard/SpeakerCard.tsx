@@ -1,18 +1,27 @@
 import './SpeakerCard.css';
-import speakerImg from '../../../assets/speakerImg.png';
 
 interface SpeakerCardProps {
-  isPlanBlock: any;
+  isPlanBlock: boolean;
+  speakerName: string;
+  speakerCompany: string;
+  speakerPosition: string;
+  speakerPhoto: string;
 }
 
-export default function SpeakerCard({ isPlanBlock }: SpeakerCardProps) {
+export default function SpeakerCard({
+  isPlanBlock,
+  speakerName,
+  speakerCompany,
+  speakerPosition,
+  speakerPhoto,
+}: SpeakerCardProps) {
   return (
     <div className={`speaker-card ${isPlanBlock ? 'speaker-card_plan' : ''}`}>
       <img
         className={`speaker-card__img ${
           isPlanBlock ? 'speaker-card__img_plan' : ''
         }`}
-        src={speakerImg}
+        src={speakerPhoto}
         alt='speaker'
       />
       <div
@@ -25,7 +34,7 @@ export default function SpeakerCard({ isPlanBlock }: SpeakerCardProps) {
             isPlanBlock ? 'speaker-card__title_plan' : ''
           }`}
         >
-          DJ Pandas as PD
+          {speakerName}
         </h3>
         <div
           className={`speaker-card__professions ${
@@ -37,14 +46,14 @@ export default function SpeakerCard({ isPlanBlock }: SpeakerCardProps) {
               isPlanBlock ? 'speaker-card__profession_plan' : ''
             }`}
           >
-            AI/ML инженер
+            {speakerPosition}
           </p>
           <p
             className={`speaker-card__profession ${
               isPlanBlock ? 'speaker-card__profession_plan' : ''
             }`}
           >
-            ClosedAI
+            {speakerCompany}
           </p>
         </div>
       </div>

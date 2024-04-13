@@ -144,6 +144,14 @@ export const COURSES_DATA = {
   text: 'Похожие',
 };
 
+export const SPEAKERS_DATA = {
+  text: 'Спикер',
+};
+
+export const PLAN_DATA = {
+  text: 'Программа',
+};
+
 export const REG_ON_IVENT_DATA = {
   title: 'Регистрация на',
   inputLabels: [
