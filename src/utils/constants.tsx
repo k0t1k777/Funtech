@@ -151,3 +151,49 @@ export const SPEAKERS_DATA = {
 export const PLAN_DATA = {
   text: 'Программа',
 };
+
+export const REG_ON_IVENT_DATA = {
+  title: 'Регистрация на',
+  inputLabels: [
+    'Имя*',
+    'Фамилия*',
+    'Дата рождения',
+    'Email*',
+    'Телефон*',
+    'Телеграм',
+    'Город',
+  ],
+  inputJobLabels: ['Компания*', 'Должность*', 'Опыт*'],
+  checkboxLabels: [
+    'Frontend',
+    'Backend',
+    'UX/UI',
+    'AI',
+    'QA',
+    'ML',
+    'Менеджмент',
+    'Аналитика',
+    'HR',
+    'DevOps',
+  ],
+  checkboxJobLabels: {
+    working: 'Работаю',
+    studying: 'Учусь',
+    jobHunting: 'В поиске работы',
+  },
+  checkboxformatLabels: {
+    online: 'Онлайн',
+    offline: {
+      notAvailable: 'Оффлайн мест нет',
+      available: 'Оффлайн',
+    },
+  },
+  format: 'Формат участия',
+  occupation: 'Род  деятельности',
+  direction: 'Направление',
+  showAll: 'Показать все',
+  submitButton: 'Сохранить',
+  cancelButton: 'Отменить',
+  legalText: 'Я даю свое согласие на обработку персональных данных',
+  saveData: 'Сохранить мои данные  в личном кабинете',
+};
