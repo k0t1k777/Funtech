@@ -23,7 +23,7 @@ export default function Event({ eventId }: EventProps) {
     <div className='event'>
       <div className='event__container'>
         <About eventId={showEventId} />
-        <Speakers />
+        <Speakers eventId={showEventId}/>
         <Plan eventId={showEventId}  />
       </div>
       <div className='event__container'>

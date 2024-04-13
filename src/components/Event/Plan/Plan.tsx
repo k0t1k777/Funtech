@@ -10,6 +10,7 @@ export interface PlanProps {
 export interface EventCard {
   name: string;
   description: string;
+  image: string;
   eventId: EventCard[];
   format?: string;
   place: string;

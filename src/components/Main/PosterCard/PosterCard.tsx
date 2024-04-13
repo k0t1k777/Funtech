@@ -16,8 +16,7 @@ export interface PosterCardProps {
   event?: string;
   status: string;
   format: string;
-  getEventId: (eventId: []) => void;
-  // getEventId: (data: any) => void;
+  setEventId: (eventId: []) => void;
   isRegistrated: boolean;
   isDeleted: boolean;
 }
@@ -33,27 +32,25 @@ export default function PosterCard({
   format,
   status,
   id,
-  getEventId,
+  setEventId,
   isRegistrated,
   isDeleted,
 }: PosterCardProps) {
-
   const navigate = useNavigate();
 
-   useEffect(() => {
+  useEffect(() => {
     Api.getEvent(id)
       .then((data) => {
-        getEventId(data);
+        setEventId(data);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, [id, getEventId]);
+  }, [id, setEventId]);
 
   const handleButtonClick = (id: string) => {
     navigate(`/event/${id}`);
   };
-
 
   return (
     <div className='poster-card'>
@@ -92,7 +89,10 @@ export default function PosterCard({
         </div>
         {isRegistrated ? (
           <div className='poster-card__registration-container'>
-            <div className='poster-card__registration-status poster-card__registration-status_registered' />
+            <div
+              className='poster-card__registration-status
+             poster-card__registration-status_registered'
+            />
             <p className='poster-card__registration-text'>
               {POSTER_DATA.registration.registered}
             </p>
@@ -106,7 +106,10 @@ export default function PosterCard({
           </div>
         ) : status === 'registration is open' ? (
           <div className='poster-card__registration-container'>
-            <div className='poster-card__registration-status poster-card__registration-status_open' />
+            <div
+              className='poster-card__registration-status
+             poster-card__registration-status_open'
+            />
             <p className='poster-card__registration-text'>
               {POSTER_DATA.registration.open}
             </p>
@@ -119,8 +122,14 @@ export default function PosterCard({
             </button>
           </div>
         ) : (
-          <div className='poster-card__registration-container poster-card__registration-container_reg_closed'>
-            <div className='poster-card__registration-status poster-card__registration-status_close' />
+          <div
+            className='poster-card__registration-container
+           poster-card__registration-container_reg_closed'
+          >
+            <div
+              className='poster-card__registration-status
+             poster-card__registration-status_close'
+            />
             <p className='poster-card__registration-text'>
               {POSTER_DATA.registration.close}
             </p>

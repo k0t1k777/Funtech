@@ -5,8 +5,6 @@ import DownloadIcon from '../../../assets/download.svg?react';
 import PlayIcon from '../../../assets/play.svg?react';
 import TelegrammIcon from '../../../assets/telegramm.svg?react';
 import VkIcon from '../../../assets/vk.svg?react';
-import Phon from '../../../assets/eventImg.png';
-
 import { useState } from 'react';
 import {
   MONTH_NAMES_DATA,
@@ -51,7 +49,7 @@ export default function Registration({ eventId }: RegistrationProps) {
         </div>
       </div>
       <div className='registration__container-img'>
-        <img className='registration__img' src={Phon} alt="Фон события" />
+        <img className='registration__img' src={eventId.image} alt="Фон события" />
         <div className='registration__status'>
           <div
             className={`registration__status-icon ${

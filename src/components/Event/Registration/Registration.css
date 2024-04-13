@@ -86,8 +86,8 @@
 }
 
 .registration__img {
-width: 529px;
-height: 290px;
+  width: 529px;
+  height: 290px;
 }
 
 .registration__status {
@@ -209,5 +209,5 @@ height: 290px;
   line-height: 18.2px;
   cursor: pointer;
   margin-top: 40px;
-  color: #FFFFFF;
+  color: #ffffff;
 }

@@ -9,15 +9,15 @@ import { Events } from './../Main/PosterCardList/PosterCardList';
 import { EventCard } from './../Event/Plan/Plan';
 
 export default function App() {
-  const [events, getEvents] = useState<Events[]>([]);
-  const [eventId, getEventId] = useState<EventCard[]>([]);
+  const [events, setEvents] = useState<Events[]>([]);
+  const [eventId, setEventId] = useState<EventCard[]>([]);
   // const [personalEvents, getPersonalEvents] = useState<EventCard[]>([]);
   // console.log('personalEvents: ', personalEvents);
 
   useEffect(() => {
     Api.getEvents()
       .then((data) => {
-        getEvents(data.results);
+        setEvents(data.results);
       })
       .catch((error) => {
         console.error(error);
@@ -40,7 +40,7 @@ export default function App() {
       <Routes>
         <Route
           path='/'
-          element={<Main events={events} getEventId={getEventId} />}
+          element={<Main events={events} setEventId={setEventId} />}
         />
         <Route path='/event/:id' element={<Event eventId={eventId} />} />
       </Routes>

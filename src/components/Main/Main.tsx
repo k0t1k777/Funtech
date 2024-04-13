@@ -7,14 +7,14 @@ import { MAIN_DATA } from './../../utils/constants';
 
 export interface MainProps {
   events: Events[];
-  getEventId: (eventId: []) => void;
+  setEventId: (eventId: []) => void;
 }
 
 export interface EventId {
-  getEventId: (eventId: []) => void;
+  setEventId: (eventId: []) => void;
 }
 
-export default function Main({ events, getEventId }: MainProps) {
+export default function Main({ events, setEventId }: MainProps) {
   return (
     <div className='main'>
       <div>
@@ -26,7 +26,7 @@ export default function Main({ events, getEventId }: MainProps) {
         /> */}
         <EventsPoster
           events={events}
-          getEventId={getEventId}
+          setEventId={setEventId}
           text={MAIN_DATA.title}
         />
       </div>

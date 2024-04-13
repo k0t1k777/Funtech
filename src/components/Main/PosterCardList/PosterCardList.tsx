@@ -28,12 +28,12 @@ export interface Events {
 
 export interface PosterCardListProps {
   events: Events[];
-  getEventId: (eventId: []) => void;
+  setEventId: (eventId: []) => void;
 }
 
 export default function PosterCardList({
   events,
-  getEventId,
+  setEventId,
 }: PosterCardListProps) {
 
   function getDate(startTime: string, endTime: string | null) {
@@ -70,7 +70,7 @@ export default function PosterCardList({
               date={getDate(card.start_time, card.end_time)}
               isRegistrated={card.is_registrated}
               isDeleted={card.is_deleted}
-              getEventId={getEventId}
+              setEventId={setEventId}
             />
           )
       )}

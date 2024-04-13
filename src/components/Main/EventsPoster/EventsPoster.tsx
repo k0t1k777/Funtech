@@ -4,18 +4,18 @@ import { Events } from './../PosterCardList/PosterCardList';
 
 export interface EventsPosterProps {
   events: Events[];
-  getEventId: (eventId: []) => void;
+  setEventId: (eventId: []) => void;
   text: string;
 }
 export default function EventsPoster({
   text,
   events,
-  getEventId,
+  setEventId,
 }: EventsPosterProps) {
   return (
     <div className='events-poster'>
       <h2 className='events-poster__title'>{text}</h2>
-      <PosterCardList events={events} getEventId={getEventId} />
+      <PosterCardList events={events} setEventId={setEventId} />
     </div>
   );
 }
