@@ -5,7 +5,7 @@ import './App.css';
 import Event from '../Event/Event';
 import { useEffect, useState } from 'react';
 import * as Api from './../../utils/utils';
-import { Events } from './../Main/PosterCardList/PosterCardList';
+import { Events } from './../Main/EventsPoster/EventsPoster';
 import { EventCard } from './../Event/Plan/Plan';
 import { PersonalEvents } from './../Main/Main'
 

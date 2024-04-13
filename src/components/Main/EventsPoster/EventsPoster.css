@@ -9,3 +9,10 @@
   line-height: 36.4px;
   margin: 0 0 20px 0;
 }
+
+.events-poster-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  grid-template-rows: repeat(3, min-content);
+  gap: 40px;
+}

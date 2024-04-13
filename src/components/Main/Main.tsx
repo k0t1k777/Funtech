@@ -2,7 +2,7 @@ import './Main.css';
 import News from './News/News';
 import FiltersContainer from './FiltersContainer/FiltersContainer';
 import EventsPoster from './EventsPoster/EventsPoster';
-import { Events } from './../Main/PosterCardList/PosterCardList';
+import { Events } from './../Main/EventsPoster/EventsPoster';
 import { MAIN_DATA } from './../../utils/constants';
 
 export interface MainProps {
@@ -29,12 +29,11 @@ export default function Main({
       <div>
         <News />
         <EventsPoster
-          events={events}
-          personalEvents={personalEvents}
+          eventsBlock={personalEvents}
           text={MAIN_DATA.personalTitle}
         />
         <EventsPoster
-          events={events}
+          eventsBlock={events}
           setEventId={setEventId}
           text={MAIN_DATA.title}
         />
