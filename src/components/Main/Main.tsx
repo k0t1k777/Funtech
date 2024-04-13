@@ -7,6 +7,7 @@ import { MAIN_DATA } from './../../utils/constants';
 
 export interface MainProps {
   events: Events[];
+  personalEvents: PersonalEvents[];
   setEventId: (eventId: []) => void;
 }
 
@@ -14,16 +15,24 @@ export interface EventId {
   setEventId: (eventId: []) => void;
 }
 
-export default function Main({ events, setEventId }: MainProps) {
+export interface PersonalEvents {
+  personalEvents: EventPersonalCard[];
+}
+
+export default function Main({
+  events,
+  personalEvents,
+  setEventId,
+}: MainProps) {
   return (
     <div className='main'>
       <div>
         <News />
-        {/* <EventsPoster
+        <EventsPoster
           events={events}
-          getEventId={getEventId}
+          personalEvents={personalEvents}
           text={MAIN_DATA.personalTitle}
-        /> */}
+        />
         <EventsPoster
           events={events}
           setEventId={setEventId}

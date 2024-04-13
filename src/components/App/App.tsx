@@ -7,12 +7,13 @@ import { useEffect, useState } from 'react';
 import * as Api from './../../utils/utils';
 import { Events } from './../Main/PosterCardList/PosterCardList';
 import { EventCard } from './../Event/Plan/Plan';
+import { PersonalEvents } from './../Main/Main'
 
 export default function App() {
   const [events, setEvents] = useState<Events[]>([]);
   const [eventId, setEventId] = useState<EventCard[]>([]);
-  // const [personalEvents, getPersonalEvents] = useState<EventCard[]>([]);
-  // console.log('personalEvents: ', personalEvents);
+  const [personalEvents, setPersonalEvents] = useState<PersonalEvents[]>([]);
+  console.log('personalEvents: ', personalEvents);
 
   useEffect(() => {
     Api.getEvents()
@@ -24,15 +25,15 @@ export default function App() {
       });
   }, []);
 
-  // useEffect(() => {
-  //   Api.getPersonalEvents()
-  //     .then((data) => {
-  //       getPersonalEvents(data);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }, []);
+  useEffect(() => {
+    Api.getPersonalEvents()
+      .then((data) => {
+        setPersonalEvents(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
   return (
     <>
@@ -40,7 +41,13 @@ export default function App() {
       <Routes>
         <Route
           path='/'
-          element={<Main events={events} setEventId={setEventId} />}
+          element={
+            <Main
+              events={events}
+              setEventId={setEventId}
+              personalEvents={personalEvents}
+            />
+          }
         />
         <Route path='/event/:id' element={<Event eventId={eventId} />} />
       </Routes>
