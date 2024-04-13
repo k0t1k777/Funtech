@@ -16,7 +16,7 @@ export default function Place({ eventId }: PlaceProps) {
       <div>
         {eventIdArray.map((event, index) => (
           <p key={index} className='placeadress'>
-            {event.city}, {event.place}
+            {event.city?.city_name}, {event.place}
           </p>
         ))}
         <img className='place__img' src={adressImg} alt='address' />

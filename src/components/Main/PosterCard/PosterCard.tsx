@@ -3,6 +3,7 @@ import CalendarVector from '../../../assets/calendar.svg?react';
 import { POSTER_DATA } from '../../../utils/constants';
 import { useNavigate } from 'react-router-dom';
 import * as Api from './../../../utils/utils';
+import { useEffect } from 'react';
 
 export interface PosterCardProps {
   name: string;
@@ -16,6 +17,7 @@ export interface PosterCardProps {
   status: string;
   format: string;
   getEventId: (eventId: []) => void;
+  // getEventId: (data: any) => void;
   isRegistrated: boolean;
   isDeleted: boolean;
 }
@@ -35,8 +37,10 @@ export default function PosterCard({
   isRegistrated,
   isDeleted,
 }: PosterCardProps) {
+
   const navigate = useNavigate();
-  const handleButtonClick = (id: string) => {
+
+   useEffect(() => {
     Api.getEvent(id)
       .then((data) => {
         getEventId(data);
@@ -44,8 +48,13 @@ export default function PosterCard({
       .catch((error) => {
         console.error(error);
       });
+  }, [id, getEventId]);
+
+  const handleButtonClick = (id: string) => {
     navigate(`/event/${id}`);
   };
+
+
   return (
     <div className='poster-card'>
       <div className='poster-card__img'>

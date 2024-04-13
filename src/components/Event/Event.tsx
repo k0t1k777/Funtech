@@ -13,7 +13,7 @@ export interface EventProps {
 
 export default function Event({ eventId }: EventProps) {
   const [showEventId, setShowEventId] = useState(eventId);
-  console.log('showEventIdsdsdsdsd: ', showEventId);
+  console.log('showEventId: ', showEventId);
 
   useEffect(() => {
     setShowEventId(eventId);
@@ -24,7 +24,7 @@ export default function Event({ eventId }: EventProps) {
       <div className='event__container'>
         <About eventId={showEventId} />
         <Speakers />
-        <Plan eventId={showEventId} />
+        <Plan eventId={showEventId}  />
       </div>
       <div className='event__container'>
         <Registration eventId={showEventId} />

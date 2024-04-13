@@ -74,16 +74,20 @@
   cursor: pointer;
 }
 
-.registration__img {
+.registration__container-img {
   display: flex;
   align-items: start;
-  background-image: url('../../../assets/eventImg.png');
   min-height: 290px;
   border-radius: 12px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   margin-top: 12px;
+}
+
+.registration__img {
+width: 529px;
+height: 290px;
 }
 
 .registration__status {
