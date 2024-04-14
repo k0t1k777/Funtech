@@ -7,17 +7,17 @@ import TelegrammIcon from '../../../assets/telegramm.svg?react';
 import VkIcon from '../../../assets/vk.svg?react';
 import { getFullDate } from '../../../helpers/Date';
 import { REGISTRATION_DATA } from './../../../utils/constants';
-import { EventCard } from '../Plan/Plan';
+import IEvent from '../../types/Event';
 
-export interface RegistrationProps {
-  eventId: EventCard;
+export interface IRegistrationProps {
+  event: IEvent;
   handleRegOnIventOpen: () => void;
 }
 
 export default function Registration({
-  eventId,
+  event,
   handleRegOnIventOpen,
-}: RegistrationProps) {
+}: IRegistrationProps) {
   return (
     <div className='registration'>
       <div className='registration__container'>
@@ -25,15 +25,15 @@ export default function Registration({
           <div className='registration__date'>
             <CalendarIcon />
             <p className='registration__date-text'>
-              {getFullDate(eventId.start_time)}
+              {getFullDate(event?.start_time)}
             </p>
           </div>
-          {eventId.format === 'online' ? (
+          {event?.format === 'online' ? (
             ''
           ) : (
             <div className='registration__adress'>
               <LocationIcon />
-              <p className='registration__adress-text'>{eventId.place}</p>
+              <p className='registration__adress-text'>{event?.place}</p>
             </div>
           )}
         </div>
@@ -45,28 +45,28 @@ export default function Registration({
       <div className='registration__container-img'>
         <img
           className='registration__img'
-          src={eventId.image}
+          src={event?.image}
           alt='Фон события'
         />
         <div className='registration__status'>
           <div
             className={`registration__status-icon ${
-              eventId.status === 'registration is open'
+              event?.status === 'registration is open'
                 ? 'registration__status-icon_open'
                 : 'registration__status-icon_close'
             }`}
           />
-          <p className='registration__status-text'>{eventId.status}</p>
+          <p className='registration__status-text'>{event?.status}</p>
         </div>
       </div>
       <div className='registration__tags'>
         <p className='registration__tag'>
-          {eventId.specializations.specialization_name}
+          {event?.specializations.specialization_name}
         </p>
         <p className='registration__tag'>
-          {eventId.event_type.event_type_name}
+          {event?.event_type.event_type_name}
         </p>
-        <p className='registration__tag'>{eventId.format}</p>
+        <p className='registration__tag'>{event?.format}</p>
       </div>
 
       <div className='registration__container'>

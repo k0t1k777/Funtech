@@ -5,9 +5,7 @@ import './App.css';
 import Event from '../Event/Event';
 import { useEffect, useState } from 'react';
 import * as Api from './../../utils/utils';
-import { Events } from './../Main/EventsPoster/EventsPoster';
-import { EventCard } from './../Event/Plan/Plan';
-import { PersonalEvents } from './../Main/Main';
+import IEventCard from '../types/EventCard';
 import PopupEnter from '../Popups/PopupEnter';
 import PopupProfile from '../Popups/PopupProfile';
 import PopupCreateEvent from '../Popups/PopupCreateEvent';
@@ -19,11 +17,10 @@ import PopupRegistration from '../Popups/PopupRegistration';
 import Footer from '../Footer/Footer';
 
 export default function App() {
-  const [events, setEvents] = useState<Events[]>([]);
   const [eventId, setEventId] = useState<EventCard[]>([]);
   const [cities, setCities] = useState([]);
-  console.log('cities: ', cities);
-  const [personalEvents, setPersonalEvents] = useState<PersonalEvents[]>([]);
+  const [events, setEvents] = useState<IEventCard[]>([]);
+  const [personalEvents, setPersonalEvents] = useState<IEventCard[]>([]);
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
   const [isEnterOpen, setIsEnterOpen] = useState(false);
   const [isEnterProfile, setIsEnterProfile] = useState(false);
@@ -116,17 +113,16 @@ export default function App() {
           element={
             <Main
               events={events}
-              setEventId={setEventId}
               personalEvents={personalEvents}
               cities={cities}
+              handleRegOnIventOpen={handleRegOnIventOpen}
             />
           }
         />
         <Route
-          path='/event/:id'
+          path='/event/:eventId'
           element={
             <Event
-              eventId={eventId}
               handleRegOnIventOpen={handleRegOnIventOpen}
             />
           }

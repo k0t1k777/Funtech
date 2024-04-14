@@ -1,38 +1,42 @@
 import './Event.css';
 import About from './About/About';
 import Speakers from './Speakers/Speakers';
-import Plan, { EventCard } from './Plan/Plan';
+import Plan from './Plan/Plan';
 import Registration from './Registration/Registration';
 import Place from './Place/Place';
 import Courses from './Courses/Courses';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import * as Api from '../../utils/utils';
 
-export interface EventProps {
-  eventId: EventCard;
+export interface IEventProps {
   handleRegOnIventOpen: () => void;
 }
 
-export default function Event({ eventId, handleRegOnIventOpen }: EventProps) {
-  const [showEventId, setShowEventId] = useState(eventId);
-  console.log('showEventId: ', showEventId);
+export default function Event({ handleRegOnIventOpen }: IEventProps) {
+  const [eventData, setEventData] = useState();
+  const { eventId } = useParams();
 
   useEffect(() => {
-    setShowEventId(eventId);
+    Api.getEvent(eventId).then((data) => {
+      setEventData(data);
+      console.log(data);
+    });
   }, [eventId]);
 
   return (
     <div className='event'>
       <div className='event__container'>
-        <About eventId={showEventId} />
-        <Speakers eventId={showEventId} />
-        <Plan eventId={showEventId} />
+        <About event={eventData} />
+        <Speakers event={eventData} />
+        <Plan event={eventData} />
       </div>
       <div className='event__container'>
         <Registration
-          eventId={showEventId}
+          event={eventData}
           handleRegOnIventOpen={handleRegOnIventOpen}
         />
-        <Place eventId={showEventId} />
+        <Place event={eventData} />
       </div>
       <Courses />
     </div>

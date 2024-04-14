@@ -1,6 +1,6 @@
 import './SpeakerCard.css';
 
-interface SpeakerCardProps {
+interface ISpeakerCardProps {
   isPlanBlock: boolean;
   speakerName: string;
   speakerCompany: string;
@@ -14,7 +14,7 @@ export default function SpeakerCard({
   speakerCompany,
   speakerPosition,
   speakerPhoto,
-}: SpeakerCardProps) {
+}: ISpeakerCardProps) {
   return (
     <div className={`speaker-card ${isPlanBlock ? 'speaker-card_plan' : ''}`}>
       <img
