@@ -157,17 +157,18 @@ export const PLAN_DATA = {
   text: 'Программа',
 };
 
+export const INPUT_DATA = {
+    name: 'Имя*',
+    surname: 'Фамилия*',
+    date: 'Дата рождения',
+    email: 'Email*',
+    phone: 'Телефон*',
+    telegram: 'Телеграм',
+    city: 'Город',
+  };
+
 export const REG_ON_IVENT_DATA = {
   title: 'Регистрация на',
-  inputLabels: [
-    'Имя*',
-    'Фамилия*',
-    'Дата рождения',
-    'Email*',
-    'Телефон*',
-    'Телеграм',
-    'Город',
-  ],
   inputJobLabels: ['Компания*', 'Должность*', 'Опыт*'],
   checkboxLabels: [
     'Frontend',

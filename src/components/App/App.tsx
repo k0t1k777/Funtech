@@ -17,7 +17,6 @@ import PopupRegistration from '../Popups/PopupRegistration';
 import Footer from '../Footer/Footer';
 import { SelectProps } from '../Select/Select';
 
-
 export default function App() {
   const [cities, setCities] = useState<SelectProps[]>([]);
   const [events, setEvents] = useState<IEventCard[]>([]);
@@ -30,6 +29,64 @@ export default function App() {
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   const [isPersonalOpen, setIsPersonalOpen] = useState(false);
   const [isRegOnIventOpen, setIsRegOnIventOpen] = useState(false);
+  // POST
+  const [registrationEvent, setRegistrationEvent] = useState<object>({});
+  const [valuesEvent, setValuesEvent] = useState<string>('');
+  const [valuesFormat, setValuesFormat] = useState<string>('');
+  const [valuesSource, setValuesSource] = useState<string>('');
+  const [valuesFirstName, setValuesFirstName] = useState<string>('');
+  const [valuesLastName, setValuesLastName] = useState<string>('');
+  const [valuesEmail, setValuesEmail] = useState<string>('');
+  const [valuesPhone, setValuesPhone] = useState<string>('');
+  const [valuesTelegram, setValuesTelegram] = useState<string>('');
+  const [valuesBirthDate, setValuesBirthDate] = useState<string>('');
+  const [valuesCity, setValuesCity] = useState<string>('');
+  const [valuesActivity, setValuesActivity] = useState<string>('');
+  const [valuesCompany, setValuesCompany] = useState<string>('');
+  const [valuesPosition, setValuesPosition] = useState<string>('');
+  const [valuesExpYears, setValuesExpYears] = useState<string>('');
+  const [valuesSpec, setValuesSpec] = useState<string>('');
+
+  const postEvent = () => {
+    Api.postEvent(registrationEvent);
+    console.log('registrationEvent: ', registrationEvent);
+  };
+
+  useEffect(() => {
+    setRegistrationEvent({
+      event: valuesEvent,
+      format: valuesFormat,
+      source: valuesSource,
+      first_name: valuesFirstName,
+      last_name: valuesLastName,
+      email: valuesEmail,
+      phone: valuesPhone,
+      telegram: valuesTelegram,
+      birth_date: valuesBirthDate,
+      city: valuesCity,
+      activity: valuesActivity,
+      company: valuesCompany,
+      position: valuesPosition,
+      experience_years: valuesExpYears,
+      specializations: valuesSpec,
+    });
+  }, [
+    valuesEvent,
+    valuesFormat,
+    valuesSource,
+    valuesFirstName,
+    valuesLastName,
+    valuesEmail,
+    valuesPhone,
+    valuesTelegram,
+    valuesBirthDate,
+    valuesCity,
+    valuesActivity,
+    valuesCompany,
+    valuesPosition,
+    valuesExpYears,
+    valuesSpec,
+  ]);
 
   useEffect(() => {
     Api.getEvents()
@@ -106,7 +163,7 @@ export default function App() {
 
   return (
     <>
-      <Header handeleRegistrationOpen={handeleRegistrationOpen}/>
+      <Header handeleRegistrationOpen={handeleRegistrationOpen} />
       <Routes>
         <Route
           path='/'
@@ -145,7 +202,40 @@ export default function App() {
         <PopupPersonal handleOverlayClose={handleOverlayClose} />
       )}
       {isRegOnIventOpen && (
-        <PopupRegOnEvent handleOverlayClose={handleOverlayClose} />
+        <PopupRegOnEvent
+          handleOverlayClose={handleOverlayClose}
+          postEvent={postEvent}
+          // valuesEvent={valuesEvent}
+          // valuesFormat={valuesFormat}
+          // valuesSource={valuesSource}
+          valuesFirstName={valuesFirstName}
+          valuesLastName={valuesLastName}
+          valuesEmail={valuesEmail}
+          valuesPhone={valuesPhone}
+          valuesTelegram={valuesTelegram}
+          valuesBirthDate={valuesBirthDate}
+          valuesCity={valuesCity}
+          // valuesActivity={valuesActivity}
+          // valuesCompany={valuesCompany}
+          // valuesPosition={valuesPosition}
+          // valuesExpYears={valuesExpYears}
+          // valuesSpec={valuesSpec}
+          // setValuesEvent={setValuesEvent}
+          // setValuesFormat={setValuesFormat}
+          // setValuesSource={setValuesSource}
+          setValuesFirstName={setValuesFirstName}
+          setValuesLastName={setValuesLastName}
+          setValuesEmail={setValuesEmail}
+          setValuesPhone={setValuesPhone}
+          setValuesTelegram={setValuesTelegram}
+          setValuesBirthDate={setValuesBirthDate}
+          setValuesCity={setValuesCity}
+          // setValuesActivity={setValuesActivity}
+          // setValuesCompany={setValuesCompany}
+          // setValuesPosition={setValuesPosition}
+          // setValuesExpYears={setValuesExpYears}
+          // setValuesSpec={setValuesSpec}
+        />
       )}
     </>
   );

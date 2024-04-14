@@ -13,6 +13,10 @@
   cursor: text;
 }
 
+.label__error {
+  border: 1px solid red;
+}
+
 .label__input {
   background-color: white;
   border: none;

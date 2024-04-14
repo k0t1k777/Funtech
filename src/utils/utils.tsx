@@ -31,11 +31,12 @@ export const getCities = () => {
   }).then(getResponseData);
 };
 
-// export const postChat = () => {
-//   return fetch(`${BASE_URL}/api/v1/chat/`, {
-//     method: 'POST',
-//   }).then(getResponseData);
-// };
+export const postEvent = (event: object) => {
+  return fetch(`${BASE_URL}/events/`, {
+    method: 'POST',
+    body: JSON.stringify(event)
+  }).then(getResponseData);
+};
 
 // export const getChat = (id: string) => {
 //   return fetch(`${BASE_URL}/api/v1/chat/${id}/`, {

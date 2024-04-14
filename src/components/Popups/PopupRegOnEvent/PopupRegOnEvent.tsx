@@ -1,5 +1,6 @@
 import '../Popups.css';
-import { REG_ON_IVENT_DATA } from '../../../utils/constants';
+import { REG_ON_IVENT_DATA, INPUT_DATA } from '../../../utils/constants';
+import * as yup from 'yup';
 import {
   Box,
   Button,
@@ -7,7 +8,6 @@ import {
   FormControlLabel,
   Typography,
 } from '@mui/material';
-import Input from '../../../ui/Input/Input';
 import { useState } from 'react';
 import CheckboxesGroupDirection from './CheckboxesGroup/CheckboxesGroupDirection';
 import CheckboxesGroupFormat from './CheckboxesGroup/CheckboxesGroupFormat';
@@ -16,12 +16,77 @@ import { checkboxDefault } from './CheckboxesGroup/CheckboxStyles';
 
 interface PopupRegOnEventProps {
   handleOverlayClose: () => void;
+  postEvent: () => void;
+  //   valuesEvent: string;
+  // valuesFormat: string;
+  // valuesSource: string;
+  valuesFirstName: string;
+  valuesLastName: string;
+  valuesEmail: string;
+  valuesPhone: string;
+  valuesTelegram: string;
+  valuesBirthDate: string;
+  valuesCity: string;
+  // valuesActivity: string;
+  // valuesCompany: string;
+  // valuesPosition: string;
+  // valuesExpYears: string;
+  // valuesSpec: string;
+  // setValuesEvent: () => void;
+  // setValuesFormat: () => void;
+  // setValuesSource: () => void;
+  setValuesFirstName: () => void;
+  setValuesLastName: () => void;
+  setValuesEmail: () => void;
+  setValuesPhone: () => void;
+  setValuesTelegram: () => void;
+  setValuesBirthDate: () => void;
+  setValuesCity: () => void;
+  // setValuesActivity: () => void;
+  // setValuesCompany: () => void;
+  // setValuesPosition: () => void;
+  // setValuesExpYears: () => void;
+  // setValuesSpec: () => void;
 }
 
 export default function PopupRegOnEvent({
   handleOverlayClose,
-}: PopupRegOnEventProps) {
+  postEvent,
+  // valuesEvent,
+  // valuesFormat,
+  // valuesSource,
+  valuesFirstName,
+  valuesLastName,
+  valuesEmail,
+  valuesPhone,
+  valuesTelegram,
+  valuesBirthDate,
+  valuesCity,
+  // valuesActivity,
+  // valuesCompany,
+  // valuesPosition,
+  // valuesExpYears,
+  // valuesSpec,
+  // setValuesEvent,
+  // setValuesFormat,
+  // setValuesSource,
+  setValuesFirstName,
+  setValuesLastName,
+  setValuesEmail,
+  setValuesPhone,
+  setValuesTelegram,
+  setValuesBirthDate,
+  setValuesCity,
+}: // setValuesActivity,
+// setValuesCompany,
+// setValuesPosition,
+// setValuesExpYears,
+// setValuesSpec,
+PopupRegOnEventProps) {
+  const [isInputValid, setIsInputValid] = useState(false);
+  console.log('isInputValid: ', isInputValid);
   const [isShowAllClicked, setIsShowAllClicked] = useState(false);
+
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
@@ -30,6 +95,38 @@ export default function PopupRegOnEvent({
     setIsShowAllClicked(true);
   };
 
+  type SetValueFunction = (value: string) => void;
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    setValue: SetValueFunction
+  ) => {
+    const value = event.target.value;
+    setValue(value);
+  };
+
+  const handleSubmit = () => {
+    handleValidation(valuesFirstName);
+    handleValidation(valuesLastName);
+    handleValidation(valuesEmail);
+    handleValidation(valuesPhone);
+  };
+
+  const validationSchema = yup.object().shape({
+    inputValue: yup.string().required('This field is required'),
+  });
+
+  const handleValidation = (value: string) => {
+    validationSchema
+      .validate({ inputValue: value }, { abortEarly: false })
+      .then(() => {
+        setIsInputValid(true);
+      })
+      .catch((error) => {
+        setIsInputValid(false);
+        console.error(error.errors);
+      });
+  };
   return (
     <div
       className='popup__overlay popup__overlay_centered'
@@ -65,9 +162,69 @@ export default function PopupRegOnEvent({
               marginTop: '28px',
             }}
           >
-            {REG_ON_IVENT_DATA.inputLabels.map((label) => {
-              return <Input key={label} label={label} />;
-            })}
+            <label className={`label ${isInputValid ? 'label__error' : ''}`}>
+              {INPUT_DATA.name}
+              <input
+                className='label__input'
+                type='text'
+                value={valuesFirstName}
+                onChange={(e) => handleChange(e, setValuesFirstName)}
+              />
+            </label>
+            <label className={`label ${isInputValid ? 'label__error' : ''}`}>
+              {INPUT_DATA.surname}
+              <input
+                className='label__input'
+                type='text'
+                value={valuesLastName}
+                onChange={(e) => handleChange(e, setValuesLastName)}
+              />
+            </label>
+            <label className='label'>
+              {INPUT_DATA.date}
+              <input
+                className='label__input'
+                type='number'
+                value={valuesBirthDate}
+                onChange={(e) => handleChange(e, setValuesBirthDate)}
+              />
+            </label>
+            <label className={`label ${isInputValid ? 'label__error' : ''}`}>
+              {INPUT_DATA.email}
+              <input
+                className='label__input'
+                type='mail'
+                value={valuesEmail}
+                onChange={(e) => handleChange(e, setValuesEmail)}
+              />
+            </label>
+            <label className={`label ${isInputValid ? 'label__error' : ''}`}>
+              {INPUT_DATA.phone}
+              <input
+                className='label__input'
+                type='number'
+                value={valuesPhone}
+                onChange={(e) => handleChange(e, setValuesPhone)}
+              />
+            </label>
+            <label className='label'>
+              {INPUT_DATA.telegram}
+              <input
+                className='label__input'
+                type='number'
+                value={valuesTelegram}
+                onChange={(e) => handleChange(e, setValuesTelegram)}
+              />
+            </label>
+            <label className='label'>
+              {INPUT_DATA.city}
+              <input
+                className='label__input  label__error'
+                type='text'
+                value={valuesCity}
+                onChange={(e) => handleChange(e, setValuesCity)}
+              />
+            </label>
           </Box>
           <Box
             sx={{
@@ -85,7 +242,9 @@ export default function PopupRegOnEvent({
               }}
             >
               {REG_ON_IVENT_DATA.direction}
-              <Typography component='span' sx={{ color: '#FF666F' }}>*</Typography>
+              <Typography component='span' sx={{ color: '#FF666F' }}>
+                *
+              </Typography>
             </Typography>
             <Button
               disableRipple={true}
@@ -117,7 +276,9 @@ export default function PopupRegOnEvent({
             }}
           >
             {REG_ON_IVENT_DATA.format}
-            <Typography component='span' sx={{ color: '#FF666F' }}>*</Typography>
+            <Typography component='span' sx={{ color: '#FF666F' }}>
+              *
+            </Typography>
           </Typography>
           <CheckboxesGroupFormat />
           <Typography
@@ -130,7 +291,9 @@ export default function PopupRegOnEvent({
             }}
           >
             {REG_ON_IVENT_DATA.occupation}
-            <Typography component='span' sx={{ color: '#FF666F' }}>*</Typography>
+            <Typography component='span' sx={{ color: '#FF666F' }}>
+              *
+            </Typography>
           </Typography>
           <CheckboxesGroupJob />
         </Box>
@@ -163,6 +326,7 @@ export default function PopupRegOnEvent({
         >
           <Button
             disableRipple={true}
+            onClick={handleSubmit}
             sx={{
               fontSize: '14px',
               fontWeight: '400',
