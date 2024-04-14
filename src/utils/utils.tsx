@@ -19,7 +19,7 @@ export const getPersonalEvents = () => {
   }).then(getResponseData);
 };
 
-export const getEvent = (id: string) => {
+export const getEvent = (id: string | undefined) => {
   return fetch(`${BASE_URL}/events/${id}/`, {
     method: 'GET',
   }).then(getResponseData);

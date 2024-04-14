@@ -15,10 +15,11 @@ import PopupPersonal from '../Popups/PopupPersonal/PopupPersonal';
 import PopupRegOnEvent from '../Popups/PopupRegOnEvent/PopupRegOnEvent';
 import PopupRegistration from '../Popups/PopupRegistration';
 import Footer from '../Footer/Footer';
+import { SelectProps } from '../Select/Select';
+
 
 export default function App() {
-  const [eventId, setEventId] = useState<EventCard[]>([]);
-  const [cities, setCities] = useState([]);
+  const [cities, setCities] = useState<SelectProps[]>([]);
   const [events, setEvents] = useState<IEventCard[]>([]);
   const [personalEvents, setPersonalEvents] = useState<IEventCard[]>([]);
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
@@ -54,7 +55,6 @@ export default function App() {
     Api.getCities()
       .then((data) => {
         setCities(data);
-        console.log('data: ', data);
       })
       .catch((error) => {
         console.error(error);
@@ -106,7 +106,7 @@ export default function App() {
 
   return (
     <>
-      <Header />
+      <Header handeleRegistrationOpen={handeleRegistrationOpen}/>
       <Routes>
         <Route
           path='/'
@@ -115,17 +115,15 @@ export default function App() {
               events={events}
               personalEvents={personalEvents}
               cities={cities}
+              // cityValue={cityValue}
+              // setCityValue={setCityValue}
               handleRegOnIventOpen={handleRegOnIventOpen}
             />
           }
         />
         <Route
           path='/event/:eventId'
-          element={
-            <Event
-              handleRegOnIventOpen={handleRegOnIventOpen}
-            />
-          }
+          element={<Event handleRegOnIventOpen={handleRegOnIventOpen} />}
         />
       </Routes>
       <Footer />

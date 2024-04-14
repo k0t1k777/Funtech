@@ -4,16 +4,23 @@ import FiltersContainer from './FiltersContainer/FiltersContainer';
 import EventsPoster from './EventsPoster/EventsPoster';
 import IEventCard from '../types/EventCard';
 import { MAIN_DATA } from './../../utils/constants';
+import { SelectProps } from '../Select/Select';
+
 
 interface IMainProps {
   events: IEventCard[];
   personalEvents: IEventCard[];
+  cities: SelectProps[];
   handleRegOnIventOpen: () => void;
+  setCityValue?: (value: string) => void;
+  cityValue?: string;
 }
 
 export default function Main({
   events,
   cities,
+  cityValue,
+  setCityValue,
   personalEvents,
   handleRegOnIventOpen,
 }: IMainProps) {
@@ -32,8 +39,10 @@ export default function Main({
           handleRegOnIventOpen={handleRegOnIventOpen}
         />
       </div>
-      <FiltersContainer 
-      // cities={cities}
+      <FiltersContainer
+        cityValue={cityValue}
+        setCityValue={setCityValue}
+        cities={cities}
       />
     </div>
   );

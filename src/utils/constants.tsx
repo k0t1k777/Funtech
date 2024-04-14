@@ -1,6 +1,10 @@
 import Calendar from './../../src/assets/calendar.svg';
 import Online from './../assets/Online.svg';
 
+export const FILTER_DATA = {
+  select: 'Город',
+};
+
 export const NEWS_DATA = [
   {
     img: Calendar,

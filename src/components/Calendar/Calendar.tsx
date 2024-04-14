@@ -21,13 +21,12 @@ export default function Calendar() {
           '& .MuiDialogActions-root': {
             display: 'none',
           },
-          '& .css-zlm3dp-MuiPickersLayout-root': {
+          '& .css-m2eom3-MuiDayCalendar-slideTransition': {
             height: '100%',
           },
           '& .MuiDateRangeCalendar-root': {
             borderRadius: '12px',
             border: '1px solid #CAC4D0',
-            height: '312px',
             width: '300px',
           },
           '& .css-1juxbee-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected':

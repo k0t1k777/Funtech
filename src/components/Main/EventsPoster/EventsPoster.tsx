@@ -10,7 +10,11 @@ interface IEventsPosterProps {
   handleRegOnIventOpen: () => void;
 }
 
-export default function EventsPoster({ text, events, handleRegOnIventOpen }: IEventsPosterProps) {
+export default function EventsPoster({
+  text,
+  events,
+  handleRegOnIventOpen,
+}: IEventsPosterProps) {
   return (
     <div className='events-poster'>
       <h2 className='events-poster__title'>{text}</h2>
