@@ -13,6 +13,7 @@ interface IMainProps {
 
 export default function Main({
   events,
+  cities,
   personalEvents,
   handleRegOnIventOpen,
 }: IMainProps) {
@@ -31,7 +32,9 @@ export default function Main({
           handleRegOnIventOpen={handleRegOnIventOpen}
         />
       </div>
-      <FiltersContainer />
+      <FiltersContainer 
+      // cities={cities}
+      />
     </div>
   );
 }

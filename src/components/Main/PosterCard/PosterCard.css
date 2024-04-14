@@ -137,6 +137,7 @@
 .poster-card__registration-container_reg_closed {
   justify-content: center;
   margin-top: 26.5px;
+  gap: 4px;
 }
 
 .poster-card__registration-status {
