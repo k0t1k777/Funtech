@@ -2,40 +2,15 @@ import './EventsPoster.css';
 import PosterCard from '../PosterCard/PosterCard';
 import { getDate } from '../../../helpers/Date';
 import { MAIN_DATA } from './../../../utils/constants';
+import IEventCard from '../../types/EventCard';
 
-export interface EventsPosterProps {
-  eventsBlock: Events[];
-  setEventId: (eventId: []) => void;
+interface IEventsPosterProps {
+  events: IEventCard[];
   text: string;
+  handleRegOnIventOpen: () => void;
 }
-export interface Events {
-  id: string;
-  name: string;
-  skill: string;
-  start_time: string;
-  end_time: string | null;
-  format: string;
-  status: string;
-  is_registrated: boolean;
-  is_deleted: boolean;
-  first_speaker: {
-    position?: string | undefined;
-    speaker_name: string | undefined;
-    company: string;
-    speaker_description: string;
-  };
-  event_type: {
-    event_type_name: string;
-  };
-  specializations: {
-    specialization_name: string;
-  };
-}
-export default function EventsPoster({
-  text,
-  eventsBlock,
-  setEventId,
-}: EventsPosterProps) {
+
+export default function EventsPoster({ text, events, handleRegOnIventOpen }: IEventsPosterProps) {
   return (
     <div className='events-poster'>
       <h2 className='events-poster__title'>{text}</h2>
@@ -44,7 +19,7 @@ export default function EventsPoster({
           text === MAIN_DATA.personalTitle ? 'events-poster-cards_personal' : ''
         }`}
       >
-        {eventsBlock.map(
+        {events.map(
           (card) =>
             card.first_speaker && (
               <PosterCard
@@ -61,7 +36,7 @@ export default function EventsPoster({
                 date={getDate(card.start_time, card.end_time)}
                 isRegistrated={card.is_registrated}
                 isDeleted={card.is_deleted}
-                setEventId={setEventId}
+                handleRegOnIventOpen={handleRegOnIventOpen}
               />
             )
         )}

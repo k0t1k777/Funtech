@@ -1,15 +1,15 @@
 import './About.css';
-import { EventCard } from './../Plan/Plan';
+import IEvent from '../../types/Event';
 
-export interface AboutProps {
-  eventId: EventCard;
+export interface IAboutProps {
+  event: IEvent;
 }
 
-export default function About({ eventId }: AboutProps) {
+export default function About({ event }: IAboutProps) {
   return (
     <div className='about'>
-      <h2 className='about__title'>{eventId.name}</h2>
-      <p className='about__subtitle'>{eventId.description}</p>
+      <h2 className='about__title'>{event?.name}</h2>
+      <p className='about__subtitle'>{event?.description}</p>
     </div>
   );
 }
