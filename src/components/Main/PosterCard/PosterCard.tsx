@@ -2,12 +2,10 @@ import './PosterCard.css';
 import CalendarVector from '../../../assets/calendar.svg?react';
 import { POSTER_DATA } from '../../../utils/constants';
 import { useNavigate } from 'react-router-dom';
-import * as Api from './../../../utils/utils';
-import { useEffect } from 'react';
 
-export interface PosterCardProps {
+interface IPosterCardProps {
   name: string;
-  id: string;
+  id: number;
   organization?: string;
   description?: string | undefined;
   date?: string;
@@ -16,9 +14,9 @@ export interface PosterCardProps {
   event?: string;
   status: string;
   format: string;
-  setEventId: (eventId: []) => void;
   isRegistrated: boolean;
   isDeleted: boolean;
+  handleRegOnIventOpen: () => void;
 }
 
 export default function PosterCard({
@@ -32,28 +30,21 @@ export default function PosterCard({
   format,
   status,
   id,
-  setEventId,
   isRegistrated,
   isDeleted,
-}: PosterCardProps) {
+  handleRegOnIventOpen,
+}: IPosterCardProps) {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    Api.getEvent(id)
-      .then((data) => {
-        setEventId(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [id, setEventId]);
-
-  const handleButtonClick = (id: string) => {
+  const handleNavigateOnEvent = (e) => {
+    if (e.target.id === '0') {
+      return;
+    }
     navigate(`/event/${id}`);
   };
 
   return (
-    <div className='poster-card'>
+    <div className='poster-card' onMouseUp={handleNavigateOnEvent}>
       <div className='poster-card__img'>
         <div className='poster-card__container'>
           <div className='poster-card__date-container'>
@@ -61,11 +52,15 @@ export default function PosterCard({
             <p className='poster-card__date'>{date}</p>
           </div>
           <div className='poster-card__buttons'>
-            <button className='poster-card__button-edit' type='button' />
+            <button id='0' className='poster-card__button-edit' type='button' />
             {isDeleted ? (
-              <button className='poster-card__button-off' type='button' />
+              <button
+                id='0'
+                className='poster-card__button-off'
+                type='button'
+              />
             ) : (
-              <button className='poster-card__button-on' type='button' />
+              <button id='0' className='poster-card__button-on' type='button' />
             )}
           </div>
         </div>
@@ -97,9 +92,10 @@ export default function PosterCard({
               {POSTER_DATA.registration.registered}
             </p>
             <button
+              id='0'
               className='poster-card__button-submit'
               type='submit'
-              onClick={() => handleButtonClick(id)}
+              onClick={handleRegOnIventOpen}
             >
               {POSTER_DATA.buttonText.registered}
             </button>
@@ -114,9 +110,10 @@ export default function PosterCard({
               {POSTER_DATA.registration.open}
             </p>
             <button
+              id='0'
               className='poster-card__button-submit'
               type='submit'
-              onClick={() => handleButtonClick(id)}
+              onClick={handleRegOnIventOpen}
             >
               {POSTER_DATA.buttonText.notRegistered}
             </button>

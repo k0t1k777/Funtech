@@ -2,41 +2,33 @@ import './Main.css';
 import News from './News/News';
 import FiltersContainer from './FiltersContainer/FiltersContainer';
 import EventsPoster from './EventsPoster/EventsPoster';
-import { Events } from './../Main/EventsPoster/EventsPoster';
+import IEventCard from '../types/EventCard';
 import { MAIN_DATA } from './../../utils/constants';
 
-export interface MainProps {
-  events: Events[];
-  personalEvents: PersonalEvents[];
-  setEventId: (eventId: []) => void;
-}
-
-export interface EventId {
-  setEventId: (eventId: []) => void;
-}
-
-export interface PersonalEvents {
-  personalEvents: EventPersonalCard[];
+interface IMainProps {
+  events: IEventCard[];
+  personalEvents: IEventCard[];
+  handleRegOnIventOpen: () => void;
 }
 
 export default function Main({
   events,
   personalEvents,
-  setEventId,
-}: MainProps) {
+  handleRegOnIventOpen,
+}: IMainProps) {
   return (
     <div className='main'>
       <div>
         <News />
         <EventsPoster
-          eventsBlock={personalEvents}
+          events={personalEvents}
           text={MAIN_DATA.personalTitle}
-          setEventId={setEventId}
+          handleRegOnIventOpen={handleRegOnIventOpen}
         />
         <EventsPoster
-          eventsBlock={events}
-          setEventId={setEventId}
+          events={events}
           text={MAIN_DATA.title}
+          handleRegOnIventOpen={handleRegOnIventOpen}
         />
       </div>
       <FiltersContainer />
