@@ -21,6 +21,7 @@ export interface PersonalEvents {
 
 export default function Main({
   events,
+  cities,
   personalEvents,
   setEventId,
 }: MainProps) {
@@ -39,7 +40,9 @@ export default function Main({
           text={MAIN_DATA.title}
         />
       </div>
-      <FiltersContainer />
+      <FiltersContainer 
+      // cities={cities}
+      />
     </div>
   );
 }

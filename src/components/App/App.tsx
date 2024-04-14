@@ -118,6 +118,7 @@ export default function App() {
               events={events}
               setEventId={setEventId}
               personalEvents={personalEvents}
+              cities={cities}
             />
           }
         />
