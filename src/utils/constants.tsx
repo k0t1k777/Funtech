@@ -134,6 +134,7 @@ export const REGISTRATION_DATA = {
   link: 'Ссылка на трансляцию',
   registration: 'Ссылка на трансляцию',
   download: 'Скачать дополнительные материалы',
+  regButton: 'Зарегистрироваться',
 };
 
 export const PLACE_DATA = {

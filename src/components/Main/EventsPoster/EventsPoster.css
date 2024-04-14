@@ -3,7 +3,7 @@
 }
 
 .events-poster__title {
-  color: #2B2D33;
+  color: #2b2d33;
   font-size: 28px;
   font-weight: 700;
   line-height: 36.4px;
@@ -13,6 +13,10 @@
 .events-poster-cards {
   display: grid;
   grid-template-columns: repeat(3, 300px);
-  grid-template-rows: repeat(3, min-content);
+  grid-template-rows: repeat(2, min-content);
   gap: 40px;
+}
+
+.events-poster-cards_personal {
+  grid-template-rows: min-content;
 }

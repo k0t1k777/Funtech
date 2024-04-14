@@ -9,9 +9,10 @@ import { useEffect, useState } from 'react';
 
 export interface EventProps {
   eventId: EventCard;
+  handleRegOnIventOpen: () => void;
 }
 
-export default function Event({ eventId }: EventProps) {
+export default function Event({ eventId, handleRegOnIventOpen }: EventProps) {
   const [showEventId, setShowEventId] = useState(eventId);
   console.log('showEventId: ', showEventId);
 
@@ -23,11 +24,11 @@ export default function Event({ eventId }: EventProps) {
     <div className='event'>
       <div className='event__container'>
         <About eventId={showEventId} />
-        <Speakers eventId={showEventId}/>
-        <Plan eventId={showEventId}  />
+        <Speakers eventId={showEventId} />
+        <Plan eventId={showEventId} />
       </div>
       <div className='event__container'>
-        <Registration eventId={showEventId} />
+        <Registration eventId={showEventId} handleRegOnIventOpen={handleRegOnIventOpen} />
         <Place eventId={showEventId} />
       </div>
       <Courses />

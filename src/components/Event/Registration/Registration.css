@@ -1,6 +1,5 @@
 .registration {
-  grid-column: 2 / 2;
-  grid-row: 1 / 4;
+  width: 529px;
 }
 
 .registration__container {
@@ -76,18 +75,16 @@
 
 .registration__container-img {
   display: flex;
-  align-items: start;
   min-height: 290px;
-  border-radius: 12px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   margin-top: 12px;
+  position: relative;
 }
 
 .registration__img {
   width: 529px;
   height: 290px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 .registration__status {
@@ -97,7 +94,9 @@
   border: 1px solid #d4c4f7;
   border-radius: 16px;
   padding: 8.5px 16.5px;
-  margin: 16px 0 0 16px;
+  position: absolute;
+  top: 16px;
+  left: 16px;
 }
 
 .registration__status-icon {

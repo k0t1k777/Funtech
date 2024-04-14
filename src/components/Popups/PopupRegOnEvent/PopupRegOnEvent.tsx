@@ -81,9 +81,11 @@ export default function PopupRegOnEvent({
                 fontSize: '16px',
                 fontWeight: '400',
                 lineHeight: '20.8px',
+                display: 'flex',
               }}
             >
               {REG_ON_IVENT_DATA.direction}
+              <Typography component='span' sx={{ color: '#FF666F' }}>*</Typography>
             </Typography>
             <Button
               disableRipple={true}
@@ -115,7 +117,7 @@ export default function PopupRegOnEvent({
             }}
           >
             {REG_ON_IVENT_DATA.format}
-            <Typography sx={{ color: '#FF666F' }}>*</Typography>
+            <Typography component='span' sx={{ color: '#FF666F' }}>*</Typography>
           </Typography>
           <CheckboxesGroupFormat />
           <Typography
@@ -128,7 +130,7 @@ export default function PopupRegOnEvent({
             }}
           >
             {REG_ON_IVENT_DATA.occupation}
-            <Typography sx={{ color: '#FF666F' }}>*</Typography>
+            <Typography component='span' sx={{ color: '#FF666F' }}>*</Typography>
           </Typography>
           <CheckboxesGroupJob />
         </Box>

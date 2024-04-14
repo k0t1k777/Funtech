@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import SpeakerCard from '../SpeakerCard/SpeakerCard';
 import { PLAN_DATA } from './../../../utils/constants';
+import { getStartTime } from '../../../helpers/Date';
 import './Plan.css';
 
 export interface PlanProps {
@@ -11,7 +12,6 @@ export interface EventCard {
   name: string;
   description: string;
   image: string;
-  eventId: EventCard[];
   format?: string;
   place: string;
   start_time?: string;
@@ -34,20 +34,6 @@ export interface EventCard {
   }[];
 }
 export default function Plan({ eventId }: PlanProps) {
-  const [date, setDate] = useState<string>('');
-
-  function getCurrentDateTime() {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    return `${hours}:${minutes}`;
-  }
-
-  useEffect(() => {
-    const firstDateTime = getCurrentDateTime();
-    setDate(firstDateTime);
-  }, []);
-
   useEffect(() => {
     localStorage.setItem('eventId', JSON.stringify(eventId));
   }, [eventId]);
@@ -59,9 +45,11 @@ export default function Plan({ eventId }: PlanProps) {
         {Array.isArray(eventId.event_parts) &&
           eventId.event_parts.map((part, index) => (
             <div key={index} className='plan__container'>
-              <p className='plan__time'>{date}</p>
+              <p className='plan__time'>
+                {getStartTime(part.event_part_start_time)}
+              </p>
               <p className='plan__description'>
-                <b className='plan__bold-text'>{part.event_part_name}</b>
+                <b className='plan__bold-text'>{`${part.event_part_name}: `}</b>
                 {part.event_part_description}
               </p>
               <SpeakerCard

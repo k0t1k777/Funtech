@@ -5,43 +5,37 @@ import DownloadIcon from '../../../assets/download.svg?react';
 import PlayIcon from '../../../assets/play.svg?react';
 import TelegrammIcon from '../../../assets/telegramm.svg?react';
 import VkIcon from '../../../assets/vk.svg?react';
-import { useState } from 'react';
-import {
-  MONTH_NAMES_DATA,
-  REGISTRATION_DATA,
-} from './../../../utils/constants';
+import { getFullDate } from '../../../helpers/Date';
+import { REGISTRATION_DATA } from './../../../utils/constants';
 import { EventCard } from '../Plan/Plan';
 
 export interface RegistrationProps {
   eventId: EventCard;
+  handleRegOnIventOpen: () => void;
 }
 
-export default function Registration({ eventId }: RegistrationProps) {
-  const [date, setdate] = useState<string>('');
-  const eventIdArray = [eventId];
-  function getCurrentDateTime() {
-    const now = new Date();
-    const month = MONTH_NAMES_DATA[now.getMonth()];
-    const day = now.getDate().toString().padStart(2, '0');
-    return `${day} ${month}`;
-  }
-  if (date === '' && eventId?.start_time) {
-    const firstDateTime = getCurrentDateTime();
-    setdate(firstDateTime);
-  }
+export default function Registration({
+  eventId,
+  handleRegOnIventOpen,
+}: RegistrationProps) {
   return (
     <div className='registration'>
       <div className='registration__container'>
         <div className='registration__container'>
           <div className='registration__date'>
             <CalendarIcon />
-            <p className='registration__date-text'>{date}</p>
+            <p className='registration__date-text'>
+              {getFullDate(eventId.start_time)}
+            </p>
           </div>
-          <div className='registration__adress'>
-            <LocationIcon />
-            <p className='registration__adress-text'>{eventId.format}</p>
-            <p className='registration__adress-text'>{eventId.place}</p>
-          </div>
+          {eventId.format === 'online' ? (
+            ''
+          ) : (
+            <div className='registration__adress'>
+              <LocationIcon />
+              <p className='registration__adress-text'>{eventId.place}</p>
+            </div>
+          )}
         </div>
         <div className='registration__buttons'>
           <button className='registration__button-edit' />
@@ -49,23 +43,32 @@ export default function Registration({ eventId }: RegistrationProps) {
         </div>
       </div>
       <div className='registration__container-img'>
-        <img className='registration__img' src={eventId.image} alt="Фон события" />
+        <img
+          className='registration__img'
+          src={eventId.image}
+          alt='Фон события'
+        />
         <div className='registration__status'>
           <div
             className={`registration__status-icon ${
-              false
-                ? 'registration__status-icon_close'
-                : 'registration__status-icon_open'
+              eventId.status === 'registration is open'
+                ? 'registration__status-icon_open'
+                : 'registration__status-icon_close'
             }`}
           />
           <p className='registration__status-text'>{eventId.status}</p>
         </div>
       </div>
-      {eventIdArray.map((event, index) => (
-        <p key={index} className='registration__tag'>
-          {event.event_type?.event_type_name}
+      <div className='registration__tags'>
+        <p className='registration__tag'>
+          {eventId.specializations.specialization_name}
         </p>
-      ))}
+        <p className='registration__tag'>
+          {eventId.event_type.event_type_name}
+        </p>
+        <p className='registration__tag'>{eventId.format}</p>
+      </div>
+
       <div className='registration__container'>
         <button className='registration__download' type='button'>
           <DownloadIcon />
@@ -87,8 +90,11 @@ export default function Registration({ eventId }: RegistrationProps) {
         </a>
         <button className='registration__button-other' />
       </div>
-      <button className='registration__button-reg'>
-        {REGISTRATION_DATA.registration}
+      <button
+        className='registration__button-reg'
+        onClick={handleRegOnIventOpen}
+      >
+        {REGISTRATION_DATA.regButton}
       </button>
     </div>
   );

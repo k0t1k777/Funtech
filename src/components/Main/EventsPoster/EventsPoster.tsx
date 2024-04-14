@@ -1,6 +1,7 @@
 import './EventsPoster.css';
 import PosterCard from '../PosterCard/PosterCard';
-import { MONTH_NAMES_DATA } from './../../../utils/constants';
+import { getDate } from '../../../helpers/Date';
+import { MAIN_DATA } from './../../../utils/constants';
 
 export interface EventsPosterProps {
   eventsBlock: Events[];
@@ -35,25 +36,14 @@ export default function EventsPoster({
   eventsBlock,
   setEventId,
 }: EventsPosterProps) {
-  function getDate(startTime: string, endTime: string | null) {
-    const startDate = new Date(startTime);
-    if (endTime) {
-      const endDate = new Date(endTime);
-      if (startDate.getMonth() === endDate.getMonth()) {
-        return `${startDate.getDate()} - ${endDate.getDate()} ${
-          MONTH_NAMES_DATA[startDate.getMonth()]
-        }`;
-      }
-      return `${startDate.getDate()} ${
-        MONTH_NAMES_DATA[startDate.getMonth()]
-      } - ${endDate.getDate()} ${MONTH_NAMES_DATA[endDate.getMonth()]}`;
-    }
-    return `${startDate.getDate()} ${MONTH_NAMES_DATA[startDate.getMonth()]}`;
-  }
   return (
     <div className='events-poster'>
       <h2 className='events-poster__title'>{text}</h2>
-      <div className='events-poster-cards'>
+      <div
+        className={`events-poster-cards ${
+          text === MAIN_DATA.personalTitle ? 'events-poster-cards_personal' : ''
+        }`}
+      >
         {eventsBlock.map(
           (card) =>
             card.first_speaker && (
