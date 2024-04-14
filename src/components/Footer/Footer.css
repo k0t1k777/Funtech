@@ -1,0 +1,18 @@
+.footer {
+  height: 160px;
+  margin: 0;
+  padding: 40px 60px;
+  background-color: #ebeafc;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+.footer__text {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.8px;
+  color: #2C2A2ACC;
+}

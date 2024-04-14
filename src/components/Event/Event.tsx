@@ -28,7 +28,10 @@ export default function Event({ eventId, handleRegOnIventOpen }: EventProps) {
         <Plan eventId={showEventId} />
       </div>
       <div className='event__container'>
-        <Registration eventId={showEventId} handleRegOnIventOpen={handleRegOnIventOpen} />
+        <Registration
+          eventId={showEventId}
+          handleRegOnIventOpen={handleRegOnIventOpen}
+        />
         <Place eventId={showEventId} />
       </div>
       <Courses />

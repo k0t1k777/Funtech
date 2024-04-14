@@ -1,4 +1,4 @@
-import { Header } from '../Header/Header';
+import Header from '../Header/Header';
 import Main from '../Main/Main';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -16,10 +16,13 @@ import PopupNotification from '../Popups/PopupNotification';
 import PopupPersonal from '../Popups/PopupPersonal/PopupPersonal';
 import PopupRegOnEvent from '../Popups/PopupRegOnEvent/PopupRegOnEvent';
 import PopupRegistration from '../Popups/PopupRegistration';
+import Footer from '../Footer/Footer';
 
 export default function App() {
   const [events, setEvents] = useState<Events[]>([]);
   const [eventId, setEventId] = useState<EventCard[]>([]);
+  const [cities, setCities] = useState([]);
+  console.log('cities: ', cities);
   const [personalEvents, setPersonalEvents] = useState<PersonalEvents[]>([]);
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
   const [isEnterOpen, setIsEnterOpen] = useState(false);
@@ -29,7 +32,6 @@ export default function App() {
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   const [isPersonalOpen, setIsPersonalOpen] = useState(false);
   const [isRegOnIventOpen, setIsRegOnIventOpen] = useState(false);
-  console.log('personalEvents: ', personalEvents);
 
   useEffect(() => {
     Api.getEvents()
@@ -45,6 +47,17 @@ export default function App() {
     Api.getPersonalEvents()
       .then((data) => {
         setPersonalEvents(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    Api.getCities()
+      .then((data) => {
+        setCities(data);
+        console.log('data: ', data);
       })
       .catch((error) => {
         console.error(error);
@@ -118,7 +131,7 @@ export default function App() {
           }
         />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
       {isRegistrationOpen && (
         <PopupRegistration handleOverlayClose={handleOverlayClose} />
       )}
