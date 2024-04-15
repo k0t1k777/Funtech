@@ -81,85 +81,11 @@ export default function App() {
   //         storeLoggedIn(true);
   //         setLoggedIn(true);
   //         storeToken(data.token);
-  //         setAuthMessage({
-  //           text: `Вы успешно вошли!`,
-  //           isSuccess: true,
-  //         });
-  //         navigate("/movies");
-  //       }
+  //         }
   //     })
   //     .catch((error) => {
-  //       setAuthMessage({
-  //         text: `Ошибка входа: ${error}`,
-  //         isSuccess: false,
-  //       });
-  //     });
-  // }
-
-  // const [loggedIn, setLoggedIn] = React.useState(false);
-
-  // function getStoredLoggedIn() {
-  //   const storedisLoggedIn = localStorage.getItem("isLoggedIn");
-  //   return storedisLoggedIn;
-  // }
-
-  // function storeLoggedIn(value) {
-  //   localStorage.setItem("isLoggedIn", value);
-  // }
-  // function storeToken(value) {
-  //   localStorage.setItem("jwt", value);
-  // }
-
-  // useEffect(() => {
-  //   const token = getStoredToken();
-  //   if (!token) {
-  //     return;
-  //   }
-  //   storeLoggedIn(true);
-  //   setLoggedIn(true);
-  // }, []);
-
-  // при смене состояния loggedIn проверяем, если оно false - ничего не делаем
-  // а если оно true, то обновляем ниформацию о currentUser
-  // Регистрация
-
-  // useEffect(() => {
-  //   Api.getEvents()
-  //     .then((data) => {
-  //       setEvents(data);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }, []);
-
-  // Профиль
-  // function handleChangeProfile(name, email) {
-  //   const token = getStoredToken();
-  //   if (!token) {
-  //     setProfileMessage({
-  //       text: `Ошибка авторизации. Пожалуйста, авторизуйтесь заново.`,
-  //       isSuccess: false,
-  //     });
-  //     return;
-  //   }
-  //   MainApi.changeProfile({ name, email, token })
-  //     .then((data) => {
-  //       const updatedUser = {
-  //         name: data.name,
-  //         email: data.email,
-  //       };
-  //       setCurrentUser(updatedUser);
-  //       setProfileMessage({
-  //         text: `Вы обновили информацию о себе.`,
-  //         isSuccess: true,
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       setProfileMessage({
-  //         text: `Ошибка при обновлении профиля: ${error}`,
-  //         isSuccess: false,
-  //       });
+    // console.log('error: ', error);
+  //     
   //     });
   // }
 

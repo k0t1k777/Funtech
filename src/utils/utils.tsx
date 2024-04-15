@@ -8,7 +8,7 @@ const getResponseData = (res: Response) => {
 };
 
 const headers = {
-  // authorization: `Bearer`,
+  authorization: `Bearer`,
   Accept: 'application/json',
   'Content-Type': 'application/json',
 };
@@ -95,7 +95,7 @@ export const registration = ({
   }).then(getResponseData);
 };
 
-// login = ({ email, password }) => {
+// export const login ({ email, password }) => {
 //   return fetch(`${this._url}/signin`, {
 //     method: "POST",
 //     headers: {
@@ -106,38 +106,6 @@ export const registration = ({
 //       email,
 //       password,
 //     }),
-//   }).then(this._checkResponse);
+// }).then(getResponseData);
 // };
 
-// changeProfile = ({ name, email, token }) => {
-//   return fetch(`${this._url}/users/me`, {
-//     method: "PATCH",
-//     headers: {
-//       Accept: "application/json",
-//       "Content-Type": "application/json",
-//       Authorization: `Bearer ${token}`,
-//     },
-//     body: JSON.stringify({
-//       name: name,
-//       email: email,
-//     }),
-//   }).then(this._checkResponse);
-// };
-
-// export const getChat = (id: string) => {
-//   return fetch(`${BASE_URL}/api/v1/chat/${id}/`, {
-//     method: 'GET',
-//   }).then(getResponseData);
-// };
-
-// export const getDialog = (chat_uuid: string) => {
-//   return fetch(`${BASE_URL}/api/v1/chat/${chat_uuid}/dialog/`, {
-//     method: 'GET',
-//   }).then(getResponseData);
-// };
-
-// export const postDialog = (chat_uuid: string) => {
-//   return fetch(`${BASE_URL}/api/v1/chat/${chat_uuid}/dialog/`, {
-//     method: 'POST',
-//   }).then(getResponseData);
-// };
