@@ -107,7 +107,6 @@ export default function PopupPersonal({
           }}
         >
           <Button
-            disableRipple={true}
             sx={{
               fontSize: '14px',
               fontWeight: '400',
@@ -127,7 +126,6 @@ export default function PopupPersonal({
             {PERSONAL_DATA.submitButton}
           </Button>
           <Button
-            disableRipple={true}
             sx={{
               fontSize: '14px',
               fontWeight: '400',

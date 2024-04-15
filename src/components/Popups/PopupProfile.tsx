@@ -1,15 +1,17 @@
 import './Popups.css';
 import SubmitButton from '../../components/SubmitButton/SubmitButton';
 import Avatar from './../../assets/PhotoWoman.png';
-import { POPUP_DATA } from './../../utils/constants'
+import { POPUP_DATA } from './../../utils/constants';
 
-interface PopupEnterProps {
+interface IPopupEnterProps {
   handleOverlayClose: () => void;
+  handleCreateEventOpen: () => void;
 }
 
 export default function PopupProfile({
   handleOverlayClose,
-}: PopupEnterProps) {
+  handleCreateEventOpen,
+}: IPopupEnterProps) {
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
@@ -27,7 +29,7 @@ export default function PopupProfile({
         <ul className='popup__lists'>
           <li className='popup__item'>{POPUP_DATA.data}</li>
           <li className='popup__item'>{POPUP_DATA.notifications}</li>
-          <li className='popup__item'>{POPUP_DATA.event}</li>
+          <li className='popup__item' onClick={handleCreateEventOpen}>{POPUP_DATA.event}</li>
         </ul>
         <div className='popup__container-button'>
           <SubmitButton
