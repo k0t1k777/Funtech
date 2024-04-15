@@ -22,9 +22,9 @@ interface CheckboxesGroupJobProps {
   setValuesCompany: () => void;
   setValuesPosition: () => void;
   setValuesExpYears: () => void;
-  valuesActivity: { student: boolean; hunting: boolean; job: boolean };
+  valuesActivity: { studying: boolean; working: boolean; seeking: boolean };
   setValuesActivity: React.Dispatch<
-    React.SetStateAction<{ student: boolean; hunting: boolean; job: boolean }>
+    React.SetStateAction<{ studying: boolean; working: boolean; seeking: boolean }>
   >;
 }
 
@@ -103,7 +103,7 @@ export default function CheckboxesGroupJob({
             {REG_ON_IVENT_DATA.inputJobLabels.exp}
             <input
               className='label__input'
-              type='text'
+              type='number'
               value={valuesExpYears}
               onChange={(e) => handleChange(e, setValuesExpYears)}
             />
@@ -114,9 +114,9 @@ export default function CheckboxesGroupJob({
           sx={checkboxDefault}
           control={<Checkbox onChange={handleShowJobInputs} />}
           label={REG_ON_IVENT_DATA.checkboxJobLabels.working}
-          name='job'
+          name='seeking'
           onChange={handleChangeJob}
-          checked={valuesActivity.job || false}
+          checked={valuesActivity.seeking || false}
         />
       )}
 
@@ -124,18 +124,18 @@ export default function CheckboxesGroupJob({
         sx={checkboxDefault}
         control={<Checkbox />}
         label={REG_ON_IVENT_DATA.checkboxJobLabels.studying}
-        name='student'
+        name='studying'
         onChange={handleChangeJob}
-        checked={valuesActivity.student || false}
+        checked={valuesActivity.studying || false}
       />
 
       <FormControlLabel
         sx={checkboxDefault}
         control={<Checkbox />}
         label={REG_ON_IVENT_DATA.checkboxJobLabels.jobHunting}
-        name='hunting'
+        name='working'
         onChange={handleChangeJob}
-        checked={valuesActivity.hunting || false}
+        checked={valuesActivity.working || false}
       />
     </Box>
   );

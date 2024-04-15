@@ -174,18 +174,6 @@ export const REG_ON_IVENT_DATA = {
     position: 'Должность*',
     exp: 'Опыт*',
   },
-  checkboxLabels: [
-    'Frontend',
-    'Backend',
-    'UX/UI',
-    'AI',
-    'QA',
-    'ML',
-    'Менеджмент',
-    'Аналитика',
-    'HR',
-    'DevOps',
-  ],
   checkboxJobLabels: {
     working: 'Работаю',
     studying: 'Учусь',

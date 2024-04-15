@@ -4,10 +4,10 @@ import Search from './../../assets/Search.svg?react';
 import Profile from './../../assets/Profile.svg?react';
 
 export interface HeaderProps {
-  handeleProfileOpen?: () => void;
+  handleRegistrationOpen?: () => void;
 }
 
-export default function Header({ handeleProfileOpen }: HeaderProps) {
+export default function Header({ handleRegistrationOpen }: HeaderProps) {
   return (
     <div className='header'>
       <Logo />
@@ -17,7 +17,7 @@ export default function Header({ handeleProfileOpen }: HeaderProps) {
         </div>
         <button className='header__container-profile'>
           <div className='header__container-profile-img'>
-            {<Profile onClick={handeleProfileOpen} />}
+            {<Profile onClick={handleRegistrationOpen} />}
           </div>
           <p className='header__text'>Войти</p>
         </button>

@@ -14,6 +14,7 @@ import CheckboxesGroupFormat from './CheckboxesGroup/CheckboxesGroupFormat';
 import CheckboxesGroupJob from './CheckboxesGroup/CheckboxesGroupJob';
 import { checkboxDefault } from './CheckboxesGroup/CheckboxStyles';
 
+
 const validationSchema = yup.object().shape({
   firstName: yup.string().required('First name is required'),
   lastName: yup.string().required('Last name is required'),
@@ -24,25 +25,23 @@ const validationSchema = yup.object().shape({
   expYears: yup.string().required('Last expYears is required'),
 });
 
-interface PopupRegOnEventProps {
+export interface PopupRegOnEventProps {
   handleOverlayClose: () => void;
   setIsRegOnIventOpen: (value: boolean) => void;
   postEvent: () => void;
-  //   valuesEvent: string;
   valuesFormat: string;
   valuesFirstName: string;
   valuesLastName: string;
   valuesEmail: string;
-  valuesPhone: string;
+  valuesPhone: number | undefined;
   valuesTelegram: string;
   valuesBirthDate: string;
   valuesCity: string;
   valuesActivity: string;
   valuesCompany: string;
   valuesPosition: string;
-  valuesExpYears: string;
+  valuesExpYears: number | undefined;
   valuesSpec: string;
-  // setValuesEvent: () => void;
   setValuesFormat: () => void;
   setValuesFirstName: () => void;
   setValuesLastName: () => void;
@@ -56,13 +55,18 @@ interface PopupRegOnEventProps {
   setValuesPosition: () => void;
   setValuesExpYears: () => void;
   setValuesSpec: () => void;
+  specializations: Spec[];
+}
+
+export interface Spec {
+  specializations: Spec[]
 }
 
 export default function PopupRegOnEvent({
   handleOverlayClose,
   setIsRegOnIventOpen,
   postEvent,
-  // valuesEvent,
+  specializations,
   valuesFormat,
   valuesFirstName,
   valuesLastName,
@@ -76,7 +80,6 @@ export default function PopupRegOnEvent({
   valuesPosition,
   valuesExpYears,
   valuesSpec,
-  // setValuesEvent,
   setValuesFormat,
   setValuesFirstName,
   setValuesLastName,
@@ -92,6 +95,7 @@ export default function PopupRegOnEvent({
   setValuesExpYears,
 }: PopupRegOnEventProps) {
   const [isInputValid, setIsInputValid] = useState(false);
+  console.log('isInputValid: ', isInputValid);
   const [isShowAllClicked, setIsShowAllClicked] = useState(false);
   const [isWorkingChecked, setIsWorkingChecked] = useState(false);
 
@@ -232,7 +236,7 @@ export default function PopupRegOnEvent({
                 className='label__input'
                 type='number'
                 value={valuesPhone}
-                pattern="^(\+7|7|8)\d{10}$"
+                pattern='^(\+7|7|8)\d{10}$'
                 onChange={(e) => handleChange(e, setValuesPhone)}
               />
             </label>
@@ -242,8 +246,7 @@ export default function PopupRegOnEvent({
                 className='label__input'
                 type='text'
                 value={valuesTelegram}
-                pattern="^@[a-zA-Z0-9_]{5,32}$"
-
+                pattern='^@[a-zA-Z0-9_]{5,32}$'
                 onChange={(e) => handleChange(e, setValuesTelegram)}
               />
             </label>
@@ -297,6 +300,7 @@ export default function PopupRegOnEvent({
             </Button>
           </Box>
           <CheckboxesGroupDirection
+            specializations={specializations}
             isShowAllClicked={isShowAllClicked}
             valuesSpec={valuesSpec}
             setValuesSpec={setValuesSpec}
@@ -334,7 +338,7 @@ export default function PopupRegOnEvent({
             </Typography>
           </Typography>
           <CheckboxesGroupJob
-          isWorkingChecked={isWorkingChecked}
+            isWorkingChecked={isWorkingChecked}
             setIsWorkingChecked={setIsWorkingChecked}
             valuesActivity={valuesActivity}
             valuesCompany={valuesCompany}

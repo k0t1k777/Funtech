@@ -16,10 +16,13 @@ import PopupRegOnEvent from '../Popups/PopupRegOnEvent/PopupRegOnEvent';
 import PopupRegistration from '../Popups/PopupRegistration';
 import Footer from '../Footer/Footer';
 import { SelectProps } from '../Select/Select';
+import { Spec } from '../Popups/PopupRegOnEvent/PopupRegOnEvent';
 
 export default function App() {
+  const eventId = localStorage.getItem('eventId');
   const [cities, setCities] = useState<SelectProps[]>([]);
   const [events, setEvents] = useState<IEventCard[]>([]);
+  const [specializations, setSpecializations] = useState<Spec[]>([]);
   const [personalEvents, setPersonalEvents] = useState<IEventCard[]>([]);
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
   const [isEnterOpen, setIsEnterOpen] = useState(false);
@@ -35,17 +38,130 @@ export default function App() {
   const [valuesFirstName, setValuesFirstName] = useState<string>('');
   const [valuesLastName, setValuesLastName] = useState<string>('');
   const [valuesEmail, setValuesEmail] = useState<string>('');
-  const [valuesPhone, setValuesPhone] = useState<string>('');
+  const [valuesPhone, setValuesPhone] = useState<number | undefined>();
   const [valuesTelegram, setValuesTelegram] = useState<string>('');
   const [valuesBirthDate, setValuesBirthDate] = useState<string>('');
   const [valuesCity, setValuesCity] = useState<string>('');
   const [valuesActivity, setValuesActivity] = useState<string>('');
   const [valuesCompany, setValuesCompany] = useState<string>('');
   const [valuesPosition, setValuesPosition] = useState<string>('');
-  const [valuesExpYears, setValuesExpYears] = useState<string>('');
+  const [valuesExpYears, setValuesExpYears] = useState<number | undefined>();
   const [valuesSpec, setValuesSpec] = useState<string>('');
 
-  const eventId = localStorage.getItem('eventId');
+  function handleRegister({
+    firstName,
+    secondName,
+    email,
+    phone,
+  }: {
+    firstName: string;
+    secondName: string;
+    email: string;
+    phone: string;
+  }) {
+    Api.registration({ firstName, secondName, email, phone })
+      .then((data) => {
+        if (data) {
+          console.log('data: ', data);
+          handleLogin({ firstName, secondName, email, phone });
+        }
+      })
+      .catch((error) => {
+        console.log('error: ', error);
+      });
+  }
+  function handleLogin() {
+    console.log('handleLogin: ', handleLogin);
+  }
+
+  // function handleLogin({ email, password }) {
+  //   MainApi.login({ email, password })
+  //     .then((data) => {
+  //       if (data.token) {
+  //         storeLoggedIn(true);
+  //         setLoggedIn(true);
+  //         storeToken(data.token);
+  //         setAuthMessage({
+  //           text: `Вы успешно вошли!`,
+  //           isSuccess: true,
+  //         });
+  //         navigate("/movies");
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       setAuthMessage({
+  //         text: `Ошибка входа: ${error}`,
+  //         isSuccess: false,
+  //       });
+  //     });
+  // }
+
+  // const [loggedIn, setLoggedIn] = React.useState(false);
+
+  // function getStoredLoggedIn() {
+  //   const storedisLoggedIn = localStorage.getItem("isLoggedIn");
+  //   return storedisLoggedIn;
+  // }
+
+  // function storeLoggedIn(value) {
+  //   localStorage.setItem("isLoggedIn", value);
+  // }
+  // function storeToken(value) {
+  //   localStorage.setItem("jwt", value);
+  // }
+
+  // useEffect(() => {
+  //   const token = getStoredToken();
+  //   if (!token) {
+  //     return;
+  //   }
+  //   storeLoggedIn(true);
+  //   setLoggedIn(true);
+  // }, []);
+
+  // при смене состояния loggedIn проверяем, если оно false - ничего не делаем
+  // а если оно true, то обновляем ниформацию о currentUser
+  // Регистрация
+
+  // useEffect(() => {
+  //   Api.getEvents()
+  //     .then((data) => {
+  //       setEvents(data);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }, []);
+
+  // Профиль
+  // function handleChangeProfile(name, email) {
+  //   const token = getStoredToken();
+  //   if (!token) {
+  //     setProfileMessage({
+  //       text: `Ошибка авторизации. Пожалуйста, авторизуйтесь заново.`,
+  //       isSuccess: false,
+  //     });
+  //     return;
+  //   }
+  //   MainApi.changeProfile({ name, email, token })
+  //     .then((data) => {
+  //       const updatedUser = {
+  //         name: data.name,
+  //         email: data.email,
+  //       };
+  //       setCurrentUser(updatedUser);
+  //       setProfileMessage({
+  //         text: `Вы обновили информацию о себе.`,
+  //         isSuccess: true,
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       setProfileMessage({
+  //         text: `Ошибка при обновлении профиля: ${error}`,
+  //         isSuccess: false,
+  //       });
+  //     });
+  // }
 
   const postEvent = () => {
     Api.postEvent(registrationEvent);
@@ -90,6 +206,16 @@ export default function App() {
     Api.getEvents()
       .then((data) => {
         setEvents(data.results);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    Api.getSpecializations()
+      .then((data) => {
+        setSpecializations(data);
       })
       .catch((error) => {
         console.error(error);
@@ -158,7 +284,7 @@ export default function App() {
 
   return (
     <>
-      <Header handeleProfileOpen={handleProfileOpen} />
+      <Header handleRegistrationOpen={handleRegistrationOpen} />
       <Routes>
         <Route
           path='/'
@@ -186,7 +312,10 @@ export default function App() {
       </Routes>
       <Footer />
       {isRegistrationOpen && (
-        <PopupRegistration handleOverlayClose={handleOverlayClose} />
+        <PopupRegistration
+          handleOverlayClose={handleOverlayClose}
+          handleRegister={handleRegister}
+        />
       )}
       {isEnterOpen && <PopupEnter handleOverlayClose={handleOverlayClose} />}
       {isProfileOpen && (
@@ -210,7 +339,6 @@ export default function App() {
           setIsRegOnIventOpen={setIsRegOnIventOpen}
           handleOverlayClose={handleOverlayClose}
           postEvent={postEvent}
-          // valuesEvent={valuesEvent}
           valuesFormat={valuesFormat}
           valuesFirstName={valuesFirstName}
           valuesLastName={valuesLastName}
@@ -224,7 +352,7 @@ export default function App() {
           valuesPosition={valuesPosition}
           valuesExpYears={valuesExpYears}
           valuesSpec={valuesSpec}
-          // setValuesEvent={setValuesEvent}
+          specializations={specializations}
           setValuesFormat={setValuesFormat}
           setValuesFirstName={setValuesFirstName}
           setValuesLastName={setValuesLastName}

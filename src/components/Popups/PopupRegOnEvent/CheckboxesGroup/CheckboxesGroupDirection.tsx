@@ -1,10 +1,13 @@
 import { Checkbox, FormControlLabel, Box } from '@mui/material';
-import { REG_ON_IVENT_DATA } from '../../../../utils/constants';
 import { checkboxDirection } from './CheckboxStyles';
 
 interface CheckboxesGroupProps {
   isShowAllClicked: boolean;
-  valuesSpec:  { [key: string]: boolean };
+  specializations: {
+    specialization_name: string;
+    specialization_slug: string;
+  }[];
+  valuesSpec: { [key: string]: boolean };
   setValuesSpec: React.Dispatch<
     React.SetStateAction<{ [key: string]: boolean }>
   >;
@@ -13,6 +16,7 @@ interface CheckboxesGroupProps {
 export default function CheckboxesGroupDirection({
   isShowAllClicked,
   valuesSpec,
+  specializations,
   setValuesSpec,
 }: CheckboxesGroupProps) {
   const handleChangeSpec = (
@@ -25,6 +29,7 @@ export default function CheckboxesGroupDirection({
       [name]: checked,
     }));
   };
+
   return (
     <Box
       sx={{
@@ -36,29 +41,29 @@ export default function CheckboxesGroupDirection({
       }}
     >
       {isShowAllClicked
-        ? REG_ON_IVENT_DATA.checkboxLabels.map((label) => {
+        ? specializations.map((spec, index) => {
             return (
               <FormControlLabel
                 control={<Checkbox />}
                 sx={checkboxDirection}
-                key={label}
-                label={label}
-                name={label}
+                key={index}
+                label={spec.specialization_name}
+                name={spec.specialization_slug}
                 onChange={handleChangeSpec}
-                checked={valuesSpec[label] ?? false}
+                checked={valuesSpec[spec.specialization_slug] ?? false}
               />
             );
           })
-        : REG_ON_IVENT_DATA.checkboxLabels.slice(0, 8).map((label) => {
+        : specializations.slice(0, 8).map((spec, index) => {
             return (
               <FormControlLabel
                 control={<Checkbox />}
                 sx={checkboxDirection}
-                key={label}
-                label={label}
-                name={label}
+                key={index}
+                label={spec.specialization_name}
+                name={spec.specialization_slug}
                 onChange={handleChangeSpec}
-                checked={valuesSpec[label] ?? false}
+                checked={valuesSpec[spec.specialization_slug] ?? false}
               />
             );
           })}
