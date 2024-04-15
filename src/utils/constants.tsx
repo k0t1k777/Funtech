@@ -158,18 +158,22 @@ export const PLAN_DATA = {
 };
 
 export const INPUT_DATA = {
-    name: 'Имя*',
-    surname: 'Фамилия*',
-    date: 'Дата рождения',
-    email: 'Email*',
-    phone: 'Телефон*',
-    telegram: 'Телеграм',
-    city: 'Город',
-  };
+  name: 'Имя*',
+  surname: 'Фамилия*',
+  date: 'Дата рождения',
+  email: 'Email*',
+  phone: 'Телефон*',
+  telegram: 'Телеграм',
+  city: 'Город',
+};
 
 export const REG_ON_IVENT_DATA = {
   title: 'Регистрация на',
-  inputJobLabels: ['Компания*', 'Должность*', 'Опыт*'],
+  inputJobLabels: {
+    company: 'Компания*',
+    position: 'Должность*',
+    exp: 'Опыт*',
+  },
   checkboxLabels: [
     'Frontend',
     'Backend',

@@ -20,7 +20,6 @@ export default function Event({ handleRegOnIventOpen }: IEventProps) {
   useEffect(() => {
     Api.getEvent(eventId).then((data) => {
       setEventData(data);
-      console.log(data);
     });
   }, [eventId]);
 

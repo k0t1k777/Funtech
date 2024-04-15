@@ -4,11 +4,27 @@ import { checkboxDirection } from './CheckboxStyles';
 
 interface CheckboxesGroupProps {
   isShowAllClicked: boolean;
+  valuesSpec:  { [key: string]: boolean };
+  setValuesSpec: React.Dispatch<
+    React.SetStateAction<{ [key: string]: boolean }>
+  >;
 }
 
 export default function CheckboxesGroupDirection({
   isShowAllClicked,
+  valuesSpec,
+  setValuesSpec,
 }: CheckboxesGroupProps) {
+  const handleChangeSpec = (
+    event: React.SyntheticEvent<Element, Event>,
+    checked: boolean
+  ) => {
+    const { name } = event.currentTarget as HTMLInputElement;
+    setValuesSpec((prevValues) => ({
+      ...prevValues,
+      [name]: checked,
+    }));
+  };
   return (
     <Box
       sx={{
@@ -27,6 +43,9 @@ export default function CheckboxesGroupDirection({
                 sx={checkboxDirection}
                 key={label}
                 label={label}
+                name={label}
+                onChange={handleChangeSpec}
+                checked={valuesSpec[label] ?? false}
               />
             );
           })
@@ -37,6 +56,9 @@ export default function CheckboxesGroupDirection({
                 sx={checkboxDirection}
                 key={label}
                 label={label}
+                name={label}
+                onChange={handleChangeSpec}
+                checked={valuesSpec[label] ?? false}
               />
             );
           })}
