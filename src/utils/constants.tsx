@@ -158,14 +158,14 @@ export const PLAN_DATA = {
 };
 
 export const INPUT_DATA = {
-    name: 'Имя*',
-    surname: 'Фамилия*',
-    date: 'Дата рождения',
-    email: 'Email*',
-    phone: 'Телефон*',
-    telegram: 'Телеграм',
-    city: 'Город',
-  };
+  name: 'Имя*',
+  surname: 'Фамилия*',
+  date: 'Дата рождения',
+  email: 'Email*',
+  phone: 'Телефон*',
+  telegram: 'Телеграм',
+  city: 'Город',
+};
 
 export const REG_ON_IVENT_DATA = {
   title: 'Регистрация на',
@@ -202,4 +202,38 @@ export const REG_ON_IVENT_DATA = {
   cancelButton: 'Отменить',
   legalText: 'Я даю свое согласие на обработку персональных данных',
   saveData: 'Сохранить мои данные  в личном кабинете',
+};
+
+export const CREATE_EVENT_DATA = {
+  eventTopic: 'Тема события*',
+  eventDescription: 'Описание события*',
+  eventTypeText: 'Тип мероприятия*',
+  eventTypes: ['Встреча', 'MeetUp', 'Конференция'],
+  eventDirectionText: 'Направление*',
+  eventDirections: [
+    'Frontend',
+    'Backend',
+    'UX/UI',
+    'AI',
+    'QA',
+    'ML',
+    'Менеджмент',
+    'Аналитика',
+    'HR',
+    'DevOps',
+  ],
+  date: 'Дата',
+  time: 'Время',
+  eventFormatText: 'Формат',
+  eventFormats: ['Online', 'Offline', 'Hybrid'],
+  seatsOffline: 'Мест, Офлайн',
+  seatsOnline: 'Мест, Онлайн',
+  cityText: 'Город',
+  cities: ['Москва', 'Санкт-Петербург', 'Ростов-на-Дону'],
+  linkOnTranslation: 'Ссылка на запись трансляции',
+  place: 'Место проведения',
+  promote: 'Продвигать с главной',
+  fileWithAdditional: 'Файл с дополнительными материалами',
+  submitButton: 'Сохранить',
+  fillButton: 'Заполнить программу',
 };

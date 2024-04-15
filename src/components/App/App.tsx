@@ -8,7 +8,7 @@ import * as Api from './../../utils/utils';
 import IEventCard from '../types/EventCard';
 import PopupEnter from '../Popups/PopupEnter';
 import PopupProfile from '../Popups/PopupProfile';
-import PopupCreateEvent from '../Popups/PopupCreateEvent';
+import PopupCreateEvent from '../Popups/PopupCreateEvent/PopupCreateEvent';
 import PopupEntry from '../Popups/PopupEntry';
 import PopupNotification from '../Popups/PopupNotification';
 import PopupPersonal from '../Popups/PopupPersonal/PopupPersonal';
@@ -23,7 +23,7 @@ export default function App() {
   const [personalEvents, setPersonalEvents] = useState<IEventCard[]>([]);
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
   const [isEnterOpen, setIsEnterOpen] = useState(false);
-  const [isEnterProfile, setIsEnterProfile] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isCreateEventOpen, setIsCreateEventOpen] = useState(false);
   const [isEntryOpen, setIsEntryOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
@@ -118,22 +118,18 @@ export default function App() {
       });
   }, []);
 
-  const handeleEnterOpen = () => {
-    setIsEnterOpen(true);
-  };
-
-  const handeleRegistrationOpen = () => {
+  const handleRegistrationOpen = () => {
     setIsRegistrationOpen(true);
   };
 
-  const handeleProfileOpen = () => {
-    setIsEnterProfile(true);
+  const handleProfileOpen = () => {
+    setIsProfileOpen(true);
   };
 
   const handleOverlayClose = () => {
     setIsRegistrationOpen(false);
     setIsEnterOpen(false);
-    setIsEnterProfile(false);
+    setIsProfileOpen(false);
     setIsCreateEventOpen(false);
     setIsEntryOpen(false);
     setIsNotificationOpen(false);
@@ -142,6 +138,7 @@ export default function App() {
   };
 
   const handleCreateEventOpen = () => {
+    handleOverlayClose();
     setIsCreateEventOpen(true);
   };
 
@@ -163,7 +160,7 @@ export default function App() {
 
   return (
     <>
-      <Header handeleRegistrationOpen={handeleRegistrationOpen} />
+      <Header handeleProfileOpen={handleProfileOpen} />
       <Routes>
         <Route
           path='/'
@@ -188,8 +185,11 @@ export default function App() {
         <PopupRegistration handleOverlayClose={handleOverlayClose} />
       )}
       {isEnterOpen && <PopupEnter handleOverlayClose={handleOverlayClose} />}
-      {isEnterProfile && (
-        <PopupProfile handleOverlayClose={handleOverlayClose} />
+      {isProfileOpen && (
+        <PopupProfile
+          handleOverlayClose={handleOverlayClose}
+          handleCreateEventOpen={handleCreateEventOpen}
+        />
       )}
       {isCreateEventOpen && (
         <PopupCreateEvent handleOverlayClose={handleOverlayClose} />

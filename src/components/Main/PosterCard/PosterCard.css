@@ -24,6 +24,9 @@
 .poster-card__date-container {
   display: flex;
   align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  padding: 0 8px;
 }
 
 .poster-card__date {
