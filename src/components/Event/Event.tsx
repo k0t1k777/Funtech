@@ -20,6 +20,8 @@ export default function Event({
 }: IEventProps) {
   const [eventData, setEventData] = useState();
   const { eventId } = useParams();
+  localStorage.setItem('eventId', eventId);
+  console.log('eventId: ', eventId);
 
   useEffect(() => {
     Api.getEvent(eventId).then((data) => {

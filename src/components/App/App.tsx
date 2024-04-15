@@ -31,7 +31,6 @@ export default function App() {
   const [isRegOnIventOpen, setIsRegOnIventOpen] = useState(false);
   // POST
   const [registrationEvent, setRegistrationEvent] = useState<object>({});
-  const [valuesEvent, setValuesEvent] = useState<string>('');
   const [valuesFormat, setValuesFormat] = useState<string>('');
   const [valuesFirstName, setValuesFirstName] = useState<string>('');
   const [valuesLastName, setValuesLastName] = useState<string>('');
@@ -46,6 +45,8 @@ export default function App() {
   const [valuesExpYears, setValuesExpYears] = useState<string>('');
   const [valuesSpec, setValuesSpec] = useState<string>('');
 
+  const eventId = localStorage.getItem('eventId');
+
   const postEvent = () => {
     Api.postEvent(registrationEvent);
     console.log('registrationEvent: ', registrationEvent);
@@ -53,7 +54,7 @@ export default function App() {
 
   useEffect(() => {
     setRegistrationEvent({
-      event: valuesEvent,
+      event: parseInt(eventId, 10),
       format: valuesFormat,
       first_name: valuesFirstName,
       last_name: valuesLastName,
@@ -69,7 +70,7 @@ export default function App() {
       specializations: valuesSpec,
     });
   }, [
-    valuesEvent,
+    eventId,
     valuesFormat,
     valuesFirstName,
     valuesLastName,

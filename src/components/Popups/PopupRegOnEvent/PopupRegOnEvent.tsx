@@ -212,7 +212,7 @@ export default function PopupRegOnEvent({
               {INPUT_DATA.date}
               <input
                 className='label__input'
-                type='number'
+                type='date'
                 value={valuesBirthDate}
                 onChange={(e) => handleChange(e, setValuesBirthDate)}
               />
@@ -232,6 +232,7 @@ export default function PopupRegOnEvent({
                 className='label__input'
                 type='number'
                 value={valuesPhone}
+                pattern="^(\+7|7|8)\d{10}$"
                 onChange={(e) => handleChange(e, setValuesPhone)}
               />
             </label>
@@ -239,8 +240,10 @@ export default function PopupRegOnEvent({
               {INPUT_DATA.telegram}
               <input
                 className='label__input'
-                type='number'
+                type='text'
                 value={valuesTelegram}
+                pattern="^@[a-zA-Z0-9_]{5,32}$"
+
                 onChange={(e) => handleChange(e, setValuesTelegram)}
               />
             </label>
