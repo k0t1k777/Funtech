@@ -33,7 +33,6 @@ export default function App() {
   const [registrationEvent, setRegistrationEvent] = useState<object>({});
   const [valuesEvent, setValuesEvent] = useState<string>('');
   const [valuesFormat, setValuesFormat] = useState<string>('');
-  const [valuesSource, setValuesSource] = useState<string>('');
   const [valuesFirstName, setValuesFirstName] = useState<string>('');
   const [valuesLastName, setValuesLastName] = useState<string>('');
   const [valuesEmail, setValuesEmail] = useState<string>('');
@@ -56,7 +55,6 @@ export default function App() {
     setRegistrationEvent({
       event: valuesEvent,
       format: valuesFormat,
-      source: valuesSource,
       first_name: valuesFirstName,
       last_name: valuesLastName,
       email: valuesEmail,
@@ -73,7 +71,6 @@ export default function App() {
   }, [
     valuesEvent,
     valuesFormat,
-    valuesSource,
     valuesFirstName,
     valuesLastName,
     valuesEmail,
@@ -203,11 +200,11 @@ export default function App() {
       )}
       {isRegOnIventOpen && (
         <PopupRegOnEvent
+        setIsRegOnIventOpen ={setIsRegOnIventOpen }
           handleOverlayClose={handleOverlayClose}
           postEvent={postEvent}
           // valuesEvent={valuesEvent}
-          // valuesFormat={valuesFormat}
-          // valuesSource={valuesSource}
+          valuesFormat={valuesFormat}
           valuesFirstName={valuesFirstName}
           valuesLastName={valuesLastName}
           valuesEmail={valuesEmail}
@@ -215,14 +212,13 @@ export default function App() {
           valuesTelegram={valuesTelegram}
           valuesBirthDate={valuesBirthDate}
           valuesCity={valuesCity}
-          // valuesActivity={valuesActivity}
-          // valuesCompany={valuesCompany}
-          // valuesPosition={valuesPosition}
-          // valuesExpYears={valuesExpYears}
-          // valuesSpec={valuesSpec}
+          valuesActivity={valuesActivity}
+          valuesCompany={valuesCompany}
+          valuesPosition={valuesPosition}
+          valuesExpYears={valuesExpYears}
+          valuesSpec={valuesSpec}
           // setValuesEvent={setValuesEvent}
-          // setValuesFormat={setValuesFormat}
-          // setValuesSource={setValuesSource}
+          setValuesFormat={setValuesFormat}
           setValuesFirstName={setValuesFirstName}
           setValuesLastName={setValuesLastName}
           setValuesEmail={setValuesEmail}
@@ -230,11 +226,11 @@ export default function App() {
           setValuesTelegram={setValuesTelegram}
           setValuesBirthDate={setValuesBirthDate}
           setValuesCity={setValuesCity}
-          // setValuesActivity={setValuesActivity}
-          // setValuesCompany={setValuesCompany}
-          // setValuesPosition={setValuesPosition}
-          // setValuesExpYears={setValuesExpYears}
-          // setValuesSpec={setValuesSpec}
+          setValuesActivity={setValuesActivity}
+          setValuesCompany={setValuesCompany}
+          setValuesPosition={setValuesPosition}
+          setValuesExpYears={setValuesExpYears}
+          setValuesSpec={setValuesSpec}
         />
       )}
     </>

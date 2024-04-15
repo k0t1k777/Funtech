@@ -14,12 +14,22 @@ import CheckboxesGroupFormat from './CheckboxesGroup/CheckboxesGroupFormat';
 import CheckboxesGroupJob from './CheckboxesGroup/CheckboxesGroupJob';
 import { checkboxDefault } from './CheckboxesGroup/CheckboxStyles';
 
+const validationSchema = yup.object().shape({
+  firstName: yup.string().required('First name is required'),
+  lastName: yup.string().required('Last name is required'),
+  email: yup.string().required('Last email is required'),
+  phone: yup.string().required('Last phone is required'),
+  company: yup.string().required('First company is required'),
+  position: yup.string().required('Last position is required'),
+  expYears: yup.string().required('Last expYears is required'),
+});
+
 interface PopupRegOnEventProps {
   handleOverlayClose: () => void;
+  setIsRegOnIventOpen: (value: boolean) => void;
   postEvent: () => void;
   //   valuesEvent: string;
-  // valuesFormat: string;
-  // valuesSource: string;
+  valuesFormat: string;
   valuesFirstName: string;
   valuesLastName: string;
   valuesEmail: string;
@@ -27,14 +37,13 @@ interface PopupRegOnEventProps {
   valuesTelegram: string;
   valuesBirthDate: string;
   valuesCity: string;
-  // valuesActivity: string;
-  // valuesCompany: string;
-  // valuesPosition: string;
-  // valuesExpYears: string;
-  // valuesSpec: string;
+  valuesActivity: string;
+  valuesCompany: string;
+  valuesPosition: string;
+  valuesExpYears: string;
+  valuesSpec: string;
   // setValuesEvent: () => void;
-  // setValuesFormat: () => void;
-  // setValuesSource: () => void;
+  setValuesFormat: () => void;
   setValuesFirstName: () => void;
   setValuesLastName: () => void;
   setValuesEmail: () => void;
@@ -42,19 +51,19 @@ interface PopupRegOnEventProps {
   setValuesTelegram: () => void;
   setValuesBirthDate: () => void;
   setValuesCity: () => void;
-  // setValuesActivity: () => void;
-  // setValuesCompany: () => void;
-  // setValuesPosition: () => void;
-  // setValuesExpYears: () => void;
-  // setValuesSpec: () => void;
+  setValuesActivity: () => void;
+  setValuesCompany: () => void;
+  setValuesPosition: () => void;
+  setValuesExpYears: () => void;
+  setValuesSpec: () => void;
 }
 
 export default function PopupRegOnEvent({
   handleOverlayClose,
+  setIsRegOnIventOpen,
   postEvent,
   // valuesEvent,
-  // valuesFormat,
-  // valuesSource,
+  valuesFormat,
   valuesFirstName,
   valuesLastName,
   valuesEmail,
@@ -62,14 +71,13 @@ export default function PopupRegOnEvent({
   valuesTelegram,
   valuesBirthDate,
   valuesCity,
-  // valuesActivity,
-  // valuesCompany,
-  // valuesPosition,
-  // valuesExpYears,
-  // valuesSpec,
+  valuesActivity,
+  valuesCompany,
+  valuesPosition,
+  valuesExpYears,
+  valuesSpec,
   // setValuesEvent,
-  // setValuesFormat,
-  // setValuesSource,
+  setValuesFormat,
   setValuesFirstName,
   setValuesLastName,
   setValuesEmail,
@@ -77,56 +85,76 @@ export default function PopupRegOnEvent({
   setValuesTelegram,
   setValuesBirthDate,
   setValuesCity,
-}: // setValuesActivity,
-// setValuesCompany,
-// setValuesPosition,
-// setValuesExpYears,
-// setValuesSpec,
-PopupRegOnEventProps) {
+  setValuesSpec,
+  setValuesActivity,
+  setValuesCompany,
+  setValuesPosition,
+  setValuesExpYears,
+}: PopupRegOnEventProps) {
   const [isInputValid, setIsInputValid] = useState(false);
-  console.log('isInputValid: ', isInputValid);
   const [isShowAllClicked, setIsShowAllClicked] = useState(false);
+  const [isWorkingChecked, setIsWorkingChecked] = useState(false);
 
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
+  };
+
+  const handleClose = () => {
+    setIsRegOnIventOpen(false);
   };
 
   const handleShowAll = () => {
     setIsShowAllClicked(true);
   };
 
-  type SetValueFunction = (value: string) => void;
+  const handleSubmit = () => {
+    if (isWorkingChecked) {
+      validationSchema
+        .validate(
+          {
+            firstName: valuesFirstName,
+            lastName: valuesLastName,
+            email: valuesEmail,
+            phone: valuesPhone,
+            company: valuesCompany,
+            position: valuesPosition,
+            expYears: valuesExpYears,
+          },
+          { abortEarly: false }
+        )
+        .then(() => {
+          setIsInputValid(false);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      validationSchema
+        .validate(
+          {
+            firstName: valuesFirstName,
+            lastName: valuesLastName,
+            email: valuesEmail,
+            phone: valuesPhone,
+          },
+          { abortEarly: false }
+        )
+        .then(() => {
+          setIsInputValid(false);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+    postEvent();
+  };
 
-  const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    setValue: SetValueFunction
-  ) => {
+  const handleChange = (event, setValue) => {
     const value = event.target.value;
     setValue(value);
+    setIsInputValid(false);
   };
 
-  const handleSubmit = () => {
-    handleValidation(valuesFirstName);
-    handleValidation(valuesLastName);
-    handleValidation(valuesEmail);
-    handleValidation(valuesPhone);
-  };
-
-  const validationSchema = yup.object().shape({
-    inputValue: yup.string().required('This field is required'),
-  });
-
-  const handleValidation = (value: string) => {
-    validationSchema
-      .validate({ inputValue: value }, { abortEarly: false })
-      .then(() => {
-        setIsInputValid(true);
-      })
-      .catch((error) => {
-        setIsInputValid(false);
-        console.error(error.errors);
-      });
-  };
   return (
     <div
       className='popup__overlay popup__overlay_centered'
@@ -265,7 +293,11 @@ PopupRegOnEventProps) {
               {REG_ON_IVENT_DATA.showAll}
             </Button>
           </Box>
-          <CheckboxesGroupDirection isShowAllClicked={isShowAllClicked} />
+          <CheckboxesGroupDirection
+            isShowAllClicked={isShowAllClicked}
+            valuesSpec={valuesSpec}
+            setValuesSpec={setValuesSpec}
+          />
           <Typography
             sx={{
               fontSize: '16px',
@@ -280,7 +312,10 @@ PopupRegOnEventProps) {
               *
             </Typography>
           </Typography>
-          <CheckboxesGroupFormat />
+          <CheckboxesGroupFormat
+            valuesFormat={valuesFormat}
+            setValuesFormat={setValuesFormat}
+          />
           <Typography
             sx={{
               fontSize: '16px',
@@ -295,7 +330,18 @@ PopupRegOnEventProps) {
               *
             </Typography>
           </Typography>
-          <CheckboxesGroupJob />
+          <CheckboxesGroupJob
+          isWorkingChecked={isWorkingChecked}
+            setIsWorkingChecked={setIsWorkingChecked}
+            valuesActivity={valuesActivity}
+            valuesCompany={valuesCompany}
+            valuesPosition={valuesPosition}
+            valuesExpYears={valuesExpYears}
+            setValuesActivity={setValuesActivity}
+            setValuesPosition={setValuesPosition}
+            setValuesCompany={setValuesCompany}
+            setValuesExpYears={setValuesExpYears}
+          />
         </Box>
         <Box
           sx={{
@@ -308,11 +354,13 @@ PopupRegOnEventProps) {
           <FormControlLabel
             sx={checkboxDefault}
             control={<Checkbox />}
+            required
             label={REG_ON_IVENT_DATA.legalText}
           />
           <FormControlLabel
             sx={checkboxDefault}
             control={<Checkbox />}
+            required
             label={REG_ON_IVENT_DATA.saveData}
           />
         </Box>
@@ -347,6 +395,7 @@ PopupRegOnEventProps) {
           </Button>
           <Button
             disableRipple={true}
+            onClick={handleClose}
             sx={{
               fontSize: '14px',
               fontWeight: '400',

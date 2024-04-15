@@ -31,8 +31,15 @@ export const getCities = () => {
   }).then(getResponseData);
 };
 
+// export const postEvent = (event: object) => {
+//   return fetch(`${BASE_URL}/events/`, {
+//     method: 'POST',
+//     body: JSON.stringify(event)
+//   }).then(getResponseData);
+// };
+
 export const postEvent = (event: object) => {
-  return fetch(`${BASE_URL}/events/`, {
+  return fetch(`${BASE_URL}/applications/`, {
     method: 'POST',
     body: JSON.stringify(event)
   }).then(getResponseData);

@@ -169,7 +169,11 @@ export const INPUT_DATA = {
 
 export const REG_ON_IVENT_DATA = {
   title: 'Регистрация на',
-  inputJobLabels: ['Компания*', 'Должность*', 'Опыт*'],
+  inputJobLabels: {
+    company: 'Компания*',
+    position: 'Должность*',
+    exp: 'Опыт*',
+  },
   checkboxLabels: [
     'Frontend',
     'Backend',
