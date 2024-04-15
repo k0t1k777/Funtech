@@ -12,11 +12,13 @@ import IEvent from '../../types/Event';
 export interface IRegistrationProps {
   event: IEvent;
   handleRegOnIventOpen: () => void;
+  handleCreateEventOpen: () => void;
 }
 
 export default function Registration({
   event,
   handleRegOnIventOpen,
+  handleCreateEventOpen,
 }: IRegistrationProps) {
   return (
     <div className='registration'>
@@ -38,7 +40,10 @@ export default function Registration({
           )}
         </div>
         <div className='registration__buttons'>
-          <button className='registration__button-edit' />
+          <button
+            className='registration__button-edit'
+            onClick={handleCreateEventOpen}
+          />
           <button className='registration__button-on' />
         </div>
       </div>
@@ -63,9 +68,7 @@ export default function Registration({
         <p className='registration__tag'>
           {event?.specializations.specialization_name}
         </p>
-        <p className='registration__tag'>
-          {event?.event_type.event_type_name}
-        </p>
+        <p className='registration__tag'>{event?.event_type.event_type_name}</p>
         <p className='registration__tag'>{event?.format}</p>
       </div>
 

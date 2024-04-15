@@ -8,12 +8,14 @@ interface IEventsPosterProps {
   events: IEventCard[];
   text: string;
   handleRegOnIventOpen: () => void;
+  handleCreateEventOpen: () => void;
 }
 
 export default function EventsPoster({
   text,
   events,
   handleRegOnIventOpen,
+  handleCreateEventOpen,
 }: IEventsPosterProps) {
   return (
     <div className='events-poster'>
@@ -41,6 +43,7 @@ export default function EventsPoster({
                 isRegistrated={card.is_registrated}
                 isDeleted={card.is_deleted}
                 handleRegOnIventOpen={handleRegOnIventOpen}
+                handleCreateEventOpen={handleCreateEventOpen}
               />
             )
         )}

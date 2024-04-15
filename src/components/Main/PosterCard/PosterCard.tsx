@@ -17,6 +17,7 @@ interface IPosterCardProps {
   isRegistrated: boolean;
   isDeleted: boolean;
   handleRegOnIventOpen: () => void;
+  handleCreateEventOpen: () => void;
 }
 
 export default function PosterCard({
@@ -32,6 +33,7 @@ export default function PosterCard({
   id,
   isRegistrated,
   isDeleted,
+  handleCreateEventOpen,
   handleRegOnIventOpen,
 }: IPosterCardProps) {
   const navigate = useNavigate();
@@ -52,7 +54,12 @@ export default function PosterCard({
             <p className='poster-card__date'>{date}</p>
           </div>
           <div className='poster-card__buttons'>
-            <button id='0' className='poster-card__button-edit' type='button' />
+            <button
+              id='0'
+              className='poster-card__button-edit'
+              type='button'
+              onClick={handleCreateEventOpen}
+            />
             {isDeleted ? (
               <button
                 id='0'

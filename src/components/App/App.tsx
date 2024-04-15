@@ -169,12 +169,18 @@ export default function App() {
               // cityValue={cityValue}
               // setCityValue={setCityValue}
               handleRegOnIventOpen={handleRegOnIventOpen}
+              handleCreateEventOpen={handleCreateEventOpen}
             />
           }
         />
         <Route
           path='/event/:eventId'
-          element={<Event handleRegOnIventOpen={handleRegOnIventOpen} />}
+          element={
+            <Event
+              handleRegOnIventOpen={handleRegOnIventOpen}
+              handleCreateEventOpen={handleCreateEventOpen}
+            />
+          }
         />
       </Routes>
       <Footer />
@@ -200,7 +206,7 @@ export default function App() {
       )}
       {isRegOnIventOpen && (
         <PopupRegOnEvent
-        setIsRegOnIventOpen ={setIsRegOnIventOpen }
+          setIsRegOnIventOpen={setIsRegOnIventOpen}
           handleOverlayClose={handleOverlayClose}
           postEvent={postEvent}
           // valuesEvent={valuesEvent}

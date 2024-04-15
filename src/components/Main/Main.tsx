@@ -13,6 +13,7 @@ interface IMainProps {
   cities: SelectProps[];
   handleRegOnIventOpen: () => void;
   setCityValue?: (value: string) => void;
+  handleCreateEventOpen: () => void;
   cityValue?: string;
 }
 
@@ -23,6 +24,7 @@ export default function Main({
   setCityValue,
   personalEvents,
   handleRegOnIventOpen,
+  handleCreateEventOpen,
 }: IMainProps) {
   return (
     <div className='main'>
@@ -32,11 +34,13 @@ export default function Main({
           events={personalEvents}
           text={MAIN_DATA.personalTitle}
           handleRegOnIventOpen={handleRegOnIventOpen}
+          handleCreateEventOpen={handleCreateEventOpen}
         />
         <EventsPoster
           events={events}
           text={MAIN_DATA.title}
           handleRegOnIventOpen={handleRegOnIventOpen}
+          handleCreateEventOpen={handleCreateEventOpen}
         />
       </div>
       <FiltersContainer

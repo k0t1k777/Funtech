@@ -11,9 +11,13 @@ import * as Api from '../../utils/utils';
 
 export interface IEventProps {
   handleRegOnIventOpen: () => void;
+  handleCreateEventOpen: () => void;
 }
 
-export default function Event({ handleRegOnIventOpen }: IEventProps) {
+export default function Event({
+  handleRegOnIventOpen,
+  handleCreateEventOpen,
+}: IEventProps) {
   const [eventData, setEventData] = useState();
   const { eventId } = useParams();
 
@@ -34,6 +38,7 @@ export default function Event({ handleRegOnIventOpen }: IEventProps) {
         <Registration
           event={eventData}
           handleRegOnIventOpen={handleRegOnIventOpen}
+          handleCreateEventOpen={handleCreateEventOpen}
         />
         <Place event={eventData} />
       </div>
