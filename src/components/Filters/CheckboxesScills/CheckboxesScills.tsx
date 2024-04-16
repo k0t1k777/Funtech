@@ -5,50 +5,10 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { Typography } from '@mui/material';
-import { CHECKBOX_DATA } from './../../../utils/constants'
-
-const checkboxData = [
-  {
-    name: 'Frontend',
-    label: 'Frontend',
-    margin: '0 14px 0 0',
-  },
-  {
-    name: 'Backend',
-    label: 'Backend',
-    margin: '0',
-  },
-  {
-    name: 'ML',
-    label: 'ML',
-    margin: '0 14px 0 0',
-  },
-  {
-    name: 'QA',
-    label: 'QA',
-    margin: '0 0 0 0',
-  },
-  {
-    name: 'UX/UI',
-    label: 'UX/UI',
-    margin: '0 14px 0 0',
-  },
-  {
-    name: 'AI',
-    label: 'AI',
-    margin: '0 0 0 0',
-  },
-  {
-    name: 'Менеджмент',
-    label: 'Менеджмент',
-    margin: '0 14px 0 0',
-  },
-  {
-    name: 'Аналитика',
-    label: 'Аналитика',
-    margin: '0',
-  },
-];
+import {
+  CHECKBOX_DATA,
+  CHECKBOX_SCILLS_DATA,
+} from './../../../utils/constants';
 
 export default function CheckboxesGroup() {
   const [state, setState] = React.useState({
@@ -78,7 +38,7 @@ export default function CheckboxesGroup() {
           {CHECKBOX_DATA.line}
         </Typography>
         <FormGroup sx={{ display: 'flex', flexDirection: 'row' }}>
-          {checkboxData.map((checkbox) => (
+          {CHECKBOX_SCILLS_DATA.map((checkbox) => (
             <FormControlLabel
               key={checkbox.name}
               sx={{

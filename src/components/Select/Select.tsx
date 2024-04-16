@@ -11,7 +11,6 @@ export interface SelectProps {
     city_slug: string;
     city_name: string;
   }[];
-  city_slug: string;
   setCityValue?: (value: string) => void;
   cityValue?: string;
 }

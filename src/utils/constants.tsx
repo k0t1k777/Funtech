@@ -268,3 +268,64 @@ export const ERROR_DATA = {
 export const FOOTER_DATA = {
   text: '© 2005–2024 ООО «Яндекс»',
 };
+
+export const CHECKBOX_TIME_DATA = [
+  {
+    name: 'Online',
+    label: 'Online',
+    margin: '0 14px 0 0',
+  },
+  {
+    name: 'Offline',
+    label: 'Offline',
+    margin: '0',
+  },
+  {
+    name: 'MyEvent',
+    label: 'Мои события',
+    margin: '0 14px 0 0',
+  },
+];
+
+export const CHECKBOX_SCILLS_DATA = [
+  {
+    name: 'Frontend',
+    label: 'Frontend',
+    margin: '0 14px 0 0',
+  },
+  {
+    name: 'Backend',
+    label: 'Backend',
+    margin: '0',
+  },
+  {
+    name: 'ML',
+    label: 'ML',
+    margin: '0 14px 0 0',
+  },
+  {
+    name: 'QA',
+    label: 'QA',
+    margin: '0 0 0 0',
+  },
+  {
+    name: 'UX/UI',
+    label: 'UX/UI',
+    margin: '0 14px 0 0',
+  },
+  {
+    name: 'AI',
+    label: 'AI',
+    margin: '0 0 0 0',
+  },
+  {
+    name: 'Менеджмент',
+    label: 'Менеджмент',
+    margin: '0 14px 0 0',
+  },
+  {
+    name: 'Аналитика',
+    label: 'Аналитика',
+    margin: '0',
+  },
+]

@@ -4,12 +4,16 @@ import CheckboxesTime from '../../Filters/CheckboxesTime/CheckboxesTime';
 import CheckboxesScills from '../../Filters/CheckboxesScills/CheckboxesScills';
 import CheckboxesTypes from '../../Filters/CheckboxesTypes/CheckboxesTypes';
 import './FiltersContainer.css';
-import { SelectProps } from '../../Select/Select';
 
 interface FiltersContainerProps {
-  cities: SelectProps[];
+  cities: Сities[];
   setCityValue?: (value: string) => void;
   cityValue?: string;
+}
+
+interface Сities {
+  city_slug: string;
+  city_name: string;
 }
 
 export default function FiltersContainer({

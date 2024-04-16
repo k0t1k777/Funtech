@@ -40,12 +40,13 @@ export default function PosterCard({
 }: IPosterCardProps) {
   const navigate = useNavigate();
 
-  const handleNavigateOnEvent = (e) => {
-    if (e.target.id === '0') {
-      return;
-    }
-    navigate(`/event/${id}`);
-  };
+  const handleNavigateOnEvent = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+  if (target.id === '0') {
+    return;
+  }
+  navigate(`/event/${id}`);
+};
 
   return (
     <div className='poster-card' onMouseUp={handleNavigateOnEvent}>

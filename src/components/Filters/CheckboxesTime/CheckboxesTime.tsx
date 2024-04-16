@@ -4,24 +4,7 @@ import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-
-const checkboxData = [
-  {
-    name: 'Online',
-    label: 'Online',
-    margin: '0 14px 0 0',
-  },
-  {
-    name: 'Offline',
-    label: 'Offline',
-    margin: '0',
-  },
-  {
-    name: 'MyEvent',
-    label: 'Мои события',
-    margin: '0 14px 0 0',
-  },
-];
+import { CHECKBOX_TIME_DATA } from './../../../utils/constants'
 
 export default function CheckboxesGroup() {
   const [state, setState] = React.useState({
@@ -44,7 +27,7 @@ export default function CheckboxesGroup() {
         variant='standard'
       >
         <FormGroup sx={{ display: 'flex', flexDirection: 'row' }}>
-          {checkboxData.map((checkbox) => (
+          {CHECKBOX_TIME_DATA.map((checkbox) => (
             <FormControlLabel
               key={checkbox.name}
               sx={{
