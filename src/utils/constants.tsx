@@ -48,6 +48,10 @@ export const POPUP_DATA = {
   aboutMe: 'Личные данные',
   aboutName: 'Имя',
   enter: 'Войти',
+  registration: 'Регистрация',
+  reg: 'Зарегестрироваться',
+  enterYandex: 'Войти с Яндекс ID',
+  user: 'Участник',
 };
 
 export const ENTRY_DATA = {
@@ -229,4 +233,8 @@ export const CREATE_EVENT_DATA = {
   fileWithAdditional: 'Файл с дополнительными материалами',
   submitButton: 'Сохранить',
   fillButton: 'Заполнить программу',
+};
+
+export const ERROR_DATA = {
+  text: 'Ошибка, проверьте поле',
 };

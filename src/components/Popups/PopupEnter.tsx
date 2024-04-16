@@ -1,57 +1,45 @@
 import './Popups.css';
 import SubmitButton from '../SubmitButton/SubmitButton';
 import { useRef, useState, useEffect } from 'react';
+import * as Yup from 'yup';
+import { ERROR_DATA, POPUP_DATA } from './../../utils/constants'
 
 interface PopupEnterProps {
   handleOverlayClose: () => void;
-  setIsRegistrationOpen: (type: boolean) => void;
-  handleLogin: (data: { email: string; password: string }) => void;
+  handleRegistrationOpen: () => void;
 }
 
 export default function PopupEnter({
   handleOverlayClose,
-  setIsRegistrationOpen,
-  handleLogin,
+  handleRegistrationOpen,
 }: PopupEnterProps) {
   const modalRef = useRef<HTMLDivElement>(null);
+  const [inputValue, setInputValue] = useState('');
+  const [errorText, setErrorText] = useState(ERROR_DATA.text);
+  const [isValid, setIsValid] = useState(true);
+
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
 
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setInputValue(value);
-    handleValidation(value);
     setErrorText('');
-    const filteredSuggestions = options.filter((option) =>
-      option.toLowerCase().includes(value.toLowerCase())
-    );
-    setSuggestions(filteredSuggestions);
-    const inputElement = event.target;
-    if (value.trim() !== '') {
-      inputElement.classList.remove('input__invalid');
-      inputElement.classList.add('input__valid');
-    } else {
-      inputElement.classList.add('input__invalid');
-      inputElement.classList.remove('input__valid');
+  };
+
+  const handleValidation = async (value: string) => {
+    try {
+      await schema.validate({ inputValue: value });
+      setIsValid(true);
+    } catch (error) {
+      setIsValid(false);
     }
   };
 
-  const [values, setValues] = useState({
-    firstName: '',
-    secondName: '',
-    email: '',
-    phone: '',
+  const schema = Yup.object().shape({
+    inputValue: Yup.string().required(ERROR_DATA.text),
   });
-
-  function handleSubmit() {
-    handleLogin({
-      email: values.email,
-      password: values.phone,
-    });
-    setIsRegistrationOpen(false);
-  }
 
   useEffect(() => {
     if (modalRef.current) {
@@ -70,24 +58,32 @@ export default function PopupEnter({
     <div className='popup__overlay' onClick={handleOverlayClose} ref={modalRef}>
       <div className='popup' onClick={handlePopupClick}>
         <div className='popup__input-container'>
-          <input
-            className='popup__input'
-            placeholder='Логин'
-            name='email'
-            required={true}
-            onChange={(e) => setValues({ ...values, email: e.target.value })}
-          />
-          <input
-            className='popup__input'
-            type='password'
-            placeholder='Пароль'
-            name='password'
-            required={true}
-            onChange={(e) => setValues({ ...values, email: e.target.value })}
-          />
+          <div>
+            <input
+              className={`popup__input ${!isValid ? 'input__invalid' : ''}`}
+              placeholder='Логин'
+              name='email'
+              required={true}
+              onChange={handleChange}
+              onBlur={() => handleValidation(inputValue)}
+            />
+            {!isValid && <div className='error__message'>{errorText}</div>}
+          </div>
+          <div>
+            <input
+              className={`popup__input ${!isValid ? 'input__invalid' : ''}`}
+              type='password'
+              placeholder='Пароль'
+              name='password'
+              required={true}
+              onChange={handleChange}
+              onBlur={() => handleValidation(inputValue)}
+            />
+            {!isValid && <div className='error__message'>{errorText}</div>}
+          </div>
         </div>
         <div className='popup__container-button'>
-          <SubmitButton title='Войти' onClick={handleSubmit} />
+          <SubmitButton title={POPUP_DATA.enter} />
           <SubmitButton
             title='Войти с Яндекс ID'
             backgroundColor='#FFF'
@@ -95,10 +91,11 @@ export default function PopupEnter({
             borderColor='#2B2D33'
           />
           <SubmitButton
-            title='Зарегистрироваться'
+            title={POPUP_DATA.reg}
             backgroundColor='#FFF'
             color='#C29AF5'
             borderColor='#C29AF5'
+            onClick={handleRegistrationOpen}
           />
         </div>
       </div>

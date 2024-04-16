@@ -6,11 +6,20 @@ import { POPUP_DATA } from '../../utils/constants';
 
 export interface HeaderProps {
   handleEnterOpen?: () => void;
+  handleProfileOpen?: () => void;
+  loggedIn: boolean;
 }
 
 export default function Header({
   handleEnterOpen,
+  handleProfileOpen,
+  loggedIn,
 }: HeaderProps) {
+  const firstName = localStorage.getItem('firstName');
+  const secondName = localStorage.getItem('secondName');
+  const shirtSecondName = secondName
+    ? secondName.charAt(0).toUpperCase() + '.'
+    : '';
   return (
     <div className='header'>
       <Logo />
@@ -20,9 +29,11 @@ export default function Header({
         </div>
         <button className='header__container-profile'>
           <div className='header__container-profile-img'>
-            {<Profile onClick={handleEnterOpen} />}
+            {<Profile onClick={!loggedIn ? handleEnterOpen : handleProfileOpen} />}
           </div>
-          <p className='header__text'>{POPUP_DATA.enter}</p>
+          <p className='header__text'>
+            {!loggedIn ? POPUP_DATA.enter : `${firstName} ${shirtSecondName}`}
+          </p>
         </button>
       </div>
     </div>

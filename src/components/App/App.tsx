@@ -47,7 +47,6 @@ export default function App() {
   const [loggedIn, setLoggedIn] = useState<boolean>(() => {
     return localStorage.getItem('loggedIn') === 'true';
   });
-  console.log('loggedIn: ', loggedIn);
 
   function handleLogin() {
     setLoggedIn(true);
@@ -145,7 +144,7 @@ export default function App() {
   const handleRegistrationOpen = () => {
     setIsRegistrationOpen(true);
   };
-
+  // Профиль
   const handleProfileOpen = () => {
     setIsProfileOpen(true);
   };
@@ -158,13 +157,11 @@ export default function App() {
   const handleEntryOpen = () => {
     setIsEntryOpen(true);
   };
-
-
-
+  // Уведомления
   const handleNotificationOpen = () => {
     setIsNotificationOpen(true);
   };
-
+  // Персональный попап
   const handlePersonalOpen = () => {
     setIsPersonalOpen(true);
   };
@@ -175,12 +172,17 @@ export default function App() {
 
   return (
     <>
-      <Header handleEnterOpen={handleEnterOpen} />
+      <Header
+        handleEnterOpen={handleEnterOpen}
+        handleProfileOpen={handleProfileOpen}
+        loggedIn={loggedIn}
+      />
       <Routes>
         <Route
           path='/'
           element={
             <Main
+              loggedIn={loggedIn}
               events={events}
               personalEvents={personalEvents}
               cities={cities}
@@ -202,23 +204,24 @@ export default function App() {
         />
       </Routes>
       <Footer />
-      {!loggedIn &&  isEnterOpen && (
+      {!loggedIn && isEnterOpen && (
         <PopupEnter
           handleOverlayClose={handleOverlayClose}
-          setIsRegistrationOpen={setIsRegistrationOpen}
           handleRegistrationOpen={handleRegistrationOpen}
-          handleLogin={handleLogin}
         />
       )}
       {!loggedIn && isRegistrationOpen && (
         <PopupRegistration
           handleOverlayClose={handleOverlayClose}
+          handleLogin={handleLogin}
         />
       )}
-      {isProfileOpen && (
+      {loggedIn && isProfileOpen && (
         <PopupProfile
           handleOverlayClose={handleOverlayClose}
           handleCreateEventOpen={handleCreateEventOpen}
+          handlePersonalOpen={handlePersonalOpen}
+          handleNotificationOpen={handleNotificationOpen}
         />
       )}
       {isCreateEventOpen && (
@@ -226,10 +229,16 @@ export default function App() {
       )}
       {isEntryOpen && <PopupEntry handleOverlayClose={handleOverlayClose} />}
       {isNotificationOpen && (
-        <PopupNotification handleOverlayClose={handleOverlayClose} />
+        <PopupNotification
+          handleOverlayClose={handleOverlayClose}
+          setIsNotificationOpen={setIsNotificationOpen}
+        />
       )}
       {isPersonalOpen && (
-        <PopupPersonal handleOverlayClose={handleOverlayClose} />
+        <PopupPersonal
+          handleOverlayClose={handleOverlayClose}
+          setIsPersonalOpen={setIsPersonalOpen}
+        />
       )}
       {isRegOnIventOpen && (
         <PopupRegOnEvent

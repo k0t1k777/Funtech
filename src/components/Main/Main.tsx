@@ -15,12 +15,14 @@ interface IMainProps {
   setCityValue?: (value: string) => void;
   handleCreateEventOpen: () => void;
   cityValue?: string;
+  loggedIn: boolean;
 }
 
 export default function Main({
   events,
   cities,
   cityValue,
+  loggedIn,
   setCityValue,
   personalEvents,
   handleRegOnIventOpen,
@@ -30,12 +32,12 @@ export default function Main({
     <div className='main'>
       <div>
         <News />
-        <EventsPoster
+        {loggedIn && <EventsPoster
           events={personalEvents}
           text={MAIN_DATA.personalTitle}
           handleRegOnIventOpen={handleRegOnIventOpen}
           handleCreateEventOpen={handleCreateEventOpen}
-        />
+        />}
         <EventsPoster
           events={events}
           text={MAIN_DATA.title}

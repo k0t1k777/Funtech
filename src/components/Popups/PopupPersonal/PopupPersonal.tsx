@@ -8,10 +8,12 @@ import { useState } from 'react';
 
 interface PopupPersonalProps {
   handleOverlayClose: () => void;
+  setIsPersonalOpen: (type: boolean) => void;
 }
 
 export default function PopupPersonal({
   handleOverlayClose,
+  setIsPersonalOpen,
 }: PopupPersonalProps) {
   const [isShowAllClicked, setIsShowAllClicked] = useState(false);
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -22,11 +24,15 @@ export default function PopupPersonal({
     setIsShowAllClicked(true);
   };
 
+  const handleClose = () => {
+    setIsPersonalOpen(false);
+  };
+
   return (
     <div className='popup__overlay' onClick={handleOverlayClose}>
       <div className='popup popup_personal' onClick={handlePopupClick}>
         <div className='popup__header'>
-          <LeftArrow />
+          <LeftArrow onClick={handleClose}/>
           <h2 className='popup__title popup__title_notification'>
             {PERSONAL_DATA.title}
           </h2>
