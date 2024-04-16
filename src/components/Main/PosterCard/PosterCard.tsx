@@ -18,6 +18,7 @@ interface IPosterCardProps {
   isDeleted: boolean;
   handleRegOnIventOpen: () => void;
   handleCreateEventOpen: () => void;
+  loggedIn: boolean;
 }
 
 export default function PosterCard({
@@ -33,6 +34,7 @@ export default function PosterCard({
   id,
   isRegistrated,
   isDeleted,
+  loggedIn,
   handleCreateEventOpen,
   handleRegOnIventOpen,
 }: IPosterCardProps) {
@@ -53,7 +55,7 @@ export default function PosterCard({
             <CalendarVector />
             <p className='poster-card__date'>{date}</p>
           </div>
-          <div className='poster-card__buttons'>
+          {loggedIn && <div className='poster-card__buttons'>
             <button
               id='0'
               className='poster-card__button-edit'
@@ -69,7 +71,7 @@ export default function PosterCard({
             ) : (
               <button id='0' className='poster-card__button-on' type='button' />
             )}
-          </div>
+          </div>}
         </div>
       </div>
       <div

@@ -6,7 +6,6 @@ import IEventCard from '../types/EventCard';
 import { MAIN_DATA } from './../../utils/constants';
 import { SelectProps } from '../Select/Select';
 
-
 interface IMainProps {
   events: IEventCard[];
   personalEvents: IEventCard[];
@@ -37,12 +36,15 @@ export default function Main({
           text={MAIN_DATA.personalTitle}
           handleRegOnIventOpen={handleRegOnIventOpen}
           handleCreateEventOpen={handleCreateEventOpen}
+          loggedIn={loggedIn}
+
         />}
         <EventsPoster
           events={events}
           text={MAIN_DATA.title}
           handleRegOnIventOpen={handleRegOnIventOpen}
           handleCreateEventOpen={handleCreateEventOpen}
+          loggedIn={loggedIn}
         />
       </div>
       <FiltersContainer

@@ -4,24 +4,17 @@ import { useState } from 'react';
 import { checkboxDefault } from './CheckboxStyles';
 import './../../Popups.css';
 
-// import * as yup from 'yup';
-
-// const validationSchema = yup.object().shape({
-//   company: yup.string().required('First company is required'),
-//   position: yup.string().required('Last position is required'),
-//   expYears: yup.string().required('Last expYears is required'),
-// });
-
 interface CheckboxesGroupJobProps {
   isWorkingChecked: boolean;
-  setIsWorkingChecked: () => void;
-  handleSubmit: () => void;
+  setIsWorkingChecked: (checked: boolean) => void;
   valuesCompany: string;
   valuesPosition: string;
-  valuesExpYears: number | null;
-  setValuesCompany: () => void;
-  setValuesPosition: () => void;
-  setValuesExpYears: () => void;
+  valuesExpYears: string | number | readonly string[] | undefined;
+  setValuesCompany: (value: string) => void;
+  setValuesPosition: (value: string) => void;
+  setValuesExpYears: (
+    value: string | number | readonly string[] | undefined
+  ) => void;
 }
 
 export default function CheckboxesGroupJob({
@@ -36,7 +29,10 @@ export default function CheckboxesGroupJob({
 }: CheckboxesGroupJobProps) {
   const [isInputValid, setIsInputValid] = useState(false);
 
-  const handleChange = (event, setValue) => {
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    setValue: (value: string) => void
+  ) => {
     const value = event.target.value;
     setValue(value);
     setIsInputValid(false);
@@ -63,7 +59,6 @@ export default function CheckboxesGroupJob({
             control={<Checkbox onChange={handleShowJobInputs} />}
             label={REG_ON_IVENT_DATA.checkboxJobLabels.working}
           />
-
           <label className={`label ${isInputValid ? 'label__error' : ''}`}>
             {REG_ON_IVENT_DATA.inputJobLabels.company}
             <input
@@ -87,7 +82,7 @@ export default function CheckboxesGroupJob({
             <input
               className='label__input'
               type='number'
-              value={valuesExpYears || null}
+              value={valuesExpYears}
               onChange={(e) => handleChange(e, setValuesExpYears)}
             />
           </label>

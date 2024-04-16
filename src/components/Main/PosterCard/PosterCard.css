@@ -3,6 +3,7 @@
   flex-direction: column;
   border-radius: 12px;
   border: 1px solid #d5d2d2;
+  background-blend-mode:color-burn
 }
 
 .poster-card__img {

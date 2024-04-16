@@ -9,6 +9,7 @@ interface IEventsPosterProps {
   text: string;
   handleRegOnIventOpen: () => void;
   handleCreateEventOpen: () => void;
+  loggedIn: boolean;
 }
 
 export default function EventsPoster({
@@ -16,6 +17,7 @@ export default function EventsPoster({
   events,
   handleRegOnIventOpen,
   handleCreateEventOpen,
+  loggedIn,
 }: IEventsPosterProps) {
 
   return (
@@ -45,6 +47,7 @@ export default function EventsPoster({
                 isDeleted={card.is_deleted}
                 handleRegOnIventOpen={handleRegOnIventOpen}
                 handleCreateEventOpen={handleCreateEventOpen}
+                loggedIn={loggedIn}
               />
             )
         )}

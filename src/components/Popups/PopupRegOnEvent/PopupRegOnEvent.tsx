@@ -25,35 +25,40 @@ const validationSchema = yup.object().shape({
 });
 
 export interface PopupRegOnEventProps {
+  specializations: Spec[];
   handleOverlayClose: () => void;
   setIsRegOnIventOpen: (type: boolean) => void;
   postEvent: () => void;
   valuesFirstName: string;
   valuesLastName: string;
   valuesEmail: string;
-  valuesPhone: number | null;
+  valuesPhone: number | string | number | readonly string[] | undefined;
   valuesTelegram: string;
   valuesBirthDate: string;
   valuesCity: string;
   valuesCompany: string;
   valuesPosition: string;
-  valuesExpYears: number | null;
-  setValuesFirstName: () => void;
-  setValuesLastName: () => void;
-  setValuesEmail: () => void;
-  setValuesPhone: () => void;
-  setValuesTelegram: () => void;
-  setValuesBirthDate: () => void;
-  setValuesCity: () => void;
-  setValuesCompany: () => void;
-  setValuesPosition: () => void;
-  setValuesExpYears: () => void;
-  specializations: Spec[];
+  valuesExpYears: string | number | readonly string[] | undefined;
+  setValuesFirstName: (value: string) => void;
+  setValuesLastName: (value: string) => void;
+  setValuesEmail: (value: string) => void;
+  setValuesPhone: (
+    value: string | number | readonly string[] | undefined
+  ) => void;
+  setValuesTelegram: (value: string) => void;
+  setValuesBirthDate: (value: string) => void;
+  setValuesCity: (value: string) => void;
+  setValuesCompany: (value: string) => void;
+  setValuesPosition: (value: string) => void;
+  setValuesExpYears: (
+    value: string | number | readonly string[] | undefined
+  ) => void;
   handleEntryOpen: () => void;
 }
 
 export interface Spec {
-  specializations: Spec[];
+  specialization_name: string;
+  specialization_slug: string;
 }
 
 export default function PopupRegOnEvent({
@@ -144,7 +149,10 @@ export default function PopupRegOnEvent({
     setIsRegOnIventOpen(false);
   };
 
-  const handleChange = (event, setValue) => {
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    setValue: (value: string) => void
+  ) => {
     const value = event.target.value;
     setValue(value);
     setIsInputValid(false);

@@ -37,13 +37,13 @@ export default function App() {
   const [valuesFirstName, setValuesFirstName] = useState<string>('');
   const [valuesLastName, setValuesLastName] = useState<string>('');
   const [valuesEmail, setValuesEmail] = useState<string>('');
-  const [valuesPhone, setValuesPhone] = useState<number | null>();
+  const [valuesPhone, setValuesPhone] = useState<string | number | readonly string[] | undefined>();
   const [valuesTelegram, setValuesTelegram] = useState<string>('');
   const [valuesBirthDate, setValuesBirthDate] = useState<string>('');
   const [valuesCity, setValuesCity] = useState<string>('');
   const [valuesCompany, setValuesCompany] = useState<string>('');
   const [valuesPosition, setValuesPosition] = useState<string>('');
-  const [valuesExpYears, setValuesExpYears] = useState<number | null>();
+  const [valuesExpYears, setValuesExpYears] = useState<string | number | readonly string[] | undefined>();
   const [loggedIn, setLoggedIn] = useState<boolean>(() => {
     return localStorage.getItem('loggedIn') === 'true';
   });
@@ -59,19 +59,21 @@ export default function App() {
   };
 
   useEffect(() => {
-    setRegistrationEvent({
-      event: parseInt(eventId, 10),
-      first_name: valuesFirstName,
-      last_name: valuesLastName,
-      email: valuesEmail,
-      phone: valuesPhone,
-      telegram: valuesTelegram,
-      birth_date: valuesBirthDate,
-      city: valuesCity,
-      company: valuesCompany,
-      position: valuesPosition,
-      experience_years: valuesExpYears,
-    });
+    if (eventId !== null) {
+      setRegistrationEvent({
+        event: parseInt(eventId, 10),
+        first_name: valuesFirstName,
+        last_name: valuesLastName,
+        email: valuesEmail,
+        phone: valuesPhone,
+        telegram: valuesTelegram,
+        birth_date: valuesBirthDate,
+        city: valuesCity,
+        company: valuesCompany,
+        position: valuesPosition,
+        experience_years: valuesExpYears,
+      });
+    }
   }, [
     eventId,
     valuesFirstName,
@@ -136,15 +138,15 @@ export default function App() {
     setIsPersonalOpen(false);
     setIsRegOnIventOpen(false);
   };
-  // Авторизация
+
   const handleEnterOpen = () => {
     setIsEnterOpen(true);
   };
-  // регистрация
+
   const handleRegistrationOpen = () => {
     setIsRegistrationOpen(true);
   };
-  // Профиль
+
   const handleProfileOpen = () => {
     setIsProfileOpen(true);
   };
@@ -156,11 +158,11 @@ export default function App() {
   const handleEntryOpen = () => {
     setIsEntryOpen(true);
   };
-  // Уведомления
+
   const handleNotificationOpen = () => {
     setIsNotificationOpen(true);
   };
-  // Персональный попап
+
   const handlePersonalOpen = () => {
     setIsPersonalOpen(true);
   };
