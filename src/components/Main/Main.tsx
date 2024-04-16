@@ -4,12 +4,12 @@ import FiltersContainer from './FiltersContainer/FiltersContainer';
 import EventsPoster from './EventsPoster/EventsPoster';
 import IEventCard from '../types/EventCard';
 import { MAIN_DATA } from './../../utils/constants';
-import { SelectProps } from '../Select/Select';
+import { Сities } from '../..//components/Main/FiltersContainer/FiltersContainer';
 
 interface IMainProps {
   events: IEventCard[];
   personalEvents: IEventCard[];
-  cities: SelectProps[];
+  cities: Сities[];
   handleRegOnIventOpen: () => void;
   setCityValue?: (value: string) => void;
   handleCreateEventOpen: () => void;

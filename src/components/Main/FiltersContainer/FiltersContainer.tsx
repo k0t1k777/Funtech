@@ -11,7 +11,7 @@ interface FiltersContainerProps {
   cityValue?: string;
 }
 
-interface Сities {
+export interface Сities {
   city_slug: string;
   city_name: string;
 }
