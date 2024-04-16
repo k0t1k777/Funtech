@@ -15,12 +15,12 @@ import PopupPersonal from '../Popups/PopupPersonal/PopupPersonal';
 import PopupRegOnEvent from '../Popups/PopupRegOnEvent/PopupRegOnEvent';
 import PopupRegistration from '../Popups/PopupRegistration';
 import Footer from '../Footer/Footer';
-import { SelectProps } from '../Select/Select';
+import { Сities } from '../..//components/Main/FiltersContainer/FiltersContainer';
 import { Spec } from '../Popups/PopupRegOnEvent/PopupRegOnEvent';
 
 export default function App() {
   const eventId = localStorage.getItem('eventId');
-  const [cities, setCities] = useState<SelectProps[]>([]);
+  const [cities, setCities] = useState<Сities[]>([]);
   const [events, setEvents] = useState<IEventCard[]>([]);
   const [specializations, setSpecializations] = useState<Spec[]>([]);
   const [personalEvents, setPersonalEvents] = useState<IEventCard[]>([]);
@@ -187,8 +187,6 @@ export default function App() {
               events={events}
               personalEvents={personalEvents}
               cities={cities}
-              // cityValue={cityValue}
-              // setCityValue={setCityValue}
               handleRegOnIventOpen={handleRegOnIventOpen}
               handleCreateEventOpen={handleCreateEventOpen}
             />

@@ -1,5 +1,5 @@
 import './Place.css';
-import adressImg from '../../../assets/adressImg.png';
+import Map from '../../../assets/map.png';
 import { PLACE_DATA } from './../../../utils/constants';
 import IEvent from '../../types/Event';
 
@@ -10,12 +10,12 @@ export interface IPlaceProps {
 export default function Place({ event }: IPlaceProps) {
   return (
     <div className='place'>
-      <h2 className='placetitle'>{PLACE_DATA.mesto}</h2>
+      <h2 className='place__title'>{PLACE_DATA.mesto}</h2>
       <div>
-        <p className='placeadress'>
+        <p className='place__adress'>
           {event?.city?.city_name}, {event?.place}
         </p>
-        <img className='place__img' src={adressImg} alt='address' />
+        <img className='place__img' src={Map} alt='address' />
       </div>
     </div>
   );

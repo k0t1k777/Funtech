@@ -1,6 +1,6 @@
 import './Popups.css';
 import SubmitButton from '../../components/SubmitButton/SubmitButton';
-import Avatar from './../../assets/PhotoWoman.png';
+import Avatar from './../../assets/Profile.svg?react';
 import { POPUP_DATA } from './../../utils/constants';
 import { useEffect, useRef } from 'react';
 
@@ -50,7 +50,7 @@ export default function PopupProfile({
     <div className='popup__overlay' onClick={handleOverlayClose} ref={modalRef}>
       <div className='popup popup__width_s' onClick={handlePopupClick}>
         <div className='popup__container-profile'>
-          <img className='popup__img' src={Avatar} alt='Фото пользователя' />
+        <Avatar className='popup__img'/>
           <div className='popup__container-items'>
             <p className='popup__name'>
               {firstName} {secondName}
