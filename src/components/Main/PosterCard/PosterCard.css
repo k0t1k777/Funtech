@@ -1,0 +1,200 @@
+.poster-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  border: 1px solid #d5d2d2;
+  background-blend-mode:color-burn
+}
+
+.poster-card__img {
+  background-image: url('../../../assets/posterImg.jpeg');
+  min-height: 151px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.poster-card__container {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 8px 0 8px;
+}
+
+.poster-card__date-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  padding: 0 8px;
+}
+
+.poster-card__date {
+  color: #2b2d33;
+  margin: 0 0 0 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+}
+
+.poster-card__buttons {
+  display: flex;
+  align-items: center;
+}
+
+.poster-card__button-edit {
+  border: 0;
+  padding: 0;
+  background-image: url('../../../assets/editButton.svg');
+  width: 24px;
+  height: 24px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.poster-card__button-on {
+  border: 0;
+  padding: 0;
+  background-image: url('../../../assets/posterButtonOn.svg');
+  width: 24px;
+  height: 24px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.poster-card__button-off {
+  border: 0;
+  padding: 0;
+  background-image: url('../../../assets/posterButtonOff.svg');
+  width: 24px;
+  height: 24px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.poster-card__info {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px 33px;
+}
+
+.poster-card__info_reg_closed {
+  padding-bottom: 43px;
+}
+
+.poster-card__title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20.8px;
+  color: #2b2d33;
+}
+
+.poster-card__name {
+  margin: 8px 0 4px 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+  color: #2b2d33;
+}
+
+.poster-card__profession {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+  color: #2b2d33b2;
+}
+
+.poster-card__tags {
+  display: grid;
+  grid-template-columns: 94px 101px 65px;
+  gap: 4px;
+  margin: 12px 0 0 0;
+  text-align: center;
+}
+
+.poster-card__tag {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15.6px;
+  color: #2b2d33b2;
+  padding: 4px;
+  border: 1px solid #c29af5;
+  background-color: #ebeafcab;
+  border-radius: 12px;
+}
+
+.poster-card__tag_border_off {
+  border: 0;
+}
+
+.poster-card__registration-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.poster-card__registration-container_reg_closed {
+  justify-content: center;
+  margin-top: 26.5px;
+  gap: 4px;
+}
+
+.poster-card__registration-status {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.poster-card__registration-status_open {
+  background-color: #c1ff9b;
+}
+
+.poster-card__registration-status_close {
+  background-color: #ff666f;
+}
+
+.poster-card__registration-status_registered {
+  background-color: #d4c4f7;
+}
+
+.poster-card__registration-text {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.4px;
+  color: #2b2d33b2;
+}
+
+.poster-card__registration-text_reg_closed {
+  margin-left: 4px;
+}
+
+.poster-card__link {
+  max-width: 118px;
+  width: 100%;
+}
+
+.poster-card__button-submit {
+  border: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+  color: white;
+  background-color: #6750a4;
+  border-radius: 16px;
+  width: 118px;
+  padding: 8.5px 0 8.5px 0;
+  cursor: pointer;
+}
+
+.poster-card__button-submit_registered {
+  border: 1px solid #7e7e7eb2;
+  background-color: white;
+  color: #7e7e7eb2;
+}

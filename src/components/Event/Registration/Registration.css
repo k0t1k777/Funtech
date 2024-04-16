@@ -1,0 +1,212 @@
+.registration {
+  width: 529px;
+}
+
+.registration__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.registration__date {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+  padding: 0 4px 0 4px;
+}
+
+.registration__date-text {
+  margin: 0 0 0 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+  color: #2b2d33;
+}
+
+.registration__adress {
+  display: flex;
+  align-items: center;
+  padding: 0 4px 0 4px;
+}
+
+.registration__adress-text {
+  margin: 0 0 0 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+  color: #2b2d33;
+}
+
+.registration__buttons {
+  display: flex;
+  align-items: center;
+}
+
+.registration__button-edit {
+  border: 0;
+  padding: 0;
+  background-image: url('../../../assets/editButton.svg');
+  width: 24px;
+  height: 24px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  margin-right: 4px;
+}
+
+.registration__button-on {
+  border: 0;
+  padding: 0;
+  background-image: url('../../../assets/posterButtonOn.svg');
+  width: 24px;
+  height: 24px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.registration__button-off {
+  border: 0;
+  padding: 0;
+  background-image: url('../../../assets/posterButtonOff.svg');
+  width: 24px;
+  height: 24px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.registration__container-img {
+  display: flex;
+  min-height: 290px;
+  margin-top: 12px;
+  position: relative;
+}
+
+.registration__img {
+  width: 529px;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.registration__status {
+  display: flex;
+  align-items: center;
+  background-color: #fafafae8;
+  border: 1px solid #d4c4f7;
+  border-radius: 16px;
+  padding: 8.5px 16.5px;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.registration__status-icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.registration__status-icon_open {
+  background-color: #c1ff9b;
+}
+
+.registration__status-icon_close {
+  background-color: #ff666f;
+}
+
+.registration__status-text {
+  margin: 0 0 0 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+}
+
+.registration__tags {
+  margin: 12px 0 20px 0;
+  display: grid;
+  grid-template-columns: repeat(5, 94px);
+  column-gap: 8px;
+}
+
+.registration__tag {
+  margin: 0;
+  border-radius: 12px;
+  border: 1px solid #d4c4f7;
+  color: #7e7e7eb2;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15.6px;
+  padding: 4px 0;
+  text-align: center;
+}
+
+.registration__download {
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 0;
+  background-color: white;
+  cursor: pointer;
+}
+
+.registration__download-text {
+  margin: 0 0 0 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+  color: #2b2d33;
+}
+
+.registration__play {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  max-width: 238px;
+  width: 100%;
+}
+
+.registration__play-text {
+  margin: 0 0 0 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+  color: #2b2d33;
+}
+
+.registration__share {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 28px);
+  align-items: center;
+  column-gap: 12px;
+}
+
+.registration__link {
+  text-decoration: none;
+  height: 28px;
+}
+
+.registration__button-other {
+  background-color: white;
+  background-image: url('../../../assets/other.svg');
+  background-size: cover;
+  width: 28px;
+  height: 24px;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.registration__button-reg {
+  background-color: #6750a4;
+  border-radius: 16px;
+  border: none;
+  max-width: 299px;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+  cursor: pointer;
+  margin-top: 40px;
+  color: #ffffff;
+}

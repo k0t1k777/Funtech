@@ -1,30 +1,56 @@
-# React + TypeScript + Vite
+# Frontend для Funtech приложения
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Задача Funtech - создание MVP сайта с мероприятиями.
 
-Currently, two official plugins are available:
+## Описание проекта
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Cервис информирования и регистрации представителей IT-сообщества на организованные. Заказчиком мероприятия по различным направлениям IT-индустрии. Сервис позволяет Заказчику создавать и размещать афиши событий на сайте и информировать о них заинтересованных пользователей. Пользователя могут находить интересные мероприятия, регистрироваться на них, получать уведомления и отслеживать свои события удобным способом.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Используемые технологии
 
-- Configure the top-level `parserOptions` property like this:
+- TS [TypeScript](https://www.typescriptlang.org/)
+- ⚛️[React](https://ru.reactjs.org/)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Сведения о команде:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Сидорчук Николай - Профиль на GitHub [https://github.com/k0t1k777](https://github.com/k0t1k777) 
+2. Тилек Куламназаров - Профиль на GitHub [https://github.com/k0t1k777](https://github.com/Zikoshh) 
+
+## ссылка на Github Pages
+[Ссылка: https://k0t1k777.github.io/HR_Space](https://k0t1k777.github.io/Funtech)
+
+## Инструкции по установке и запуску
+
+1. Клонируйте репозиторий: `git clone git@github.com:Funtech.git`
+2. Перейдите в директорию проекта: `cd Funtech`
+3. Установите зависимости: `npm install`
+4. Запустите проект: `npm run dev`
+5. В браузере открываем `http://localhost:5173/`
+
+Или
+
+1. Переходим по этой ссылке: `https://github.com/Funtech/tree/dev`
+2. Нажимаем `Code`
+3. Нажимаем `Download ZIP`
+4. Распаковываем скачанный архив в любое удобное место
+5. Заходим в `Visual Studio Code`, в разделе `Файл` выбираем `Открыть папку`, выбираем распакованную папку, жмём `Ok`
+6. В разделе `Терминал` выбираем `Создать терминал`
+7. Пишем в терминале: `cd Funtech`
+8. Установка зависимости: `npm install`
+9. Запуск проект: `npm run dev`
+10. В браузере открываем `http://localhost:5173/`
+
+## Библиотеки,которые использовалис
+
+<!-- 1. @hookform/resolvers -->
+2. yup
+
+## Ключевые точки для медиа min,max-width: 1440px
+<!-- ![alt text](./src/assets/image.png)
+![alt text](./src/assets/image-1.png)
+![alt text](./src/assets/image-2.png)
+![alt text](./src/assets/image-3.png)
+![alt text](./src/assets/image-4.png)
+![alt text](./src/assets/image-5.png)
+![alt text](./src/assets/image-6.png) -->

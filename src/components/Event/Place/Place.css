@@ -1,0 +1,27 @@
+.place {
+  margin-top: 40px;
+}
+
+.place__title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36.4px;
+  color: #2b2d33;
+}
+
+.place__adress {
+  margin: 21px 0 0 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.8px;
+  color: #2b2d33;
+}
+
+.place__img {
+  width: 451px;
+  height: 158px;
+  border-radius: 12px;
+  background-image: url('../../../assets/adressImg.png');
+  margin-top: 20px;
+}

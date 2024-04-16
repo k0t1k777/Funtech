@@ -1,0 +1,29 @@
+.label {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #cac4d0;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15.6px;
+  color: #d5d2d2;
+  cursor: text;
+}
+
+.label__error {
+  border: 1px solid red;
+}
+
+.label__input {
+  background-color: white;
+  border: none;
+  color: #2b2d33;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+  padding: 0;
+  outline: none;
+}

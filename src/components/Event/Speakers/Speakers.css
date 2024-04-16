@@ -1,0 +1,17 @@
+.speakers {
+  margin-top: 40px;
+}
+
+.speakers__title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36.4px;
+  color: #2B2D33;
+}
+
+.speakers__container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 340px);
+}

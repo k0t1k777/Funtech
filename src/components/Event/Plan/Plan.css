@@ -1,0 +1,45 @@
+.plan {
+  margin-top: 60px;
+  grid-row: 3 / 4;
+}
+
+.plan__title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36.4px;
+  color: #2b2d33;
+}
+
+.plan__containers {
+  margin-top: 20px;
+  max-width: 736px;
+}
+
+.plan__container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: min-content 457px 1fr;
+  border-bottom: 1px solid #EBEAFCAB;
+  padding: 5px 0 5px 0;
+}
+
+.plan__time {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20.8px;
+}
+
+.plan__description {
+  margin: 0 0 0 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.8px;
+}
+
+.plan__bold-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20.8px;
+}

@@ -1,0 +1,22 @@
+.events-poster {
+  margin-top: 40px;
+}
+
+.events-poster__title {
+  color: #2b2d33;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36.4px;
+  margin: 0 0 20px 0;
+}
+
+.events-poster-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  grid-template-rows: repeat(2, min-content);
+  gap: 40px;
+}
+
+.events-poster-cards_personal {
+  grid-template-rows: min-content;
+}

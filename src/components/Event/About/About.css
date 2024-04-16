@@ -1,0 +1,19 @@
+.about {
+  max-width: 736px;
+}
+
+.about__title {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 52px;
+  color: #2B2D33;
+}
+
+.about__subtitle {
+  margin: 20px 0 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  color: #2B2D33;
+}
