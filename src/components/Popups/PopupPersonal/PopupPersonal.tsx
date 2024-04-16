@@ -41,11 +41,11 @@ export default function PopupPersonal({
   }
 
   function handleTooltipShow() {
-    setInfoTooltipIsOpen(true)
+    setInfoTooltipIsOpen(true);
     setTimeout(() => {
-      setInfoTooltipIsOpen(false)
+      setInfoTooltipIsOpen(false);
     }, 500);
-    handleCloseAll()
+    setIsPersonalOpen(false);
   }
 
   useEffect(() => {

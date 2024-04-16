@@ -222,6 +222,7 @@ export default function App() {
           handlePersonalOpen={handlePersonalOpen}
           handleNotificationOpen={handleNotificationOpen}
           setIsProfileOpen={setIsProfileOpen}
+          setLoggedIn={setLoggedIn}
         />
       )}
       {isCreateEventOpen && (

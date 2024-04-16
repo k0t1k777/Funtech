@@ -10,6 +10,7 @@ interface IPopupEnterProps {
   handlePersonalOpen: () => void;
   handleNotificationOpen: () => void;
   setIsProfileOpen: (type: boolean) => void;
+  setLoggedIn: (type: boolean) => void;
 }
 
 export default function PopupProfile({
@@ -18,6 +19,7 @@ export default function PopupProfile({
   handlePersonalOpen,
   handleNotificationOpen,
   setIsProfileOpen,
+  setLoggedIn,
 }: IPopupEnterProps) {
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
@@ -28,6 +30,7 @@ export default function PopupProfile({
 
   function handleClose() {
     setIsProfileOpen(false);
+    setLoggedIn(false);
   }
 
   useEffect(() => {
