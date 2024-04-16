@@ -9,8 +9,8 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import { CREATE_EVENT_DATA } from '../../../utils/constants';
-import { useState } from 'react';
+import { CREATE_EVENT_DATA, POPUP_DATA } from '../../../utils/constants';
+import { useEffect, useRef, useState } from 'react';
 import DefaultEventImg from '../../../assets/defaultEventImg.png';
 import {
   defaultInputStyles,
@@ -25,11 +25,14 @@ import CloudIcon from '../../../assets/cloudIcon.svg?react';
 
 interface IPopupCreateEventProps {
   handleOverlayClose: () => void;
+  setIsCreateEventOpen: (type: boolean) => void;
 }
 
 export default function PopupCreateEvent({
   handleOverlayClose,
+  setIsCreateEventOpen,
 }: IPopupCreateEventProps) {
+  const modalRef = useRef<HTMLDivElement>(null);
   const [selectType, setSelectType] = useState('eventType');
   const [selectDirection, setSelectDirection] = useState('eventDirection');
   const [selectFormat, setSelectFormat] = useState('eventFormat');
@@ -54,12 +57,33 @@ export default function PopupCreateEvent({
     setSelectCity(e.target.value);
   };
 
+  useEffect(() => {
+    if (modalRef.current) {
+      const modal = modalRef.current;
+      modal.style.display = 'block';
+      modal.style.opacity = '0';
+      modal.animate([{ opacity: 0 }, { opacity: 1 }], {
+        duration: 400,
+        easing: 'ease-in-out',
+        fill: 'forwards',
+      });
+    }
+  }, []);
+
+  const handleCloseAll = () => {
+    setIsCreateEventOpen(false);
+  };
+
   return (
     <div
       className='popup__overlay popup__overlay_centered'
       onClick={handleOverlayClose}
     >
-      <div className='popup popup_create-event' onClick={handlePopupClick}>
+      <div
+        className='popup popup_create-event'
+        onClick={handlePopupClick}
+        ref={modalRef}
+      >
         <Box
           sx={{
             display: 'flex',
@@ -321,7 +345,7 @@ export default function PopupCreateEvent({
               }}
             >
               <CloudIcon />
-              WowLookAtThis.ppt
+             {POPUP_DATA.download}
             </Link>
           </Box>
           <Box
@@ -332,10 +356,10 @@ export default function PopupCreateEvent({
               columnGap: '20px',
             }}
           >
-            <Button sx={submitButtonStyles}>
+            <Button sx={submitButtonStyles} onClick={handleCloseAll}>
               {CREATE_EVENT_DATA.submitButton}
             </Button>
-            <Button sx={fillButtonStyles}>
+            <Button sx={fillButtonStyles} onClick={handleCloseAll}>
               {CREATE_EVENT_DATA.fillButton}
             </Button>
           </Box>

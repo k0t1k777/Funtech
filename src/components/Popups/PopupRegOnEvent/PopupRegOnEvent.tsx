@@ -8,12 +8,11 @@ import {
   FormControlLabel,
   Typography,
 } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import CheckboxesGroupDirection from './CheckboxesGroup/CheckboxesGroupDirection';
 import CheckboxesGroupFormat from './CheckboxesGroup/CheckboxesGroupFormat';
 import CheckboxesGroupJob from './CheckboxesGroup/CheckboxesGroupJob';
 import { checkboxDefault } from './CheckboxesGroup/CheckboxStyles';
-
 
 const validationSchema = yup.object().shape({
   firstName: yup.string().required('First name is required'),
@@ -27,7 +26,7 @@ const validationSchema = yup.object().shape({
 
 export interface PopupRegOnEventProps {
   handleOverlayClose: () => void;
-  setIsRegOnIventOpen: (value: boolean) => void;
+  setIsRegOnIventOpen: (type: boolean) => void;
   postEvent: () => void;
   valuesFirstName: string;
   valuesLastName: string;
@@ -50,16 +49,18 @@ export interface PopupRegOnEventProps {
   setValuesPosition: () => void;
   setValuesExpYears: () => void;
   specializations: Spec[];
+  handleEntryOpen: () => void;
 }
 
 export interface Spec {
-  specializations: Spec[]
+  specializations: Spec[];
 }
 
 export default function PopupRegOnEvent({
   handleOverlayClose,
   setIsRegOnIventOpen,
   postEvent,
+  handleEntryOpen,
   specializations,
   valuesFirstName,
   valuesLastName,
@@ -82,8 +83,8 @@ export default function PopupRegOnEvent({
   setValuesPosition,
   setValuesExpYears,
 }: PopupRegOnEventProps) {
+  const modalRef = useRef<HTMLDivElement>(null);
   const [isInputValid, setIsInputValid] = useState(false);
-  console.log('isInputValid: ', isInputValid);
   const [isShowAllClicked, setIsShowAllClicked] = useState(false);
   const [isWorkingChecked, setIsWorkingChecked] = useState(false);
 
@@ -139,6 +140,8 @@ export default function PopupRegOnEvent({
         });
     }
     postEvent();
+    handleEntryOpen();
+    setIsRegOnIventOpen(false);
   };
 
   const handleChange = (event, setValue) => {
@@ -147,12 +150,29 @@ export default function PopupRegOnEvent({
     setIsInputValid(false);
   };
 
+  useEffect(() => {
+    if (modalRef.current) {
+      const modal = modalRef.current;
+      modal.style.display = 'block';
+      modal.style.opacity = '0';
+      modal.animate([{ opacity: 0 }, { opacity: 1 }], {
+        duration: 400,
+        easing: 'ease-in-out',
+        fill: 'forwards',
+      });
+    }
+  }, []);
+
   return (
     <div
       className='popup__overlay popup__overlay_centered'
       onClick={handleOverlayClose}
     >
-      <div className='popup popup_reg-on-ivent' onClick={handlePopupClick}>
+      <div
+        className='popup popup_reg-on-ivent'
+        onClick={handlePopupClick}
+        ref={modalRef}
+      >
         <Box
           sx={{ display: 'flex', flexDirection: 'column', textAlign: 'center' }}
         >
@@ -305,8 +325,7 @@ export default function PopupRegOnEvent({
               *
             </Typography>
           </Typography>
-          <CheckboxesGroupFormat
-          />
+          <CheckboxesGroupFormat />
           <Typography
             sx={{
               fontSize: '16px',

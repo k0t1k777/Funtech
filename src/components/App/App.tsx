@@ -150,7 +150,6 @@ export default function App() {
   };
 
   const handleCreateEventOpen = () => {
-    handleOverlayClose();
     setIsCreateEventOpen(true);
   };
 
@@ -222,26 +221,38 @@ export default function App() {
           handleCreateEventOpen={handleCreateEventOpen}
           handlePersonalOpen={handlePersonalOpen}
           handleNotificationOpen={handleNotificationOpen}
+          setIsProfileOpen={setIsProfileOpen}
         />
       )}
       {isCreateEventOpen && (
-        <PopupCreateEvent handleOverlayClose={handleOverlayClose} />
+        <PopupCreateEvent
+          handleOverlayClose={handleOverlayClose}
+          setIsCreateEventOpen={setIsCreateEventOpen}
+        />
       )}
-      {isEntryOpen && <PopupEntry handleOverlayClose={handleOverlayClose} />}
+      {isEntryOpen && (
+        <PopupEntry
+          handleOverlayClose={handleOverlayClose}
+          setIsEntryOpen={setIsEntryOpen}
+        />
+      )}
       {isNotificationOpen && (
         <PopupNotification
           handleOverlayClose={handleOverlayClose}
           setIsNotificationOpen={setIsNotificationOpen}
+          setIsProfileOpen={setIsProfileOpen}
         />
       )}
       {isPersonalOpen && (
         <PopupPersonal
           handleOverlayClose={handleOverlayClose}
           setIsPersonalOpen={setIsPersonalOpen}
+          setIsProfileOpen={setIsProfileOpen}
         />
       )}
       {isRegOnIventOpen && (
         <PopupRegOnEvent
+          handleEntryOpen={handleEntryOpen}
           setIsRegOnIventOpen={setIsRegOnIventOpen}
           handleOverlayClose={handleOverlayClose}
           postEvent={postEvent}

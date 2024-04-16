@@ -1,38 +1,71 @@
 import '../Popups.css';
 import LeftArrow from '../../../assets/left-arrow.svg?react';
-import { PERSONAL_DATA } from '../../../utils/constants';
+import { PERSONAL_DATA, INFOTOOLTIP_DATA } from '../../../utils/constants';
 import Input from '../../../ui/Input/Input';
 import CheckboxesGroup from './CheckboxesGroup/CheckboxesGroup';
 import { Box, Button, Typography } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import InfoTooltipDone from '../../InfoTooltipDone/InfoTooltipDone';
 
 interface PopupPersonalProps {
   handleOverlayClose: () => void;
   setIsPersonalOpen: (type: boolean) => void;
+  setIsProfileOpen: (type: boolean) => void;
 }
 
 export default function PopupPersonal({
   handleOverlayClose,
   setIsPersonalOpen,
+  setIsProfileOpen,
 }: PopupPersonalProps) {
+  const modalRef = useRef<HTMLDivElement>(null);
   const [isShowAllClicked, setIsShowAllClicked] = useState(false);
+  const [infoTooltipIsOpen, setInfoTooltipIsOpen] = useState(false);
+  console.log('infoTooltipIsOpen: ', infoTooltipIsOpen);
+
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
 
-  const handleShowAll = () => {
+  function handleShowAll() {
     setIsShowAllClicked(true);
-  };
+  }
 
-  const handleClose = () => {
+  function handleClose() {
     setIsPersonalOpen(false);
-  };
+  }
+
+  function handleCloseAll() {
+    setIsPersonalOpen(false);
+    setIsProfileOpen(false);
+  }
+
+  function handleTooltipShow() {
+    setInfoTooltipIsOpen(true)
+    setTimeout(() => {
+      setInfoTooltipIsOpen(false)
+    }, 500);
+    handleCloseAll()
+  }
+
+  useEffect(() => {
+    if (modalRef.current) {
+      const modal = modalRef.current;
+      modal.style.display = 'block';
+      modal.style.opacity = '0';
+      modal.animate([{ opacity: 0 }, { opacity: 1 }], {
+        duration: 400,
+        easing: 'ease-in-out',
+        fill: 'forwards',
+      });
+    }
+  }, []);
 
   return (
-    <div className='popup__overlay' onClick={handleOverlayClose}>
+    <div className='popup__overlay' onClick={handleOverlayClose} ref={modalRef}>
       <div className='popup popup_personal' onClick={handlePopupClick}>
         <div className='popup__header'>
-          <LeftArrow onClick={handleClose}/>
+          <LeftArrow onClick={handleClose} />
           <h2 className='popup__title popup__title_notification'>
             {PERSONAL_DATA.title}
           </h2>
@@ -128,6 +161,7 @@ export default function PopupPersonal({
                 backgroundColor: '#6750A4',
               },
             }}
+            onClick={handleTooltipShow}
           >
             {PERSONAL_DATA.submitButton}
           </Button>
@@ -148,11 +182,16 @@ export default function PopupPersonal({
                 backgroundColor: 'white',
               },
             }}
+            onClick={handleCloseAll}
           >
             {PERSONAL_DATA.cancelButton}
           </Button>
         </Box>
       </div>
+      <InfoTooltipDone
+        isVisible={infoTooltipIsOpen}
+        messageTitle={INFOTOOLTIP_DATA.done}
+      />
     </div>
   );
 }

@@ -32,6 +32,7 @@
   max-height: 741px;
   padding: 80px;
   text-align: center;
+  position: static;
 }
 
 .popup_notification {

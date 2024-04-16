@@ -52,6 +52,7 @@ export const POPUP_DATA = {
   reg: 'Зарегестрироваться',
   enterYandex: 'Войти с Яндекс ID',
   user: 'Участник',
+  download: 'WowLookAtThis.ppt',
 };
 
 export const ENTRY_DATA = {
@@ -237,4 +238,8 @@ export const CREATE_EVENT_DATA = {
 
 export const ERROR_DATA = {
   text: 'Ошибка, проверьте поле',
+};
+
+export const INFOTOOLTIP_DATA = {
+  done: 'Ошибка, проверьте поле',
 };

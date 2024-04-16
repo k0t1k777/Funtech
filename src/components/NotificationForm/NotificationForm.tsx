@@ -6,11 +6,32 @@ import { FormControl, RadioGroup } from '@mui/material';
 
 interface NotificationFormProps {
   isNotificationPopup: boolean;
+  setIsNotificationOpen?: (type: boolean) => void;
+  setIsProfileOpen?: (type: boolean) => void;
+  setIsEntryOpen?: (type: boolean) => void;
 }
 
 export default function NotificationForm({
   isNotificationPopup,
+  setIsProfileOpen,
+  setIsNotificationOpen,
+  setIsEntryOpen,
 }: NotificationFormProps) {
+  function handleCloseAll() {
+    if (setIsProfileOpen) {
+      setIsProfileOpen(false);
+    }
+    if (setIsNotificationOpen) {
+      setIsNotificationOpen(false);
+    }
+  }
+
+  function handleConfirm() {
+    if (setIsEntryOpen) {
+      setIsEntryOpen(false);
+    }
+  }
+
   return (
     <FormControl sx={{ alignItems: 'center' }}>
       <div
@@ -106,15 +127,18 @@ export default function NotificationForm({
       </div>
       {isNotificationPopup ? (
         <div className='form__buttons'>
-          <button className='form__button-submit form__button-submit_notification'>
+          <button
+            className='form__button-submit form__button-submit_notification'
+            onClick={handleCloseAll}
+          >
             {NOTIFICATION_FORM_DATA.submitButton.notification}
           </button>
-          <button className='form__button-cancel'>
+          <button className='form__button-cancel' onClick={handleCloseAll}>
             {NOTIFICATION_FORM_DATA.cancelButton}
           </button>
         </div>
       ) : (
-        <button className='form__button-submit'>
+        <button className='form__button-submit' onClick={handleConfirm}>
           {NOTIFICATION_FORM_DATA.submitButton.entry}
         </button>
       )}
