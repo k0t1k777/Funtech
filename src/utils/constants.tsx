@@ -47,6 +47,7 @@ export const POPUP_DATA = {
   event: 'Добавить мероприятие',
   aboutMe: 'Личные данные',
   aboutName: 'Имя',
+  enter: 'Войти',
 };
 
 export const ENTRY_DATA = {

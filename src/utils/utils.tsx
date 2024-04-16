@@ -1,4 +1,6 @@
 export const BASE_URL = 'https://hackathon-funtech.sytes.net/api/v1';
+export const TOKEN = '';
+
 
 const getResponseData = (res: Response) => {
   if (!res.ok) {
@@ -8,7 +10,7 @@ const getResponseData = (res: Response) => {
 };
 
 const headers = {
-  authorization: `Bearer`,
+  authorization: `Token ${TOKEN}`,
   Accept: 'application/json',
   'Content-Type': 'application/json',
 };
@@ -58,16 +60,16 @@ export const postEvent = (event: object) => {
   }).then(getResponseData);
 };
 
-export const getUserToken = (token: any) => {
-  return fetch(`${BASE_URL}/users/`, {
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
-    },
-  }).then(getResponseData);
-};
+// export const getUserToken = (token: any) => {
+//   return fetch(`${BASE_URL}/users/`, {
+//     method: 'GET',
+//     headers: {
+//       Accept: 'application/json',
+//       'Content-Type': 'application/json',
+//       Authorization: `Bearer ${token}`,
+//     },
+//   }).then(getResponseData);
+// };
 
 export const registration = ({
   firstName,

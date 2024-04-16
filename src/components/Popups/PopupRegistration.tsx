@@ -1,47 +1,57 @@
 import './Popups.css';
 import SubmitButton from '../SubmitButton/SubmitButton';
 import { POPUP_DATA } from '../../utils/constants';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface PopupRegistrationProps {
   handleOverlayClose: () => void;
-  handleRegister: (data: {
-    email: string;
-    phone: string;
-    firstName: string;
-    secondName: string;
-  }) => void;
-}
+  }
 
 export default function PopupRegistration({
   handleOverlayClose,
-  handleRegister,
+  // setIsRegistrationOpen,
+  // handleLogin,
 }: PopupRegistrationProps) {
+  const modalRef = useRef<HTMLDivElement>(null);
+  
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
-  const [values, setValues] = useState({
-    firstName: '',
-    secondName: '',
-    email: '',
-    phone: '',
-  });
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    handleRegister({
-      firstName: values.firstName,
-      secondName: values.secondName,
-      email: values.email,
-      phone: values.phone,
-      
-    });
-  }
+  // const [values, setValues] = useState({
+  //   firstName: '',
+  //   secondName: '',
+  //   email: '',
+  //   phone: '',
+  // });
+
+  // function handleSubmit() {
+  //   handleLogin({
+  //     firstName: values.firstName,
+  //     secondName: values.secondName,
+  //     email: values.email,
+  //     phone: values.phone,
+  //   });
+  //   setIsRegistrationOpen(false);
+  // }
+
+  useEffect(() => {
+    if (modalRef.current) {
+      const modal = modalRef.current;
+      modal.style.display = 'block';
+      modal.style.opacity = '0';
+      modal.animate([{ opacity: 0 }, { opacity: 1 }], {
+        duration: 400,
+        easing: 'ease-in-out',
+        fill: 'forwards',
+      });
+    }
+  }, []);
 
   return (
-    <div className='popup__overlay' onClick={handleOverlayClose}>
+    <div className='popup__overlay' onClick={handleOverlayClose} ref={modalRef}>
       <div className='popup' onClick={handlePopupClick}>
-        <form onSubmit={handleSubmit}>
+        <form>
           <div className='popup__input-container'>
             <input
               className='popup__input'
@@ -88,7 +98,7 @@ export default function PopupRegistration({
             <p className='popup__text'>{POPUP_DATA.agry}</p>
           </div>
           <div className='popup__container-button'>
-            <SubmitButton title='Регистрация'  onClick={handleSubmit} />
+            <SubmitButton title='Регистрация' />
             <SubmitButton
               title='Войти с Яндекс ID'
               backgroundColor='#FFF'

@@ -29,20 +29,16 @@ export interface PopupRegOnEventProps {
   handleOverlayClose: () => void;
   setIsRegOnIventOpen: (value: boolean) => void;
   postEvent: () => void;
-  valuesFormat: string;
   valuesFirstName: string;
   valuesLastName: string;
   valuesEmail: string;
-  valuesPhone: number | undefined;
+  valuesPhone: number | null;
   valuesTelegram: string;
   valuesBirthDate: string;
   valuesCity: string;
-  valuesActivity: string;
   valuesCompany: string;
   valuesPosition: string;
-  valuesExpYears: number | undefined;
-  valuesSpec: string;
-  setValuesFormat: () => void;
+  valuesExpYears: number | null;
   setValuesFirstName: () => void;
   setValuesLastName: () => void;
   setValuesEmail: () => void;
@@ -50,11 +46,9 @@ export interface PopupRegOnEventProps {
   setValuesTelegram: () => void;
   setValuesBirthDate: () => void;
   setValuesCity: () => void;
-  setValuesActivity: () => void;
   setValuesCompany: () => void;
   setValuesPosition: () => void;
   setValuesExpYears: () => void;
-  setValuesSpec: () => void;
   specializations: Spec[];
 }
 
@@ -67,7 +61,6 @@ export default function PopupRegOnEvent({
   setIsRegOnIventOpen,
   postEvent,
   specializations,
-  valuesFormat,
   valuesFirstName,
   valuesLastName,
   valuesEmail,
@@ -75,12 +68,9 @@ export default function PopupRegOnEvent({
   valuesTelegram,
   valuesBirthDate,
   valuesCity,
-  valuesActivity,
   valuesCompany,
   valuesPosition,
   valuesExpYears,
-  valuesSpec,
-  setValuesFormat,
   setValuesFirstName,
   setValuesLastName,
   setValuesEmail,
@@ -88,8 +78,6 @@ export default function PopupRegOnEvent({
   setValuesTelegram,
   setValuesBirthDate,
   setValuesCity,
-  setValuesSpec,
-  setValuesActivity,
   setValuesCompany,
   setValuesPosition,
   setValuesExpYears,
@@ -302,8 +290,6 @@ export default function PopupRegOnEvent({
           <CheckboxesGroupDirection
             specializations={specializations}
             isShowAllClicked={isShowAllClicked}
-            valuesSpec={valuesSpec}
-            setValuesSpec={setValuesSpec}
           />
           <Typography
             sx={{
@@ -320,8 +306,6 @@ export default function PopupRegOnEvent({
             </Typography>
           </Typography>
           <CheckboxesGroupFormat
-            valuesFormat={valuesFormat}
-            setValuesFormat={setValuesFormat}
           />
           <Typography
             sx={{
@@ -340,11 +324,9 @@ export default function PopupRegOnEvent({
           <CheckboxesGroupJob
             isWorkingChecked={isWorkingChecked}
             setIsWorkingChecked={setIsWorkingChecked}
-            valuesActivity={valuesActivity}
             valuesCompany={valuesCompany}
             valuesPosition={valuesPosition}
             valuesExpYears={valuesExpYears}
-            setValuesActivity={setValuesActivity}
             setValuesPosition={setValuesPosition}
             setValuesCompany={setValuesCompany}
             setValuesExpYears={setValuesExpYears}

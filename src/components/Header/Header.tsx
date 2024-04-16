@@ -2,12 +2,15 @@ import './Header.css';
 import Logo from './../../assets/Logo.svg?react';
 import Search from './../../assets/Search.svg?react';
 import Profile from './../../assets/Profile.svg?react';
+import { POPUP_DATA } from '../../utils/constants';
 
 export interface HeaderProps {
-  handleRegistrationOpen?: () => void;
+  handleEnterOpen?: () => void;
 }
 
-export default function Header({ handleRegistrationOpen }: HeaderProps) {
+export default function Header({
+  handleEnterOpen,
+}: HeaderProps) {
   return (
     <div className='header'>
       <Logo />
@@ -17,9 +20,9 @@ export default function Header({ handleRegistrationOpen }: HeaderProps) {
         </div>
         <button className='header__container-profile'>
           <div className='header__container-profile-img'>
-            {<Profile onClick={handleRegistrationOpen} />}
+            {<Profile onClick={handleEnterOpen} />}
           </div>
-          <p className='header__text'>Войти</p>
+          <p className='header__text'>{POPUP_DATA.enter}</p>
         </button>
       </div>
     </div>

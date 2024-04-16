@@ -12,10 +12,7 @@ export default function PopupEntry({ handleOverlayClose }: PopupEntryProps) {
   };
 
   return (
-    <div
-      className='popup__overlay'
-      onClick={handleOverlayClose}
-    >
+    <div className='popup__overlay' onClick={handleOverlayClose}>
       <div className='popup popup_entry' onClick={handlePopupClick}>
         <h2 className='popup__title'>{ENTRY_DATA.title}</h2>
         <h3 className='popup__date'>13.04.2024 в 15:00</h3>

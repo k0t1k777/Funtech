@@ -34,60 +34,25 @@ export default function App() {
   const [isRegOnIventOpen, setIsRegOnIventOpen] = useState(false);
   // POST
   const [registrationEvent, setRegistrationEvent] = useState<object>({});
-  const [valuesFormat, setValuesFormat] = useState<string>('');
   const [valuesFirstName, setValuesFirstName] = useState<string>('');
   const [valuesLastName, setValuesLastName] = useState<string>('');
   const [valuesEmail, setValuesEmail] = useState<string>('');
-  const [valuesPhone, setValuesPhone] = useState<number | undefined>();
+  const [valuesPhone, setValuesPhone] = useState<number | null>();
   const [valuesTelegram, setValuesTelegram] = useState<string>('');
   const [valuesBirthDate, setValuesBirthDate] = useState<string>('');
   const [valuesCity, setValuesCity] = useState<string>('');
-  const [valuesActivity, setValuesActivity] = useState<string>('');
   const [valuesCompany, setValuesCompany] = useState<string>('');
   const [valuesPosition, setValuesPosition] = useState<string>('');
-  const [valuesExpYears, setValuesExpYears] = useState<number | undefined>();
-  const [valuesSpec, setValuesSpec] = useState<string>('');
+  const [valuesExpYears, setValuesExpYears] = useState<number | null>();
+  const [loggedIn, setLoggedIn] = useState<boolean>(() => {
+    return localStorage.getItem('loggedIn') === 'true';
+  });
+  console.log('loggedIn: ', loggedIn);
 
-  function handleRegister({
-    firstName,
-    secondName,
-    email,
-    phone,
-  }: {
-    firstName: string;
-    secondName: string;
-    email: string;
-    phone: string;
-  }) {
-    Api.registration({ firstName, secondName, email, phone })
-      .then((data) => {
-        if (data) {
-          console.log('data: ', data);
-          handleLogin({ firstName, secondName, email, phone });
-        }
-      })
-      .catch((error) => {
-        console.log('error: ', error);
-      });
-  }
   function handleLogin() {
-    console.log('handleLogin: ', handleLogin);
+    setLoggedIn(true);
+    localStorage.setItem('loggedIn', 'true');
   }
-
-  // function handleLogin({ email, password }) {
-  //   MainApi.login({ email, password })
-  //     .then((data) => {
-  //       if (data.token) {
-  //         storeLoggedIn(true);
-  //         setLoggedIn(true);
-  //         storeToken(data.token);
-  //         }
-  //     })
-  //     .catch((error) => {
-    // console.log('error: ', error);
-  //     
-  //     });
-  // }
 
   const postEvent = () => {
     Api.postEvent(registrationEvent);
@@ -97,7 +62,6 @@ export default function App() {
   useEffect(() => {
     setRegistrationEvent({
       event: parseInt(eventId, 10),
-      format: valuesFormat,
       first_name: valuesFirstName,
       last_name: valuesLastName,
       email: valuesEmail,
@@ -105,15 +69,12 @@ export default function App() {
       telegram: valuesTelegram,
       birth_date: valuesBirthDate,
       city: valuesCity,
-      activity: valuesActivity,
       company: valuesCompany,
       position: valuesPosition,
       experience_years: valuesExpYears,
-      specializations: valuesSpec,
     });
   }, [
     eventId,
-    valuesFormat,
     valuesFirstName,
     valuesLastName,
     valuesEmail,
@@ -121,11 +82,9 @@ export default function App() {
     valuesTelegram,
     valuesBirthDate,
     valuesCity,
-    valuesActivity,
     valuesCompany,
     valuesPosition,
     valuesExpYears,
-    valuesSpec,
   ]);
 
   useEffect(() => {
@@ -168,14 +127,6 @@ export default function App() {
       });
   }, []);
 
-  const handleRegistrationOpen = () => {
-    setIsRegistrationOpen(true);
-  };
-
-  const handleProfileOpen = () => {
-    setIsProfileOpen(true);
-  };
-
   const handleOverlayClose = () => {
     setIsRegistrationOpen(false);
     setIsEnterOpen(false);
@@ -186,6 +137,18 @@ export default function App() {
     setIsPersonalOpen(false);
     setIsRegOnIventOpen(false);
   };
+  // Авторизация
+  const handleEnterOpen = () => {
+    setIsEnterOpen(true);
+  };
+  // регистрация
+  const handleRegistrationOpen = () => {
+    setIsRegistrationOpen(true);
+  };
+
+  const handleProfileOpen = () => {
+    setIsProfileOpen(true);
+  };
 
   const handleCreateEventOpen = () => {
     handleOverlayClose();
@@ -195,6 +158,8 @@ export default function App() {
   const handleEntryOpen = () => {
     setIsEntryOpen(true);
   };
+
+
 
   const handleNotificationOpen = () => {
     setIsNotificationOpen(true);
@@ -210,7 +175,7 @@ export default function App() {
 
   return (
     <>
-      <Header handleRegistrationOpen={handleRegistrationOpen} />
+      <Header handleEnterOpen={handleEnterOpen} />
       <Routes>
         <Route
           path='/'
@@ -237,13 +202,19 @@ export default function App() {
         />
       </Routes>
       <Footer />
-      {isRegistrationOpen && (
-        <PopupRegistration
+      {!loggedIn &&  isEnterOpen && (
+        <PopupEnter
           handleOverlayClose={handleOverlayClose}
-          handleRegister={handleRegister}
+          setIsRegistrationOpen={setIsRegistrationOpen}
+          handleRegistrationOpen={handleRegistrationOpen}
+          handleLogin={handleLogin}
         />
       )}
-      {isEnterOpen && <PopupEnter handleOverlayClose={handleOverlayClose} />}
+      {!loggedIn && isRegistrationOpen && (
+        <PopupRegistration
+          handleOverlayClose={handleOverlayClose}
+        />
+      )}
       {isProfileOpen && (
         <PopupProfile
           handleOverlayClose={handleOverlayClose}
@@ -265,7 +236,6 @@ export default function App() {
           setIsRegOnIventOpen={setIsRegOnIventOpen}
           handleOverlayClose={handleOverlayClose}
           postEvent={postEvent}
-          valuesFormat={valuesFormat}
           valuesFirstName={valuesFirstName}
           valuesLastName={valuesLastName}
           valuesEmail={valuesEmail}
@@ -273,13 +243,10 @@ export default function App() {
           valuesTelegram={valuesTelegram}
           valuesBirthDate={valuesBirthDate}
           valuesCity={valuesCity}
-          valuesActivity={valuesActivity}
           valuesCompany={valuesCompany}
           valuesPosition={valuesPosition}
           valuesExpYears={valuesExpYears}
-          valuesSpec={valuesSpec}
           specializations={specializations}
-          setValuesFormat={setValuesFormat}
           setValuesFirstName={setValuesFirstName}
           setValuesLastName={setValuesLastName}
           setValuesEmail={setValuesEmail}
@@ -287,11 +254,9 @@ export default function App() {
           setValuesTelegram={setValuesTelegram}
           setValuesBirthDate={setValuesBirthDate}
           setValuesCity={setValuesCity}
-          setValuesActivity={setValuesActivity}
           setValuesCompany={setValuesCompany}
           setValuesPosition={setValuesPosition}
           setValuesExpYears={setValuesExpYears}
-          setValuesSpec={setValuesSpec}
         />
       )}
     </>

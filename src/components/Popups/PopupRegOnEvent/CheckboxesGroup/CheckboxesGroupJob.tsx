@@ -18,24 +18,18 @@ interface CheckboxesGroupJobProps {
   handleSubmit: () => void;
   valuesCompany: string;
   valuesPosition: string;
-  valuesExpYears: string;
+  valuesExpYears: number | null;
   setValuesCompany: () => void;
   setValuesPosition: () => void;
   setValuesExpYears: () => void;
-  valuesActivity: { studying: boolean; working: boolean; seeking: boolean };
-  setValuesActivity: React.Dispatch<
-    React.SetStateAction<{ studying: boolean; working: boolean; seeking: boolean }>
-  >;
 }
 
 export default function CheckboxesGroupJob({
   isWorkingChecked,
   setIsWorkingChecked,
-  valuesActivity,
   valuesCompany,
   valuesPosition,
   valuesExpYears,
-  setValuesActivity,
   setValuesCompany,
   setValuesPosition,
   setValuesExpYears,
@@ -50,17 +44,6 @@ export default function CheckboxesGroupJob({
 
   const handleShowJobInputs = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIsWorkingChecked(e.target.checked);
-  };
-
-  const handleChangeJob = (
-    event: React.SyntheticEvent<Element, Event>,
-    checked: boolean
-  ) => {
-    const { name } = event.currentTarget as HTMLInputElement;
-    setValuesActivity((prevValues) => ({
-      ...prevValues,
-      [name]: checked,
-    }));
   };
 
   return (
@@ -104,7 +87,7 @@ export default function CheckboxesGroupJob({
             <input
               className='label__input'
               type='number'
-              value={valuesExpYears}
+              value={valuesExpYears || null}
               onChange={(e) => handleChange(e, setValuesExpYears)}
             />
           </label>
@@ -115,8 +98,6 @@ export default function CheckboxesGroupJob({
           control={<Checkbox onChange={handleShowJobInputs} />}
           label={REG_ON_IVENT_DATA.checkboxJobLabels.working}
           name='seeking'
-          onChange={handleChangeJob}
-          checked={valuesActivity.seeking || false}
         />
       )}
 
@@ -125,8 +106,6 @@ export default function CheckboxesGroupJob({
         control={<Checkbox />}
         label={REG_ON_IVENT_DATA.checkboxJobLabels.studying}
         name='studying'
-        onChange={handleChangeJob}
-        checked={valuesActivity.studying || false}
       />
 
       <FormControlLabel
@@ -134,8 +113,6 @@ export default function CheckboxesGroupJob({
         control={<Checkbox />}
         label={REG_ON_IVENT_DATA.checkboxJobLabels.jobHunting}
         name='working'
-        onChange={handleChangeJob}
-        checked={valuesActivity.working || false}
       />
     </Box>
   );
