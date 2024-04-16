@@ -1,11 +1,10 @@
 import '../Popups.css';
 import LeftArrow from '../../../assets/left-arrow.svg?react';
-import { PERSONAL_DATA, INFOTOOLTIP_DATA } from '../../../utils/constants';
+import { PERSONAL_DATA } from '../../../utils/constants';
 import Input from '../../../ui/Input/Input';
 import CheckboxesGroup from './CheckboxesGroup/CheckboxesGroup';
 import { Box, Button, Typography } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
-import InfoTooltipDone from '../../InfoTooltipDone/InfoTooltipDone';
 
 interface PopupPersonalProps {
   handleOverlayClose: () => void;
@@ -20,8 +19,6 @@ export default function PopupPersonal({
 }: PopupPersonalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
   const [isShowAllClicked, setIsShowAllClicked] = useState(false);
-  const [infoTooltipIsOpen, setInfoTooltipIsOpen] = useState(false);
-  console.log('infoTooltipIsOpen: ', infoTooltipIsOpen);
 
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
@@ -38,14 +35,6 @@ export default function PopupPersonal({
   function handleCloseAll() {
     setIsPersonalOpen(false);
     setIsProfileOpen(false);
-  }
-
-  function handleTooltipShow() {
-    setInfoTooltipIsOpen(true);
-    setTimeout(() => {
-      setInfoTooltipIsOpen(false);
-    }, 500);
-    setIsPersonalOpen(false);
   }
 
   useEffect(() => {
@@ -161,7 +150,7 @@ export default function PopupPersonal({
                 backgroundColor: '#6750A4',
               },
             }}
-            onClick={handleTooltipShow}
+            onClick={handleCloseAll}
           >
             {PERSONAL_DATA.submitButton}
           </Button>
@@ -188,10 +177,6 @@ export default function PopupPersonal({
           </Button>
         </Box>
       </div>
-      <InfoTooltipDone
-        isVisible={infoTooltipIsOpen}
-        messageTitle={INFOTOOLTIP_DATA.done}
-      />
     </div>
   );
 }

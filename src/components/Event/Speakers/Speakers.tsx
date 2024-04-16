@@ -4,7 +4,7 @@ import { SPEAKERS_DATA } from './../../../utils/constants';
 import IEvent from '../../types/Event';
 
 export interface ISpeakersProps {
-  event: IEvent;
+  event?: IEvent;
 }
 
 export default function Speakers({ event }: ISpeakersProps) {

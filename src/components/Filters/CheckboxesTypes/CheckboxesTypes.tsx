@@ -5,30 +5,7 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { Typography } from '@mui/material';
-import { CHECKBOX_DATA } from './../../../utils/constants'
-
-const checkboxData = [
-  {
-    name: 'MeetUp',
-    label: 'MeetUp',
-    margin: '0 14px 0 0',
-  },
-  {
-    name: 'Конференция',
-    label: 'Конференция',
-    margin: '0',
-  },
-  {
-    name: 'ML',
-    label: 'ML',
-    margin: '0 14px 0 0',
-  },
-  {
-    name: 'Воркшоп',
-    label: 'Воркшоп',
-    margin: '0 0 0 0',
-  },
-];
+import { CHECKBOX_DATA, CHECKBOX_DATA_CONST } from './../../../utils/constants';
 
 export default function CheckboxesGroup() {
   const [state, setState] = React.useState({
@@ -49,16 +26,16 @@ export default function CheckboxesGroup() {
       <FormControl component='fieldset' variant='standard'>
         <Typography
           sx={{
-              fontWeight: '500',
-              fontSize: '16px',
-              lineHeight: '20.8px',
+            fontWeight: '500',
+            fontSize: '16px',
+            lineHeight: '20.8px',
           }}
           gutterBottom
         >
           {CHECKBOX_DATA.type}
         </Typography>
         <FormGroup sx={{ display: 'flex', flexDirection: 'row' }}>
-          {checkboxData.map((checkbox) => (
+          {CHECKBOX_DATA_CONST.map((checkbox) => (
             <FormControlLabel
               key={checkbox.name}
               sx={{

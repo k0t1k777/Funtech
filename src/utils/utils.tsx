@@ -17,40 +17,38 @@ const headers = {
 
 export const getEvents = () => {
   return fetch(`${BASE_URL}/events/`, {
+    headers,
     method: 'GET',
   }).then(getResponseData);
 };
 
 export const getPersonalEvents = () => {
   return fetch(`${BASE_URL}/events/three-recommended-events/`, {
+    headers,
     method: 'GET',
   }).then(getResponseData);
 };
 
 export const getEvent = (id: string | undefined) => {
   return fetch(`${BASE_URL}/events/${id}/`, {
+    headers,
     method: 'GET',
   }).then(getResponseData);
 };
 
 export const getCities = () => {
   return fetch(`${BASE_URL}/cities/`, {
+    headers,
     method: 'GET',
   }).then(getResponseData);
 };
 
 export const getSpecializations = () => {
   return fetch(`${BASE_URL}/specializations/`, {
+    headers,
     method: 'GET',
   }).then(getResponseData);
 };
-
-// export const postEvent = (event: object) => {
-//   return fetch(`${BASE_URL}/events/`, {
-//     method: 'POST',
-//     body: JSON.stringify(event)
-//   }).then(getResponseData);
-// };
 
 export const postEvent = (event: object) => {
   return fetch(`${BASE_URL}/applications/`, {
@@ -59,17 +57,6 @@ export const postEvent = (event: object) => {
     body: JSON.stringify(event),
   }).then(getResponseData);
 };
-
-// export const getUserToken = (token: any) => {
-//   return fetch(`${BASE_URL}/users/`, {
-//     method: 'GET',
-//     headers: {
-//       Accept: 'application/json',
-//       'Content-Type': 'application/json',
-//       Authorization: `Bearer ${token}`,
-//     },
-//   }).then(getResponseData);
-// };
 
 export const registration = ({
   firstName,
@@ -96,18 +83,4 @@ export const registration = ({
     }),
   }).then(getResponseData);
 };
-
-// export const login ({ email, password }) => {
-//   return fetch(`${this._url}/signin`, {
-//     method: "POST",
-//     headers: {
-//       Accept: "application/json",
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({
-//       email,
-//       password,
-//     }),
-// }).then(getResponseData);
-// };
 

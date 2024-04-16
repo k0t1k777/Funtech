@@ -40,6 +40,29 @@ export const CHECKBOX_DATA = {
   type: 'Тип',
 };
 
+export const CHECKBOX_DATA_CONST = [
+  {
+    name: 'MeetUp',
+    label: 'MeetUp',
+    margin: '0 14px 0 0',
+  },
+  {
+    name: 'Конференция',
+    label: 'Конференция',
+    margin: '0',
+  },
+  {
+    name: 'ML',
+    label: 'ML',
+    margin: '0 14px 0 0',
+  },
+  {
+    name: 'Воркшоп',
+    label: 'Воркшоп',
+    margin: '0 0 0 0',
+  },
+];
+
 export const POPUP_DATA = {
   agry: 'Заполняя форму, я даю согласие на обработку данных',
   data: 'Личные данные',
@@ -58,6 +81,8 @@ export const POPUP_DATA = {
 export const ENTRY_DATA = {
   title: 'Запись подтверждена!',
   addReminderText: 'Добавить напоминание в календарь',
+  done: 'Вы успешно зарегистрировались на ',
+  continue: ' Подробности уже на вашей почте!',
 };
 
 export const NOTIFICATION_DATA = {
@@ -240,6 +265,6 @@ export const ERROR_DATA = {
   text: 'Ошибка, проверьте поле',
 };
 
-export const INFOTOOLTIP_DATA = {
-  done: 'Ошибка, проверьте поле',
+export const FOOTER_DATA = {
+  text: '© 2005–2024 ООО «Яндекс»',
 };

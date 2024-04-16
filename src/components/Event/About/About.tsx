@@ -2,7 +2,7 @@ import './About.css';
 import IEvent from '../../types/Event';
 
 export interface IAboutProps {
-  event: IEvent;
+  event?: IEvent;
 }
 
 export default function About({ event }: IAboutProps) {

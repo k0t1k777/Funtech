@@ -29,7 +29,11 @@ export default function Header({
         </div>
         <button className='header__container-profile'>
           <div className='header__container-profile-img'>
-            {<Profile onClick={!loggedIn ? handleEnterOpen : handleProfileOpen} />}
+            {
+              <Profile
+                onClick={!loggedIn ? handleEnterOpen : handleProfileOpen}
+              />
+            }
           </div>
           <p className='header__text'>
             {!loggedIn ? POPUP_DATA.enter : `${firstName} ${shirtSecondName}`}

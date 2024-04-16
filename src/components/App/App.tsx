@@ -231,6 +231,7 @@ export default function App() {
         <PopupCreateEvent
           handleOverlayClose={handleOverlayClose}
           setIsCreateEventOpen={setIsCreateEventOpen}
+          setIsProfileOpen={setIsProfileOpen}
         />
       )}
       {isEntryOpen && (

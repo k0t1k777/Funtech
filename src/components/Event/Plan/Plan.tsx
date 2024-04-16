@@ -5,7 +5,7 @@ import IEvent from '../../types/Event';
 import './Plan.css';
 
 export interface IPlanProps {
-  event: IEvent;
+  event?: IEvent;
 }
 
 export default function Plan({ event }: IPlanProps) {

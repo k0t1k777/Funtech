@@ -8,6 +8,7 @@ import Courses from './Courses/Courses';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as Api from '../../utils/utils';
+import IEvent from '../types/Event';
 
 export interface IEventProps {
   handleRegOnIventOpen: () => void;
@@ -18,9 +19,8 @@ export default function Event({
   handleRegOnIventOpen,
   handleCreateEventOpen,
 }: IEventProps) {
-  const [eventData, setEventData] = useState();
+  const [eventData, setEventData] = useState<IEvent | undefined>(undefined);
   const { eventId } = useParams();
-  localStorage.setItem('eventId', eventId);
 
   useEffect(() => {
     Api.getEvent(eventId).then((data) => {

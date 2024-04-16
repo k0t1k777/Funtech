@@ -22,15 +22,18 @@ import {
 } from './PopupCreateEventStyles';
 import SwitchButton from '../../../ui/SwitchButton';
 import CloudIcon from '../../../assets/cloudIcon.svg?react';
+import { SelectChangeEvent } from '@mui/material/Select';
 
 interface IPopupCreateEventProps {
   handleOverlayClose: () => void;
   setIsCreateEventOpen: (type: boolean) => void;
+  setIsProfileOpen: (type: boolean) => void;
 }
 
 export default function PopupCreateEvent({
   handleOverlayClose,
   setIsCreateEventOpen,
+  setIsProfileOpen,
 }: IPopupCreateEventProps) {
   const modalRef = useRef<HTMLDivElement>(null);
   const [selectType, setSelectType] = useState('eventType');
@@ -41,19 +44,19 @@ export default function PopupCreateEvent({
     e.stopPropagation();
   };
 
-  const handleSelectType = (e) => {
+  const handleSelectType = (e: SelectChangeEvent<string>) => {
     setSelectType(e.target.value);
   };
 
-  const handleSelectDirection = (e) => {
+  const handleSelectDirection = (e: SelectChangeEvent<string>) => {
     setSelectDirection(e.target.value);
   };
 
-  const handleSelectFormat = (e) => {
+  const handleSelectFormat = (e: SelectChangeEvent<string>) => {
     setSelectFormat(e.target.value);
   };
 
-  const handleSelectCity = (e) => {
+  const handleSelectCity = (e: SelectChangeEvent<string>) => {
     setSelectCity(e.target.value);
   };
 
@@ -72,6 +75,7 @@ export default function PopupCreateEvent({
 
   const handleCloseAll = () => {
     setIsCreateEventOpen(false);
+    setIsProfileOpen(false);
   };
 
   return (
@@ -345,7 +349,7 @@ export default function PopupCreateEvent({
               }}
             >
               <CloudIcon />
-             {POPUP_DATA.download}
+              {POPUP_DATA.download}
             </Link>
           </Box>
           <Box

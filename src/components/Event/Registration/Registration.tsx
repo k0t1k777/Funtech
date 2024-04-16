@@ -10,8 +10,8 @@ import { REGISTRATION_DATA } from './../../../utils/constants';
 import IEvent from '../../types/Event';
 
 export interface IRegistrationProps {
-  event: IEvent;
-  handleRegOnIventOpen: () => void;
+  event?: IEvent;
+    handleRegOnIventOpen: () => void;
   handleCreateEventOpen: () => void;
 }
 
@@ -27,10 +27,10 @@ export default function Registration({
           <div className='registration__date'>
             <CalendarIcon />
             <p className='registration__date-text'>
-              {getFullDate(event?.start_time)}
+              {event && getFullDate(event?.start_time)}
             </p>
           </div>
-          {event?.format === 'online' ? (
+          {event && event.format === 'online' ? (
             ''
           ) : (
             <div className='registration__adress'>

@@ -4,7 +4,7 @@ import { PLACE_DATA } from './../../../utils/constants';
 import IEvent from '../../types/Event';
 
 export interface IPlaceProps {
-  event: IEvent;
+  event?: IEvent;
 }
 
 export default function Place({ event }: IPlaceProps) {

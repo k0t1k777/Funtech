@@ -25,9 +25,6 @@ export default function BasicSelect({
 
   const handleChange = (evt: SelectChangeEvent<string>) => {
     const value = evt.target.value;
-    // if (onChange) {
-    //   onChange(value);
-    // }
     if (setCityValue) {
       setCityValue(value);
     }
