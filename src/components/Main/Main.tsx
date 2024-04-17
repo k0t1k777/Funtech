@@ -27,6 +27,7 @@ export default function Main({
   handleRegOnIventOpen,
   handleCreateEventOpen,
 }: IMainProps) {
+
   return (
     <div className='main'>
       <div>

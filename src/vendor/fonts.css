@@ -9,7 +9,6 @@
 
 @font-face {
   font-family: 'Yandex Sans Text';
-
   src: url('./fonts/YandexSansText-Regular.ttf') format('ttf'),
     url('./fonts/YandexSansText-Regular.woff2') format('woff2'),
     url('./fonts/YandexSansText-Regular.woff') format('woff');
@@ -19,7 +18,6 @@
 
 @font-face {
   font-family: 'Yandex Sans Text';
-
   src: url('./fonts/YandexSansText-Medium.ttf') format('ttf'),
     url('./fonts/YandexSansText-Medium.woff2') format('woff2'),
     url('./fonts/YandexSansText-Medium.woff') format('woff');
