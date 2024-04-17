@@ -18,7 +18,7 @@ Cервис информирования и регистрации предст�
 2. Тилек Куламназаров - Профиль на GitHub [https://github.com/k0t1k777](https://github.com/Zikoshh) 
 
 ## ссылка на Github Pages
-[Ссылка: https://k0t1k777.github.io/HR_Space](https://k0t1k777.github.io/Funtech)
+[Ссылка: https://hackathon-funtech.sytes.net/](https://hackathon-funtech.sytes.net/)
 
 ## Инструкции по установке и запуску
 
@@ -49,10 +49,13 @@ Cервис информирования и регистрации предст�
 4. mui/x-date-pickers-pro
 
 ## Ключевые точки для медиа min,max-width: 1440px
-<!-- ![alt text](./src/assets/image.png)
-![alt text](./src/assets/image-1.png)
-![alt text](./src/assets/image-2.png)
-![alt text](./src/assets/image-3.png)
-![alt text](./src/assets/image-4.png)
-![alt text](./src/assets/image-5.png)
-![alt text](./src/assets/image-6.png) -->
+![alt text](./src/assets/Снимок.gpg)
+![alt text](./src/assets/Снимок2.gpg)
+![alt text](./src/assets/Снимок3.gpg)
+![alt text](./src/assets/Снимок4.gpg)
+![alt text](./src/assets/Снимок5.gpg)
+![alt text](./src/assets/Снимок6.gpg)
+![alt text](./src/assets/Снимок7.gpg)
+![alt text](./src/assets/Снимок8.gpg)
+![alt text](./src/assets/Снимок9.gpg)
+![alt text](./src/assets/Снимок10.gpg)
