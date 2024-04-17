@@ -8,5 +8,6 @@ export default interface IEventCard extends IEvent {
     position: string;
     speaker_description: string;
     speaker_name: string;
+    image: string;
   };
 }

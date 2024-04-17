@@ -14,6 +14,7 @@ interface IPosterCardProps {
   event?: string;
   status: string;
   format: string;
+  image: string;
   isRegistrated: boolean;
   isDeleted: boolean;
   handleRegOnIventOpen: () => void;
