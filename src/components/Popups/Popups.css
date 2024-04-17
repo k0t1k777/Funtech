@@ -43,11 +43,7 @@
 
 .popup_reg-on-ivent {
   width: 740px;
-  /* max-height: 90%; */
-  height: 1400px;
-  height: 90%;
-
-
+  max-height: 90%;
   position: static;
   padding: 80px;
 }
