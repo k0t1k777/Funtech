@@ -58,8 +58,6 @@ export default function App() {
     setSuperUser(true);
     setIsRegistrationOpen(false);
   }
-  console.log('loggedIn: ', loggedIn);
-  console.log('superUser: ', superUser);
 
   function handleLogin() {
     setLoggedIn(true);
