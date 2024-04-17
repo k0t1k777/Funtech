@@ -19,9 +19,12 @@ export default function EventsPoster({
   handleCreateEventOpen,
   loggedIn,
 }: IEventsPosterProps) {
+  console.log(events)
   return (
     <div className='events-poster'>
       <h2 className='events-poster__title'>{text}</h2>
+
+
       <div
         className={`events-poster-cards ${
           text === MAIN_DATA.personalTitle ? 'events-poster-cards_personal' : ''
@@ -46,6 +49,7 @@ export default function EventsPoster({
                 isDeleted={card.is_deleted}
                 handleRegOnIventOpen={handleRegOnIventOpen}
                 handleCreateEventOpen={handleCreateEventOpen}
+                image={card.image}
                 loggedIn={loggedIn}
               />
             )

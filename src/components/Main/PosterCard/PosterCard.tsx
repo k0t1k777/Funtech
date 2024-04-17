@@ -35,6 +35,7 @@ export default function PosterCard({
   isRegistrated,
   isDeleted,
   loggedIn,
+  image,
   handleCreateEventOpen,
   handleRegOnIventOpen,
 }: IPosterCardProps) {
@@ -51,7 +52,7 @@ export default function PosterCard({
   return (
     <div className='poster-card' onMouseUp={handleNavigateOnEvent}>
       <div className='poster-card__img'>
-        
+        <img src={image} className='poster-card__img' alt="картинка карточки" />
         <div className='poster-card__container'>
           <div className='poster-card__date-container'>
             <CalendarVector />
