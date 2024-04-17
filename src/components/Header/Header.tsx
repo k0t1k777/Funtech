@@ -8,12 +8,14 @@ export interface HeaderProps {
   handleEnterOpen?: () => void;
   handleProfileOpen?: () => void;
   loggedIn: boolean;
+  turnSuperUser: () => void;
 }
 
 export default function Header({
   handleEnterOpen,
   handleProfileOpen,
   loggedIn,
+  turnSuperUser,
 }: HeaderProps) {
   const firstName = localStorage.getItem('firstName');
   const secondName = localStorage.getItem('secondName');
@@ -22,7 +24,9 @@ export default function Header({
     : '';
   return (
     <div className='header'>
-      <Logo />
+      <Logo
+       onClick={turnSuperUser}
+       />
       <div className='header__container-wrapper'>
         <div className='header__container-search'>
           <Search />

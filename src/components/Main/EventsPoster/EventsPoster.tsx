@@ -9,7 +9,7 @@ interface IEventsPosterProps {
   text: string;
   handleRegOnIventOpen: () => void;
   handleCreateEventOpen: () => void;
-  loggedIn: boolean;
+  superUser: boolean;
 }
 
 export default function EventsPoster({
@@ -17,14 +17,11 @@ export default function EventsPoster({
   events,
   handleRegOnIventOpen,
   handleCreateEventOpen,
-  loggedIn,
+  superUser,
 }: IEventsPosterProps) {
-  console.log(events)
   return (
     <div className='events-poster'>
       <h2 className='events-poster__title'>{text}</h2>
-
-
       <div
         className={`events-poster-cards ${
           text === MAIN_DATA.personalTitle ? 'events-poster-cards_personal' : ''
@@ -50,7 +47,7 @@ export default function EventsPoster({
                 handleRegOnIventOpen={handleRegOnIventOpen}
                 handleCreateEventOpen={handleCreateEventOpen}
                 image={card.image}
-                loggedIn={loggedIn}
+                superUser={superUser}
               />
             )
         )}

@@ -14,6 +14,7 @@ interface IMainProps {
   setCityValue?: (value: string) => void;
   handleCreateEventOpen: () => void;
   cityValue?: string;
+  superUser: boolean;
   loggedIn: boolean;
 }
 
@@ -21,34 +22,37 @@ export default function Main({
   events,
   cities,
   cityValue,
+  superUser,
   loggedIn,
   setCityValue,
   personalEvents,
   handleRegOnIventOpen,
   handleCreateEventOpen,
 }: IMainProps) {
-
   return (
     <div className='main'>
       <div>
         <News />
-        {loggedIn && <EventsPoster
-          events={personalEvents}
-          text={MAIN_DATA.personalTitle}
-          handleRegOnIventOpen={handleRegOnIventOpen}
-          handleCreateEventOpen={handleCreateEventOpen}
-          loggedIn={loggedIn}
-
-        />}
+        {loggedIn && superUser && (
+          <EventsPoster
+            events={personalEvents}
+            text={MAIN_DATA.personalTitle}
+            handleRegOnIventOpen={handleRegOnIventOpen}
+            handleCreateEventOpen={handleCreateEventOpen}
+            superUser={superUser}
+          />
+        )}
         <EventsPoster
           events={events}
           text={MAIN_DATA.title}
           handleRegOnIventOpen={handleRegOnIventOpen}
           handleCreateEventOpen={handleCreateEventOpen}
-          loggedIn={loggedIn}
+          superUser={superUser}
         />
       </div>
       <FiltersContainer
+        loggedIn={loggedIn}
+        superUser={superUser}
         cityValue={cityValue}
         setCityValue={setCityValue}
         cities={cities}

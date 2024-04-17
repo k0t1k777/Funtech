@@ -11,12 +11,14 @@ import IEvent from '../../types/Event';
 
 export interface IRegistrationProps {
   event?: IEvent;
-    handleRegOnIventOpen: () => void;
+  handleRegOnIventOpen: () => void;
   handleCreateEventOpen: () => void;
+  superUser: boolean;
 }
 
 export default function Registration({
   event,
+  superUser,
   handleRegOnIventOpen,
   handleCreateEventOpen,
 }: IRegistrationProps) {
@@ -39,13 +41,13 @@ export default function Registration({
             </div>
           )}
         </div>
-        <div className='registration__buttons'>
+        {superUser && <div className='registration__buttons'>
           <button
             className='registration__button-edit'
             onClick={handleCreateEventOpen}
           />
           <button className='registration__button-on' />
-        </div>
+        </div>}
       </div>
       <div className='registration__container-img'>
         <img

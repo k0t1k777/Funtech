@@ -3,11 +3,10 @@ import react from '@vitejs/plugin-react-swc'
 import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
-  base: "/Funtech",
+  base: "/",
   plugins: [
     react(),
     svgr({svgrOptions: {
-      // svgrOptions
         }
       })
     ]

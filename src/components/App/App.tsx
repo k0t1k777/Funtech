@@ -37,16 +37,29 @@ export default function App() {
   const [valuesFirstName, setValuesFirstName] = useState<string>('');
   const [valuesLastName, setValuesLastName] = useState<string>('');
   const [valuesEmail, setValuesEmail] = useState<string>('');
-  const [valuesPhone, setValuesPhone] = useState<string | number | readonly string[] | undefined>();
+  const [valuesPhone, setValuesPhone] = useState<
+    string | number | readonly string[] | undefined
+  >();
   const [valuesTelegram, setValuesTelegram] = useState<string>('');
   const [valuesBirthDate, setValuesBirthDate] = useState<string>('');
   const [valuesCity, setValuesCity] = useState<string>('');
   const [valuesCompany, setValuesCompany] = useState<string>('');
   const [valuesPosition, setValuesPosition] = useState<string>('');
-  const [valuesExpYears, setValuesExpYears] = useState<string | number | readonly string[] | undefined>();
+  const [valuesExpYears, setValuesExpYears] = useState<
+    string | number | readonly string[] | undefined
+  >();
   const [loggedIn, setLoggedIn] = useState<boolean>(() => {
     return localStorage.getItem('loggedIn') === 'true';
   });
+  const [superUser, setSuperUser] = useState<boolean>(() => {
+    return localStorage.getItem('superUser') === 'true';
+  });
+  function turnSuperUser() {
+    setSuperUser(true);
+    setIsRegistrationOpen(false);
+  }
+  console.log('loggedIn: ', loggedIn);
+  console.log('superUser: ', superUser);
 
   function handleLogin() {
     setLoggedIn(true);
@@ -177,6 +190,7 @@ export default function App() {
         handleEnterOpen={handleEnterOpen}
         handleProfileOpen={handleProfileOpen}
         loggedIn={loggedIn}
+        turnSuperUser={turnSuperUser}
       />
       <Routes>
         <Route
@@ -184,6 +198,7 @@ export default function App() {
           element={
             <Main
               loggedIn={loggedIn}
+              superUser={superUser}
               events={events}
               personalEvents={personalEvents}
               cities={cities}
@@ -196,6 +211,7 @@ export default function App() {
           path='/event/:eventId'
           element={
             <Event
+              superUser={superUser}
               handleRegOnIventOpen={handleRegOnIventOpen}
               handleCreateEventOpen={handleCreateEventOpen}
             />

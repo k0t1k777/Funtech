@@ -13,11 +13,13 @@ import IEvent from '../types/Event';
 export interface IEventProps {
   handleRegOnIventOpen: () => void;
   handleCreateEventOpen: () => void;
+  superUser: boolean;
 }
 
 export default function Event({
   handleRegOnIventOpen,
   handleCreateEventOpen,
+  superUser,
 }: IEventProps) {
   const [eventData, setEventData] = useState<IEvent | undefined>(undefined);
   const { eventId } = useParams();
@@ -40,6 +42,7 @@ export default function Event({
           event={eventData}
           handleRegOnIventOpen={handleRegOnIventOpen}
           handleCreateEventOpen={handleCreateEventOpen}
+          superUser={superUser}
         />
         <Place event={eventData} />
       </div>
