@@ -9,7 +9,6 @@ interface IEventsPosterProps {
   text: string;
   handleRegOnIventOpen: () => void;
   handleCreateEventOpen: () => void;
-  superUser: boolean;
 }
 
 export default function EventsPoster({
@@ -17,8 +16,9 @@ export default function EventsPoster({
   events,
   handleRegOnIventOpen,
   handleCreateEventOpen,
-  superUser,
 }: IEventsPosterProps) {
+  console.log('events: ', events);
+
   return (
     <div className='events-poster'>
       <h2 className='events-poster__title'>{text}</h2>
@@ -30,7 +30,7 @@ export default function EventsPoster({
         {events.map(
           (card) =>
             card.first_speaker && (
-              <PosterCard
+              <PosterCard 
                 key={card.id}
                 id={card.id}
                 name={card.name}
@@ -41,13 +41,12 @@ export default function EventsPoster({
                 event={card.event_type.event_type_name}
                 format={card.format}
                 status={card.status}
-                date={getDate(card.start_time, card.end_time)}
                 isRegistrated={card.is_registrated}
                 isDeleted={card.is_deleted}
+                image={card.image}
+                date={getDate(card.start_time, card.end_time)}
                 handleRegOnIventOpen={handleRegOnIventOpen}
                 handleCreateEventOpen={handleCreateEventOpen}
-                image={card.image}
-                superUser={superUser}
               />
             )
         )}

@@ -7,12 +7,9 @@ import { useState } from 'react';
 import { MenuItem } from '@mui/material';
 
 export interface SelectProps {
-  cities: {
-    city_slug: string;
-    city_name: string;
-  }[];
   setCityValue?: (value: string) => void;
   cityValue?: string;
+  cities: any;
 }
 
 export default function BasicSelect({
@@ -79,7 +76,7 @@ export default function BasicSelect({
         >
           {cities.map((city, index) => (
             <MenuItem key={index} value={city.city_slug}>
-              {city.city_name}
+              {city.city_slug}
             </MenuItem>
           ))}
         </Select>

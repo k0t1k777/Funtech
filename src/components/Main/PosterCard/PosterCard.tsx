@@ -1,7 +1,7 @@
 import './PosterCard.css';
 import CalendarVector from '../../../assets/calendar.svg?react';
 import { POSTER_DATA } from '../../../utils/constants';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 interface IPosterCardProps {
   name: string;
@@ -19,10 +19,10 @@ interface IPosterCardProps {
   isDeleted: boolean;
   handleRegOnIventOpen: () => void;
   handleCreateEventOpen: () => void;
-  superUser: boolean;
 }
 
-export default function PosterCard({
+export default function PosterCard(
+  {
   name,
   organization,
   description,
@@ -36,18 +36,19 @@ export default function PosterCard({
   isRegistrated,
   isDeleted,
   image,
-  superUser,
   handleCreateEventOpen,
   handleRegOnIventOpen,
-}: IPosterCardProps) {
-  const navigate = useNavigate();
+}: IPosterCardProps
+) {
+  // const navigate = useNavigate();
+  console.log('id: ', id);
 
   const handleNavigateOnEvent = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLElement;
   if (target.id === '0') {
     return;
   }
-  navigate(`/event/${id}`);
+  // navigate(`/event/${id}`);
 };
 
   return (
@@ -59,7 +60,7 @@ export default function PosterCard({
             <CalendarVector />
             <p className='poster-card__date'>{date}</p>
           </div>
-          {superUser && <div className='poster-card__buttons'>
+          <div className='poster-card__buttons'>
             <button
               id='0'
               className='poster-card__button-edit'
@@ -75,7 +76,7 @@ export default function PosterCard({
             ) : (
               <button id='0' className='poster-card__button-on' type='button' />
             )}
-          </div>}
+          </div>
         </div>
       </div>
       <div
