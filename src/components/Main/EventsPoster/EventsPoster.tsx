@@ -17,6 +17,7 @@ export default function EventsPoster({
   handleRegOnIventOpen,
   handleCreateEventOpen,
 }: IEventsPosterProps) {
+  
   console.log('events: ', events);
 
   return (
