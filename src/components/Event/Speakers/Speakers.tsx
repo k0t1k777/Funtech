@@ -1,27 +1,41 @@
 import './Speakers.css';
 import SpeakerCard from '../SpeakerCard/SpeakerCard';
 import { SPEAKERS_DATA } from './../../../utils/constants';
-import IEvent from '../../types/Event';
+import { useEffect, useState } from 'react';
+
 
 export interface ISpeakersProps {
   event?: any;
 }
 
 export default function Speakers({ event }: ISpeakersProps) {
-  console.log('event: ', event);
+  const [randomEvents, setRandomEvents] = useState<any>([]);
+
+  useEffect(() => {
+    const randomIndexes = [];
+    while (randomIndexes.length < 2) {
+      const randomIndex = Math.floor(Math.random() * event.length);
+      if (!randomIndexes.includes(randomIndex)) {
+        randomIndexes.push(randomIndex);
+      }
+    }
+
+    const selectedEvents = randomIndexes.map((index) => event[index]);
+    setRandomEvents(selectedEvents);
+  }, [event]);
+
   return (
     <div className='speakers'>
       <h2 className='speakers__title'>{SPEAKERS_DATA.text}</h2>
       <div className='speakers__container'>
-        {event?.slice(0, 2).map((event) => {
+        {randomEvents?.slice(0, 2).map((event) => {
           return (
             <div key={event.id}>
               <SpeakerCard
-                // isPlanBlock={false}
                 speakerName={event?.first_speaker.speaker_name}
                 speakerCompany={event?.first_speaker.company}
-                // speakerPosition={event?.speaker.position}
-                // speakerPhoto={event?.speaker.photo}
+                speakerPosition={event?.first_speaker.position}
+                speakerPhoto={event?.first_speaker.photo}
               />
             </div>
           );
