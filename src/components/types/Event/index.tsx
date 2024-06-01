@@ -12,7 +12,6 @@ export default interface IEvent {
   event_parts: IEventPart[];
   event_type: {
     event_type_name: string;
-    event_type_slug: string;
   };
   format: string;
   id: number;
@@ -30,7 +29,6 @@ export default interface IEvent {
   registration_deadline: string;
   specializations: {
     specialization_name: string;
-    specialization_slug: string;
   };
   start_time: string;
   status: string;

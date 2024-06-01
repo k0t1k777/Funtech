@@ -7,16 +7,15 @@ import { CHECKBOX_TIME_DATA } from './../../../utils/constants';
 
 interface CheckboxesGroupProps {
   loggedIn: boolean;
-  superUser: boolean;
 }
 
-export default function CheckboxesGroup({ loggedIn, superUser }: CheckboxesGroupProps) {
+export default function CheckboxesGroup({ loggedIn }: CheckboxesGroupProps) {
   return (
     <Box sx={{ display: 'flex', width: '100%' }}>
       <FormControl component='fieldset' variant='standard'>
         <FormGroup sx={{ display: 'flex', flexDirection: 'row' }}>
           {CHECKBOX_TIME_DATA.map((checkbox) => (
-            (checkbox.name !== 'MyEvent' || loggedIn || superUser) && (
+            (checkbox.name !== 'MyEvent' || loggedIn) && (
             <FormControlLabel
               key={checkbox.name}
               sx={{

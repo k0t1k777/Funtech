@@ -1,50 +1,49 @@
 import './Event.css';
-import About from './About/About';
-import Speakers from './Speakers/Speakers';
-import Plan from './Plan/Plan';
+// import About from './About/About';
+// import Speakers from './Speakers/Speakers';
+// import Plan from './Plan/Plan';
 import Registration from './Registration/Registration';
 import Place from './Place/Place';
 import Courses from './Courses/Courses';
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import * as Api from '../../utils/utils';
-import IEvent from '../types/Event';
+// import { useEffect, useState } from 'react';
+// import { useParams } from 'react-router-dom';
+// import * as Api from '../../utils/utils';
+// import IEvent from '../types/Event';
 
 export interface IEventProps {
   handleRegOnIventOpen: () => void;
   handleCreateEventOpen: () => void;
-  superUser: boolean;
 }
 
 export default function Event({
   handleRegOnIventOpen,
   handleCreateEventOpen,
-  superUser,
 }: IEventProps) {
-  const [eventData, setEventData] = useState<IEvent | undefined>(undefined);
-  const { eventId } = useParams();
+  // const [eventData, setEventData] = useState<IEvent | undefined>(undefined);
+  // const { eventId } = useParams();
 
-  useEffect(() => {
-    Api.getEvent(eventId).then((data) => {
-      setEventData(data);
-    });
-  }, [eventId]);
+  // useEffect(() => {
+  //   Api.getEvent(eventId).then((data) => {
+  //     setEventData(data);
+  //   });
+  // }, [eventId]);
 
   return (
     <div className='event'>
       <div className='event__container'>
-        <About event={eventData} />
+        {/* <About event={eventData} />
         <Speakers event={eventData} />
-        <Plan event={eventData} />
+        <Plan event={eventData} /> */}
       </div>
       <div className='event__container'>
         <Registration
-          event={eventData}
+          // event={eventData}
           handleRegOnIventOpen={handleRegOnIventOpen}
           handleCreateEventOpen={handleCreateEventOpen}
-          superUser={superUser}
         />
-        <Place event={eventData} />
+        <Place 
+        // event={eventData} 
+        />
       </div>
       <Courses />
     </div>

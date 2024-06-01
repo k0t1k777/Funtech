@@ -1,3 +1,4 @@
+
 export const CITY_DATA = [
   { city_slug: 'Москва' },
   { city_slug: 'Питер' },
@@ -8,46 +9,200 @@ export const CITY_DATA = [
 export const EVENTS = [
   {
     id: 1,
-    name: "Название события 1",
+    name: 'Введение в TensorFlow',
     first_speaker: {
-      position: "Должность спикера 1",
-      speaker_name: "Имя спикера 1",
-      company: "Компания спикера 1"
+      position: 'Инженер по ML',
+      speaker_name: 'Сергей Петров',
+      company: 'Google',
     },
     specializations: {
-      specialization_name: "Специализация 1"
+      specialization_name: 'Backend',
     },
     event_type: {
-      event_type_name: "Тип события 1"
+      event_type_name: 'Конференция',
     },
-    format: "Формат события 1",
-    status: "Статус события 1",
+    format: 'offline',
+    status: '	registration is open',
     is_registrated: true,
     is_deleted: false,
-    image: "URL_изображения_1",
-    start_time: "2023-08-15T10:00:00Z",
-    end_time: "2023-08-15T12:00:00Z"
+    image: 'URL_изображения_1',
+    start_time: '2024-04-20 10:00:00+03:00',
+    end_time: '2023-08-15T12:00:00Z',
   },
   {
     id: 2,
-    name: "Название события 2",
+    name: 'Название события 2',
     first_speaker: {
-      position: "Должность спикера 2",
-      speaker_name: "Имя спикера 2",
-      company: "Компания спикера 2"
+      position: 'Должность спикера 2',
+      speaker_name: 'Имя спикера 2',
+      company: 'Компания спикера 2',
     },
     specializations: {
-      specialization_name: "Специализация 2"
+      specialization_name: 'Специализация 2',
     },
     event_type: {
-      event_type_name: "Тип события 2"
+      event_type_name: 'Тип события 2',
     },
-    format: "Формат события 2",
-    status: "Статус события 2",
+    format: 'Формат события 2',
+    status: 'Статус события 2',
     is_registrated: false,
     is_deleted: false,
-    image: "URL_изображения_2",
-    start_time: "2023-09-20T15:00:00Z",
-    end_time: "2023-09-20T17:00:00Z"
-  }
+    image: 'URL_изображения_2',
+    start_time: '2024-04-20 10:00:00+03:00',
+    end_time: '2023-08-15T12:00:00Z',
+  },
+  {
+    id: 2,
+    name: 'Название события 2',
+    first_speaker: {
+      position: 'Должность спикера 2',
+      speaker_name: 'Имя спикера 2',
+      company: 'Компания спикера 2',
+    },
+    specializations: {
+      specialization_name: 'Специализация 2',
+    },
+    event_type: {
+      event_type_name: 'Тип события 2',
+    },
+    format: 'Формат события 2',
+    status: 'Статус события 2',
+    is_registrated: false,
+    is_deleted: false,
+    image: 'URL_изображения_2',
+    start_time: '2024-04-20 10:00:00+03:00',
+    end_time: '2023-08-15T12:00:00Z',
+  },
+  {
+    id: 2,
+    name: 'Название события 2',
+    first_speaker: {
+      position: 'Должность спикера 2',
+      speaker_name: 'Имя спикера 2',
+      company: 'Компания спикера 2',
+    },
+    specializations: {
+      specialization_name: 'Специализация 2',
+    },
+    event_type: {
+      event_type_name: 'Тип события 2',
+    },
+    format: 'Формат события 2',
+    status: 'Статус события 2',
+    is_registrated: false,
+    is_deleted: false,
+    image: 'URL_изображения_2',
+    start_time: '2024-04-20 10:00:00+03:00',
+    end_time: '2023-08-15T12:00:00Z',
+  },
+  {
+    id: 2,
+    name: 'Название события 2',
+    first_speaker: {
+      position: 'Должность спикера 2',
+      speaker_name: 'Имя спикера 2',
+      company: 'Компания спикера 2',
+    },
+    specializations: {
+      specialization_name: 'Специализация 2',
+    },
+    event_type: {
+      event_type_name: 'Тип события 2',
+    },
+    format: 'Формат события 2',
+    status: 'Статус события 2',
+    is_registrated: false,
+    is_deleted: false,
+    image: 'URL_изображения_2',
+    start_time: '2024-04-20 10:00:00+03:00',
+    end_time: '2023-08-15T12:00:00Z',
+  },
+  {
+    id: 2,
+    name: 'Название события 2',
+    first_speaker: {
+      position: 'Должность спикера 2',
+      speaker_name: 'Имя спикера 2',
+      company: 'Компания спикера 2',
+    },
+    specializations: {
+      specialization_name: 'Специализация 2',
+    },
+    event_type: {
+      event_type_name: 'Тип события 2',
+    },
+    format: 'Формат события 2',
+    status: 'Статус события 2',
+    is_registrated: false,
+    is_deleted: false,
+    image: 'URL_изображения_2',
+    start_time: '2024-04-20 10:00:00+03:00',
+    end_time: '2023-08-15T12:00:00Z',
+  },
+  {
+    id: 2,
+    name: 'Название события 2',
+    first_speaker: {
+      position: 'Должность спикера 2',
+      speaker_name: 'Имя спикера 2',
+      company: 'Компания спикера 2',
+    },
+    specializations: {
+      specialization_name: 'Специализация 2',
+    },
+    event_type: {
+      event_type_name: 'Тип события 2',
+    },
+    format: 'Формат события 2',
+    status: 'Статус события 2',
+    is_registrated: false,
+    is_deleted: false,
+    image: 'URL_изображения_2',
+    start_time: '2024-04-20 10:00:00+03:00',
+    end_time: '2023-08-15T12:00:00Z',
+  },
+  {
+    id: 2,
+    name: 'Название события 2',
+    first_speaker: {
+      position: 'Должность спикера 2',
+      speaker_name: 'Имя спикера 2',
+      company: 'Компания спикера 2',
+    },
+    specializations: {
+      specialization_name: 'Специализация 2',
+    },
+    event_type: {
+      event_type_name: 'Тип события 2',
+    },
+    format: 'Формат события 2',
+    status: 'Статус события 2',
+    is_registrated: false,
+    is_deleted: false,
+    image: 'URL_изображения_2',
+    start_time: '2024-04-20 10:00:00+03:00',
+    end_time: '2023-08-15T12:00:00Z',
+  },
+  {
+    id: 2,
+    name: 'Название события 2',
+    first_speaker: {
+      position: 'Должность спикера 2',
+      speaker_name: 'Имя спикера 2',
+      company: 'Компания спикера 2',
+    },
+    specializations: {
+      specialization_name: 'Специализация 2',
+    },
+    event_type: {
+      event_type_name: 'Тип события 2',
+    },
+    format: 'Формат события 2',
+    status: 'Статус события 2',
+    is_registrated: false,
+    is_deleted: false,
+    image: 'URL_изображения_2',
+    start_time: '2024-04-20 10:00:00+03:00',
+    end_time: '2023-08-15T12:00:00Z',
+  },
 ];

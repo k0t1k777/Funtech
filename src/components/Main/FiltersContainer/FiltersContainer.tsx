@@ -10,7 +10,6 @@ interface FiltersContainerProps {
   setCityValue?: (value: string) => void;
   cityValue?: string;
   loggedIn: boolean;
-  superUser: boolean;
 }
 
 export interface Сities {
@@ -22,7 +21,6 @@ export default function FiltersContainer({
   cities,
   cityValue,
   loggedIn,
-  superUser,
   setCityValue,
 }: FiltersContainerProps) {
   return (
@@ -33,7 +31,7 @@ export default function FiltersContainer({
         cityValue={cityValue}
         setCityValue={setCityValue}
       />
-      <CheckboxesTime loggedIn={loggedIn} superUser={superUser} />
+      <CheckboxesTime loggedIn={loggedIn} />
       <CheckboxesScills />
       <CheckboxesTypes />
     </div>

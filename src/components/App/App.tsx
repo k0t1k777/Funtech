@@ -22,7 +22,6 @@ import Footer from '../Footer/Footer';
 import { CITY_DATA } from './../../utils/mock'
 import { EVENTS } from './../../utils/mock'
 
-
 export default function App() {
   // const eventId = localStorage.getItem('eventId');
   // const [cities, setCities] = useState<Сities[]>([]);
