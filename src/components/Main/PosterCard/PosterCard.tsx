@@ -2,7 +2,6 @@ import './PosterCard.css';
 import CalendarVector from '../../../assets/calendar.svg?react';
 import { POSTER_DATA } from '../../../utils/constants';
 import { useNavigate } from 'react-router-dom';
-// import { useNavigate } from 'react-router-dom';
 
 interface IPosterCardProps {
   name: string;
@@ -42,7 +41,6 @@ export default function PosterCard(
 }: IPosterCardProps
 ) {
   const navigate = useNavigate();
-  console.log('id: ', id);
 
   const handleNavigateOnEvent = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLElement;

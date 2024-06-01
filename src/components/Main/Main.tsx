@@ -2,13 +2,11 @@ import './Main.css';
 import News from './News/News';
 import FiltersContainer from './FiltersContainer/FiltersContainer';
 import EventsPoster from './EventsPoster/EventsPoster';
-import IEventCard from '../types/EventCard';
 import { MAIN_DATA } from './../../utils/constants';
-// import { Сities } from '../..//components/Main/FiltersContainer/FiltersContainer';
 
 interface IMainProps {
-  events: IEventCard[];
-  personalEvents: IEventCard[];
+  events: any;
+  personalEvents: any;
   cities: any;
   handleRegOnIventOpen: () => void;
   setCityValue?: (value: string) => void;

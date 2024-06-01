@@ -209,6 +209,7 @@ export default function App() {
           path='/event/:eventId'
           element={
             <Event
+              events={EVENTS}
               handleRegOnIventOpen={handleRegOnIventOpen}
               handleCreateEventOpen={handleCreateEventOpen}
             />

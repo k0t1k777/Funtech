@@ -48,8 +48,9 @@
   display: flex;
   align-items: center;
   position: absolute;
-  top: 1px;
-  right: -160px;
+  top: 2px;
+  right: -140px;
+  gap: 6px;
 }
 
 .poster-card__button-edit {

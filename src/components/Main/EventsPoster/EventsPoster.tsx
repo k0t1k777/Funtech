@@ -18,8 +18,6 @@ export default function EventsPoster({
   handleCreateEventOpen,
 }: IEventsPosterProps) {
   
-  console.log('events: ', events);
-
   return (
     <div className='events-poster'>
       <h2 className='events-poster__title'>{text}</h2>

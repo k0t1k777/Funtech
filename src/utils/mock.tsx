@@ -1,10 +1,9 @@
-
 export const CITY_DATA = [
   { city_slug: 'Москва' },
   { city_slug: 'Питер' },
   { city_slug: 'Казань' },
   { city_slug: 'Екатеринбург' },
-  { city_slug: 'Владивосток' }
+  { city_slug: 'Владивосток' },
 ];
 
 export const EVENTS = [
@@ -23,10 +22,12 @@ export const EVENTS = [
       event_type_name: 'Конференция',
     },
     format: 'offline',
-    status: '	registration is open',
+    status: 'registration is open',
     is_registrated: true,
     is_deleted: false,
-    // image: url('./../'),
+    description:
+      'Митап на котором обсуждаются основы TensorFlow популярного фреймворка для машинного обучения.',
+    image: './../src/assets/images/1.png',
     start_time: '2024-04-20 10:00:00+03:00',
     end_time: '2024-04-23 10:45:00+03:00',
   },
@@ -48,7 +49,9 @@ export const EVENTS = [
     status: 'registration is open',
     is_registrated: false,
     is_deleted: false,
-    image: 'URL_изображения_2',
+    image: './../src/assets/images/2.png',
+    description:
+      'Вебинар на котором обсуждаются основы глубокого обучения с использованием PyTorch.',
     start_time: '2024-04-20 10:45:00+03:00',
     end_time: '2024-04-21 10:45:00+03:00',
   },
@@ -70,7 +73,9 @@ export const EVENTS = [
     status: 'registration is closed',
     is_registrated: false,
     is_deleted: false,
-    image: 'URL_изображения_2',
+    image: './../src/assets/images/3.png',
+    description:
+      'Встреча на которой обсуждаются возможности использования сверточных нейронных сетей в компьютерном зрении.',
     start_time: '2024-04-17 10:00:00+03:00',
     end_time: '2024-04-19 10:00:00+03:00',
   },
@@ -92,7 +97,9 @@ export const EVENTS = [
     status: 'registration is closed',
     is_registrated: false,
     is_deleted: false,
-    image: 'URL_изображения_2',
+    image: './../src/assets/images/4.png',
+    description:
+      'Конференция на которой обсуждаются возможности использования машинного обучения в финансовом секторе.',
     start_time: '2024-04-22 10:00:00+03:00',
     end_time: '2024-04-23 10:00:00+03:00',
   },
@@ -114,7 +121,9 @@ export const EVENTS = [
     status: 'registration is closed',
     is_registrated: false,
     is_deleted: false,
-    image: 'URL_изображения_2',
+    image: './../src/assets/images/5.png',
+    description:
+      'Митап на котором обсуждаются Автоматизация тестирования с Selenium.',
     start_time: '2024-04-25 10:00:00+03:00',
     end_time: '2024-04-28 10:00:00+03:00',
   },
@@ -136,7 +145,9 @@ export const EVENTS = [
     status: 'registration is open',
     is_registrated: false,
     is_deleted: false,
-    image: 'URL_изображения_2',
+    image: './../src/assets/images/6.png',
+    description:
+      'Вебинар на котором обсуждаются Тестирование производительности с JMeter.',
     start_time: '2024-04-28 10:00:00+03:00',
     end_time: '2024-04-28 10:00:00+03:00',
   },
@@ -161,7 +172,9 @@ export const PERSONAL_EVENTS = [
     status: '	registration is open',
     is_registrated: false,
     is_deleted: false,
-    image: 'URL_изображения_2',
+    image: './../src/assets/images/7.png',
+    description:
+      'Встреча на которой обсуждаются Методологии тестирования: Waterfall vs Agile.',
     start_time: '2024-04-24 10:00:00+03:00',
     end_time: '2024-04-25 10:00:00+03:00',
   },
@@ -183,7 +196,9 @@ export const PERSONAL_EVENTS = [
     status: 'registration is closed',
     is_registrated: false,
     is_deleted: false,
-    image: 'URL_изображения_2',
+    image: './../src/assets/images/8.png',
+    description:
+      'Конференция на которой обсуждаются возможности использования Тестирование безопасности веб-приложений.',
     start_time: '2024-04-21 10:00:00+03:00',
     end_time: '2024-04-22 10:00:00+03:00',
   },
@@ -205,7 +220,9 @@ export const PERSONAL_EVENTS = [
     status: 'registration is open',
     is_registrated: false,
     is_deleted: false,
-    image: 'URL_изображения_2',
+    image: './../src/assets/images/9.png',
+    description:
+      'Митап, на котором обсуждаются основы работы с Docker, инструментом для создания, развертывания и управления контейнерами.',
     start_time: '2024-04-21 10:00:00+03:00',
     end_time: '2024-04-22 10:00:00+03:00',
   },

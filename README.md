@@ -18,7 +18,7 @@ Cервис информирования и регистрации предст�
 2. Тилек Куламназаров - Профиль на GitHub [https://github.com/k0t1k777](https://github.com/Zikoshh) 
 
 ## ссылка на Github Pages
-[Ссылка: https://hackathon-funtech.sytes.net/](https://hackathon-funtech.sytes.net/)
+Ссылка: [https://k0t1k777.github.io/Funtech/](https://k0t1k777.github.io/Funtech/)
 
 ## Инструкции по установке и запуску
 
