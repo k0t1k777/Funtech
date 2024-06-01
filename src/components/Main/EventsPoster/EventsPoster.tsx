@@ -55,22 +55,3 @@ export default function EventsPoster({
   );
 }
 
-
-{/* <PosterCard 
-key={card.id}
-id={card.id}
-name={card.name}
-description={card.first_speaker.position}
-organization={card.first_speaker.speaker_name}
-company={card.first_speaker.company}
-skill={card.specializations.specialization_name}
-event={card.event_type.event_type_name}
-format={card.format}
-status={card.status}
-isRegistrated={card.is_registrated}
-isDeleted={card.is_deleted}
-image={card.image}
-date={getDate(card.start_time, card.end_time)}
-handleRegOnIventOpen={handleRegOnIventOpen}
-handleCreateEventOpen={handleCreateEventOpen}
-/> */}

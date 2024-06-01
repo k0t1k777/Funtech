@@ -21,6 +21,7 @@ import Footer from '../Footer/Footer';
 // МОК ДАННЫЕ
 import { CITY_DATA } from './../../utils/mock'
 import { EVENTS } from './../../utils/mock'
+import { PERSONAL_EVENTS } from '../../utils/mock';
 
 export default function App() {
   // const eventId = localStorage.getItem('eventId');
@@ -197,7 +198,7 @@ export default function App() {
             <Main
               loggedIn={loggedIn}
               events={EVENTS}
-              // personalEvents={personalEvents}
+              personalEvents={PERSONAL_EVENTS}
               cities={CITY_DATA}
               handleRegOnIventOpen={handleRegOnIventOpen}
               handleCreateEventOpen={handleCreateEventOpen}
