@@ -1,6 +1,6 @@
 import './News.css';
 import RegOpen from './../../../assets/Reg-open.svg?react';
-import PhotoNews from './../../../assets/PhotoWoman.png';
+import PhotoNews from './../../../assets/images/PhotoWoman.png';
 import PhotoWaves from './../../../assets/Waves.svg';
 import { NEWS_DATA, NEWS_TEXT_DATA } from './../../../utils/constants';
 

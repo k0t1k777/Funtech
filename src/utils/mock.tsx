@@ -26,7 +26,7 @@ export const EVENTS = [
     status: '	registration is open',
     is_registrated: true,
     is_deleted: false,
-    image: 'URL_изображения_1',
+    // image: url('./../'),
     start_time: '2024-04-20 10:00:00+03:00',
     end_time: '2024-04-23 10:45:00+03:00',
   },

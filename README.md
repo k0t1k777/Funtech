@@ -50,13 +50,13 @@ Cервис информирования и регистрации предст�
 
 ## Ключевые точки для медиа min,max-width: 1440px
 
-![alt text](./src/assets/Снимок.JPG)
-![alt text](./src/assets/Снимок2.jpg)
-![alt text](./src/assets/Снимок3.jpg)
-![alt text](./src/assets/Снимок4.jpg)
-![alt text](./src/assets/Снимок5.jpg)
-![alt text](./src/assets/Снимок6.jpg)
-![alt text](./src/assets/Снимок7.jpg)
-![alt text](./src/assets/Снимок8.jpg)
-![alt text](./src/assets/Снимок9.jpg)
-![alt text](./src/assets/Снимок10.jpg)
+![alt text](./src/assets/screenshots/Снимок.JPG)
+![alt text](./src/assets/screenshots/Снимок2.JPG)
+![alt text](./src/assets/screenshots/Снимок3.JPG)
+![alt text](./src/assets/screenshots/Снимок4.JPG)
+![alt text](./src/assets/screenshots/Снимок5.JPG)
+![alt text](./src/assets/screenshots/Снимок6.JPG)
+![alt text](./src/assets/screenshots/Снимок7.JPG)
+![alt text](./src/assets/screenshots/Снимок8.JPG)
+![alt text](./src/assets/screenshots/Снимок9.JPG)
+![alt text](./src/assets/screenshots/Снимок10.JPG)

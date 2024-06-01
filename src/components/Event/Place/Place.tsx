@@ -1,5 +1,5 @@
 import './Place.css';
-import Map from '../../../assets/map.png';
+import Map from '../../../assets/images/map.png';
 import { PLACE_DATA } from './../../../utils/constants';
 // import IEvent from '../../types/Event';
 

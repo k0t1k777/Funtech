@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import { CREATE_EVENT_DATA, POPUP_DATA } from '../../../utils/constants';
 import { useEffect, useRef, useState } from 'react';
-import DefaultEventImg from '../../../assets/defaultEventImg.png';
+import DefaultEventImg from '../../../assets/images/defaultEventImg.png';
 import {
   defaultInputStyles,
   descriptionInputStyles,
