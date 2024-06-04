@@ -76,7 +76,7 @@ export const EVENTS = [
     status: 'registration is closed',
     is_registrated: false,
     is_deleted: false,
-    image: './../src/assets/images/2photo.png',
+    image: './../src/assets/images/3.png',
     description:
       'Встреча на которой обсуждаются возможности использования сверточных нейронных сетей в компьютерном зрении.',
     start_time: '2024-04-17 10:00:00+03:00',
@@ -101,7 +101,7 @@ export const EVENTS = [
     status: 'registration is closed',
     is_registrated: false,
     is_deleted: false,
-    image: './../src/assets/images/5photo.png',
+    image: './../src/assets/images/4.png',
     description:
       'Конференция на которой обсуждаются возможности использования машинного обучения в финансовом секторе.',
     start_time: '2024-04-22 10:00:00+03:00',
@@ -114,7 +114,7 @@ export const EVENTS = [
       position: 'Специалист по ML2',
       speaker_name: 'Анна Морозова',
       company: 'JetBrains',
-      photo: './../src/assets/images/7photo.jpeg',
+      photo: './../src/assets/images/6photo.jpeg',
     },
     specializations: {
       specialization_name: 'ML',
@@ -126,7 +126,7 @@ export const EVENTS = [
     status: 'registration is closed',
     is_registrated: false,
     is_deleted: false,
-    image: './../src/assets/images/4photo.png',
+    image: './../src/assets/images/7.png',
     description:
       'Митап на котором обсуждаются Автоматизация тестирования с Selenium.',
     start_time: '2024-04-25 10:00:00+03:00',
@@ -179,7 +179,7 @@ export const PERSONAL_EVENTS = [
     status: '	registration is open',
     is_registrated: false,
     is_deleted: false,
-    image: './../src/assets/images/8photo.png',
+    image: './../src/assets/images/4.png',
     description:
       'Встреча на которой обсуждаются Методологии тестирования: Waterfall vs Agile.',
     start_time: '2024-04-24 10:00:00+03:00',
@@ -204,7 +204,7 @@ export const PERSONAL_EVENTS = [
     status: 'registration is closed',
     is_registrated: false,
     is_deleted: false,
-    image: './../src/assets/images/9photo.png',
+    image: './../src/assets/images/5.png',
     description:
       'Конференция на которой обсуждаются возможности использования Тестирование безопасности веб-приложений.',
     start_time: '2024-04-21 10:00:00+03:00',
@@ -229,7 +229,7 @@ export const PERSONAL_EVENTS = [
     status: 'registration is open',
     is_registrated: false,
     is_deleted: false,
-    image: './../src/assets/images/6photo.png',
+    image: './../src/assets/images/8.png',
     description:
       'Митап, на котором обсуждаются основы работы с Docker, инструментом для создания, развертывания и управления контейнерами.',
     start_time: '2024-04-21 10:00:00+03:00',
