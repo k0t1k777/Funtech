@@ -4,7 +4,7 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { FILTER_DATA } from './../../utils/constants';
 import { useState } from 'react';
-import { MenuItem } from '@mui/material';
+// import { MenuItem } from '@mui/material';
 
 export interface SelectProps {
   setCityValue?: (value: string) => void;
@@ -13,7 +13,7 @@ export interface SelectProps {
 }
 
 export default function BasicSelect({
-  cities,
+  // cities,
   cityValue,
   setCityValue,
 }: SelectProps) {
@@ -74,11 +74,11 @@ export default function BasicSelect({
             borderRadius: '12px',
           }}
         >
-          {cities.map((city, index) => (
+          {/* {cities.map((city, index) => (
             <MenuItem key={index} value={city.city_slug}>
               {city.city_slug}
             </MenuItem>
-          ))}
+          ))} */}
         </Select>
       </FormControl>
     </Box>

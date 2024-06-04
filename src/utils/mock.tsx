@@ -31,6 +31,11 @@ export const EVENTS = [
     image: './../src/assets/images/1.png',
     start_time: '2024-04-20 10:00:00+03:00',
     end_time: '2024-04-23 10:45:00+03:00',
+    event_parts: {
+      event_part_start_time: '2024-04-20 10:00:00+03:00',
+      event_part_name: 'Введение в TensorFlow',
+      event_part_description: 'Более подробно поговорим о теме доклада',
+    },
   },
   {
     id: 2,
@@ -56,6 +61,11 @@ export const EVENTS = [
       'Вебинар на котором обсуждаются основы глубокого обучения с использованием PyTorch.',
     start_time: '2024-04-20 10:45:00+03:00',
     end_time: '2024-04-21 10:45:00+03:00',
+    event_parts: {
+      event_part_start_time: '2024-04-20 10:00:00+03:00',
+      event_part_name: 'Введение в TensorFlow',
+      event_part_description: 'Более подробно поговорим о теме доклада',
+    },
   },
   {
     id: 3,
@@ -81,6 +91,11 @@ export const EVENTS = [
       'Встреча на которой обсуждаются возможности использования сверточных нейронных сетей в компьютерном зрении.',
     start_time: '2024-04-17 10:00:00+03:00',
     end_time: '2024-04-19 10:00:00+03:00',
+    event_parts: {
+      event_part_start_time: '2024-04-20 10:00:00+03:00',
+      event_part_name: 'Введение в TensorFlow',
+      event_part_description: 'Более подробно поговорим о теме доклада',
+    },
   },
   {
     id: 4,
@@ -106,6 +121,11 @@ export const EVENTS = [
       'Конференция на которой обсуждаются возможности использования машинного обучения в финансовом секторе.',
     start_time: '2024-04-22 10:00:00+03:00',
     end_time: '2024-04-23 10:00:00+03:00',
+    event_parts: {
+      event_part_start_time: '2024-04-20 10:00:00+03:00',
+      event_part_name: 'Введение в TensorFlow',
+      event_part_description: 'Более подробно поговорим о теме доклада',
+    },
   },
   {
     id: 5,
@@ -131,6 +151,11 @@ export const EVENTS = [
       'Митап на котором обсуждаются Автоматизация тестирования с Selenium.',
     start_time: '2024-04-25 10:00:00+03:00',
     end_time: '2024-04-28 10:00:00+03:00',
+    event_parts: {
+      event_part_start_time: '2024-04-20 10:00:00+03:00',
+      event_part_name: 'Введение в TensorFlow',
+      event_part_description: 'Более подробно поговорим о теме доклада',
+    },
   },
   {
     id: 6,
@@ -156,6 +181,11 @@ export const EVENTS = [
       'Вебинар на котором обсуждаются Тестирование производительности с JMeter.',
     start_time: '2024-04-28 10:00:00+03:00',
     end_time: '2024-04-28 10:00:00+03:00',
+    event_parts: {
+      event_part_start_time: '2024-04-20 10:00:00+03:00',
+      event_part_name: 'Введение в TensorFlow',
+      event_part_description: 'Более подробно поговорим о теме доклада',
+    },
   },
 ];
 
@@ -184,6 +214,11 @@ export const PERSONAL_EVENTS = [
       'Встреча на которой обсуждаются Методологии тестирования: Waterfall vs Agile.',
     start_time: '2024-04-24 10:00:00+03:00',
     end_time: '2024-04-25 10:00:00+03:00',
+    event_parts: {
+      event_part_start_time: '2024-04-20 10:00:00+03:00',
+      event_part_name: 'Введение в TensorFlow',
+      event_part_description: 'Более подробно поговорим о теме доклада',
+    },
   },
   {
     id: 8,
@@ -209,6 +244,11 @@ export const PERSONAL_EVENTS = [
       'Конференция на которой обсуждаются возможности использования Тестирование безопасности веб-приложений.',
     start_time: '2024-04-21 10:00:00+03:00',
     end_time: '2024-04-22 10:00:00+03:00',
+    event_parts: {
+      event_part_start_time: '2024-04-20 10:00:00+03:00',
+      event_part_name: 'Введение в TensorFlow',
+      event_part_description: 'Более подробно поговорим о теме доклада',
+    },
   },
   {
     id: 9,
@@ -234,5 +274,10 @@ export const PERSONAL_EVENTS = [
       'Митап, на котором обсуждаются основы работы с Docker, инструментом для создания, развертывания и управления контейнерами.',
     start_time: '2024-04-21 10:00:00+03:00',
     end_time: '2024-04-22 10:00:00+03:00',
+    event_parts: {
+      event_part_start_time: '2024-04-20 10:00:00+03:00',
+      event_part_name: 'Введение в TensorFlow',
+      event_part_description: 'Более подробно поговорим о теме доклада',
+    },
   },
 ];

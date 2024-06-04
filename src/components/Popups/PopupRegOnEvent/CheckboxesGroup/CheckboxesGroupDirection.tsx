@@ -1,17 +1,19 @@
-import { Checkbox, FormControlLabel, Box } from '@mui/material';
-import { checkboxDirection } from './CheckboxStyles';
+import { 
+  // Checkbox, FormControlLabel,
+   Box } from '@mui/material';
+// import { checkboxDirection } from './CheckboxStyles';
 
 interface CheckboxesGroupProps {
   isShowAllClicked: boolean;
-  specializations: {
-    specialization_name: string;
-    specialization_slug: string;
-  }[];
+  // specializations: {
+  //   specialization_name: string;
+  //   specialization_slug: string;
+  // }[];
 }
 
 export default function CheckboxesGroupDirection({
-  isShowAllClicked,
-  specializations,
+  // isShowAllClicked,
+  // specializations,
 }: CheckboxesGroupProps) {
  
   return (
@@ -24,7 +26,7 @@ export default function CheckboxesGroupDirection({
         rowGap: '12px',
       }}
     >
-      {isShowAllClicked
+      {/* {isShowAllClicked
         ? specializations.map((spec, index) => {
             return (
               <FormControlLabel
@@ -35,8 +37,8 @@ export default function CheckboxesGroupDirection({
                 name={spec.specialization_slug}
               />
             );
-          })
-        : specializations.slice(0, 8).map((spec, index) => {
+          }) */}
+        {/* : specializations.slice(0, 8).map((spec, index) => {
             return (
               <FormControlLabel
                 control={<Checkbox />}
@@ -46,7 +48,7 @@ export default function CheckboxesGroupDirection({
                 name={spec.specialization_slug}
               />
             );
-          })}
+          })} */}
     </Box>
   );
 }

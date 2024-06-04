@@ -46,7 +46,7 @@ export default function Event({
          event={events}
         />
         <Plan
-        //  event={eventData}
+         event={eventData}
         />
       </div>
       <div className='event__container'>

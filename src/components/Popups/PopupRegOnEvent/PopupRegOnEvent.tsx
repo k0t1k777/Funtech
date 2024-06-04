@@ -9,7 +9,7 @@ import {
   Typography,
 } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
-import CheckboxesGroupDirection from './CheckboxesGroup/CheckboxesGroupDirection';
+// import CheckboxesGroupDirection from './CheckboxesGroup/CheckboxesGroupDirection';
 import CheckboxesGroupFormat from './CheckboxesGroup/CheckboxesGroupFormat';
 import CheckboxesGroupJob from './CheckboxesGroup/CheckboxesGroupJob';
 import { checkboxDefault } from './CheckboxesGroup/CheckboxStyles';
@@ -25,10 +25,10 @@ const validationSchema = yup.object().shape({
 });
 
 export interface PopupRegOnEventProps {
-  specializations: Spec[];
+  // specializations: Spec[];
   handleOverlayClose: () => void;
   setIsRegOnIventOpen: (type: boolean) => void;
-  postEvent: () => void;
+  // postEvent: () => void;
   valuesFirstName: string;
   valuesLastName: string;
   valuesEmail: string;
@@ -64,9 +64,9 @@ export interface Spec {
 export default function PopupRegOnEvent({
   handleOverlayClose,
   setIsRegOnIventOpen,
-  postEvent,
+  // postEvent,
   handleEntryOpen,
-  specializations,
+  // specializations,
   valuesFirstName,
   valuesLastName,
   valuesEmail,
@@ -90,7 +90,7 @@ export default function PopupRegOnEvent({
 }: PopupRegOnEventProps) {
   const modalRef = useRef<HTMLDivElement>(null);
   const [isInputValid, setIsInputValid] = useState(false);
-  const [isShowAllClicked, setIsShowAllClicked] = useState(false);
+  // const [isShowAllClicked, setIsShowAllClicked] = useState(false);
   const [isWorkingChecked, setIsWorkingChecked] = useState(false);
 
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -101,9 +101,9 @@ export default function PopupRegOnEvent({
     setIsRegOnIventOpen(false);
   };
 
-  const handleShowAll = () => {
-    setIsShowAllClicked(true);
-  };
+  // const handleShowAll = () => {
+  //   setIsShowAllClicked(true);
+  // };
 
   const handleSubmit = () => {
     if (isWorkingChecked) {
@@ -144,7 +144,7 @@ export default function PopupRegOnEvent({
           console.log(error);
         });
     }
-    postEvent();
+    // postEvent();
     handleEntryOpen();
     setIsRegOnIventOpen(false);
   };
@@ -310,15 +310,15 @@ export default function PopupRegOnEvent({
                   textDecoration: 'underline',
                 },
               }}
-              onClick={handleShowAll}
+              // onClick={handleShowAll}
             >
               {REG_ON_IVENT_DATA.showAll}
             </Button>
           </Box>
-          <CheckboxesGroupDirection
-            specializations={specializations}
-            isShowAllClicked={isShowAllClicked}
-          />
+          {/* <CheckboxesGroupDirection
+            // specializations={specializations}
+            // isShowAllClicked={isShowAllClicked}
+          /> */}
           <Typography
             sx={{
               fontSize: '16px',
