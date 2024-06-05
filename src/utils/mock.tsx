@@ -31,11 +31,38 @@ export const EVENTS = [
     image: './../src/assets/images/1.png',
     start_time: '2024-04-20 10:00:00+03:00',
     end_time: '2024-04-23 10:45:00+03:00',
-    event_parts: {
-      event_part_start_time: '2024-04-20 10:00:00+03:00',
-      event_part_name: 'Введение в TensorFlow',
-      event_part_description: 'Более подробно поговорим о теме доклада',
-    },
+    event_parts: [
+      {
+        id: 0,
+        event_part_start_time: '2024-04-20 10:00:00+03:00',
+        event_part_name: 'Введение в TensorFlow',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 1,
+        event_part_start_time: '2024-04-20 10:45:00+03:00	',
+        event_part_name: 'Тензоры и операции в TensorFlow',
+        event_part_description: 'Более подробно поговорим о теме доклада	',
+      },
+      {
+        id: 2,
+        event_part_start_time: '2024-04-20 11:30:00+03:00',
+        event_part_name: 'Кофе-брейк',
+        event_part_description: 'Немого отдохнем',
+      },
+      {
+        id: 3,
+        event_part_start_time: '2024-04-20 12:00:00+03:00',
+        event_part_name: 'Обучение нейронных сетей в TensorFlow',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 4,
+        event_part_start_time: '2024-04-20 12:45:00+03:00',
+        event_part_name: 'Продвинутые техники в TensorFlow',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+    ],
   },
   {
     id: 2,
@@ -61,11 +88,38 @@ export const EVENTS = [
       'Вебинар на котором обсуждаются основы глубокого обучения с использованием PyTorch.',
     start_time: '2024-04-20 10:45:00+03:00',
     end_time: '2024-04-21 10:45:00+03:00',
-    event_parts: {
-      event_part_start_time: '2024-04-20 10:00:00+03:00',
-      event_part_name: 'Введение в TensorFlow',
-      event_part_description: 'Более подробно поговорим о теме доклада',
-    },
+    event_parts: [
+      {
+        id: 0,
+        event_part_start_time: '2024-04-20 10:00:00+03:00',
+        event_part_name: 'Основы PyTorch',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 1,
+        event_part_start_time: '2024-04-20 10:45:00+03:00	',
+        event_part_name: 'Модели глубокого обучения в PyTorch',
+        event_part_description: 'Более подробно поговорим о теме доклада	',
+      },
+      {
+        id: 2,
+        event_part_start_time: '2024-04-20 11:30:00+03:00',
+        event_part_name: 'Кофе-брейк',
+        event_part_description: 'Немого отдохнем',
+      },
+      {
+        id: 3,
+        event_part_start_time: '2024-04-20 12:00:00+03:00',
+        event_part_name: 'Применение PyTorch в реальных проектах',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 4,
+        event_part_start_time: '2024-04-20 12:45:00+03:00',
+        event_part_name: 'Оптимизация производительности с PyTorch',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+    ],
   },
   {
     id: 3,
@@ -91,11 +145,38 @@ export const EVENTS = [
       'Встреча на которой обсуждаются возможности использования сверточных нейронных сетей в компьютерном зрении.',
     start_time: '2024-04-17 10:00:00+03:00',
     end_time: '2024-04-19 10:00:00+03:00',
-    event_parts: {
-      event_part_start_time: '2024-04-20 10:00:00+03:00',
-      event_part_name: 'Введение в TensorFlow',
-      event_part_description: 'Более подробно поговорим о теме доклада',
-    },
+    event_parts: [
+      {
+        id: 0,
+        event_part_start_time: '2024-04-20 10:00:00+03:00',
+        event_part_name: 'Основы сверточных нейронных сетей',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 1,
+        event_part_start_time: '2024-04-20 10:45:00+03:00	',
+        event_part_name: 'Сверточные сети в задачах компьютерного зрения',
+        event_part_description: 'Более подробно поговорим о теме доклада	',
+      },
+      {
+        id: 2,
+        event_part_start_time: '2024-04-20 11:30:00+03:00',
+        event_part_name: 'Кофе-брейк',
+        event_part_description: 'Немого отдохнем',
+      },
+      {
+        id: 3,
+        event_part_start_time: '2024-04-20 12:00:00+03:00',
+        event_part_name: 'Случаи использования сверточных сетей',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 4,
+        event_part_start_time: '2024-04-20 12:45:00+03:00',
+        event_part_name: 'Оптимизация сверточных сетей',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+    ],
   },
   {
     id: 4,
@@ -121,11 +202,38 @@ export const EVENTS = [
       'Конференция на которой обсуждаются возможности использования машинного обучения в финансовом секторе.',
     start_time: '2024-04-22 10:00:00+03:00',
     end_time: '2024-04-23 10:00:00+03:00',
-    event_parts: {
-      event_part_start_time: '2024-04-20 10:00:00+03:00',
-      event_part_name: 'Введение в TensorFlow',
-      event_part_description: 'Более подробно поговорим о теме доклада',
-    },
+    event_parts: [
+      {
+        id: 0,
+        event_part_start_time: '2024-04-20 10:00:00+03:00',
+        event_part_name: 'Машинное обучение в банковском секторе',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 1,
+        event_part_start_time: '2024-04-20 10:45:00+03:00	',
+        event_part_name: 'Применение ML в страховании',
+        event_part_description: 'Более подробно поговорим о теме доклада	',
+      },
+      {
+        id: 2,
+        event_part_start_time: '2024-04-20 11:30:00+03:00',
+        event_part_name: 'Кофе-брейк',
+        event_part_description: 'Немого отдохнем',
+      },
+      {
+        id: 3,
+        event_part_start_time: '2024-04-20 12:00:00+03:00',
+        event_part_name: 'ML для предсказания финансового рынка',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 4,
+        event_part_start_time: '2024-04-20 12:45:00+03:00',
+        event_part_name: 'Будущее машинного обучения в финансах',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+    ],
   },
   {
     id: 5,
@@ -151,11 +259,38 @@ export const EVENTS = [
       'Митап на котором обсуждаются Автоматизация тестирования с Selenium.',
     start_time: '2024-04-25 10:00:00+03:00',
     end_time: '2024-04-28 10:00:00+03:00',
-    event_parts: {
-      event_part_start_time: '2024-04-20 10:00:00+03:00',
-      event_part_name: 'Введение в TensorFlow',
-      event_part_description: 'Более подробно поговорим о теме доклада',
-    },
+    event_parts: [
+      {
+        id: 0,
+        event_part_start_time: '2024-04-20 10:00:00+03:00',
+        event_part_name: 'Введение в Selenium',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 1,
+        event_part_start_time: '2024-04-20 10:45:00+03:00	',
+        event_part_name: 'Применение Selenium для автоматизации тестирования',
+        event_part_description: 'Более подробно поговорим о теме доклада	',
+      },
+      {
+        id: 2,
+        event_part_start_time: '2024-04-20 11:30:00+03:00',
+        event_part_name: 'Кофе-брейк',
+        event_part_description: 'Немого отдохнем',
+      },
+      {
+        id: 3,
+        event_part_start_time: '2024-04-20 12:00:00+03:00',
+        event_part_name: '	Реальный опыт использования Selenium',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 4,
+        event_part_start_time: '2024-04-20 12:45:00+03:00',
+        event_part_name: 'Selenium: Будущее автоматизации тестированияw',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+    ],
   },
   {
     id: 6,
@@ -181,11 +316,39 @@ export const EVENTS = [
       'Вебинар на котором обсуждаются Тестирование производительности с JMeter.',
     start_time: '2024-04-28 10:00:00+03:00',
     end_time: '2024-04-28 10:00:00+03:00',
-    event_parts: {
-      event_part_start_time: '2024-04-20 10:00:00+03:00',
-      event_part_name: 'Введение в TensorFlow',
-      event_part_description: 'Более подробно поговорим о теме доклада',
-    },
+    event_parts: [
+      {
+        id: 0,
+        event_part_start_time: '2024-04-20 10:00:00+03:00',
+        event_part_name: 'Введение в JMeter',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 1,
+        event_part_start_time: '2024-04-20 10:45:00+03:00	',
+        event_part_name:
+          'Применение JMeter для тестирования производительности',
+        event_part_description: 'Более подробно поговорим о теме доклада	',
+      },
+      {
+        id: 2,
+        event_part_start_time: '2024-04-20 11:30:00+03:00',
+        event_part_name: 'Кофе-брейк',
+        event_part_description: 'Немого отдохнем',
+      },
+      {
+        id: 3,
+        event_part_start_time: '2024-04-20 12:00:00+03:00',
+        event_part_name: 'Реальный опыт использования JMeter',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 4,
+        event_part_start_time: '2024-04-20 12:45:00+03:00',
+        event_part_name: 'JMeter: Будущее тестирования производительности',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+    ],
   },
 ];
 
@@ -214,11 +377,38 @@ export const PERSONAL_EVENTS = [
       'Встреча на которой обсуждаются Методологии тестирования: Waterfall vs Agile.',
     start_time: '2024-04-24 10:00:00+03:00',
     end_time: '2024-04-25 10:00:00+03:00',
-    event_parts: {
-      event_part_start_time: '2024-04-20 10:00:00+03:00',
-      event_part_name: 'Введение в TensorFlow',
-      event_part_description: 'Более подробно поговорим о теме доклада',
-    },
+    event_parts: [
+      {
+        id: 0,
+        event_part_start_time: '2024-04-20 10:00:00+03:00',
+        event_part_name: 'Водопадная модель разработки и тестирования',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 1,
+        event_part_start_time: '2024-04-20 10:45:00+03:00	',
+        event_part_name: 'Гибкая методология разработки и тестирования',
+        event_part_description: 'Более подробно поговорим о теме доклада	',
+      },
+      {
+        id: 2,
+        event_part_start_time: '2024-04-20 11:30:00+03:00',
+        event_part_name: 'Кофе-брейк',
+        event_part_description: 'Немого отдохнем',
+      },
+      {
+        id: 3,
+        event_part_start_time: '2024-04-20 12:00:00+03:00',
+        event_part_name: 'Реальный опыт использования Waterfall и Agile',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 4,
+        event_part_start_time: '2024-04-20 12:45:00+03:00',
+        event_part_name: 'Waterfall vs Agile: Будущее методологий тестирования',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+    ],
   },
   {
     id: 8,
@@ -244,11 +434,39 @@ export const PERSONAL_EVENTS = [
       'Конференция на которой обсуждаются возможности использования Тестирование безопасности веб-приложений.',
     start_time: '2024-04-21 10:00:00+03:00',
     end_time: '2024-04-22 10:00:00+03:00',
-    event_parts: {
-      event_part_start_time: '2024-04-20 10:00:00+03:00',
-      event_part_name: 'Введение в TensorFlow',
-      event_part_description: 'Более подробно поговорим о теме доклада',
-    },
+    event_parts: [
+      {
+        id: 0,
+        event_part_start_time: '2024-04-20 10:00:00+03:00',
+        event_part_name: 'Введение в тестирование безопасности веб-приложений',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 1,
+        event_part_start_time: '2024-04-20 10:45:00+03:00	',
+        event_part_name: 'Методы тестирования безопасности веб-приложений',
+        event_part_description: 'Более подробно поговорим о теме доклада	',
+      },
+      {
+        id: 2,
+        event_part_start_time: '2024-04-20 11:30:00+03:00',
+        event_part_name: 'Кофе-брейк',
+        event_part_description: 'Немого отдохнем',
+      },
+      {
+        id: 3,
+        event_part_start_time: '2024-04-20 12:00:00+03:00',
+        event_part_name:
+          'Реальный опыт тестирования безопасности веб-приложений',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 4,
+        event_part_start_time: '2024-04-20 12:45:00+03:00',
+        event_part_name: 'Тестирование безопасности веб-приложений: Будущее',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+    ],
   },
   {
     id: 9,
@@ -274,10 +492,37 @@ export const PERSONAL_EVENTS = [
       'Митап, на котором обсуждаются основы работы с Docker, инструментом для создания, развертывания и управления контейнерами.',
     start_time: '2024-04-21 10:00:00+03:00',
     end_time: '2024-04-22 10:00:00+03:00',
-    event_parts: {
-      event_part_start_time: '2024-04-20 10:00:00+03:00',
-      event_part_name: 'Введение в TensorFlow',
-      event_part_description: 'Более подробно поговорим о теме доклада',
-    },
+    event_parts: [
+      {
+        id: 0,
+        event_part_start_time: '2024-04-20 10:00:00+03:00',
+        event_part_name: 'Основы Docker',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 1,
+        event_part_start_time: '2024-04-20 10:45:00+03:00	',
+        event_part_name: '	Развёртывание приложений с Docker',
+        event_part_description: 'Более подробно поговорим о теме доклада	',
+      },
+      {
+        id: 2,
+        event_part_start_time: '2024-04-20 11:30:00+03:00',
+        event_part_name: 'Кофе-брейк',
+        event_part_description: 'Немого отдохнем',
+      },
+      {
+        id: 3,
+        event_part_start_time: '2024-04-20 12:00:00+03:00',
+        event_part_name: 'Управление контейнерами Docker',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 4,
+        event_part_start_time: '2024-04-20 12:45:00+03:00',
+        event_part_name: 'Развёртывание приложений с Docker',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+    ],
   },
 ];
