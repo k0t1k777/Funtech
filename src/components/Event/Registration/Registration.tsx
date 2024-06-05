@@ -1,43 +1,44 @@
 import './Registration.css';
 import CalendarIcon from '../../../assets/calendar.svg?react';
-// import LocationIcon from '../../../assets/location.svg?react';
+import LocationIcon from '../../../assets/location.svg?react';
 import DownloadIcon from '../../../assets/download.svg?react';
 import PlayIcon from '../../../assets/play.svg?react';
 import TelegrammIcon from '../../../assets/telegramm.svg?react';
 import VkIcon from '../../../assets/vk.svg?react';
-// import { getFullDate } from '../../../helpers/Date';
+import { getFullDate } from '../../../helpers/Date';
 import { REGISTRATION_DATA } from './../../../utils/constants';
-// import IEvent from '../../types/Event';
 
 export interface IRegistrationProps {
-  // event?: IEvent;
+  event?: any;
   handleRegOnIventOpen: () => void;
   handleCreateEventOpen: () => void;
 }
 
 export default function Registration({
-  // event,
+  event,
   handleRegOnIventOpen,
   handleCreateEventOpen,
 }: IRegistrationProps) {
+  console.log('event: ', event);
+
   return (
     <div className='registration'>
       <div className='registration__container'>
         <div className='registration__container'>
           <div className='registration__date'>
             <CalendarIcon />
-            {/* <p className='registration__date-text'>
+            <p className='registration__date-text'>
               {event && getFullDate(event?.start_time)}
-            </p> */}
+            </p>
           </div>
-          {/* {event && event.format === 'online' ? (
+          {event && event.format === 'online' ? (
             ''
           ) : (
             <div className='registration__adress'>
               <LocationIcon />
               <p className='registration__adress-text'>{event?.place}</p>
             </div>
-          )} */}
+          )}
         </div>
         <div className='registration__buttons'>
           <button
@@ -48,28 +49,28 @@ export default function Registration({
         </div>
       </div>
       <div className='registration__container-img'>
-        {/* <img
+        <img
           className='registration__img'
           src={event?.image}
           alt='Фон события'
-        /> */}
+        />
         <div className='registration__status'>
-          {/* <div
+          <div
             className={`registration__status-icon ${
               event?.status === 'registration is open'
                 ? 'registration__status-icon_open'
                 : 'registration__status-icon_close'
             }`}
-          /> */}
-          {/* <p className='registration__status-text'>{event?.status}</p> */}
+          />
+          <p className='registration__status-text'>{event?.status}</p>
         </div>
       </div>
       <div className='registration__tags'>
-        {/* <p className='registration__tag'>
-          {event?.specializations.specialization_name}
-        </p> */}
-        {/* <p className='registration__tag'>{event?.event_type.event_type_name}</p>
-        <p className='registration__tag'>{event?.format}</p> */}
+        <p className='registration__tag'>
+          {event?.specializations?.specialization_name}
+        </p>
+        <p className='registration__tag'>{event?.event_type?.event_type_name}</p>
+        <p className='registration__tag'>{event?.format}</p>
       </div>
 
       <div className='registration__container'>

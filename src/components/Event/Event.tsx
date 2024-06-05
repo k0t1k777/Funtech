@@ -51,12 +51,12 @@ export default function Event({
       </div>
       <div className='event__container'>
         <Registration
-          // event={eventData}
+          event={eventData}
           handleRegOnIventOpen={handleRegOnIventOpen}
           handleCreateEventOpen={handleCreateEventOpen}
         />
         <Place
-        // event={eventData}
+        event={eventData}
         />
       </div>
       <Courses />
