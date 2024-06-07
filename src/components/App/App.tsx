@@ -13,7 +13,7 @@ import PopupPersonal from '../Popups/PopupPersonal/PopupPersonal';
 import PopupRegOnEvent from '../Popups/PopupRegOnEvent/PopupRegOnEvent';
 import PopupRegistration from '../Popups/PopupRegistration';
 import Footer from '../Footer/Footer';
-// import { Сities } from '../..//components/Main/FiltersContainer/FiltersContainer';
+// import { Сities } from '../../components/Main/FiltersContainer/FiltersContainer';
 // import { Spec } from '../Popups/PopupRegOnEvent/PopupRegOnEvent';
 // import * as Api from './../../utils/utils';
 // import IEventCard from '../types/EventCard';

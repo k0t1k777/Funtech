@@ -32,6 +32,7 @@ export const EVENTS = [
     start_time: '2024-04-20 10:00:00+03:00',
     end_time: '2024-04-23 10:45:00+03:00',
     place: 'Екатеринбург',
+    street: 'пер. Архангельского',
     event_parts: [
       {
         id: 0,
@@ -90,6 +91,7 @@ export const EVENTS = [
     start_time: '2024-04-20 10:45:00+03:00',
     end_time: '2024-04-21 10:45:00+03:00',
     place: 'Москва',
+    street: 'ул. Баумана',
     event_parts: [
       {
         id: 0,
@@ -148,6 +150,7 @@ export const EVENTS = [
     start_time: '2024-04-17 10:00:00+03:00',
     end_time: '2024-04-19 10:00:00+03:00',
     place: 'Москва',
+    street: 'ул. Кузнецова',
     event_parts: [
       {
         id: 0,
@@ -206,6 +209,7 @@ export const EVENTS = [
     start_time: '2024-04-22 10:00:00+03:00',
     end_time: '2024-04-23 10:00:00+03:00',
     place: 'Москва',
+    street: 'пер. Рябиновый',
     event_parts: [
       {
         id: 0,
@@ -264,6 +268,7 @@ export const EVENTS = [
     start_time: '2024-04-25 10:00:00+03:00',
     end_time: '2024-04-28 10:00:00+03:00',
     place: 'Москва',
+    street: 'ул. Фурманова',
     event_parts: [
       {
         id: 0,
@@ -322,6 +327,7 @@ export const EVENTS = [
     start_time: '2024-04-28 10:00:00+03:00',
     end_time: '2024-04-28 10:00:00+03:00',
     place: 'Москва',
+    street: 'ул. Шевченко',
     event_parts: [
       {
         id: 0,
@@ -384,6 +390,7 @@ export const PERSONAL_EVENTS = [
     start_time: '2024-04-24 10:00:00+03:00',
     end_time: '2024-04-25 10:00:00+03:00',
     place: 'С-Петербург',
+    street: 'ул. 12 Сентября',
     event_parts: [
       {
         id: 0,
@@ -442,6 +449,7 @@ export const PERSONAL_EVENTS = [
     start_time: '2024-04-21 10:00:00+03:00',
     end_time: '2024-04-22 10:00:00+03:00',
     place: 'Казань',
+    street: 'ул. Хвалынская',
     event_parts: [
       {
         id: 0,
@@ -501,6 +509,7 @@ export const PERSONAL_EVENTS = [
     start_time: '2024-04-21 10:00:00+03:00',
     end_time: '2024-04-22 10:00:00+03:00',
     place: 'Владивосток',
+    street: 'пер. Хлебный',
     event_parts: [
       {
         id: 0,

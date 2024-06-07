@@ -9,12 +9,13 @@ export interface IPlaceProps {
 export default function Place(
   { event }: IPlaceProps
 ) {
+
   return (
     <div className='place'>
       <h2 className='place__title'>{PLACE_DATA.mesto}</h2>
       <div>
         <p className='place__adress'>
-          {event?.city?.city_name}, {event?.place}
+          {event?.place}, {event?.street}
         </p>
         <img className='place__img' src={Map} alt='address' />
       </div>
