@@ -16,7 +16,7 @@ export default function EventsPoster({
   handleRegOnIventOpen,
   handleCreateEventOpen,
 }: IEventsPosterProps) {
-  
+
   return (
     <div className='events-poster'>
       <h2 className='events-poster__title'>{text}</h2>

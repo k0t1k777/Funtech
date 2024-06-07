@@ -57,10 +57,6 @@ export default function App() {
     return localStorage.getItem('loggedIn') === 'true';
   });
 
-  function turnSuperUser() {
-    setIsRegistrationOpen(false);
-  }
-
   function handleLogin() {
     setLoggedIn(true);
     localStorage.setItem('loggedIn', 'true');
@@ -214,16 +210,6 @@ export default function App() {
             />
           }
         />
-        {/* <Route
-          path='/personal-event/:eventId'
-          element={
-            <Event
-              events={PERSONAL_EVENTS}
-              handleRegOnIventOpen={handleRegOnIventOpen}
-              handleCreateEventOpen={handleCreateEventOpen}
-            />
-          }
-        /> */}
       </Routes>
       <Footer />
       {!loggedIn && isEnterOpen && (
