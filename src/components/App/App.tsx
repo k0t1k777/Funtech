@@ -19,9 +19,12 @@ import Footer from '../Footer/Footer';
 // import IEventCard from '../types/EventCard';
 
 // МОК ДАННЫЕ
-import { CITY_DATA } from './../../utils/mock';
-import { EVENTS } from './../../utils/mock';
-import { PERSONAL_EVENTS } from '../../utils/mock';
+import {
+  EVENTS,
+  PERSONAL_EVENTS,
+  CITY_DATA,
+  SPECIALIZATION_DATA,
+} from './../../utils/mock';
 
 export default function App() {
   // const eventId = localStorage.getItem('eventId');
@@ -53,9 +56,10 @@ export default function App() {
   const [valuesExpYears, setValuesExpYears] = useState<
     string | number | readonly string[] | undefined
   >();
-  const [loggedIn, setLoggedIn] = useState<boolean>(() => {
-    return localStorage.getItem('loggedIn') === 'true';
-  });
+  const [loggedIn, setLoggedIn] = useState<boolean>(true);
+  // const [loggedIn, setLoggedIn] = useState<boolean>(() => {
+  //   return localStorage.getItem('loggedIn') === 'true';
+  // });
 
   function handleLogin() {
     setLoggedIn(true);
@@ -277,7 +281,7 @@ export default function App() {
           valuesCompany={valuesCompany}
           valuesPosition={valuesPosition}
           valuesExpYears={valuesExpYears}
-          // specializations={specializations}
+          specializations={SPECIALIZATION_DATA}
           setValuesFirstName={setValuesFirstName}
           setValuesLastName={setValuesLastName}
           setValuesEmail={setValuesEmail}

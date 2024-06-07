@@ -36,7 +36,6 @@ export default function PopupRegistration({
       setSecondName(value);
       setInputValue(value);
     }
-
     setErrorText('');
   };
 

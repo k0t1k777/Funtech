@@ -19,7 +19,6 @@ export default function Registration({
   handleRegOnIventOpen,
   handleCreateEventOpen,
 }: IRegistrationProps) {
-  console.log('event: ', event);
 
   return (
     <div className='registration'>

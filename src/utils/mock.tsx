@@ -6,6 +6,45 @@ export const CITY_DATA = [
   { city_slug: 'Владивосток' },
 ];
 
+export const SPECIALIZATION_DATA = [
+  {
+    specialization_name: 'Backend',
+    specialization_slug: 'frontend',
+  },
+  {
+    specialization_name: 'Backend',
+    specialization_slug: 'backend',
+  },
+  {
+    specialization_name: 'UX/UI',
+    specialization_slug: 'uxui',
+  },
+  {
+    specialization_name: 'AI',
+    specialization_slug: 'ai',
+  },
+  {
+    specialization_name: 'ML',
+    specialization_slug: 'ml',
+  },
+  {
+    specialization_name: 'QA',
+    specialization_slug: 'qa',
+  },
+  {
+    specialization_name: 'DevOps',
+    specialization_slug: 'devops',
+  },
+  {
+    specialization_name: 'Аналитика',
+    specialization_slug: 'analytics',
+  },
+  {
+    specialization_name: 'PM',
+    specialization_slug: 'pm',
+  },
+];
+
 export const EVENTS = [
   {
     id: 1,
