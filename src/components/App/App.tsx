@@ -19,8 +19,8 @@ import Footer from '../Footer/Footer';
 // import IEventCard from '../types/EventCard';
 
 // МОК ДАННЫЕ
-import { CITY_DATA } from './../../utils/mock'
-import { EVENTS } from './../../utils/mock'
+import { CITY_DATA } from './../../utils/mock';
+import { EVENTS } from './../../utils/mock';
 import { PERSONAL_EVENTS } from '../../utils/mock';
 
 export default function App() {
@@ -56,7 +56,7 @@ export default function App() {
   const [loggedIn, setLoggedIn] = useState<boolean>(() => {
     return localStorage.getItem('loggedIn') === 'true';
   });
-  
+
   function turnSuperUser() {
     setIsRegistrationOpen(false);
   }
@@ -189,7 +189,6 @@ export default function App() {
         handleEnterOpen={handleEnterOpen}
         handleProfileOpen={handleProfileOpen}
         loggedIn={loggedIn}
-        turnSuperUser={turnSuperUser}
       />
       <Routes>
         <Route
@@ -215,6 +214,16 @@ export default function App() {
             />
           }
         />
+        {/* <Route
+          path='/personal-event/:eventId'
+          element={
+            <Event
+              events={PERSONAL_EVENTS}
+              handleRegOnIventOpen={handleRegOnIventOpen}
+              handleCreateEventOpen={handleCreateEventOpen}
+            />
+          }
+        /> */}
       </Routes>
       <Footer />
       {!loggedIn && isEnterOpen && (

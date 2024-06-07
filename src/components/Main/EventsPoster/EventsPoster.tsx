@@ -2,10 +2,9 @@ import './EventsPoster.css';
 import PosterCard from '../PosterCard/PosterCard';
 import { getDate } from '../../../helpers/Date';
 import { MAIN_DATA } from './../../../utils/constants';
-import IEventCard from '../../types/EventCard';
 
 interface IEventsPosterProps {
-  events: IEventCard[];
+  events: any;
   text: string;
   handleRegOnIventOpen: () => void;
   handleCreateEventOpen: () => void;
@@ -26,7 +25,7 @@ export default function EventsPoster({
           text === MAIN_DATA.personalTitle ? 'events-poster-cards_personal' : ''
         }`}
       >
-        {events?.map((card) =>
+        {events?.map((card: any) =>
             card.first_speaker && (
               <PosterCard 
                 key={card.id}

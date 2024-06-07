@@ -362,9 +362,6 @@ export const EVENTS = [
       },
     ],
   },
-];
-
-export const PERSONAL_EVENTS = [
   {
     id: 7,
     name: 'Waterfall vs Agile',
@@ -372,7 +369,7 @@ export const PERSONAL_EVENTS = [
       position: 'Инженер по ML',
       speaker_name: 'Елена Попова',
       company: 'Ланит',
-      photo: './../src/assets/images/2.png',
+      photo: './../src/assets/images/4photo.png',
     },
     specializations: {
       specialization_name: 'DevOps',
@@ -431,7 +428,7 @@ export const PERSONAL_EVENTS = [
       position: 'Ведущий специалист по ML',
       speaker_name: 'Дмитрий Петров',
       company: 'Контур',
-      photo: './../src/assets/images/2.png',
+      photo: './../src/assets/images/2photo.png',
     },
     specializations: {
       specialization_name: 'Аналитика',
@@ -491,7 +488,188 @@ export const PERSONAL_EVENTS = [
       position: 'Главный инженер',
       speaker_name: 'Виктория Смирнова',
       company: 'Skolkovo',
-      photo: './../src/assets/images/2.png',
+      photo: './../src/assets/images/5photo.png',
+    },
+    specializations: {
+      specialization_name: 'QA',
+    },
+    event_type: {
+      event_type_name: 'Воркшоп',
+    },
+    format: 'online',
+    status: 'registration is open',
+    is_registrated: false,
+    is_deleted: false,
+    image: './../src/assets/images/8.png',
+    description:
+      'Митап, на котором обсуждаются основы работы с Docker, инструментом для создания, развертывания и управления контейнерами.',
+    start_time: '2024-04-21 10:00:00+03:00',
+    end_time: '2024-04-22 10:00:00+03:00',
+    place: 'Владивосток',
+    street: 'пер. Хлебный',
+    event_parts: [
+      {
+        id: 0,
+        event_part_start_time: '2024-04-20 10:00:00+03:00',
+        event_part_name: 'Основы Docker',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 1,
+        event_part_start_time: '2024-04-20 10:45:00+03:00	',
+        event_part_name: '	Развёртывание приложений с Docker',
+        event_part_description: 'Более подробно поговорим о теме доклада	',
+      },
+      {
+        id: 2,
+        event_part_start_time: '2024-04-20 11:30:00+03:00',
+        event_part_name: 'Кофе-брейк',
+        event_part_description: 'Немого отдохнем',
+      },
+      {
+        id: 3,
+        event_part_start_time: '2024-04-20 12:00:00+03:00',
+        event_part_name: 'Управление контейнерами Docker',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 4,
+        event_part_start_time: '2024-04-20 12:45:00+03:00',
+        event_part_name: 'Развёртывание приложений с Docker',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+    ],
+  },
+];
+
+export const PERSONAL_EVENTS = [
+  {
+    id: 7,
+    name: 'Waterfall vs Agile',
+    first_speaker: {
+      position: 'Инженер по ML',
+      speaker_name: 'Елена Попова',
+      company: 'Ланит',
+      photo: './../src/assets/images/4photo.png',
+    },
+    specializations: {
+      specialization_name: 'DevOps',
+    },
+    event_type: {
+      event_type_name: 'Вебинар',
+    },
+    format: 'online',
+    status: '	registration is open',
+    is_registrated: false,
+    is_deleted: false,
+    image: './../src/assets/images/4.png',
+    description:
+      'Встреча на которой обсуждаются Методологии тестирования: Waterfall vs Agile.',
+    start_time: '2024-04-24 10:00:00+03:00',
+    end_time: '2024-04-25 10:00:00+03:00',
+    place: 'С-Петербург',
+    street: 'ул. 12 Сентября',
+    event_parts: [
+      {
+        id: 0,
+        event_part_start_time: '2024-04-20 10:00:00+03:00',
+        event_part_name: 'Водопадная модель разработки и тестирования',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 1,
+        event_part_start_time: '2024-04-20 10:45:00+03:00	',
+        event_part_name: 'Гибкая методология разработки и тестирования',
+        event_part_description: 'Более подробно поговорим о теме доклада	',
+      },
+      {
+        id: 2,
+        event_part_start_time: '2024-04-20 11:30:00+03:00',
+        event_part_name: 'Кофе-брейк',
+        event_part_description: 'Немого отдохнем',
+      },
+      {
+        id: 3,
+        event_part_start_time: '2024-04-20 12:00:00+03:00',
+        event_part_name: 'Реальный опыт использования Waterfall и Agile',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 4,
+        event_part_start_time: '2024-04-20 12:45:00+03:00',
+        event_part_name: 'Waterfall vs Agile: Будущее методологий тестирования',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+    ],
+  },
+  {
+    id: 8,
+    name: 'Тестирование веб-приложений',
+    first_speaker: {
+      position: 'Ведущий специалист по ML',
+      speaker_name: 'Дмитрий Петров',
+      company: 'Контур',
+      photo: './../src/assets/images/2photo.png',
+    },
+    specializations: {
+      specialization_name: 'Аналитика',
+    },
+    event_type: {
+      event_type_name: 'Воркшоп',
+    },
+    format: 'hybrid',
+    status: 'registration is closed',
+    is_registrated: false,
+    is_deleted: false,
+    image: './../src/assets/images/5.png',
+    description:
+      'Конференция на которой обсуждаются возможности использования Тестирование безопасности веб-приложений.',
+    start_time: '2024-04-21 10:00:00+03:00',
+    end_time: '2024-04-22 10:00:00+03:00',
+    place: 'Казань',
+    street: 'ул. Хвалынская',
+    event_parts: [
+      {
+        id: 0,
+        event_part_start_time: '2024-04-20 10:00:00+03:00',
+        event_part_name: 'Введение в тестирование безопасности веб-приложений',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 1,
+        event_part_start_time: '2024-04-20 10:45:00+03:00	',
+        event_part_name: 'Методы тестирования безопасности веб-приложений',
+        event_part_description: 'Более подробно поговорим о теме доклада	',
+      },
+      {
+        id: 2,
+        event_part_start_time: '2024-04-20 11:30:00+03:00',
+        event_part_name: 'Кофе-брейк',
+        event_part_description: 'Немого отдохнем',
+      },
+      {
+        id: 3,
+        event_part_start_time: '2024-04-20 12:00:00+03:00',
+        event_part_name:
+          'Реальный опыт тестирования безопасности веб-приложений',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+      {
+        id: 4,
+        event_part_start_time: '2024-04-20 12:45:00+03:00',
+        event_part_name: 'Тестирование безопасности веб-приложений: Будущее',
+        event_part_description: 'Более подробно поговорим о теме доклада',
+      },
+    ],
+  },
+  {
+    id: 9,
+    name: 'Введение в Docker',
+    first_speaker: {
+      position: 'Главный инженер',
+      speaker_name: 'Виктория Смирнова',
+      company: 'Skolkovo',
+      photo: './../src/assets/images/5photo.png',
     },
     specializations: {
       specialization_name: 'QA',
