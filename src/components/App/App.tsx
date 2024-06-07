@@ -1,8 +1,8 @@
 import Header from '../Header/Header';
 import Main from '../Main/Main';
-import { Routes, Route } from 'react-router-dom';
+// import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Event from '../Event/Event';
+// import Event from '../Event/Event';
 import { useState } from 'react';
 import PopupEnter from '../Popups/PopupEnter';
 import PopupProfile from '../Popups/PopupProfile';
