@@ -52,7 +52,7 @@ export const EVENTS = [
     first_speaker: {
       position: 'Инженер по ML',
       speaker_name: 'Сергей Петров',
-      photo: './../src/assets/images/1photo.png',
+      photo: '/../src/assets/images/1photo.png',
       company: 'Google',
     },
     specializations: {
