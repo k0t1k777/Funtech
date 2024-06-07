@@ -1,8 +1,8 @@
 import Header from '../Header/Header';
 import Main from '../Main/Main';
-// import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
-// import Event from '../Event/Event';
+import Event from '../Event/Event';
 import { useState } from 'react';
 import PopupEnter from '../Popups/PopupEnter';
 import PopupProfile from '../Popups/PopupProfile';
@@ -190,10 +190,10 @@ export default function App() {
         handleProfileOpen={handleProfileOpen}
         loggedIn={loggedIn}
       />
-      {/* <Routes> */}
-        {/* <Route */}
-          {/* path='/'
-          element={ */}
+      <Routes>
+        <Route
+          path='/'
+          element={
             <Main
               loggedIn={loggedIn}
               events={EVENTS}
@@ -202,19 +202,19 @@ export default function App() {
               handleRegOnIventOpen={handleRegOnIventOpen}
               handleCreateEventOpen={handleCreateEventOpen}
             />
-          {/* } */}
-        {/* /> */}
-        {/* <Route */}
-          {/* path='/event/:eventId'
-          element={ */}
-            {/* <Event
+          }
+        />
+        <Route
+          path='event/:eventId'
+          element={
+            <Event
               events={EVENTS}
               handleRegOnIventOpen={handleRegOnIventOpen}
-              handleCreateEventOpen={handleCreateEventOpen} */}
-            {/* /> */}
-          {/* } */}
-        {/* /> */}
-      {/* </Routes> */}
+              handleCreateEventOpen={handleCreateEventOpen}
+            />
+          }
+        />
+      </Routes>
       <Footer />
       {!loggedIn && isEnterOpen && (
         <PopupEnter
