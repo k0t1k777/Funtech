@@ -67,7 +67,7 @@ export const EVENTS = [
     is_deleted: false,
     description:
       'Митап на котором обсуждаются основы TensorFlow популярного фреймворка для машинного обучения.',
-    image: '/assets/1.png',
+    image: '/Funtech/assets/1.png',
     start_time: '2024-04-20 10:00:00+03:00',
     end_time: '2024-04-23 10:45:00+03:00',
     place: 'Екатеринбург',
