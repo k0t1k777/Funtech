@@ -16,10 +16,12 @@ interface IMainProps {
 
 interface Event {
   place: string;
+  format: string;
 }
 
 interface PersonalEvent {
   place: string;
+  format: string;
 }
 
 export default function Main({
@@ -30,29 +32,41 @@ export default function Main({
   handleRegOnIventOpen,
   handleCreateEventOpen,
 }: IMainProps) {
+  // Фильтрация
   const [cityValue, setCityValue] = useState('');
   const [filteredEvents, setFilteredEvents] = useState(events);
   const [filteredPersEvents, setPersFilteredEvents] = useState(personalEvents);
+  const [formatEvent, setFormatEvent] = useState<string[]>([])
+  console.log('formatEvent: ', formatEvent);
 
   useEffect(() => {
     if (cityValue) {
-      const filtred = events.filter((event) => event.place === cityValue);
-      setFilteredEvents(filtred);
-    } else {
+      const filtredByCity = events.filter((event) => event.place === cityValue);
+      setFilteredEvents(filtredByCity);
+    }
+    if (formatEvent.length > 0) {
+      const filtredByFormat = events.filter((event) => formatEvent.includes(event.format));
+      setFilteredEvents(filtredByFormat);
+  } 
+    else {
       setFilteredEvents(events);
     }
-  }, [cityValue, events]);
+  }, [cityValue, formatEvent, events]);
 
   useEffect(() => {
     if (cityValue) {
-      const filtred = personalEvents.filter(
+      const filtredByCity = personalEvents.filter(
         (event) => event.place === cityValue
       );
-      setPersFilteredEvents(filtred);
-    } else {
+      setPersFilteredEvents(filtredByCity);
+    } 
+    if (formatEvent.length > 0) {
+      const filtredByFormat = personalEvents.filter((event) => formatEvent.includes(event.format));
+      setPersFilteredEvents(filtredByFormat);
+  } else {
       setPersFilteredEvents(personalEvents);
     }
-  }, [cityValue, personalEvents]);
+  }, [cityValue, formatEvent, personalEvents]);
 
   return (
     <div className='main'>
@@ -74,10 +88,11 @@ export default function Main({
         />
       </div>
       <FiltersContainer
-        loggedIn={loggedIn}
         cityValue={cityValue}
         setCityValue={setCityValue}
         cities={cities}
+        formatEvent={formatEvent}
+        setFormatEvent={setFormatEvent}
       />
     </div>
   );

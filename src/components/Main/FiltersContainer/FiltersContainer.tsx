@@ -9,7 +9,8 @@ interface FiltersContainerProps {
   cities: Сities[];
   setCityValue?: (value: string) => void;
   cityValue?: string;
-  loggedIn: boolean;
+  formatEvent: string[];
+  setFormatEvent: (type: string[]) => void;
 }
 
 export interface Сities {
@@ -20,9 +21,11 @@ export interface Сities {
 export default function FiltersContainer({
   cities,
   cityValue,
-  loggedIn,
   setCityValue,
+  formatEvent,
+  setFormatEvent,
 }: FiltersContainerProps) {
+
   return (
     <div className='filters-container'>
       <Calendar />
@@ -31,7 +34,7 @@ export default function FiltersContainer({
         cityValue={cityValue}
         setCityValue={setCityValue}
       />
-      <CheckboxesTime loggedIn={loggedIn} />
+      <CheckboxesTime value={formatEvent} setValue={setFormatEvent} />
       <CheckboxesScills />
       <CheckboxesTypes />
     </div>

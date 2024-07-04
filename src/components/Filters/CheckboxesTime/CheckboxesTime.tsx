@@ -6,22 +6,35 @@ import Checkbox from '@mui/material/Checkbox';
 import { CHECKBOX_TIME_DATA } from './../../../utils/constants';
 
 interface CheckboxesGroupProps {
-  loggedIn: boolean;
+  value: string[];
+  setValue: (type: string[]) => void;
 }
 
-export default function CheckboxesGroup({ loggedIn }: CheckboxesGroupProps) {
+export default function CheckboxesGroup({
+  value,
+  setValue,
+}: CheckboxesGroupProps) {
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = e.target;
+    let updatedValues = [...value];
+    if (checked) {
+      updatedValues = [...updatedValues, name];
+    } else {
+      updatedValues = updatedValues.filter((item: string) => item !== name);
+    }
+    setValue(updatedValues);
+  };
+
   return (
     <Box sx={{ display: 'flex', width: '100%' }}>
       <FormControl component='fieldset' variant='standard'>
         <FormGroup sx={{ display: 'flex', flexDirection: 'row' }}>
-          {CHECKBOX_TIME_DATA.map((checkbox) => (
-            (checkbox.name !== 'MyEvent' || loggedIn) && (
+          {CHECKBOX_TIME_DATA.map((checkbox: string, index: number) => (
             <FormControlLabel
-              key={checkbox.name}
+              key={index}
               sx={{
                 width: '143px',
                 height: '32px',
-                margin: checkbox.margin,
                 '& .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked, .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate':
                   { color: '#6750A4' },
                 '.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root': {
@@ -32,10 +45,15 @@ export default function CheckboxesGroup({ loggedIn }: CheckboxesGroupProps) {
                   height: '18px',
                 },
               }}
-              control={<Checkbox name={checkbox.name} />}
-              label={checkbox.label}
+              control={
+                <Checkbox
+                  checked={value.includes(checkbox)}
+                  onChange={handleCheckboxChange}
+                  name={checkbox}
+                />
+              }
+              label={checkbox}
             />
-            )
           ))}
         </FormGroup>
       </FormControl>

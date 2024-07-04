@@ -14,7 +14,7 @@ export default function Plan({ event }: IPlanProps) {
     <div className='plan'>
       <h2 className='plan__title'>{PLAN_DATA.text}</h2>
       <div className='plan__containers'>
-{event?.event_parts.map((part: any) => {
+        {event?.event_parts.map((part: any) => {
           renderCount++;
           if (renderCount % 3 === 0) {
             return (

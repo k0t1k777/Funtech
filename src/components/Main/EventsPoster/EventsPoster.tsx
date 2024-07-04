@@ -1,7 +1,7 @@
 import './EventsPoster.css';
-import PosterCard from '../PosterCard/PosterCard';
-import { getDate } from '../../../helpers/Date';
-import { MAIN_DATA } from './../../../utils/constants';
+import PosterCard from 'src/components/Main/PosterCard/PosterCard';
+import { getDate } from 'src/helpers/Date';
+import { MAIN_DATA } from 'src/utils/constants';
 
 interface IEventsPosterProps {
   events: any;
@@ -16,7 +16,6 @@ export default function EventsPoster({
   handleRegOnIventOpen,
   handleCreateEventOpen,
 }: IEventsPosterProps) {
-  console.log('events: ', events);
 
   return (
     <div className='events-poster'>
@@ -51,7 +50,7 @@ export default function EventsPoster({
               )
           )
         ) : (
-          <p>Личных подборок не найдено</p>
+          <p>Ничего не найдено</p>
         )}
       </div>
     </div>

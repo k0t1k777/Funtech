@@ -269,23 +269,7 @@ export const FOOTER_DATA = {
   text: '© 2005–2024 ООО «Яндекс»',
 };
 
-export const CHECKBOX_TIME_DATA = [
-  {
-    name: 'Online',
-    label: 'Online',
-    margin: '0 14px 0 0',
-  },
-  {
-    name: 'Offline',
-    label: 'Offline',
-    margin: '0',
-  },
-  {
-    name: 'MyEvent',
-    label: 'Мои события',
-    margin: '0 14px 0 0',
-  },
-];
+export const CHECKBOX_TIME_DATA = ['online', 'offline', 'Мои события'];
 
 export const CHECKBOX_SCILLS_DATA = [
   {
@@ -328,4 +312,4 @@ export const CHECKBOX_SCILLS_DATA = [
     label: 'Аналитика',
     margin: '0',
   },
-]
+];
