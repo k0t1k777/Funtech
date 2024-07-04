@@ -119,6 +119,9 @@ export const PERSONAL_DATA = {
   },
   occupation: 'Род  деятельности*',
   direction: 'Направление',
+  showAll: 'Показать все',
+  submitButton: 'Сохранить',
+  cancelButton: 'Отменить',
 };
 
 export const MAIN_DATA = {

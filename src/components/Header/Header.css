@@ -1,7 +1,8 @@
 .header {
   height: 80px;
   margin: 0;
-  padding: 0 60px;
+  padding: 0 calc((100vw - 1320px) / 2);
+  width: 100%;
   background-color: #EBEAFC;
   display: flex;
   align-items: center;

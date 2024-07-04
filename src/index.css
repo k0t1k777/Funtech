@@ -20,6 +20,6 @@
 body {
   margin: 0 auto;
   min-width: 320px;
-  max-width: 1440px;
+  /* width: 1440px; */
   min-height: 100vh;
 }

@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { FILTER_DATA } from './../../utils/constants';
+import { FILTER_DATA } from '../../utils/constants';
 import { useState } from 'react';
 import { MenuItem } from '@mui/material';
 

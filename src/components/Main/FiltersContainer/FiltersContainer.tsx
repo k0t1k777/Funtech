@@ -1,6 +1,6 @@
-import Calendar from '../../Calendar/Calendar';
-import BasicSelect from '../../Select/Select';
-import CheckboxItem from 'src/components/Filters/CheckboxItem/CheckboxItem';
+import Calendar from '../../../ui/Calendar/Calendar';
+import BasicSelect from '../../../ui/Select/Select';
+import CheckboxItem from 'src/ui/CheckboxItem';
 import {
   CHECKBOX_TIME_DATA,
   CHECKBOX_SCILLS_DATA,

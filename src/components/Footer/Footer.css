@@ -1,12 +1,13 @@
 .footer {
   height: 160px;
   margin: 0;
-  padding: 40px 60px;
+  padding: 40px calc((100vw - 1320px) / 2);
   background-color: #ebeafc;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   gap: 20px;
+  width: 100%;
 }
 
 .footer__text {

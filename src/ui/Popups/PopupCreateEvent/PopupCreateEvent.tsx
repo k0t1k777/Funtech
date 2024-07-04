@@ -20,7 +20,7 @@ import {
   placeInputStyles,
   submitButtonStyles,
 } from './PopupCreateEventStyles';
-import SwitchButton from '../../../ui/SwitchButton';
+import SwitchButton from '../../SwitchButton';
 import CloudIcon from '../../../assets/cloudIcon.svg?react';
 import { SelectChangeEvent } from '@mui/material/Select';
 

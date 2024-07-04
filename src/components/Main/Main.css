@@ -1,5 +1,6 @@
 .main {
-  margin: 0;
-  padding: 40px 60px 60px;
+  margin: 0 auto;
+  padding: 40px calc((100vw - 1320px) / 2) 60px;
   display: flex;
+  min-height: 100vh;
 }

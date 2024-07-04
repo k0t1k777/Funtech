@@ -7,7 +7,7 @@ import Place from './Place/Place';
 import Courses from './Courses/Courses';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import IEvent from '../types/Event';
+import IEvent from '../../types/Event';
 
 export interface IEventProps {
   events: any;
