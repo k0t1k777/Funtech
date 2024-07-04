@@ -8,7 +8,7 @@ export const CITY_DATA = [
 
 export const SPECIALIZATION_DATA = [
   {
-    specialization_name: 'Backend',
+    specialization_name: 'Frontend',
     specialization_slug: 'frontend',
   },
   {
@@ -56,7 +56,7 @@ export const EVENTS = [
       company: 'Google',
     },
     specializations: {
-      specialization_name: 'Backend',
+      specialization_name: 'Менеджмент',
     },
     event_type: {
       event_type_name: 'Конференция',
@@ -179,7 +179,7 @@ export const EVENTS = [
       specialization_name: 'UX/UI',
     },
     event_type: {
-      event_type_name: 'Встреча',
+      event_type_name: 'MeetUp',
     },
     format: 'hybrid',
     status: 'registration is closed',
@@ -238,7 +238,7 @@ export const EVENTS = [
       specialization_name: 'AI',
     },
     event_type: {
-      event_type_name: 'Встреча',
+      event_type_name: 'MeetUp',
     },
     format: 'hybrid',
     status: 'registration is closed',
@@ -353,7 +353,7 @@ export const EVENTS = [
       photo: 'src/assets/images/11photo.jpeg',
     },
     specializations: {
-      specialization_name: 'QA',
+      specialization_name: 'Frontend',
     },
     event_type: {
       event_type_name: 'Воркшоп',
@@ -419,7 +419,7 @@ export const EVENTS = [
       event_type_name: 'Вебинар',
     },
     format: 'online',
-    status: '	registration is open',
+    status: 'registration is open',
     is_registrated: false,
     is_deleted: false,
     image: 'src/assets/images/4.png',

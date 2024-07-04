@@ -17,11 +17,23 @@ interface IMainProps {
 interface Event {
   place: string;
   format: string;
+  specializations: {
+    specialization_name: string;
+  };
+  event_type: {
+    event_type_name: string;
+  };
 }
 
 interface PersonalEvent {
   place: string;
   format: string;
+  specializations: {
+    specialization_name: string;
+  };
+  event_type: {
+    event_type_name: string;
+  };
 }
 
 export default function Main({
@@ -36,37 +48,59 @@ export default function Main({
   const [cityValue, setCityValue] = useState('');
   const [filteredEvents, setFilteredEvents] = useState(events);
   const [filteredPersEvents, setPersFilteredEvents] = useState(personalEvents);
-  const [formatEvent, setFormatEvent] = useState<string[]>([])
-  console.log('formatEvent: ', formatEvent);
+  const [formatFilter, setFormatFilter] = useState<string[]>([]);
+  const [skillsFilter, setSkilsFilter] = useState<string[]>([]);
+  const [typeFilter, setTypeFilter] = useState<string[]>([]);
 
   useEffect(() => {
+    let filteredEvents = events;
     if (cityValue) {
-      const filtredByCity = events.filter((event) => event.place === cityValue);
-      setFilteredEvents(filtredByCity);
-    }
-    if (formatEvent.length > 0) {
-      const filtredByFormat = events.filter((event) => formatEvent.includes(event.format));
-      setFilteredEvents(filtredByFormat);
-  } 
-    else {
-      setFilteredEvents(events);
-    }
-  }, [cityValue, formatEvent, events]);
-
-  useEffect(() => {
-    if (cityValue) {
-      const filtredByCity = personalEvents.filter(
+      filteredEvents = filteredEvents.filter(
         (event) => event.place === cityValue
       );
-      setPersFilteredEvents(filtredByCity);
-    } 
-    if (formatEvent.length > 0) {
-      const filtredByFormat = personalEvents.filter((event) => formatEvent.includes(event.format));
-      setPersFilteredEvents(filtredByFormat);
-  } else {
-      setPersFilteredEvents(personalEvents);
     }
-  }, [cityValue, formatEvent, personalEvents]);
+    if (formatFilter.length > 0) {
+      filteredEvents = filteredEvents.filter((event) =>
+        formatFilter.includes(event.format)
+      );
+    }
+    if (skillsFilter.length > 0) {
+      filteredEvents = filteredEvents.filter((event) =>
+        skillsFilter.includes(event.specializations.specialization_name)
+      );
+    }
+    if (typeFilter.length > 0) {
+      filteredEvents = filteredEvents.filter((event) =>
+        typeFilter.includes(event.event_type.event_type_name)
+      );
+    }
+    setFilteredEvents(filteredEvents);
+  }, [cityValue, formatFilter, skillsFilter, typeFilter, events]);
+
+  useEffect(() => {
+    let filteredPersEvents = personalEvents;
+    if (cityValue) {
+      filteredPersEvents = filteredPersEvents.filter(
+        (event) => event.place === cityValue
+      );
+    }
+    if (formatFilter.length > 0) {
+      filteredPersEvents = filteredPersEvents.filter((event) =>
+        formatFilter.includes(event.format)
+      );
+    }
+    if (skillsFilter.length > 0) {
+      filteredPersEvents = filteredPersEvents.filter((event) =>
+        skillsFilter.includes(event.specializations.specialization_name)
+      );
+    }
+    if (typeFilter.length > 0) {
+      filteredPersEvents = filteredPersEvents.filter((event) =>
+        typeFilter.includes(event.event_type.event_type_name)
+      );
+    }
+    setPersFilteredEvents(filteredPersEvents);
+  }, [cityValue, formatFilter, skillsFilter, typeFilter, personalEvents]);
 
   return (
     <div className='main'>
@@ -91,8 +125,12 @@ export default function Main({
         cityValue={cityValue}
         setCityValue={setCityValue}
         cities={cities}
-        formatEvent={formatEvent}
-        setFormatEvent={setFormatEvent}
+        formatFilter={formatFilter}
+        setFormatFilter={setFormatFilter}
+        skillsFilter={skillsFilter}
+        setSkilsFilter={setSkilsFilter}
+        typeFilter={typeFilter}
+        setTypeFilter={setTypeFilter}
       />
     </div>
   );
