@@ -22,6 +22,8 @@
   grid-template-columns: min-content 457px 1fr;
   border-bottom: 1px solid #EBEAFCAB;
   padding: 5px 0 5px 0;
+  height: 92px;
+  box-sizing: border-box;
 }
 
 .plan__time {

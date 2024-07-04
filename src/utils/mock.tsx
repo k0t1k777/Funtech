@@ -52,7 +52,7 @@ export const EVENTS = [
     first_speaker: {
       position: 'Инженер по ML',
       speaker_name: 'Сергей Петров',
-      photo: './../src/assets/images/1photo.png',
+      photo: 'src/assets/images/1photo.png',
       company: 'Google',
     },
     specializations: {
@@ -67,7 +67,9 @@ export const EVENTS = [
     is_deleted: false,
     description:
       'Митап на котором обсуждаются основы TensorFlow популярного фреймворка для машинного обучения.',
-    image: '/Funtech/assets/1.png',
+    // на деплое работает
+    // image: '/Funtech/assets/1.png',
+    image: 'src/assets/1.png',
     start_time: '2024-04-20 10:00:00+03:00',
     end_time: '2024-04-23 10:45:00+03:00',
     place: 'Екатеринбург',
@@ -112,7 +114,7 @@ export const EVENTS = [
       position: 'Операции в TensorFlow',
       speaker_name: 'Иван Андреев',
       company: 'Яндекс',
-      photo: './../src/assets/images/3photo.png',
+      photo: 'src/assets/images/3photo.png',
     },
     specializations: {
       specialization_name: 'Backend',
@@ -124,7 +126,7 @@ export const EVENTS = [
     status: 'registration is open',
     is_registrated: false,
     is_deleted: false,
-    image: './../src/assets/images/2.png',
+    image: 'src/assets/images/2.png',
     description:
       'Вебинар на котором обсуждаются основы глубокого обучения с использованием PyTorch.',
     start_time: '2024-04-20 10:45:00+03:00',
@@ -171,7 +173,7 @@ export const EVENTS = [
       position: 'Главный исследователь',
       speaker_name: 'Юлия Мирова',
       company: 'Яндекс',
-      photo: './../src/assets/images/10photo.jpeg',
+      photo: 'src/assets/images/10photo.jpeg',
     },
     specializations: {
       specialization_name: 'UX/UI',
@@ -183,7 +185,7 @@ export const EVENTS = [
     status: 'registration is closed',
     is_registrated: false,
     is_deleted: false,
-    image: './../src/assets/images/3.png',
+    image: 'src/assets/images/3.png',
     description:
       'Встреча на которой обсуждаются возможности использования сверточных нейронных сетей в компьютерном зрении.',
     start_time: '2024-04-17 10:00:00+03:00',
@@ -230,7 +232,7 @@ export const EVENTS = [
       position: 'Инженер по ML',
       speaker_name: 'Энэсс Иванов',
       company: 'Mail',
-      photo: './../src/assets/images/12photo.jpeg',
+      photo: 'src/assets/images/12photo.jpeg',
     },
     specializations: {
       specialization_name: 'AI',
@@ -242,7 +244,7 @@ export const EVENTS = [
     status: 'registration is closed',
     is_registrated: false,
     is_deleted: false,
-    image: './../src/assets/images/4.png',
+    image: 'src/assets/images/4.png',
     description:
       'Конференция на которой обсуждаются возможности использования машинного обучения в финансовом секторе.',
     start_time: '2024-04-22 10:00:00+03:00',
@@ -289,7 +291,7 @@ export const EVENTS = [
       position: 'Специалист по ML2',
       speaker_name: 'Анна Морозова',
       company: 'JetBrains',
-      photo: './../src/assets/images/6photo.jpeg',
+      photo: 'src/assets/images/6photo.jpeg',
     },
     specializations: {
       specialization_name: 'ML',
@@ -301,7 +303,7 @@ export const EVENTS = [
     status: 'registration is closed',
     is_registrated: false,
     is_deleted: false,
-    image: './../src/assets/images/7.png',
+    image: 'src/assets/images/7.png',
     description:
       'Митап на котором обсуждаются Автоматизация тестирования с Selenium.',
     start_time: '2024-04-25 10:00:00+03:00',
@@ -348,7 +350,7 @@ export const EVENTS = [
       position: 'Главный исследователь',
       speaker_name: 'Юрий Соколов',
       company: 'VK',
-      photo: './../src/assets/images/11photo.jpeg',
+      photo: 'src/assets/images/11photo.jpeg',
     },
     specializations: {
       specialization_name: 'QA',
@@ -360,7 +362,7 @@ export const EVENTS = [
     status: 'registration is open',
     is_registrated: false,
     is_deleted: false,
-    image: './../src/assets/images/6.png',
+    image: 'src/assets/images/6.png',
     description:
       'Вебинар на котором обсуждаются Тестирование производительности с JMeter.',
     start_time: '2024-04-28 10:00:00+03:00',
@@ -408,7 +410,7 @@ export const EVENTS = [
       position: 'Инженер по ML',
       speaker_name: 'Елена Попова',
       company: 'Ланит',
-      photo: './../src/assets/images/4photo.png',
+      photo: 'src/assets/images/4photo.png',
     },
     specializations: {
       specialization_name: 'DevOps',
@@ -420,7 +422,7 @@ export const EVENTS = [
     status: '	registration is open',
     is_registrated: false,
     is_deleted: false,
-    image: './../src/assets/images/4.png',
+    image: 'src/assets/images/4.png',
     description:
       'Встреча на которой обсуждаются Методологии тестирования: Waterfall vs Agile.',
     start_time: '2024-04-24 10:00:00+03:00',
@@ -467,7 +469,7 @@ export const EVENTS = [
       position: 'Ведущий специалист по ML',
       speaker_name: 'Дмитрий Петров',
       company: 'Контур',
-      photo: './../src/assets/images/2photo.png',
+      photo: 'src/assets/images/2photo.png',
     },
     specializations: {
       specialization_name: 'Аналитика',
@@ -479,7 +481,7 @@ export const EVENTS = [
     status: 'registration is closed',
     is_registrated: false,
     is_deleted: false,
-    image: './../src/assets/images/5.png',
+    image: 'src/assets/images/5.png',
     description:
       'Конференция на которой обсуждаются возможности использования Тестирование безопасности веб-приложений.',
     start_time: '2024-04-21 10:00:00+03:00',
@@ -527,7 +529,7 @@ export const EVENTS = [
       position: 'Главный инженер',
       speaker_name: 'Виктория Смирнова',
       company: 'Skolkovo',
-      photo: './../src/assets/images/5photo.png',
+      photo: 'src/assets/images/5photo.png',
     },
     specializations: {
       specialization_name: 'QA',
@@ -539,7 +541,7 @@ export const EVENTS = [
     status: 'registration is open',
     is_registrated: false,
     is_deleted: false,
-    image: './../src/assets/images/8.png',
+    image: 'src/assets/images/8.png',
     description:
       'Митап, на котором обсуждаются основы работы с Docker, инструментом для создания, развертывания и управления контейнерами.',
     start_time: '2024-04-21 10:00:00+03:00',
@@ -589,7 +591,7 @@ export const PERSONAL_EVENTS = [
       position: 'Инженер по ML',
       speaker_name: 'Елена Попова',
       company: 'Ланит',
-      photo: './../src/assets/images/4photo.png',
+      photo: 'src/assets/images/4photo.png',
     },
     specializations: {
       specialization_name: 'DevOps',
@@ -601,7 +603,7 @@ export const PERSONAL_EVENTS = [
     status: '	registration is open',
     is_registrated: false,
     is_deleted: false,
-    image: './../src/assets/images/4.png',
+    image: 'src/assets/images/4.png',
     description:
       'Встреча на которой обсуждаются Методологии тестирования: Waterfall vs Agile.',
     start_time: '2024-04-24 10:00:00+03:00',
@@ -648,7 +650,7 @@ export const PERSONAL_EVENTS = [
       position: 'Ведущий специалист по ML',
       speaker_name: 'Дмитрий Петров',
       company: 'Контур',
-      photo: './../src/assets/images/2photo.png',
+      photo: 'src/assets/images/2photo.png',
     },
     specializations: {
       specialization_name: 'Аналитика',
@@ -660,7 +662,7 @@ export const PERSONAL_EVENTS = [
     status: 'registration is closed',
     is_registrated: false,
     is_deleted: false,
-    image: './../src/assets/images/5.png',
+    image: 'src/assets/images/5.png',
     description:
       'Конференция на которой обсуждаются возможности использования Тестирование безопасности веб-приложений.',
     start_time: '2024-04-21 10:00:00+03:00',
@@ -708,7 +710,7 @@ export const PERSONAL_EVENTS = [
       position: 'Главный инженер',
       speaker_name: 'Виктория Смирнова',
       company: 'Skolkovo',
-      photo: './../src/assets/images/5photo.png',
+      photo: 'src/assets/images/5photo.png',
     },
     specializations: {
       specialization_name: 'QA',
@@ -720,7 +722,7 @@ export const PERSONAL_EVENTS = [
     status: 'registration is open',
     is_registrated: false,
     is_deleted: false,
-    image: './../src/assets/images/8.png',
+    image: 'src/assets/images/8.png',
     description:
       'Митап, на котором обсуждаются основы работы с Docker, инструментом для создания, развертывания и управления контейнерами.',
     start_time: '2024-04-21 10:00:00+03:00',

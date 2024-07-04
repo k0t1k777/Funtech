@@ -61,7 +61,7 @@
 // export const registration = ({
 //   firstName,
 //   secondName,
-//   email,
+//   email, 
 //   phone,
 // }: {
 //   firstName: string;

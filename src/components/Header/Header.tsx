@@ -1,8 +1,8 @@
 import './Header.css';
-import Logo from './../../assets/Logo.svg?react';
-import Search from './../../assets/Search.svg?react';
-import Profile from './../../assets/Profile.svg?react';
-import { POPUP_DATA } from '../../utils/constants';
+import Logo from 'src/assets/Logo.svg?react';
+import Search from 'src/assets/Search.svg?react';
+import Profile from 'src/assets/Profile.svg?react';
+import { POPUP_DATA } from 'src/utils/constants';
 
 export interface HeaderProps {
   handleEnterOpen?: () => void;
