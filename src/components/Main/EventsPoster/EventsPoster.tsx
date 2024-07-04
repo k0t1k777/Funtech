@@ -16,6 +16,7 @@ export default function EventsPoster({
   handleRegOnIventOpen,
   handleCreateEventOpen,
 }: IEventsPosterProps) {
+  console.log('events: ', events);
 
   return (
     <div className='events-poster'>
@@ -25,30 +26,34 @@ export default function EventsPoster({
           text === MAIN_DATA.personalTitle ? 'events-poster-cards_personal' : ''
         }`}
       >
-        {events?.map((card: any) =>
-            card.first_speaker && (
-              <PosterCard 
-                key={card.id}
-                id={card.id}
-                name={card.name}
-                description={card.first_speaker.position}
-                organization={card.first_speaker.speaker_name}
-                company={card.first_speaker.company}
-                skill={card.specializations.specialization_name}
-                event={card.event_type.event_type_name}
-                format={card.format}
-                status={card.status}
-                isRegistrated={card.is_registrated}
-                isDeleted={card.is_deleted}
-                image={card.image}
-                date={getDate(card.start_time, card.end_time)}
-                handleRegOnIventOpen={handleRegOnIventOpen}
-                handleCreateEventOpen={handleCreateEventOpen}
-              />
-            )
+        {events && events.length > 0 ? (
+          events.map(
+            (card: any) =>
+              card.first_speaker && (
+                <PosterCard
+                  key={card.id}
+                  id={card.id}
+                  name={card.name}
+                  description={card.first_speaker.position}
+                  organization={card.first_speaker.speaker_name}
+                  company={card.first_speaker.company}
+                  skill={card.specializations.specialization_name}
+                  event={card.event_type.event_type_name}
+                  format={card.format}
+                  status={card.status}
+                  isRegistrated={card.is_registrated}
+                  isDeleted={card.is_deleted}
+                  image={card.image}
+                  date={getDate(card.start_time, card.end_time)}
+                  handleRegOnIventOpen={handleRegOnIventOpen}
+                  handleCreateEventOpen={handleCreateEventOpen}
+                />
+              )
+          )
+        ) : (
+          <p>Личных подборок не найдено</p>
         )}
       </div>
     </div>
   );
 }
-

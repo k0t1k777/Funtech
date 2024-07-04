@@ -3,6 +3,7 @@ import Logo from 'src/assets/Logo.svg?react';
 import Search from 'src/assets/Search.svg?react';
 import Profile from 'src/assets/Profile.svg?react';
 import { POPUP_DATA } from 'src/utils/constants';
+import { Link } from 'react-router-dom';
 
 export interface HeaderProps {
   handleEnterOpen?: () => void;
@@ -22,8 +23,10 @@ export default function Header({
     : '';
   return (
     <div className='header'>
-      <Logo
-       />
+      <Link to='/'>
+        <Logo />
+      </Link>
+
       <div className='header__container-wrapper'>
         <div className='header__container-search'>
           <Search />

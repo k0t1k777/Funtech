@@ -1,9 +1,9 @@
 export const CITY_DATA = [
-  { city_slug: 'Москва' },
-  { city_slug: 'С-Петербург' },
-  { city_slug: 'Казань' },
-  { city_slug: 'Екатеринбург' },
-  { city_slug: 'Владивосток' },
+  'Москва',
+  'С-Петербург',
+  'Казань',
+  'Екатеринбург',
+  'Владивосток',
 ];
 
 export const SPECIALIZATION_DATA = [

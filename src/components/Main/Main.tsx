@@ -3,28 +3,56 @@ import News from './News/News';
 import FiltersContainer from './FiltersContainer/FiltersContainer';
 import EventsPoster from './EventsPoster/EventsPoster';
 import { MAIN_DATA } from './../../utils/constants';
+import { useEffect, useState } from 'react';
 
 interface IMainProps {
-  events: any;
-  personalEvents: any;
+  events: Event[];
+  personalEvents: PersonalEvent[];
   cities: any;
   handleRegOnIventOpen: () => void;
-  setCityValue?: (value: string) => void;
   handleCreateEventOpen: () => void;
-  cityValue?: string;
   loggedIn: boolean;
+}
+
+interface Event {
+  place: string;
+}
+
+interface PersonalEvent {
+  place: string;
 }
 
 export default function Main({
   events,
   cities,
-  cityValue,
   loggedIn,
-  setCityValue,
   personalEvents,
   handleRegOnIventOpen,
   handleCreateEventOpen,
 }: IMainProps) {
+  const [cityValue, setCityValue] = useState('');
+  const [filteredEvents, setFilteredEvents] = useState(events);
+  const [filteredPersEvents, setPersFilteredEvents] = useState(personalEvents);
+
+  useEffect(() => {
+    if (cityValue) {
+      const filtred = events.filter((event) => event.place === cityValue);
+      setFilteredEvents(filtred);
+    } else {
+      setFilteredEvents(events);
+    }
+  }, [cityValue, events]);
+
+  useEffect(() => {
+    if (cityValue) {
+      const filtred = personalEvents.filter(
+        (event) => event.place === cityValue
+      );
+      setPersFilteredEvents(filtred);
+    } else {
+      setPersFilteredEvents(personalEvents);
+    }
+  }, [cityValue, personalEvents]);
 
   return (
     <div className='main'>
@@ -32,14 +60,14 @@ export default function Main({
         <News />
         {loggedIn && (
           <EventsPoster
-            events={personalEvents}
+            events={filteredPersEvents}
             text={MAIN_DATA.personalTitle}
             handleRegOnIventOpen={handleRegOnIventOpen}
             handleCreateEventOpen={handleCreateEventOpen}
           />
         )}
         <EventsPoster
-          events={events}
+          events={filteredEvents}
           text={MAIN_DATA.title}
           handleRegOnIventOpen={handleRegOnIventOpen}
           handleCreateEventOpen={handleCreateEventOpen}
