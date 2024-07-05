@@ -16,12 +16,18 @@ export default function PopupNotification({
   setIsNotificationOpen,
 }: PopupNotificationProps) {
   const modalRef = useRef<HTMLDivElement>(null);
+
+  function unlockScroll() {
+    document.body.style.overflow = 'auto'
+  }
+
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
 
   const handleClose = () => {
     setIsNotificationOpen(false);
+    unlockScroll()
   };
 
   useEffect(() => {
@@ -50,6 +56,7 @@ export default function PopupNotification({
           isNotificationPopup={true}
           setIsProfileOpen={setIsProfileOpen}
           setIsNotificationOpen={setIsNotificationOpen}
+          unlockScroll={unlockScroll}
         />
       </div>
     </div>

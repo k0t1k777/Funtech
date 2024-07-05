@@ -31,6 +31,8 @@ export default function PopupProfile({
   function handleClose() {
     setIsProfileOpen(false);
     setLoggedIn(false);
+    document.body.style.overflow = 'auto'
+
   }
 
   useEffect(() => {

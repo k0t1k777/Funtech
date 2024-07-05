@@ -64,6 +64,7 @@ export default function App() {
   function handleLogin() {
     setLoggedIn(true);
     localStorage.setItem('loggedIn', 'true');
+    document.body.style.overflow = 'auto';
   }
 
   // const postEvent = () => {
@@ -140,6 +141,10 @@ export default function App() {
   //     });
   // }, []);
 
+  function lockScroll() {
+    document.body.style.overflow = 'hidden';
+  }
+
   const handleOverlayClose = () => {
     setIsRegistrationOpen(false);
     setIsEnterOpen(false);
@@ -149,39 +154,48 @@ export default function App() {
     setIsNotificationOpen(false);
     setIsPersonalOpen(false);
     setIsRegOnIventOpen(false);
+    document.body.style.overflow = 'auto';
   };
 
-  const handleEnterOpen = () => {
+  function handleEnterOpen() {
     setIsEnterOpen(true);
-  };
+    lockScroll();
+  }
 
-  const handleRegistrationOpen = () => {
+  function handleRegistrationOpen() {
     setIsRegistrationOpen(true);
-  };
+    lockScroll();
+  }
 
-  const handleProfileOpen = () => {
+  function handleProfileOpen() {
     setIsProfileOpen(true);
-  };
+    lockScroll();
+  }
 
-  const handleCreateEventOpen = () => {
+  function handleCreateEventOpen() {
     setIsCreateEventOpen(true);
-  };
+    lockScroll();
+  }
 
-  const handleEntryOpen = () => {
+  function handleEntryOpen() {
     setIsEntryOpen(true);
-  };
+    lockScroll();
+  }
 
-  const handleNotificationOpen = () => {
+  function handleNotificationOpen() {
     setIsNotificationOpen(true);
-  };
+    lockScroll();
+  }
 
-  const handlePersonalOpen = () => {
+  function handlePersonalOpen() {
     setIsPersonalOpen(true);
-  };
+    lockScroll();
+  }
 
-  const handleRegOnIventOpen = () => {
+  function handleRegOnIventOpen() {
     setIsRegOnIventOpen(true);
-  };
+    lockScroll();
+  }
 
   return (
     <>

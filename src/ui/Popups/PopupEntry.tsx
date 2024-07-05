@@ -13,6 +13,9 @@ export default function PopupEntry({
   setIsEntryOpen,
 }: PopupEntryProps) {
   const modalRef = useRef<HTMLDivElement>(null);
+  function unlockScroll() {
+    document.body.style.overflow = 'auto';
+  }
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
@@ -42,11 +45,14 @@ export default function PopupEntry({
       >
         <h2 className='popup__title'>{ENTRY_DATA.title}</h2>
         <h3 className='popup__date'>13.04.2024 в 15:00</h3>
-        <p className='popup__succes-text'>{ENTRY_DATA.done} {'Data Party'} {ENTRY_DATA.continue}</p>
+        <p className='popup__succes-text'>
+          {ENTRY_DATA.done} {'Data Party'} {ENTRY_DATA.continue}
+        </p>
         <a className='popup__reminder-text'>{ENTRY_DATA.addReminderText}</a>
         <NotificationForm
           isNotificationPopup={false}
           setIsEntryOpen={setIsEntryOpen}
+          unlockScroll={unlockScroll}
         />
       </div>
     </div>

@@ -3,7 +3,9 @@
   grid-template-columns: 736px min-content;
   grid-template-rows: repeat(2, min-content);
   column-gap: 55px;
-  padding: 60px 60px;
+  /* padding: 60px 60px; */
+  padding: 60px calc((100vw - 1320px) / 2);
+
 }
 
 .event__container {

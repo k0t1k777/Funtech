@@ -23,6 +23,11 @@ export default function PopupRegistration({
   const [secondName, setSecondName] = useState(
     localStorage.getItem('secondName') || ''
   );
+
+  // function unlockScroll() {
+  //   document.body.style.overflow = 'auto'
+  // }
+
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };

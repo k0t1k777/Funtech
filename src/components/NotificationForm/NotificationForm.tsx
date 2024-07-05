@@ -9,15 +9,18 @@ interface NotificationFormProps {
   setIsNotificationOpen?: (type: boolean) => void;
   setIsProfileOpen?: (type: boolean) => void;
   setIsEntryOpen?: (type: boolean) => void;
+  unlockScroll: () => void;
 }
 
 export default function NotificationForm({
+  unlockScroll,
   isNotificationPopup,
   setIsProfileOpen,
   setIsNotificationOpen,
   setIsEntryOpen,
 }: NotificationFormProps) {
   function handleCloseAll() {
+    unlockScroll();
     if (setIsProfileOpen) {
       setIsProfileOpen(false);
     }
@@ -27,6 +30,7 @@ export default function NotificationForm({
   }
 
   function handleConfirm() {
+    unlockScroll();
     if (setIsEntryOpen) {
       setIsEntryOpen(false);
     }

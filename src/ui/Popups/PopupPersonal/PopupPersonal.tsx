@@ -20,6 +20,10 @@ export default function PopupPersonal({
   const modalRef = useRef<HTMLDivElement>(null);
   const [isShowAllClicked, setIsShowAllClicked] = useState(false);
 
+  function unlockScroll() {
+    document.body.style.overflow = 'auto';
+  }
+
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
@@ -30,11 +34,13 @@ export default function PopupPersonal({
 
   function handleClose() {
     setIsPersonalOpen(false);
+    unlockScroll();
   }
 
   function handleCloseAll() {
     setIsPersonalOpen(false);
     setIsProfileOpen(false);
+    unlockScroll()
   }
 
   useEffect(() => {

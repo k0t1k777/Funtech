@@ -93,17 +93,22 @@ export default function PopupRegOnEvent({
   const [isShowAllClicked, setIsShowAllClicked] = useState(false);
   const [isWorkingChecked, setIsWorkingChecked] = useState(false);
 
+  function unlockScroll() {
+    document.body.style.overflow = 'auto';
+  }
+
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
 
   function handleClose() {
     setIsRegOnIventOpen(false);
-  };
+    unlockScroll();
+  }
 
   function handleShowAll() {
     setIsShowAllClicked((prev) => !prev);
-  };
+  }
 
   const handleSubmit = () => {
     if (isWorkingChecked) {
@@ -201,7 +206,7 @@ export default function PopupRegOnEvent({
             13 апреля 2024 в 15:00
           </Typography>
         </Box>
-        <Box sx={{ height: '100%', overflow: 'auto' }}>
+        <Box sx={{ height: '100%' }}>
           <Box
             sx={{
               display: 'flex',

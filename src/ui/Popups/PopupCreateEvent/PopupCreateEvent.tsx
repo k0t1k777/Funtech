@@ -40,8 +40,19 @@ export default function PopupCreateEvent({
   const [selectDirection, setSelectDirection] = useState('eventDirection');
   const [selectFormat, setSelectFormat] = useState('eventFormat');
   const [selectCity, setSelectCity] = useState('city');
+
+  function unlockScroll() {
+    document.body.style.overflow = 'auto'
+  }
+
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
+  };
+
+  const handleCloseAll = () => {
+    setIsCreateEventOpen(false);
+    setIsProfileOpen(false);
+    unlockScroll();
   };
 
   const handleSelectType = (e: SelectChangeEvent<string>) => {
@@ -72,11 +83,6 @@ export default function PopupCreateEvent({
       });
     }
   }, []);
-
-  const handleCloseAll = () => {
-    setIsCreateEventOpen(false);
-    setIsProfileOpen(false);
-  };
 
   return (
     <div
