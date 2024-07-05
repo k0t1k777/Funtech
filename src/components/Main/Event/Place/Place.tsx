@@ -1,6 +1,6 @@
-import './Place.css';
-import Map from '../../../assets/images/map.png';
-import { PLACE_DATA } from './../../../utils/constants';
+import 'src/components/Main/Event/Place/Place.css';
+import Map from 'src/assets/images/map.png';
+import { PLACE_DATA } from 'src/utils/constants';
 
 export interface IPlaceProps {
   event?: any;

@@ -1,5 +1,5 @@
-import '../Popups.css';
-import { REG_ON_IVENT_DATA, INPUT_DATA } from '../../../utils/constants';
+import 'src/ui/Popups/Popups.css';
+import { REG_ON_IVENT_DATA, INPUT_DATA } from 'src/utils/constants';
 import * as yup from 'yup';
 import {
   Box,
@@ -9,10 +9,10 @@ import {
   Typography,
 } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
-import CheckboxesGroupDirection from './CheckboxesGroup/CheckboxesGroupDirection';
-import CheckboxesGroupFormat from './CheckboxesGroup/CheckboxesGroupFormat';
-import CheckboxesGroupJob from './CheckboxesGroup/CheckboxesGroupJob';
-import { checkboxDefault } from './CheckboxesGroup/CheckboxStyles';
+import CheckboxesGroupDirection from 'src/ui/Popups/PopupRegOnEvent/CheckboxesGroup/CheckboxesGroupDirection';
+import CheckboxesGroupFormat from 'src/ui/Popups/PopupRegOnEvent/CheckboxesGroup/CheckboxesGroupFormat';
+import CheckboxesGroupJob from 'src/ui/Popups/PopupRegOnEvent/CheckboxesGroup/CheckboxesGroupJob';
+import { checkboxDefault } from 'src/ui/Popups/PopupRegOnEvent/CheckboxesGroup/CheckboxStyles';
 
 const validationSchema = yup.object().shape({
   firstName: yup.string().required('First name is required'),

@@ -1,8 +1,8 @@
-import '../Popups.css';
-import LeftArrow from '../../../assets/left-arrow.svg?react';
-import { PERSONAL_DATA } from '../../../utils/constants';
-import Input from '../../Input/Input';
-import CheckboxesGroup from './CheckboxesGroup/CheckboxesGroup';
+import 'src/ui/Popups/Popups.css';
+import LeftArrow from 'src/assets/left-arrow.svg?react';
+import { PERSONAL_DATA } from 'src/utils/constants';
+import Input from 'src/ui/Input/Input';
+import CheckboxesGroup from 'src/ui/Popups/PopupPersonal/CheckboxesGroup/CheckboxesGroup';
 import { Box, Button, Typography } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 

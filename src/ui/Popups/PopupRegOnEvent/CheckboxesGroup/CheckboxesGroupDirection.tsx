@@ -1,5 +1,5 @@
 import { Checkbox, FormControlLabel, Box } from '@mui/material';
-import { checkboxDirection } from './CheckboxStyles';
+import { checkboxDirection } from 'src/ui/Popups/PopupRegOnEvent/CheckboxesGroup/CheckboxStyles';
 
 interface CheckboxesGroupProps {
   isShowAllClicked: boolean;

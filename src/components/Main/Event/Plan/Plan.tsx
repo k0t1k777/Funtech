@@ -1,6 +1,6 @@
-import SpeakerCard from '../SpeakerCard/SpeakerCard';
-import { PLAN_DATA } from './../../../utils/constants';
-import { getStartTime } from '../../../helpers/Date';
+import SpeakerCard from 'src/components/Main/Event/SpeakerCard/SpeakerCard';
+import { PLAN_DATA } from 'src/utils/constants';
+import { getStartTime } from 'src/helpers/Date';
 import './Plan.css';
 
 export interface IPlanProps {

@@ -1,7 +1,7 @@
-import './Popups.css';
-import LeftArrow from '../../assets/left-arrow.svg?react';
-import { NOTIFICATION_DATA } from '../../utils/constants';
-import NotificationForm from '../../components/NotificationForm/NotificationForm';
+import 'src/ui/Popups/Popups.css';
+import LeftArrow from 'src/assets/left-arrow.svg?react';
+import { NOTIFICATION_DATA } from 'src/utils/constants';
+import NotificationForm from 'src/ui/NotificationForm/NotificationForm';
 import { useEffect, useRef } from 'react';
 
 interface PopupNotificationProps {

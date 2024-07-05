@@ -1,4 +1,4 @@
-import ISpeaker from '../Speaker';
+import ISpeaker from 'src/types/Speaker';
 
 export default interface IEventPart {
   event_part: string;

@@ -1,5 +1,5 @@
-import Calendar from './../../src/assets/calendar.svg';
-import Online from './../assets/Online.svg';
+import Calendar from 'src/assets/calendar.svg';
+import Online from 'src/assets/Online.svg';
 
 export const FILTER_DATA = {
   select: 'Город',

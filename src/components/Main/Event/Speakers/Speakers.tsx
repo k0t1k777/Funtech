@@ -1,6 +1,6 @@
-import './Speakers.css';
-import SpeakerCard from '../SpeakerCard/SpeakerCard';
-import { SPEAKERS_DATA } from './../../../utils/constants';
+import 'src/components/Main/Event/Speakers/Speakers.css';
+import SpeakerCard from 'src/components/Main/Event/SpeakerCard/SpeakerCard';
+import { SPEAKERS_DATA } from 'src/utils/constants';
 import { useEffect, useState } from 'react';
 
 export interface ISpeakersProps {

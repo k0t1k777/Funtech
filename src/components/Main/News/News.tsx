@@ -1,8 +1,8 @@
-import './News.css';
-import RegOpen from './../../../assets/Reg-open.svg?react';
-import PhotoNews from './../../../assets/images/PhotoWoman.png';
-import PhotoWaves from './../../../assets/Waves.svg';
-import { NEWS_DATA, NEWS_TEXT_DATA } from './../../../utils/constants';
+import 'src/components/Main/News/News.css';
+import RegOpen from 'src/assets/Reg-open.svg?react';
+import PhotoNews from 'src/assets/images/PhotoWoman.png';
+import PhotoWaves from 'src/assets/Waves.svg';
+import { NEWS_DATA, NEWS_TEXT_DATA } from 'src/utils/constants';
 
 export default function News() {
   return (

@@ -1,12 +1,12 @@
-import './Registration.css';
-import CalendarIcon from '../../../assets/calendar.svg?react';
-import LocationIcon from '../../../assets/location.svg?react';
-import DownloadIcon from '../../../assets/download.svg?react';
-import PlayIcon from '../../../assets/play.svg?react';
-import TelegrammIcon from '../../../assets/telegramm.svg?react';
-import VkIcon from '../../../assets/vk.svg?react';
-import { getFullDate } from '../../../helpers/Date';
-import { REGISTRATION_DATA } from './../../../utils/constants';
+import 'src/components/Main/Event/Registration/Registration.css';
+import CalendarIcon from 'src/assets/calendar.svg?react';
+import LocationIcon from 'src/assets/location.svg?react';
+import DownloadIcon from 'src/assets/download.svg?react';
+import PlayIcon from 'src/assets/play.svg?react';
+import TelegrammIcon from 'src/assets/telegramm.svg?react';
+import VkIcon from 'src/assets/vk.svg?react';
+import { getFullDate } from 'src/helpers/Date';
+import { REGISTRATION_DATA } from 'src/utils/constants';
 
 export interface IRegistrationProps {
   event?: any;

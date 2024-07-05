@@ -1,5 +1,5 @@
-import './CourseCard.css';
-import courseImg from '../../../assets/images/courseImg.jpeg';
+import 'src/components/Main/Event/CourseCard/CourseCard.css';
+import courseImg from 'src/assets/images/courseImg.jpeg';
 
 export default function CourseCard() {
   return (

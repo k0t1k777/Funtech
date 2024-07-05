@@ -1,4 +1,4 @@
-import './Header.css';
+import 'src/components/Header/Header.css';
 import Logo from 'src/assets/Logo.svg?react';
 import Search from 'src/assets/Search.svg?react';
 import Profile from 'src/assets/Profile.svg?react';

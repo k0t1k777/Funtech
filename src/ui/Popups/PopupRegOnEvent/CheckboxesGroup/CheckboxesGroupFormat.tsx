@@ -1,6 +1,9 @@
 import { Checkbox, FormControlLabel, Box } from '@mui/material';
-import { REG_ON_IVENT_DATA } from '../../../../utils/constants';
-import { checkboxDefault, checkboxOff } from './CheckboxStyles';
+import { REG_ON_IVENT_DATA } from 'src/utils/constants';
+import {
+  checkboxDefault,
+  checkboxOff,
+} from 'src/ui/Popups/PopupRegOnEvent/CheckboxesGroup/CheckboxStyles';
 
 export default function CheckboxesGroupFormat() {
   return (

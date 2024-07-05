@@ -1,7 +1,7 @@
-import './Popups.css';
-import SubmitButton from '../SubmitButton/SubmitButton';
-import Avatar from './../../assets/Profile.svg?react';
-import { POPUP_DATA } from '../../utils/constants';
+import 'src/ui/Popups/Popups.css';
+import SubmitButton from 'src/ui/SubmitButton/SubmitButton';
+import Avatar from 'src/assets/Profile.svg?react';
+import { POPUP_DATA } from 'src/utils/constants';
 import { useEffect, useRef } from 'react';
 
 interface IPopupEnterProps {

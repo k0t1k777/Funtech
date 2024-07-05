@@ -1,8 +1,8 @@
 import { Box, FormControlLabel, Checkbox } from '@mui/material';
-import { REG_ON_IVENT_DATA } from '../../../../utils/constants';
+import { REG_ON_IVENT_DATA } from 'src/utils/constants';
 import { useState } from 'react';
-import { checkboxDefault } from './CheckboxStyles';
-import './../../Popups.css';
+import { checkboxDefault } from 'src/ui/Popups/PopupRegOnEvent/CheckboxesGroup/CheckboxStyles';
+import 'src/ui/Popups/Popups.css';
 
 interface CheckboxesGroupJobProps {
   isWorkingChecked: boolean;

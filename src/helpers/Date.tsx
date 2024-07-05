@@ -1,4 +1,4 @@
-import { MONTH_NAMES_DATA } from '../utils/constants';
+import { MONTH_NAMES_DATA } from 'src/utils/constants';
 
 const getDate = (startTime: string, endTime: string | null) => {
   const startDate = new Date(startTime);

@@ -1,21 +1,21 @@
-import Header from '../Header/Header';
-import Main from '../Main/Main';
+import Header from 'src/components/Header/Header';
+import Main from 'src/components/Main/Main';
 import { Routes, Route } from 'react-router-dom';
-import './App.css';
-import Event from '../Event/Event';
+import 'src/components/App/App.css';
+import Event from 'src/components/Main/Event/Event';
 import { useState } from 'react';
-import PopupEnter from '../../ui/Popups/PopupEnter';
-import PopupProfile from '../../ui/Popups/PopupProfile';
-import PopupCreateEvent from '../../ui/Popups/PopupCreateEvent/PopupCreateEvent';
-import PopupEntry from '../../ui/Popups/PopupEntry';
-import PopupNotification from '../../ui/Popups/PopupNotification';
-import PopupPersonal from '../../ui/Popups/PopupPersonal/PopupPersonal';
-import PopupRegOnEvent from '../../ui/Popups/PopupRegOnEvent/PopupRegOnEvent';
-import PopupRegistration from '../../ui/Popups/PopupRegistration';
-import Footer from '../Footer/Footer';
-// import { Сities } from '../../components/Main/FiltersContainer/FiltersContainer';
+import PopupEnter from 'src/ui/Popups/PopupEnter';
+import PopupProfile from 'src/ui/Popups/PopupProfile';
+import PopupCreateEvent from 'src/ui/Popups/PopupCreateEvent/PopupCreateEvent';
+import PopupEntry from 'src/ui/Popups/PopupEntry';
+import PopupNotification from 'src/ui/Popups/PopupNotification';
+import PopupPersonal from 'src/ui/Popups/PopupPersonal/PopupPersonal';
+import PopupRegOnEvent from 'src/ui/Popups/PopupRegOnEvent/PopupRegOnEvent';
+import PopupRegistration from 'src/ui/Popups/PopupRegistration';
+import Footer from 'src/components/Footer/Footer';
+// import { Сities } from 'src/components/Main/FiltersContainer/FiltersContainer';
 // import { Spec } from '../Popups/PopupRegOnEvent/PopupRegOnEvent';
-// import * as Api from './../../utils/utils';
+// import * as Api from './src/utils/utils';
 // import IEventCard from '../types/EventCard';
 
 // МОК ДАННЫЕ
@@ -24,7 +24,7 @@ import {
   PERSONAL_EVENTS,
   CITY_DATA,
   SPECIALIZATION_DATA,
-} from './../../utils/mock';
+} from 'src/utils/mock';
 
 export default function App() {
   // const eventId = localStorage.getItem('eventId');

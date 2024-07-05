@@ -1,13 +1,13 @@
-import './Event.css';
-import About from './About/About';
-import Speakers from './Speakers/Speakers';
-import Plan from './Plan/Plan';
-import Registration from './Registration/Registration';
-import Place from './Place/Place';
-import Courses from './Courses/Courses';
+import 'src/components/Main/Event/Event.css';
+import About from 'src/components/Main/Event/About/About';
+import Speakers from 'src/components/Main/Event/Speakers/Speakers';
+import Plan from 'src/components/Main/Event/Plan/Plan';
+import Registration from 'src/components/Main/Event/Registration/Registration';
+import Place from 'src/components/Main/Event/Place/Place';
+import Courses from 'src/components/Main/Event/Courses/Courses';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import IEvent from '../../types/Event';
+import IEvent from 'src/types/Event';
 
 export interface IEventProps {
   events: any;

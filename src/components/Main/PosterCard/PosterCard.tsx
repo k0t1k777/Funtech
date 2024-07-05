@@ -1,6 +1,6 @@
-import './PosterCard.css';
-import CalendarVector from '../../../assets/calendar.svg?react';
-import { POSTER_DATA } from '../../../utils/constants';
+import 'src/components/Main/PosterCard/PosterCard.css';
+import CalendarVector from 'src/assets/calendar.svg?react';
+import { POSTER_DATA } from 'src/utils/constants';
 import { useNavigate } from 'react-router-dom';
 
 interface IPosterCardProps {

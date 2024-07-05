@@ -1,7 +1,7 @@
 import { Box, FormControlLabel, Checkbox } from '@mui/material';
-import { PERSONAL_DATA } from '../../../../utils/constants';
+import { PERSONAL_DATA } from 'src/utils/constants';
 import { useState } from 'react';
-import Input from '../../../Input/Input';
+import Input from 'src/ui/Input/Input';
 
 const checkboxStyles = {
   width: '164px',

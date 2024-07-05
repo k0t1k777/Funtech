@@ -1,8 +1,8 @@
-import './Main.css';
-import News from './News/News';
-import FiltersContainer from './FiltersContainer/FiltersContainer';
-import EventsPoster from './EventsPoster/EventsPoster';
-import { MAIN_DATA } from './../../utils/constants';
+import 'src/components/Main/Main.css';
+import News from 'src/components/Main/News/News';
+import FiltersContainer from 'src/components/Main/FiltersContainer/FiltersContainer';
+import EventsPoster from 'src/components/Main/EventsPoster/EventsPoster';
+import { MAIN_DATA } from 'src/utils/constants';
 import { useEffect, useState } from 'react';
 
 interface IMainProps {

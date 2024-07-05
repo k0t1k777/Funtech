@@ -1,6 +1,6 @@
-import './Footer.css';
-import Logo from './../../assets/Logo.svg?react';
-import { FOOTER_DATA } from './../../utils/constants'
+import 'src/components/Footer/Footer.css';
+import Logo from 'src/assets/Logo.svg?react';
+import { FOOTER_DATA } from 'src/utils/constants'
 
 export default function Footer() {
   return (

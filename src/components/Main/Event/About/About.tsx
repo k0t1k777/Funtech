@@ -1,4 +1,4 @@
-import './About.css';
+import 'src/components/Main/Event/About/About.css';
 
 export interface IAboutProps {
   event: any;

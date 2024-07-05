@@ -1,4 +1,4 @@
-import './Input.css';
+import 'src/ui/Input/Input.css';
 
 interface InputProps {
   label: string;

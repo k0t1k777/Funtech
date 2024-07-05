@@ -1,8 +1,8 @@
-import './Popups.css';
-import SubmitButton from '../SubmitButton/SubmitButton';
+import 'src/ui/Popups/Popups.css';
+import SubmitButton from 'src/ui/SubmitButton/SubmitButton';
 import { useRef, useState, useEffect } from 'react';
 import * as Yup from 'yup';
-import { ERROR_DATA, POPUP_DATA } from '../../utils/constants'
+import { ERROR_DATA, POPUP_DATA } from 'src/utils/constants'
 
 interface PopupEnterProps {
   handleOverlayClose: () => void;

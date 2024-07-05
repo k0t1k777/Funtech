@@ -1,4 +1,4 @@
-import IEventPart from '../EventPart';
+import IEventPart from 'src/types/EventPart';
 
 export default interface IEvent {
   additional_materials_link: string | null;

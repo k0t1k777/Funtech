@@ -1,4 +1,4 @@
-import './Popups.css';
+import 'src/ui/Popups/Popups.css';
 import SubmitButton from '../SubmitButton/SubmitButton';
 import { useEffect, useRef, useState } from 'react';
 import * as Yup from 'yup';
@@ -23,10 +23,6 @@ export default function PopupRegistration({
   const [secondName, setSecondName] = useState(
     localStorage.getItem('secondName') || ''
   );
-
-  // function unlockScroll() {
-  //   document.body.style.overflow = 'auto'
-  // }
 
   const handlePopupClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();

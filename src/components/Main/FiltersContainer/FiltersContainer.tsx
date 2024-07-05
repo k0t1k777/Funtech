@@ -1,5 +1,5 @@
-import Calendar from '../../../ui/Calendar/Calendar';
-import BasicSelect from '../../../ui/Select/Select';
+import Calendar from 'src/ui/Calendar/Calendar';
+import BasicSelect from 'src/ui/Select/Select';
 import CheckboxItem from 'src/ui/CheckboxItem';
 import {
   CHECKBOX_TIME_DATA,

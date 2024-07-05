@@ -1,6 +1,6 @@
-import './Popups.css';
-import { ENTRY_DATA } from '../../utils/constants';
-import NotificationForm from '../../components/NotificationForm/NotificationForm';
+import 'src/ui/Popups/Popups.css';
+import { ENTRY_DATA } from 'src/utils/constants';
+import NotificationForm from 'src/ui/NotificationForm/NotificationForm';
 import { useEffect, useRef } from 'react';
 
 interface PopupEntryProps {

@@ -1,4 +1,4 @@
-import IEvent from '../Event';
+import IEvent from 'src/types/Event';
 
 export default interface IEventCard extends IEvent {
   first_speaker: {

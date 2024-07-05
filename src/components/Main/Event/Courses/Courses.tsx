@@ -1,6 +1,6 @@
-import CourseCard from '../CourseCard/CourseCard';
-import './Courses.css';
-import { COURSES_DATA } from './../../../utils/constants';
+import CourseCard from 'src/components/Main/Event/CourseCard/CourseCard';
+import 'src/components/Main/Event/Courses/Courses.css';
+import { COURSES_DATA } from 'src/utils/constants';
 
 export default function Courses() {
   return (

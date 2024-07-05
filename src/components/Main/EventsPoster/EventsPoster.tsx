@@ -1,4 +1,4 @@
-import './EventsPoster.css';
+import 'src/components/Main/EventsPoster/EventsPoster.css';
 import PosterCard from 'src/components/Main/PosterCard/PosterCard';
 import { getDate } from 'src/helpers/Date';
 import { MAIN_DATA } from 'src/utils/constants';

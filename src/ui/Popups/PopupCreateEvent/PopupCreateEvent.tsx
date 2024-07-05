@@ -1,5 +1,5 @@
-import '../Popups.css';
-import CloseButton from '../../../assets/close-icon.svg?react';
+import 'src/ui/Popups/Popups.css';
+import CloseButton from 'src/assets/close-icon.svg?react';
 import {
   Box,
   Button,
@@ -9,9 +9,9 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import { CREATE_EVENT_DATA, POPUP_DATA } from '../../../utils/constants';
+import { CREATE_EVENT_DATA, POPUP_DATA } from 'src/utils/constants';
 import { useEffect, useRef, useState } from 'react';
-import DefaultEventImg from '../../../assets/images/defaultEventImg.png';
+import DefaultEventImg from 'src/assets/images/defaultEventImg.png';
 import {
   defaultInputStyles,
   descriptionInputStyles,
@@ -20,8 +20,8 @@ import {
   placeInputStyles,
   submitButtonStyles,
 } from './PopupCreateEventStyles';
-import SwitchButton from '../../SwitchButton';
-import CloudIcon from '../../../assets/cloudIcon.svg?react';
+import SwitchButton from 'src/ui/SwitchButton';
+import CloudIcon from 'src/assets/cloudIcon.svg?react';
 import { SelectChangeEvent } from '@mui/material/Select';
 
 interface IPopupCreateEventProps {

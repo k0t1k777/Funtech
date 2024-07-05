@@ -1,4 +1,4 @@
-import './SpeakerCard.css';
+import 'src/components/Main/Event/SpeakerCard/SpeakerCard.css';
 
 interface ISpeakerCardProps {
   speakerName: string;

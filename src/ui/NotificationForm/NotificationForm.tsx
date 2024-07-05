@@ -1,7 +1,7 @@
-import './NotificationForm.css';
-import { NOTIFICATION_FORM_DATA } from '../../utils/constants';
-import SwitchButton from '../../ui/SwitchButton';
-import RadioButton from '../../ui/RadioButton';
+import 'src/ui/NotificationForm/NotificationForm.css';
+import { NOTIFICATION_FORM_DATA } from 'src/utils/constants';
+import SwitchButton from 'src/ui/SwitchButton';
+import RadioButton from 'src/ui/RadioButton';
 import { FormControl, RadioGroup } from '@mui/material';
 
 interface NotificationFormProps {
