@@ -6,8 +6,8 @@ import {
   CHECKBOX_SCILLS_DATA,
   CHECKBOX_DATA_CONST,
   CHECKBOX_DATA,
-} from '../../../utils/constants';
-import './FiltersContainer.css';
+} from 'src/utils/constants';
+import 'src/components/Main/FiltersContainer/FiltersContainer.css';
 
 interface FiltersContainerProps {
   cities: Сities[];
@@ -19,6 +19,8 @@ interface FiltersContainerProps {
   setSkilsFilter: (type: string[]) => void;
   typeFilter: string[];
   setTypeFilter: (type: string[]) => void;
+  date: any;
+  setDate: any;
 }
 
 export interface Сities {
@@ -36,10 +38,15 @@ export default function FiltersContainer({
   setSkilsFilter,
   typeFilter,
   setTypeFilter,
+  date,
+  setDate,
 }: FiltersContainerProps) {
   return (
     <div className='filters-container'>
-      <Calendar />
+      <Calendar
+        value={date}
+        setValue={setDate}
+      />
       <BasicSelect
         cities={cities}
         cityValue={cityValue}

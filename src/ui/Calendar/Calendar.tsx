@@ -1,19 +1,26 @@
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ru';
-dayjs.locale('ru');
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { StaticDateRangePicker } from '@mui/x-date-pickers-pro/StaticDateRangePicker';
 import { LicenseInfo } from '@mui/x-license';
+dayjs.locale('ru');
 
 LicenseInfo.setLicenseKey(
   'e0d9bb8070ce0054c9d9ecb6e82cb58fTz0wLEU9MzI0NzIxNDQwMDAwMDAsUz1wcmVtaXVtLExNPXBlcnBldHVhbCxLVj0y'
 );
 
-export default function Calendar() {
+interface CalendarProps {
+  value: any;
+  setValue: any;
+}
+
+export default function Calendar({ value, setValue }: CalendarProps) {
+
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <StaticDateRangePicker
+        value={value} onChange={newValue => setValue(newValue)}
         sx={{
           '& .MuiPickersToolbar-root': {
             display: 'none',
