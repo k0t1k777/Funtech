@@ -39,7 +39,7 @@ export const SPECIALIZATION_DATA = [
   },
 ];
 
-// Картинки на деплое работают с Funtech, локально с src
+// Картинки на деплое работают с Funtech локально с src
 export const EVENTS = [
   {
     id: 1,
@@ -47,7 +47,7 @@ export const EVENTS = [
     first_speaker: {
       position: 'Инженер по ML',
       speaker_name: 'Сергей Петров',
-      photo: 'Funtech/assets/images/1photo.png',
+      photo: 'assets/images/1photo.png',
       company: 'Google',
     },
     specializations: {
@@ -62,7 +62,7 @@ export const EVENTS = [
     is_deleted: false,
     description:
       'Митап на котором обсуждаются основы TensorFlow популярного фреймворка для машинного обучения.',
-    image: 'Funtech/assets/1.png',
+    image: 'assets/1.png',
     start_time: '2024-06-21 10:00:00+03:00',
     end_time: '2024-06-21 10:45:00+03:00',
     place: 'Екатеринбург',
@@ -107,7 +107,7 @@ export const EVENTS = [
       position: 'Операции в TensorFlow',
       speaker_name: 'Иван Андреев',
       company: 'Яндекс',
-      photo: 'Funtech/assets/images/3photo.png',
+      photo: 'assets/images/3photo.png',
     },
     specializations: {
       specialization_name: 'Backend',
@@ -119,7 +119,7 @@ export const EVENTS = [
     status: 'registration is open',
     is_registrated: false,
     is_deleted: false,
-    image: 'Funtech/assets/images/2.png',
+    image: 'assets/images/2.png',
     description:
       'Вебинар на котором обсуждаются основы глубокого обучения с использованием PyTorch.',
     start_time: '2024-07-29 10:45:00+03:00',
@@ -166,7 +166,7 @@ export const EVENTS = [
       position: 'Главный исследователь',
       speaker_name: 'Юлия Мирова',
       company: 'Яндекс',
-      photo: 'Funtech/assets/images/10photo.jpeg',
+      photo: 'assets/images/10photo.jpeg',
     },
     specializations: {
       specialization_name: 'UX/UI',
@@ -178,7 +178,7 @@ export const EVENTS = [
     status: 'registration is closed',
     is_registrated: false,
     is_deleted: false,
-    image: 'Funtech/assets/images/3.png',
+    image: 'assets/images/3.png',
     description:
       'Встреча на которой обсуждаются возможности использования сверточных нейронных сетей в компьютерном зрении.',
     start_time: '2024-09-22 10:00:00+03:00',
@@ -225,7 +225,7 @@ export const EVENTS = [
       position: 'Инженер по ML',
       speaker_name: 'Энэсс Иванов',
       company: 'Mail',
-      photo: 'Funtech/assets/images/12photo.jpeg',
+      photo: 'assets/images/12photo.jpeg',
     },
     specializations: {
       specialization_name: 'AI',
@@ -237,7 +237,7 @@ export const EVENTS = [
     status: 'registration is closed',
     is_registrated: false,
     is_deleted: false,
-    image: 'Funtech/assets/images/4.png',
+    image: 'assets/images/4.png',
     description:
       'Конференция на которой обсуждаются возможности использования машинного обучения в финансовом секторе.',
     start_time: '2024-07-12 10:00:00+03:00',
@@ -284,7 +284,7 @@ export const EVENTS = [
       position: 'Специалист по ML2',
       speaker_name: 'Анна Морозова',
       company: 'JetBrains',
-      photo: 'Funtech/assets/images/6photo.jpeg',
+      photo: 'assets/images/6photo.jpeg',
     },
     specializations: {
       specialization_name: 'ML',
@@ -296,7 +296,7 @@ export const EVENTS = [
     status: 'registration is closed',
     is_registrated: false,
     is_deleted: false,
-    image: 'Funtech/assets/images/7.png',
+    image: 'assets/images/7.png',
     description:
       'Митап на котором обсуждаются Автоматизация тестирования с Selenium.',
     start_time: '2024-09-12 10:00:00+03:00',
@@ -343,7 +343,7 @@ export const EVENTS = [
       position: 'Главный исследователь',
       speaker_name: 'Юрий Соколов',
       company: 'VK',
-      photo: 'Funtech/assets/images/11photo.jpeg',
+      photo: 'assets/images/11photo.jpeg',
     },
     specializations: {
       specialization_name: 'Frontend',
@@ -355,7 +355,7 @@ export const EVENTS = [
     status: 'registration is open',
     is_registrated: false,
     is_deleted: false,
-    image: 'Funtech/assets/images/6.png',
+    image: 'assets/images/6.png',
     description:
       'Вебинар на котором обсуждаются Тестирование производительности с JMeter.',
     start_time: '2024-09-11 10:00:00+03:00',
@@ -403,7 +403,7 @@ export const EVENTS = [
       position: 'Инженер по ML',
       speaker_name: 'Елена Попова',
       company: 'Ланит',
-      photo: 'Funtech/assets/images/4photo.png',
+      photo: 'assets/images/4photo.png',
     },
     specializations: {
       specialization_name: 'DevOps',
@@ -415,7 +415,7 @@ export const EVENTS = [
     status: 'registration is closed',
     is_registrated: true,
     is_deleted: false,
-    image: 'Funtech/assets/images/9.png',
+    image: 'assets/images/9.png',
     description:
       'Встреча на которой обсуждаются Методологии тестирования: Waterfall vs Agile.',
     start_time: '2024-07-07 10:00:00+03:00',
@@ -462,7 +462,7 @@ export const EVENTS = [
       position: 'Ведущий специалист по ML',
       speaker_name: 'Дмитрий Петров',
       company: 'Контур',
-      photo: 'Funtech/assets/images/2photo.png',
+      photo: 'assets/images/2photo.png',
     },
     specializations: {
       specialization_name: 'Аналитика',
@@ -474,7 +474,7 @@ export const EVENTS = [
     status: 'registration is closed',
     is_registrated: true,
     is_deleted: false,
-    image: 'Funtech/assets/images/5.png',
+    image: 'assets/images/5.png',
     description:
       'Конференция на которой обсуждаются возможности использования Тестирование безопасности веб-приложений.',
     start_time: '2024-08-12 10:00:00+03:00',
@@ -522,7 +522,7 @@ export const EVENTS = [
       position: 'Главный инженер',
       speaker_name: 'Виктория Смирнова',
       company: 'Skolkovo',
-      photo: 'Funtech/assets/images/5photo.png',
+      photo: 'assets/images/5photo.png',
     },
     specializations: {
       specialization_name: 'QA',
@@ -534,7 +534,7 @@ export const EVENTS = [
     status: 'registration is open',
     is_registrated: false,
     is_deleted: false,
-    image: 'Funtech/assets/images/8.png',
+    image: 'assets/images/8.png',
     description:
       'Митап, на котором обсуждаются основы работы с Docker, инструментом для создания, развертывания и управления контейнерами.',
     start_time: '2024-11-02 10:00:00+03:00',
@@ -584,7 +584,7 @@ export const PERSONAL_EVENTS = [
       position: 'Инженер по ML',
       speaker_name: 'Елена Попова',
       company: 'Ланит',
-      photo: 'Funtech/assets/images/4photo.png',
+      photo: 'assets/images/4photo.png',
     },
     specializations: {
       specialization_name: 'DevOps',
@@ -596,7 +596,7 @@ export const PERSONAL_EVENTS = [
     status: 'registration is closed',
     is_registrated: true,
     is_deleted: false,
-    image: 'Funtech/assets/images/4.png',
+    image: 'assets/images/4.png',
     description:
       'Встреча на которой обсуждаются Методологии тестирования: Waterfall vs Agile.',
     start_time: '2024-07-12 10:00:00+03:00',
@@ -643,7 +643,7 @@ export const PERSONAL_EVENTS = [
       position: 'Ведущий специалист по ML',
       speaker_name: 'Дмитрий Петров',
       company: 'Контур',
-      photo: 'Funtech/assets/images/2photo.png',
+      photo: 'assets/images/2photo.png',
     },
     specializations: {
       specialization_name: 'Аналитика',
@@ -655,7 +655,7 @@ export const PERSONAL_EVENTS = [
     status: 'registration is closed',
     is_registrated: true,
     is_deleted: false,
-    image: 'Funtech/assets/images/5.png',
+    image: 'assets/images/5.png',
     description:
       'Конференция на которой обсуждаются возможности использования Тестирование безопасности веб-приложений.',
     start_time: '2024-08-12 10:00:00+03:00',
@@ -703,7 +703,7 @@ export const PERSONAL_EVENTS = [
       position: 'Главный инженер',
       speaker_name: 'Виктория Смирнова',
       company: 'Skolkovo',
-      photo: 'Funtech/assets/images/5photo.png',
+      photo: 'assets/images/5photo.png',
     },
     specializations: {
       specialization_name: 'QA',
@@ -715,7 +715,7 @@ export const PERSONAL_EVENTS = [
     status: 'registration is open',
     is_registrated: false,
     is_deleted: false,
-    image: 'Funtech/assets/images/8.png',
+    image: 'assets/images/8.png',
     description:
       'Митап, на котором обсуждаются основы работы с Docker, инструментом для создания, развертывания и управления контейнерами.',
     start_time: '2024-04-21 10:00:00+03:00',
