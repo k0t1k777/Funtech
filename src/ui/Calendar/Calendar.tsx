@@ -1,9 +1,10 @@
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import dayjs from 'dayjs';
-import 'dayjs/locale/ru';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { StaticDateRangePicker } from '@mui/x-date-pickers-pro/StaticDateRangePicker';
 import { LicenseInfo } from '@mui/x-license';
+import { DateRange } from '@mui/x-date-pickers-pro/models';
+import dayjs from 'dayjs';
+import 'dayjs/locale/ru';
 dayjs.locale('ru');
 
 LicenseInfo.setLicenseKey(
@@ -11,16 +12,30 @@ LicenseInfo.setLicenseKey(
 );
 
 interface CalendarProps {
-  value: any;
-  setValue: any;
+  value: [dayjs.Dayjs, dayjs.Dayjs];
+  setValue: React.Dispatch<React.SetStateAction<[dayjs.Dayjs, dayjs.Dayjs]>>;
+  setShowDateBefore: React.Dispatch<React.SetStateAction<string | null>>;
+  setShowDateAfter: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
-export default function Calendar({ value, setValue }: CalendarProps) {
+export default function Calendar({
+  value,
+  setValue,
+  setShowDateBefore,
+  setShowDateAfter,
+}: CalendarProps) {
 
-  return (
+      return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <StaticDateRangePicker
-        value={value} onChange={newValue => setValue(newValue)}
+        value={value}
+        onChange={(newValue: DateRange<dayjs.Dayjs>) => {
+          if (newValue[0] && newValue[1]) {
+            setValue([newValue[0], newValue[1]]);
+            setShowDateBefore(dayjs(newValue[0]).format('YYYY-MM-DD'));
+            setShowDateAfter(dayjs(newValue[1]).format('YYYY-MM-DD'));
+          }
+        }}
         sx={{
           '& .MuiPickersToolbar-root': {
             display: 'none',
