@@ -4,8 +4,6 @@
   border-radius: 12px;
   border: 1px solid #d5d2d2;
   background-blend-mode: color-burn;
-  position: relative;
-
 }
 
 .poster-card__img {
@@ -14,16 +12,13 @@
   object-fit: cover;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+  position: relative;
 }
 
 .poster-card__container {
   display: flex;
   justify-content: space-between;
   margin: 8px 8px 0 8px;
-  position: absolute;
-  top: 8px;
-  left: 8px;
-
 }
 
 .poster-card__date-container {
@@ -32,7 +27,9 @@
   background-color: white;
   border-radius: 8px;
   padding: 0 8px;
-
+  position: absolute;
+  top: 8px;
+  left: 8px;
 }
 
 .poster-card__date {
@@ -48,8 +45,8 @@
   display: flex;
   align-items: center;
   position: absolute;
-  top: 2px;
-  right: -140px;
+  top: 8px;
+  right: 8px;
   gap: 6px;
 }
 

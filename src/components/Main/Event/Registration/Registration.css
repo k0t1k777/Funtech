@@ -210,3 +210,8 @@
   margin-top: 40px;
   color: #ffffff;
 }
+
+.disabled {
+  cursor: not-allowed;
+  background-color: rgba(191, 157, 233, 1);
+}

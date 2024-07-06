@@ -1,10 +1,4 @@
-export const CITY_DATA = [
-  'Москва',
-  'С-Петербург',
-  'Казань',
-  'Екатеринбург',
-  'Владивосток',
-];
+export const CITY_DATA = ['Москва', 'С-Петербург', 'Екатеринбург'];
 
 export const SPECIALIZATION_DATA = [
   {
@@ -62,14 +56,14 @@ export const EVENTS = [
       event_type_name: 'Конференция',
     },
     format: 'offline',
-    status: 'registration is open',
+    status: 'registration is closed',
     is_registrated: true,
     is_deleted: false,
     description:
       'Митап на котором обсуждаются основы TensorFlow популярного фреймворка для машинного обучения.',
     // на деплое работает
-    // image: '/Funtech/assets/1.png',
-    image: 'src/assets/1.png',
+    image: '/Funtech/assets/1.png',
+    // image: 'src/assets/1.png',
     start_time: '2024-06-21 10:00:00+03:00',
     end_time: '2024-06-21 10:45:00+03:00',
     place: 'Екатеринбург',
@@ -419,10 +413,10 @@ export const EVENTS = [
       event_type_name: 'Вебинар',
     },
     format: 'online',
-    status: 'registration is open',
-    is_registrated: false,
+    status: 'registration is closed',
+    is_registrated: true,
     is_deleted: false,
-    image: 'src/assets/images/4.png',
+    image: 'src/assets/images/9.png',
     description:
       'Встреча на которой обсуждаются Методологии тестирования: Waterfall vs Agile.',
     start_time: '2024-07-07 10:00:00+03:00',
@@ -479,14 +473,14 @@ export const EVENTS = [
     },
     format: 'hybrid',
     status: 'registration is closed',
-    is_registrated: false,
+    is_registrated: true,
     is_deleted: false,
     image: 'src/assets/images/5.png',
     description:
       'Конференция на которой обсуждаются возможности использования Тестирование безопасности веб-приложений.',
     start_time: '2024-08-12 10:00:00+03:00',
     end_time: '2024-07-08 10:00:00+03:00',
-    place: 'Казань',
+    place: 'С-Петербург',
     street: 'ул. Хвалынская',
     event_parts: [
       {
@@ -546,7 +540,7 @@ export const EVENTS = [
       'Митап, на котором обсуждаются основы работы с Docker, инструментом для создания, развертывания и управления контейнерами.',
     start_time: '2024-11-02 10:00:00+03:00',
     end_time: '2024-11-02 10:00:00+03:00',
-    place: 'Владивосток',
+    place: 'Москва',
     street: 'пер. Хлебный',
     event_parts: [
       {
@@ -600,8 +594,8 @@ export const PERSONAL_EVENTS = [
       event_type_name: 'Вебинар',
     },
     format: 'online',
-    status: '	registration is open',
-    is_registrated: false,
+    status: 'registration is closed',
+    is_registrated: true,
     is_deleted: false,
     image: 'src/assets/images/4.png',
     description:
@@ -660,14 +654,14 @@ export const PERSONAL_EVENTS = [
     },
     format: 'hybrid',
     status: 'registration is closed',
-    is_registrated: false,
+    is_registrated: true,
     is_deleted: false,
     image: 'src/assets/images/5.png',
     description:
       'Конференция на которой обсуждаются возможности использования Тестирование безопасности веб-приложений.',
     start_time: '2024-08-12 10:00:00+03:00',
     end_time: '2024-08-12 10:00:00+03:00',
-    place: 'Казань',
+    place: 'С-Петербург',
     street: 'ул. Хвалынская',
     event_parts: [
       {
@@ -727,7 +721,7 @@ export const PERSONAL_EVENTS = [
       'Митап, на котором обсуждаются основы работы с Docker, инструментом для создания, развертывания и управления контейнерами.',
     start_time: '2024-04-21 10:00:00+03:00',
     end_time: '2024-04-22 10:00:00+03:00',
-    place: 'Владивосток',
+    place: 'Москва',
     street: 'пер. Хлебный',
     event_parts: [
       {

@@ -19,7 +19,6 @@ export default function Registration({
   handleRegOnIventOpen,
   handleCreateEventOpen,
 }: IRegistrationProps) {
-
   return (
     <div className='registration'>
       <div className='registration__container'>
@@ -68,7 +67,9 @@ export default function Registration({
         <p className='registration__tag'>
           {event?.specializations?.specialization_name}
         </p>
-        <p className='registration__tag'>{event?.event_type?.event_type_name}</p>
+        <p className='registration__tag'>
+          {event?.event_type?.event_type_name}
+        </p>
         <p className='registration__tag'>{event?.format}</p>
       </div>
 
@@ -94,10 +95,31 @@ export default function Registration({
         <button className='registration__button-other' />
       </div>
       <button
-        className='registration__button-reg'
+        className={`${
+          event &&
+          event.status === 'registration is closed' &&
+          event &&
+          event.is_registrated === false
+            ? 'registration__button-reg disabled'
+            : 'registration__button-reg'
+        }`}
+        disabled={event && event.status === 'registration is closed'}
         onClick={handleRegOnIventOpen}
       >
-        {REGISTRATION_DATA.regButton}
+        {(((event &&
+          event.status === 'registration is open' &&
+          event &&
+          event.is_registrated === false) ||
+          (event &&
+            event.status === 'registration is closed' &&
+            event &&
+            event.is_registrated === false)) &&
+          `${REGISTRATION_DATA.regButton}`) ||
+          (event &&
+            event.status === 'registration is closed' &&
+            event &&
+            event.is_registrated === true &&
+            `${REGISTRATION_DATA.cancelButton}`)}
       </button>
     </div>
   );

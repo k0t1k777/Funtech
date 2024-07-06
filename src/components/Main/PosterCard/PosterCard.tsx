@@ -21,8 +21,7 @@ interface IPosterCardProps {
   handleCreateEventOpen: () => void;
 }
 
-export default function PosterCard(
-  {
+export default function PosterCard({
   name,
   organization,
   description,
@@ -38,44 +37,37 @@ export default function PosterCard(
   image,
   handleCreateEventOpen,
   handleRegOnIventOpen,
-}: IPosterCardProps
-) {
+}: IPosterCardProps) {
   const navigate = useNavigate();
 
   const handleNavigateOnEvent = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLElement;
-  if (target.id === '0') {
-    return;
-  }
-  navigate(`/event/${id}`);
-};
+    if (target.id === '0') {
+      return;
+    }
+    navigate(`/event/${id}`);
+  };
 
   return (
     <div className='poster-card' onMouseUp={handleNavigateOnEvent}>
       <div className='poster-card__img'>
-        <img src={image} className='poster-card__img' alt="картинка карточки" />
-        <div className='poster-card__container'>
-          <div className='poster-card__date-container'>
-            <CalendarVector />
-            <p className='poster-card__date'>{date}</p>
-          </div>
-          <div className='poster-card__buttons'>
-            <button
-              id='0'
-              className='poster-card__button-edit'
-              type='button'
-              onClick={handleCreateEventOpen}
-            />
-            {isDeleted ? (
-              <button
-                id='0'
-                className='poster-card__button-off'
-                type='button'
-              />
-            ) : (
-              <button id='0' className='poster-card__button-on' type='button' />
-            )}
-          </div>
+        <img src={image} className='poster-card__img' alt='картинка карточки' />
+        <div className='poster-card__date-container'>
+          <CalendarVector />
+          <p className='poster-card__date'>{date}</p>
+        </div>
+        <div className='poster-card__buttons'>
+          <button
+            id='0'
+            className='poster-card__button-edit'
+            type='button'
+            onClick={handleCreateEventOpen}
+          />
+          {isDeleted ? (
+            <button id='0' className='poster-card__button-off' type='button' />
+          ) : (
+            <button id='0' className='poster-card__button-on' type='button' />
+          )}
         </div>
       </div>
       <div
@@ -108,7 +100,7 @@ export default function PosterCard(
               id='0'
               className='poster-card__button-submit'
               type='submit'
-              onClick={handleRegOnIventOpen}
+              // onClick={handleRegOnIventOpen}
             >
               {POSTER_DATA.buttonText.registered}
             </button>
