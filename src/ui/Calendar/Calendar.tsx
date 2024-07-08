@@ -62,7 +62,9 @@ export default function Calendar({
           '& .css-1nte4ka.Mui-selected': {
             backgroundColor: '#6750A4',
           },
-         
+          '& .css-1nte4ka.Mui-selected-selected': {
+            backgroundColor: '#6750A4',
+          },
           '& .css-1uqqj9m': {
             backgroundColor: '#E8DEF8',
           },
