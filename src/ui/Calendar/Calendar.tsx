@@ -51,7 +51,16 @@ export default function Calendar({
             width: '300px',
           },
           '& .css-xlhjvr.Mui-selected': {
-            background: '#6750A4',
+            backgroundColor: '#6750A4',
+          },
+          // '& .css-xlhjvr.Mui-selected': {
+          //   backgroundColor: '#6750A4',
+          // },
+          // '& .css-xlhjvr.Mui-selected': {
+          //   backgroundColor: '#6750A4',
+          // },
+          '& .css-1uqqj9m': {
+            backgroundColor: '#E8DEF8',
           },
           '& .css-1juxbee-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected':
             {
