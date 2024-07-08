@@ -88,7 +88,10 @@
             },
             '& .css-1ykepse.Mui-selected': {
               backgroundColor: '#6750A4',
-            },         
+            },
+            '& .css-1ykepse.Mui-selected:focus': {
+              backgroundColor: '#6750A4',
+            },        
             '& .css-1juxbee-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected':
               {
                 backgroundColor: '#6750A4',
