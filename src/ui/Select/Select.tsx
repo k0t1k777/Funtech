@@ -42,6 +42,9 @@ export default function BasicSelect({
           '& .MuiOutlinedInput-notchedOutline': {
             color: 'red',
           },
+          '& .css-zun73v.Mui-checked, .css-zun73v.MuiCheckbox-indeterminate': {
+            color: '#6750A4',
+          },
           '& label.Mui-focused': {
             color: '#6750A4',
           },
