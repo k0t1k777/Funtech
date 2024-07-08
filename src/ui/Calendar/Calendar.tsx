@@ -56,6 +56,9 @@
             '& .css-xlhjvr.Mui-selected:focus': {
               backgroundColor: '#6750A4',
             },
+            '& .css-xlhjvr.Mui-selected:input': {
+              backgroundColor: '#6750A4',
+            },
             '& .css-6u8l34.Mui-selected': {
               backgroundColor: '#6750A4',
             },
