@@ -49,7 +49,7 @@ export default function CheckboxItem({
               sx={{
                 width: '143px',
                 height: '32px',
-                '& .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked, .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate':
+                '& .css-zun73v.Mui-checked, .css-zun73v.MuiCheckbox-indeterminate':
                   { color: '#6750A4' },
                 '.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root': {
                   color: '#CAC4D0',
