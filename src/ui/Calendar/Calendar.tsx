@@ -53,7 +53,13 @@
             '& .css-xlhjvr.Mui-selected': {
               backgroundColor: '#6750A4',
             },
+            '& .css-xlhjvr.Mui-selected:focus': {
+              backgroundColor: '#6750A4',
+            },
             '& .css-6u8l34.Mui-selected': {
+              backgroundColor: '#6750A4',
+            },
+            '& .css-6u8l34:focus .Mui-selected': {
               backgroundColor: '#6750A4',
             },
             '& .css-6u8l34.Mui-selected:hover': {
@@ -74,7 +80,7 @@
             '& .css-1qe0bmr': {
               backgroundColor: '#E8DEF8',
             },
-            '&  .css-xftd62 .css-6u8l34.Mui-selected': {
+            '&  .css-1nte4ka:focus.Mui-selected:focus': {
               backgroundColor: '#6750A4',
             },
             '& .css-1juxbee-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected':
