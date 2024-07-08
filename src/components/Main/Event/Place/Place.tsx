@@ -6,10 +6,7 @@ export interface IPlaceProps {
   event?: any;
 }
 
-export default function Place(
-  { event }: IPlaceProps
-) {
-
+export default function Place({ event }: IPlaceProps) {
   return (
     <div className='place'>
       <h2 className='place__title'>{PLACE_DATA.mesto}</h2>
