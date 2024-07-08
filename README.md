@@ -20,7 +20,7 @@ Cервис информирования и регистрации предст�
 Ссылка: [https://k0t1k777.github.io/Funtech/](https://k0t1k777.github.io/Funtech/)
 
 ## ссылка на Figma
-Ссылка: [https://www.figma.com/design/dYUCRvGxhI9CPMNLw6JIfk/%D0%A5%D0%B0%D0%BA%D0%B0%D1%82%D0%BE%D0%BD-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0-%E2%84%962?node-id=1181-44528&t=ZAD7C5s5oFZRZs26-0]
+Ссылка: [Макет Figma](https://www.figma.com/design/dYUCRvGxhI9CPMNLw6JIfk/%D0%A5%D0%B0%D0%BA%D0%B0%D1%82%D0%BE%D0%BD-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0-%E2%84%962?node-id=1181-44528&t=ZAD7C5s5oFZRZs26-0)
 
 ## Инструкции по установке и запуску
 
