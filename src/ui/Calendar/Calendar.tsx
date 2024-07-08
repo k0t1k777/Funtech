@@ -24,8 +24,7 @@ export default function Calendar({
   setShowDateBefore,
   setShowDateAfter,
 }: CalendarProps) {
-
-      return (
+  return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <StaticDateRangePicker
         value={value}
@@ -52,7 +51,7 @@ export default function Calendar({
             width: '300px',
           },
           '& .css-xlhjvr.Mui-selected': {
-          color: 'red'
+            background: '#6750A4',
           },
           '& .css-1juxbee-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected':
             {

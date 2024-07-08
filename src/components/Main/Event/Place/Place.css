@@ -24,4 +24,5 @@
   border-radius: 12px;
   background-image: url('src/assets/images/map.png');
   margin-top: 20px;
+  object-fit: cover;
 }
