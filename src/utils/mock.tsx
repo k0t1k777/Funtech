@@ -596,7 +596,7 @@ export const PERSONAL_EVENTS = [
     status: 'registration is closed',
     is_registrated: true,
     is_deleted: false,
-    image: 'assets/4.png',
+    image: 'assets/9.png',
     description:
       'Встреча на которой обсуждаются Методологии тестирования: Waterfall vs Agile.',
     start_time: '2024-07-12 10:00:00+03:00',

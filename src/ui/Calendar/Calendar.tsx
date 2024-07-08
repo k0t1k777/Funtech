@@ -51,6 +51,9 @@ export default function Calendar({
             border: '1px solid #CAC4D0',
             width: '300px',
           },
+          '& .css-xlhjvr.Mui-selected': {
+          color: 'red'
+          },
           '& .css-1juxbee-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected':
             {
               backgroundColor: '#6750A4',

@@ -45,7 +45,7 @@
 .registration__button-edit {
   border: 0;
   padding: 0;
-  background-image: url('../../../assets/editButton.svg');
+  background-image: url('src/assets/editButton.svg');
   width: 24px;
   height: 24px;
   background-color: rgba(0, 0, 0, 0);
@@ -56,7 +56,7 @@
 .registration__button-on {
   border: 0;
   padding: 0;
-  background-image: url('../../../assets/posterButtonOn.svg');
+  background-image: url('src/assets/posterButtonOn.svg');
   width: 24px;
   height: 24px;
   background-color: rgba(0, 0, 0, 0);
@@ -66,7 +66,7 @@
 .registration__button-off {
   border: 0;
   padding: 0;
-  background-image: url('../../../assets/posterButtonOff.svg');
+  background-image: url('src/assets/posterButtonOff.svg');
   width: 24px;
   height: 24px;
   background-color: rgba(0, 0, 0, 0);
@@ -187,7 +187,7 @@
 
 .registration__button-other {
   background-color: white;
-  background-image: url('../../../assets/other.svg');
+  background-image: url('src/assets/other.svg');
   background-size: cover;
   width: 28px;
   height: 24px;
