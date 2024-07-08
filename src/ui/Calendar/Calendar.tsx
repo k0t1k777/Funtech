@@ -59,9 +59,9 @@ export default function Calendar({
           '& .css-6u8l34.Mui-selected:hover': {
             backgroundColor: '#6750A4',
           },
-          // '& .css-1nte4ka.Mui-selected': {
-          //   backgroundColor: '#6750A4',
-          // },
+          '& .css-1nte4ka.Mui-selected': {
+            backgroundColor: '#6750A4',
+          },
          
           '& .css-1uqqj9m': {
             backgroundColor: '#E8DEF8',
