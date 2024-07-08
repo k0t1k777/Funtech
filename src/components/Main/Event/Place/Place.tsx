@@ -17,7 +17,7 @@ export default function Place(
         <p className='place__adress'>
           {event?.place}, {event?.street}
         </p>
-        <img className='place__img' src={Map} alt='address' />
+        <img className='place__img' src={Map} alt='Ваше местоположение' />
       </div>
     </div>
   );
