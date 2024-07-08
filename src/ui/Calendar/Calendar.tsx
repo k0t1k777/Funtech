@@ -62,7 +62,7 @@
             '& .css-6u8l34.Mui-selected': {
               backgroundColor: '#6750A4',
             },
-            '& .css-6u8l34:focus .Mui-selected': {
+            '& .css-6u8l34.Mui-selected:focus': {
               backgroundColor: '#6750A4',
             },
             '& .css-6u8l34.Mui-selected:hover': {
