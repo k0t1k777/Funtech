@@ -1,5 +1,4 @@
 const BASE_URL = import.meta.env.VITE_PUBLIC_URL;
-console.log('BASE_URL: ', BASE_URL);
 
 export const CITY_DATA = ['Москва', 'С-Петербург', 'Екатеринбург'];
 
